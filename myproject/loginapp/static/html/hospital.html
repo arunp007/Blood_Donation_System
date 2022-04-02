@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Signup</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <style>
+        body{
+    background: linear-gradient(#ffd89b,#19547b);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 30px;
+    padding-left: 10px;
+    padding-bottom: 30px;
+    padding-right: 10px;
+    }
+    form{
+    background-color: white;
+    padding-top: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 50px;
+    border-radius: 20px;
+
+    }
+
+    h1{
+    color:crimson;
+    text-align: left;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bolder;
+    padding-bottom: 10px;
+    }
+    hr{
+    margin-bottom: 30px;
+    }
+
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-7 col-lg-7">
+                <form> 
+                    <h1>Hospital Registration</h1>
+                    <hr color="red">
+                        <div class="form-row">
+                          <div class="form-group col-md-12">
+                                <label for="inputHospitalName">Hospital Name</label>
+                                <input type="text" class="form-control" id="hospitalname" placeholder="Hospital Name">
+                                <label id="hostpital_error"></label>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-12">
+                                 <label for="inputAddress">Permanent Address</label>
+                                 <textarea class="form-control" id="permenentaddress" cols="10" rows="2" placeholder="Permanent Address"></textarea>
+                                 <label id="address_error"></label>
+                            </div>
+                                <div class="form-group col-md-12">
+                                      <label for="inputHospitalLocation">Location</label>
+                                      <input type="text" class="form-control" id="location" placeholder="Location">
+                                      <label id="location_error"></label>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                       <input type="file" name="" id="">
+                                     </div>
+                                 </div>
+                            <div class="form-row">
+                               <div class="form-group col-md-4">
+                                  <label for="inputState">State</label>
+                                  <select id="state" class="form-control">
+                                        <option selected>Choose...</option>
+                                        <option>Kerala</option>
+                                        <option>Tamilnadu</option>
+                                        <option>Karnataka</option>
+                                        <option>Andra Pradesh</option>
+                                        <option>Telangana</option>
+                                     </select>
+                                     <label id="state_error"></label>
+                                 </div> 
+ 
+                                <div class="form-group col-md-4">
+                                   <label for="inputDistrict">District</label>
+                                   <select id="district" class="form-control">
+                                         <option selected>Choose...</option>
+                                         <option>Alappuzha</option>
+                                         <option>Eranakulam</option>
+                                         <option>Idukki</option>
+                                         <option>Kannur</option>
+                                         <option>Kasaragod</option>
+                                         <option>Kollam</option>
+                                         <option>Kottayam</option>
+                                         <option>Kozhikode</option>
+                                         <option>Malappuram</option>
+                                         <option>Palakkad</option>
+                                         <option>Pathanamthitta</option>
+                                         <option>Thiruvanathapuram</option>
+                                         <option>Thrissur</option>
+                                         <option>Wayanad</option>
+                                     </select>
+                                     <label label="district_error"></label>
+                                 </div> 
+                                 <div class="form-group col-md-4">
+                                   <label for="inputPin">Pin Code</label>
+                                   <input type="number" class="form-control" id="pincode" placeholder="Pin Code">
+                                   <label id="pincode_error"></label>
+                               </div>
+                           </div>
+                         </div>
+                         <div class="form-row">
+                             <div class="form-group col-md-6">
+                                 <label for="inputPhoneNumber">Mobile Number</label>
+                                 <input type="phone" class="form-control" id="phonenumber" placeholder="Mobile Number">
+                                 <label id="phone_error"></label>
+                             </div>
+                             <div class="form-group col-md-6">
+                                 <label for="inputEmail">Email Address</label>
+                                 <input type="text" class="form-control" id="emailid" placeholder="Email">
+                                 <label id="email_error"></label>
+                             </div>
+                         </div>
+                           <div class="form-row">
+                                <div class="form-group col-md-6">
+                                     <label for="inputPassword">Password</label>
+                                     <input type="password" class="form-control" id="password" placeholder="Password">
+                                     <label id="password_error"></label>
+                                </div>
+                                <div class="form-group col-md-6">
+                                     <label for="inputConfirmPassword">Confirm Password</label>
+                                     <input type="password" class="form-control" id="confirmpassword" placeholder="Confirm Password">
+                                     <label id="cpassword_error"></label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="authentication">
+                                    <label class="form-check-label" for="invalidCheck2">
+                                    I authorize this website to display our hospital name and phone number, so that the needy could contact us when there is an emergency.</label><br><br>
+                                    <label id="authentication_error"></label>
+                                </div>
+                            </div>
+                            <button onclick="return validation()" class="btn btn-primary col-md-12" type="submit">Sign Up</button>&nbsp;
+                            <button class="btn btn-danger col-md-12" type="submit">Reset</button>
+                        </div>
+                 </form>          
+            </div>
+        </div>
+    </div>
+
+<script>
+    function validation(){
+        hname=document.getElementById('hospitalname')
+        address=document.getElementById('permanentaddress')
+        place=document.getElementById('location')
+        state=document.getElementById('state')
+        district=document.getElementById('district')
+        pin=document.getElementById('pincode')
+        phone=document.getElementById('phonenumber')
+        email=document.getElementById('emailid')
+        password=document.getElementById('password')
+        cpassword=document.getElementById('confirmpassword')
+        auth=document.getElementById('authentication')
+
+        if(hname.value==""){
+            document.getElementById('hospitalname').style.borderColor="red"
+            document.getElementById('hospital_error').innerHTML="Please Enter Hospital Name"
+            document.getElementById('hospital_error').style.color="red"
+            document.getElementById('hospital_error').style.display="block"
+            status=0
+        }
+        else{
+            document.getElementById('hospitalname').style.borderColor="black"
+            document.getElementById('hospital_error').style.display="none"
+            status=1
+        }
+
+        if(address.value==""){
+            document.getElementById('permanentaddress').style.borderColor="red"
+            document.getElementById('address_error').innerHTML="Please Enter Your Permanent Address"
+            document.getElementById('address_error').style.color="red"
+            document.getElementById('address_error').style.display="block"
+            status=0
+        }
+        else{
+            document.getElementById('permanentaddress').style.borderColor="black"
+            document.getElementById('address_error').style.display="none"
+            status=1
+        }
+
+        if(place.value==""){
+            document.getElementById('location').style.borderColor="red"
+            document.getElementById('location_error').innerHTML="Please Enter Your Location"
+            document.getElementById('location_error').style.color="red"
+            document.getElementById('location_error').style.display="block"
+            status=0
+        }
+        else{
+            document.getElementById('location').style.borderColor="black"
+            document.getElementById('location_error').style.display="none"
+            status=1
+        }
+
+        if(state.value==""){
+            document.getElementById('state').style.borderColor="red"
+            document.getElementById('state_error').innerHTML="Please Enter Your State"
+            document.getElementById('state_error').style.color="red"
+            document.getElementById('state_error').style.display="block"
+            status=0
+        }
+        else{
+            document.getElementById('state').style.borderColor="black"
+            document.getElementById('state_error').style.display="none"
+            status=1
+        }
+
+        if(district.value==""){
+            document.getElementById('district').style.borderColor="red"
+            document.getElementById('district_error').innerHTML="Please Enter Your district"
+            document.getElementById('district_error').style.color="red"
+            document.getElementById('district_error').style.display="block"
+            status=0
+        }
+        else{
+            document.getElementById('district').style.borderColor="black"
+            document.getElementById('district_error').style.display="none"
+            status=1
+        }
+
+        if(pin.value==""){
+            document.getElementById('pincode').style.borderColor="red"
+            document.getElementById('pincode_error').innerHTML="Please Enter Your Pincode"
+            document.getElementById('pincode_error').style.color="red"
+            document.getElementById('pincode_error').style.display="block"
+            status=0
+        }
+        else{
+            document.getElementById('pincode').style.borderColor="black"
+            document.getElementById('pincode_error').style.display="none"
+            status=1
+        }
+        
+        if(phone.value==""){
+            document.getElementById('phonenumber').style.borderColor="red"
+            document.getElementById('phone_error').innerHTML="Please Enter Your Phone Number"
+            document.getElementById('phone_error').style.color="red"
+            document.getElementById('phone_error').style.display="block"
+            status=0
+        }
+        else{
+            document.getElementById('phonenumber').style.borderColor="black"
+            document.getElementById('phone_error').style.display="none"
+            status=1
+        }
+
+        
+
+        if(status==0){
+            return false;
+        }
+        else if(status==1){
+            return true;
+        }
+     }
+ </script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script> 
+</body>
+</html>

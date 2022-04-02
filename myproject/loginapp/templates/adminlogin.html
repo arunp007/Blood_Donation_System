@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/admin.css' %}">
+    <style>
+      body{
+        background: linear-gradient(#eecda3,#ef629f);
+      }
+     
+    </style>
+</head>
+<body>
+   <div class="container">  
+        <div class="row">
+                <div class="header">
+                    <img src="{% static 'images/heart.png' %}" alt="" width="550px" height="310ps"><br>
+                    <img src="{% static 'images/blood.png' %}" alt="" width="550px" height="320ps">
+                 </div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                <h1 style="color: white; padding-left: 120px; padding-top: 40px; font-family: 'Times New Roman', Times, serif;">ADMIN LOGIN</h1><br><br><br>
+                <form style="margin-bottom:10px; padding-left: 50px; padding-top: 60px;">
+                    <div class="form-group" style="color: white;">
+                      <label for="InputEmail1">Username</label>
+                      <input type="user" class="form-control col-md-12" id="InputUser" aria-describedby="emailUser" placeholder="Username">
+                    </div>
+                    <div class="form-group" style="color: white;">
+                      <label for="exampleInputPassword1">Password</label>
+                      <input type="password" class="form-control col-md-12" id="exampleInputPassword1" placeholder="Password">
+                    </div>
+                    <div class="form-group form-check" style="color: white;">
+                      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                      <label class="form-check-label" for="exampleCheck1">Remember Me</label><br><br>
+                    </div>
+                    <button type="submit" class="btn btn-danger col-md-12">Login</button><br><br><br>
+                  </form>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donor Signup</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <style>
+        body{
+        background: linear-gradient(#cc2b5e,#753a88);
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding-top: 30px;
+        padding-left: 10px;
+        padding-bottom: 30px;
+        padding-right: 10px;
+        }
+        form{
+        background-color: white;
+        padding-top: 50px;
+        padding-left: 50px;
+        padding-right: 50px;
+        padding-bottom: 50px;
+        border-radius: 20px;
+        }
+
+        h1{
+        color:crimson;
+        text-align: left;
+        font-family: 'Times New Roman', Times, serif;
+        font-weight: bolder;
+        padding-bottom: 10px;
+        }
+        hr{
+        margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-7 col-lg-7">
+                <form> 
+                    <h1>Donor Registration</h1>
+                    <hr color="red">
+                        <div class="form-row">
+                          <div class="form-group col-md-6">
+                                <label for="inputFirstName">First Name</label>
+                                <input type="text" class="form-control" id="firstname" placeholder="First Name">
+                          </div>
+                          <div class="form-group col-md-6">
+                                <label for="inputLastName">Last Name</label>
+                                <input type="text" class="form-control" id="lastname" placeholder="Last Name">
+                          </div>
+                        </div>
+                        <div class="form-row">
+                          <div class="form-group col-md-4">
+                                <label for="inputBloodGroup">Blood Group</label>
+                                <select id="bloodgroup" class="form-control">
+                                    <option selected>Choose...</option>
+                                    <option>A+</option>
+                                    <option>A-</option>
+                                    <option>B+</option>
+                                    <option>B-</option>
+                                    <option>O+</option>
+                                    <option>O-</option>
+                                    <option>AB+</option>
+                                    <option>AB-</option>
+                                </select>
+                           </div>
+                            <div class="form-group col-md-8">
+                                <label for="inputAadhaar">Aadhaar Card Number</label>
+                                <input type="text" class="form-control" id="aadhaar" placeholder="Aadhaar Card Number">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                           <div class="form-group col-md-6">
+                              <input type="file" name="" id="">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                          <div class="form-inline">
+                               &nbsp;<label for="dob">Date Of Birth</label>
+                            </div>&nbsp;
+                               <div class="form-row">
+                                    <div class="form-group col-md-4">
+                                      <label for="inputDay">Day</label>
+                                      <select id="day" class="form-control">
+                                          <option selected>Choose...</option>
+                                          <option>1</option>
+                                          <option>2</option>
+                                          <option>3</option>
+                                          <option>4</option>
+                                          <option>5</option>
+                                          <option>6</option>
+                                          <option>7</option>
+                                          <option>8</option>
+                                          <option>9</option>
+                                          <option>10</option>
+                                          <option>11</option>
+                                          <option>12</option>
+                                          <option>13</option>
+                                          <option>14</option>
+                                          <option>15</option>
+                                          <option>16</option>
+                                          <option>17</option>
+                                          <option>18</option>
+                                          <option>19</option>
+                                          <option>20</option>
+                                          <option>21</option>
+                                          <option>22</option>
+                                          <option>23</option>
+                                          <option>24</option>
+                                          <option>25</option>
+                                          <option>26</option>
+                                          <option>27</option>
+                                          <option>28</option>
+                                          <option>29</option>
+                                          <option>30</option>
+                                          <option>31</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                       <label for="inputMonth">Month</label>
+                                       <select id="month" class="form-control">
+                                            <option selected>Choose...</option>
+                                            <option>January</option>
+                                            <option>February</option>
+                                            <option>March</option>
+                                            <option>April</option>
+                                            <option>May</option>
+                                            <option>June</option>
+                                            <option>July</option>
+                                            <option>Augest</option>
+                                            <option>September</option>
+                                            <option>October</option>
+                                            <option>November</option>
+                                            <option>December</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label for="inputYear">Year</label>
+                                        <select id="year" class="form-control">
+                                            <option selected>Choose...</option>
+                                            <option>1950</option>
+                                            <option>1951</option>
+                                            <option>1952</option>
+                                            <option>1953</option>
+                                            <option>1954</option>
+                                            <option>1955</option>
+                                            <option>1956</option>
+                                            <option>1957</option>
+                                            <option>1958</option>
+                                            <option>1959</option>
+                                            <option>1960</option>
+                                            <option>1961</option>
+                                            <option>1962</option>
+                                            <option>1963</option>
+                                            <option>1964</option>
+                                            <option>1965</option>
+                                            <option>1966</option>
+                                            <option>1967</option>
+                                            <option>1968</option>
+                                            <option>1969</option>
+                                            <option>1970</option>
+                                            <option>1971</option>
+                                            <option>1972</option>
+                                            <option>1973</option>
+                                            <option>1974</option>
+                                            <option>1975</option>
+                                            <option>1976</option>
+                                            <option>1977</option>
+                                            <option>1978</option>
+                                            <option>1979</option>
+                                            <option>1980</option>
+                                            <option>1981</option>
+                                            <option>1982</option>
+                                            <option>1983</option>
+                                            <option>1984</option>
+                                            <option>1985</option>
+                                            <option>1986</option>
+                                            <option>1987</option>
+                                            <option>1988</option>
+                                            <option>1989</option>
+                                            <option>1990</option>
+                                            <option>1991</option>
+                                            <option>1992</option>
+                                            <option>1993</option>
+                                            <option>1994</option>
+                                            <option>1995</option>
+                                            <option>1996</option>
+                                            <option>1997</option>
+                                            <option>1998</option>
+                                            <option>1999</option>
+                                            <option>2000</option>
+                                            <option>2001</option>
+                                            <option>2002</option>
+                                            <option>2003</option>
+                                            <option>2004</option>
+                                            <option>2005</option>
+                                            <option>2006</option>
+                                            <option>2007</option>
+                                            <option>2008</option>
+                                            <option>2009</option>
+                                            <option>2010</option>
+                                            <option>2011</option>
+                                            <option>2012</option>
+                                            <option>2013</option>
+                                            <option>2014</option>
+                                            <option>2015</option>
+                                            <option>2016</option>
+                                            <option>2017</option>
+                                            <option>2018</option>
+                                            <option>2019</option>
+                                            <option>2020</option>
+                                            <option>2021</option>
+                                            <option>2022</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            
+                        </div>
+                        <div class="form-row">
+                           <div class="form-group">
+                              <label for="gender">Gender</label>
+                              <div class="custom-control custom-radio custom-control-inline">
+                                  <input type="radio" id="customRadioInline1" name="customRadioInline" class="custom-control-input">
+                                  <label class="custom-control-label" for="customRadioInline1">Male</label>
+                               </div>
+                               <div class="custom-control custom-radio custom-control-inline">
+                                  <input type="radio" id="customRadioInline2" name="customRadioInline" class="custom-control-input">
+                                  <label class="custom-control-label" for="customRadioInline2">Female</label>
+                               </div>
+                               <div class="custom-control custom-radio custom-control-inline">
+                                  <input type="radio" id="customRadioInline3" name="customRadioInline" class="custom-control-input">
+                                  <label class="custom-control-label" for="customRadioInline3">Others</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                           <div class="form-group col-md-12">
+                                <label for="inputAddress">Permanent Address</label>
+                                <textarea class="form-control" id="" cols="10" rows="2" placeholder="Permanent Address"></textarea>
+                           </div>
+                        
+                           <div class="form-row">
+                              <div class="form-group col-md-4">
+                                 <label for="inputState">State</label>
+                                 <select id="state" class="form-control">
+                                       <option selected>Choose...</option>
+                                       <option>Kerala</option>
+                                       <option>Tamilnadu</option>
+                                       <option>Karnataka</option>
+                                       <option>Andra Pradesh</option>
+                                       <option>Telangana</option>
+                                    </select>
+                                </div> 
+
+                               <div class="form-group col-md-4">
+                                  <label for="inputDistrict">District</label>
+                                  <select id="state" class="form-control">
+                                        <option selected>Choose...</option>
+                                        <option>Alappuzha</option>
+                                        <option>Eranakulam</option>
+                                        <option>Idukki</option>
+                                        <option>Kannur</option>
+                                        <option>Kasaragod</option>
+                                        <option>Kollam</option>
+                                        <option>Kottayam</option>
+                                        <option>Kozhikode</option>
+                                        <option>Malappuram</option>
+                                        <option>Palakkad</option>
+                                        <option>Pathanamthitta</option>
+                                        <option>Thiruvanathapuram</option>
+                                        <option>Thrissur</option>
+                                        <option>Wayanad</option>
+                                    </select>
+                                </div> 
+                                <div class="form-group col-md-4">
+                                  <label for="inputPin">Pin Code</label>
+                                  <input type="number" class="form-control" id="pincode" placeholder="Pin Code">
+                              </div>
+                          </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="inputPhoneNumber">Mobile Number</label>
+                                <input type="phone" class="form-control" id="phonenumber" placeholder="Mobile Number">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="inputEmail">Email Address</label>
+                                <input type="text" class="form-control" id="emailid" placeholder="Email">
+                            </div>
+                        </div>
+                          <div class="form-row">
+                               <div class="form-group col-md-6">
+                                    <label for="inputPassword">Password</label>
+                                    <input type="password" class="form-control" id="password" placeholder="Password">
+                               </div>
+                               <div class="form-group col-md-6">
+                                    <label for="inputConfirmPassword">Confirm Password</label>
+                                    <input type="password" class="form-control" id="confirmpassword" placeholder="Confirm Password">
+                               </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="authentication">
+                                    <label class="form-check-label" for="invalidCheck2">
+                                    I authorize this website to display my name and phone number, so that the needy could contact me when there is an emergency.</label><br><br>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary col-md-12" type="submit">Sign Up</button>&nbsp;
+                            <button class="btn btn-danger col-md-12" type="submit">Reset</button>
+                </form>          
+            </div>
+        </div>
+   </div>
+
+    
+  
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+</body>
+</html>
+</body>
+</html>

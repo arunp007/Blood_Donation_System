@@ -1,0 +1,21 @@
+body{
+    background: linear-gradient(#eecda3,#ef629f);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.container{
+    background: linear-gradient(#141e30,#243b55);
+    margin-top: 100px;
+    margin-bottom: 50px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-right: 50px;
+    padding-left: 15px
+    
+}
+
+.header{
+    text-align: center;   
+  }
+

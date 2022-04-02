@@ -1,0 +1,29 @@
+body{
+    background: linear-gradient(#ffd89b,#19547b);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 30px;
+    padding-left: 10px;
+    padding-bottom: 30px;
+    padding-right: 10px;
+}
+form{
+    background-color: white;
+    padding-top: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 50px;
+    border-radius: 20px;
+
+}
+
+h1{
+    color:crimson;
+    text-align: left;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bolder;
+    padding-bottom: 10px;
+}
+hr{
+    margin-bottom: 30px;
+}
