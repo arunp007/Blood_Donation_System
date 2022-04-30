@@ -152,29 +152,28 @@
 
 <script>
     function validation(){
-        hname=document.getElementById('hospitalname')
-        address=document.getElementById('permanentaddress')
-        place=document.getElementById('location')
-        state=document.getElementById('state')
-        district=document.getElementById('district')
-        pin=document.getElementById('pincode')
-        phone=document.getElementById('phonenumber')
-        email=document.getElementById('emailid')
-        password=document.getElementById('password')
-        cpassword=document.getElementById('confirmpassword')
-        auth=document.getElementById('authentication')
+        var hname = document.getElementById('hospitalname')
+        var address = document.getElementById('permanentaddress')
+        var place = document.getElementById('location')
+        var pin =  document.getElementById('pincode')
+        var phone = document.getElementById('phonenumber')
+        var email = document.getElementById('emailid')
+        var pass = document.getElementById('password')
+        var cpass = document.getElementById('cpassword')
+   
 
         if(hname.value==""){
             document.getElementById('hospitalname').style.borderColor="red"
             document.getElementById('hospital_error').innerHTML="Please Enter Hospital Name"
             document.getElementById('hospital_error').style.color="red"
             document.getElementById('hospital_error').style.display="block"
-            status=0
+            status = 0
         }
+
         else{
             document.getElementById('hospitalname').style.borderColor="black"
             document.getElementById('hospital_error').style.display="none"
-            status=1
+            status = 1
         }
 
         if(address.value==""){
@@ -182,12 +181,13 @@
             document.getElementById('address_error').innerHTML="Please Enter Your Permanent Address"
             document.getElementById('address_error').style.color="red"
             document.getElementById('address_error').style.display="block"
-            status=0
+            status = 0
         }
+
         else{
             document.getElementById('permanentaddress').style.borderColor="black"
             document.getElementById('address_error').style.display="none"
-            status=1
+            status = 1
         }
 
         if(place.value==""){
@@ -195,38 +195,13 @@
             document.getElementById('location_error').innerHTML="Please Enter Your Location"
             document.getElementById('location_error').style.color="red"
             document.getElementById('location_error').style.display="block"
-            status=0
+            status = 0
         }
+
         else{
             document.getElementById('location').style.borderColor="black"
             document.getElementById('location_error').style.display="none"
-            status=1
-        }
-
-        if(state.value==""){
-            document.getElementById('state').style.borderColor="red"
-            document.getElementById('state_error').innerHTML="Please Enter Your State"
-            document.getElementById('state_error').style.color="red"
-            document.getElementById('state_error').style.display="block"
-            status=0
-        }
-        else{
-            document.getElementById('state').style.borderColor="black"
-            document.getElementById('state_error').style.display="none"
-            status=1
-        }
-
-        if(district.value==""){
-            document.getElementById('district').style.borderColor="red"
-            document.getElementById('district_error').innerHTML="Please Enter Your district"
-            document.getElementById('district_error').style.color="red"
-            document.getElementById('district_error').style.display="block"
-            status=0
-        }
-        else{
-            document.getElementById('district').style.borderColor="black"
-            document.getElementById('district_error').style.display="none"
-            status=1
+            status = 1
         }
 
         if(pin.value==""){
@@ -234,35 +209,38 @@
             document.getElementById('pincode_error').innerHTML="Please Enter Your Pincode"
             document.getElementById('pincode_error').style.color="red"
             document.getElementById('pincode_error').style.display="block"
-            status=0
+            status = 0
         }
+
         else{
             document.getElementById('pincode').style.borderColor="black"
             document.getElementById('pincode_error').style.display="none"
-            status=1
+            status = 1
         }
         
-        if(phone.value==""){
+        if(phone.value == ""){
             document.getElementById('phonenumber').style.borderColor="red"
             document.getElementById('phone_error').innerHTML="Please Enter Your Phone Number"
             document.getElementById('phone_error').style.color="red"
             document.getElementById('phone_error').style.display="block"
-            status=0
+            status = 0
         }
         else{
             document.getElementById('phonenumber').style.borderColor="black"
             document.getElementById('phone_error').style.display="none"
-            status=1
+            status = 1
         }
 
         
 
-        if(status==0){
-            return false;
+        if(status == 0){
+            return false
         }
-        else if(status==1){
-            return true;
+
+        else if(status == 1){
+            return true
         }
+
      }
  </script>
 

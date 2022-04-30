@@ -48,10 +48,12 @@
                           <div class="form-group col-md-6">
                                 <label for="inputFirstName">First Name</label>
                                 <input type="text" class="form-control" id="firstname" placeholder="First Name">
+                                <label id="first_error"></label>
                           </div>
                           <div class="form-group col-md-6">
                                 <label for="inputLastName">Last Name</label>
                                 <input type="text" class="form-control" id="lastname" placeholder="Last Name">
+                                <label id="last_error"></label>
                           </div>
                         </div>
                         <div class="form-row">
@@ -72,11 +74,13 @@
                             <div class="form-group col-md-8">
                                 <label for="inputAadhaar">Aadhaar Card Number</label>
                                 <input type="text" class="form-control" id="aadhaar" placeholder="Aadhaar Card Number">
+                                <label id="aadhaar_error"></label>
                             </div>
                         </div>
                         <div class="form-row">
                            <div class="form-group col-md-6">
-                              <input type="file" name="" id="">
+                              <input type="file" name="" id="file">
+                              <label id="file_error"></label>
                             </div>
                         </div>
                         <div class="form-row">
@@ -241,7 +245,8 @@
                         <div class="form-row">
                            <div class="form-group col-md-12">
                                 <label for="inputAddress">Permanent Address</label>
-                                <textarea class="form-control" id="" cols="10" rows="2" placeholder="Permanent Address"></textarea>
+                                <textarea class="form-control" id="permanentaddress" cols="10" rows="2" placeholder="Permanent Address"></textarea>
+                                <label id="address_error"></label>
                            </div>
                         
                            <div class="form-row">
@@ -280,6 +285,7 @@
                                 <div class="form-group col-md-4">
                                   <label for="inputPin">Pin Code</label>
                                   <input type="number" class="form-control" id="pincode" placeholder="Pin Code">
+                                  <label id="pincode_error"></label>
                               </div>
                           </div>
                         </div>
@@ -287,20 +293,24 @@
                             <div class="form-group col-md-6">
                                 <label for="inputPhoneNumber">Mobile Number</label>
                                 <input type="phone" class="form-control" id="phonenumber" placeholder="Mobile Number">
+                                <label id="phone_error"></label>
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="inputEmail">Email Address</label>
                                 <input type="text" class="form-control" id="emailid" placeholder="Email">
+                                <label id="email_error"></label>
                             </div>
                         </div>
                           <div class="form-row">
                                <div class="form-group col-md-6">
                                     <label for="inputPassword">Password</label>
                                     <input type="password" class="form-control" id="password" placeholder="Password">
+                                    <label id="password_error"></label>
                                </div>
                                <div class="form-group col-md-6">
                                     <label for="inputConfirmPassword">Confirm Password</label>
-                                    <input type="password" class="form-control" id="confirmpassword" placeholder="Confirm Password">
+                                    <input type="password" class="form-control" id="cpassword" placeholder="Confirm Password">
+                                    <label for="cpassword_error"></label>
                                </div>
                             </div>
                             <div class="form-group">
@@ -310,7 +320,7 @@
                                     I authorize this website to display my name and phone number, so that the needy could contact me when there is an emergency.</label><br><br>
                                 </div>
                             </div>
-                            <button class="btn btn-primary col-md-12" type="submit">Sign Up</button>&nbsp;
+                            <button class="btn btn-primary col-md-12" type="submit" onclick="return validation()">Sign Up</button>&nbsp;
                             <button class="btn btn-danger col-md-12" type="submit">Reset</button>
                 </form>          
             </div>
@@ -318,7 +328,154 @@
    </div>
 
     
-  
+    <script>
+        function validation(){
+            var fname = document.getElementById('firstname')
+            var lname = document.getElementById('lastname')
+            var aadhaar = document.getElementById('aadhaar')
+            var address = document.getElementById('permanentaddress')
+            var pin = document.getElementById('pincode')
+            var phone = document.getElementById('phonenumber')
+            var email = document.getElementById('emailid')
+            var pass = document.getElementById('password')
+            var cpass = document.getElementById('cpassword')
+
+            if(fname.value == ""){
+                document.getElementById('firstname').style.borderColor="red"
+                document.getElementById('first_error').innerHTML="** Please Enter Your First Name **"
+                document.getElementById('first_error').style.color="red"
+                document.getElementById('first_error').style.display="block"
+                status = 0
+            }
+
+            else{
+                document.getElementById('firstname').style.borderColor="black"
+                document.getElementById('first_error').style.display="none"
+                status = 1
+          
+            }
+
+            if(lname.value == ""){
+                document.getElementById('lastname').style.borderColor="red"
+                document.getElementById('last_error').innerHTML="** Please Enter Your Last Name **"
+                document.getElementById('last_error').style.color="red"
+                document.getElementById('last_error').style.display="block"
+                status = 0
+            }
+
+            else{
+                document.getElementById('lastname').style.borderColor="black"
+                document.getElementById('last_error').style.display='none'
+                status = 1
+            }
+
+            if(aadhaar.value == ""){
+                document.getElementById('aadhaar').style.borderColor="red"
+                document.getElementById('aadhaar_error').innerHTML="** Please Enter Your Aadhaar Number **"
+                document.getElementById('aadhaar_error').style.color="red"
+                document.getElementById('aadhaar_error').style.display="block"
+                status = 0
+            }
+
+            else{
+                document.getElementById('aadhaar').style.borderColor="black"
+                document.getElementById('aadhaar_error').style.display='none'
+                status = 1
+            }
+
+            if(address.value == ""){
+                document.getElementById('permanentaddress').style.borderColor="red"
+                document.getElementById('address_error').innerHTML="** Please Enter Your Permanent Address **"
+                document.getElementById('address_error').style.color="red"
+                document.getElementById('address_error').style.display="block"
+                status = 0
+            }
+
+            else{
+                document.getElementById('permanentaddress').style.borderColor="black"
+                document.getElementById('address_error').style.display='none'
+                status = 1
+            }
+
+            if(pin.value == ""){
+                document.getElementById('pincode').style.borderColor="red"
+                document.getElementById('pincode_error').innerHTML="** Please Enter Your Pincode **"
+                document.getElementById('pincode_error').style.color="red"
+                document.getElementById('pincode_error').style.display="block"
+                status = 0
+            }
+
+            else{
+                document.getElementById('pincode').style.borderColor="black"
+                document.getElementById('pincode_error').style.display='none'
+                status = 1
+            }
+
+            if(phone.value == ""){
+                document.getElementById('phonenumber').style.borderColor="red"
+                document.getElementById('phone_error').innerHTML="** Please Enter Your Mobile Number **"
+                document.getElementById('phone_error').style.color="red"
+                document.getElementById('phone_error').style.display="block"
+                status = 0
+            }
+
+            else{
+                document.getElementById('phonenumber').style.borderColor="black"
+                document.getElementById('phone_error').style.display='none'
+                status = 1
+            }
+
+            if(email.value == ""){
+                document.getElementById('emailid').style.borderColor="red"
+                document.getElementById('email_error').innerHTML="** Please Enter Your Email Id **"
+                document.getElementById('email_error').style.color="red"
+                document.getElementById('email_error').style.display="block"
+                status = 0
+            }
+
+            else{
+                document.getElementById('emailid').style.borderColor="black"
+                document.getElementById('email_error').style.display='none'
+                status = 1
+            }
+
+            if(pass.value == ""){
+                document.getElementById('password').style.borderColor="red"
+                document.getElementById('password_error').innerHTML="** Please Enter Your Password **"
+                document.getElementById('password_error').style.color="red"
+                document.getElementById('password_error').style.display="block"
+                status = 0
+            }
+
+            else{
+                document.getElementById('password').style.borderColor="black"
+                document.getElementById('password_error').style.display='none'
+                status = 1
+            }
+
+            // if(cpass.value == ""){
+            //     document.getElementById('cpassword').style.borderColor="red"
+            //     document.getElementById('cpassword_error').innerHTML="** Please Enter Your Confirm Password **"
+            //     document.getElementById('cpassword_error').style.color="red"
+            //     document.getElementById('cpassword_error').style.display="block"
+            //     status = 0
+            // }
+
+            // else{
+            //     document.getElementById('cpassword').style.borderColor="black"
+            //     document.getElementById('cpassword_error').style.display='none'
+            //     status = 1
+            // }
+
+            if(status == 0){
+                return false
+            }
+            else if(status == 1){
+                return true
+            }
+
+        }
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
 </body>
