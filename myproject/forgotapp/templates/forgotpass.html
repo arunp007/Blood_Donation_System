@@ -55,7 +55,7 @@
                       <input type="email" class="form-control col-md-8" id="emailid" placeholder="Registered Email Id">
                       <label id="input_error"></label><br>
                     </div>
-                    <button type="submit" onclick="validation()" class="btn btn-danger col-md-8" >Submit</button><br><br><br>
+                    <button type="submit" onclick="return validation()" class="btn btn-danger col-md-8" >Submit</button><br><br><br>
                     <a href="" style=" text-decoration: none;"><img src="https://www.kindpng.com/picc/m/1-10570_arrow-left-arrow-icon-png-transparent-png.png" width="20px"> Back To Login Page</a>
                 </form></center>
             </div>
@@ -63,27 +63,28 @@
     </div>
     <script>
         function validation(){
-            email = document.getElementById('emailid')
+            var status = 1
+            var email = document.getElementById('emailid')
             
             if(email.value == ""){
                 document.getElementById('emailid').style.borderColor="red"
                 document.getElementById('input_error').innerHTML="** Please Enter Your Email Id **"
                 document.getElementById('input_error').style.color="red"
                 document.getElementById('input_error').style.display="block"
-                status = 1
+                status = 0
             }
             
             else{
                 document.getElementById('emailid').style.borderColor="black" 
                 document.getElementById('input_error').style.display="none"
-                status = 0
+                status = 1
             }
             
             if(status == 1){
                 return true
             }
             
-            else if (status == 0){
+            if (status == 0){
                 return false
             }
         

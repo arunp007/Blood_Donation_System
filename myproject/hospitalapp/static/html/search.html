@@ -208,17 +208,18 @@
                 <div class="form-group col-md-3">
                       <label for="inputBloodGroup">Blood Group</label>
                       <select id="bloodgroup" class="form-control">
-                          <option selected>Choose...</option>
-                          <option>A+</option>
-                          <option>A-</option>
-                          <option>B+</option>
-                          <option>B-</option>
-                          <option>O+</option>
-                          <option>O-</option>
-                          <option>AB+</option>
-                          <option>AB-</option>
-                          <label id="blood_error"></label>
+                          <option value="" value="">Choose...</option>
+                          <option value="A+">A+</option>
+                          <option value="B+">B+</option>
+                          <option value="B-">B-</option>
+                          <option value="A-">A-</option>
+                          <option value="O+">O+</option>
+                          <option value="O-">O-</option>
+                          <option value="AB+">AB+</option>
+                          <option value="AB-">AB-</option>
                       </select>
+                      
+                      <label id="blood_error"></label>
                 </div>
                   <div class="form-group col-md-4">
                       <label for="inputLocation">Location</label>
@@ -228,7 +229,7 @@
                   </div>
               </div>
               <div class="form-group col-md-5">
-                <button class="btn btn-danger" style="margin-left: 10px;" type="submit" onclick="validation()">Search</button>
+                <button class="btn btn-danger" style="margin-left: 10px;" type="submit" onclick="return validation()">Search</button>
               </div>
              
               <br><br><br>
@@ -256,38 +257,45 @@
     </div>
     <script>
       function validation(){
+        var status = 1
         var blood = document.getElementById('bloodgroup')
         var location = document.getElementById('location')
 
         if(blood.value == ""){
           document.getElementById('bloodgroup').style.borderColor="red"
-          document.getElementById('blood_error').innerHTML="** Please Select Your Blood Group **"
+          document.getElementById('blood_error').innerHTML="* Please Select Your Blood Group *"
           document.getElementById('blood_error').style.color="red"
           document.getElementById('blood_error').style.display="block"
-         
+          var status = 0
         }
 
         else{
           document.getElementById('bloodgroup').style.borderColor="black"
           document.getElementById('blood_error').style.display="none"
-          
+          var status = 1
         }
 
         if(location.value == ""){
           document.getElementById('location').style.borderColor="red"
-          document.getElementById('location_error').innerHTML="** Please Enter Your Location **"
+          document.getElementById('location_error').innerHTML="*Please Select Your Location"
           document.getElementById('location_error').style.color="red"
           document.getElementById('location_error').style.display="block"
-         
+          var status = 0
         }
 
         else{
           document.getElementById('location').style.borderColor="black"
           document.getElementById('location_error').style.display="none"
-         
+          var status = 1
         }
 
-
+        if(status == 1){
+          return true
+        }
+        
+        if(status == 0){
+          return false
+        }
       }
     </script>
 

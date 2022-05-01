@@ -57,7 +57,7 @@
                       <input type="email" class="form-control col-md-8" id="password2" placeholder="Confirm Password">
                       <label id="password_error2"></label><br><br>
                     </div>
-                    <button type="submit" onclick="validation()" class="btn btn-danger col-md-8" >Submit</button><br><br><br>
+                    <button type="submit" onclick="return validation()" class="btn btn-danger col-md-8" >Submit</button><br><br><br>
                     <a href="" style=" text-decoration: none;"><img src="https://www.kindpng.com/picc/m/1-10570_arrow-left-arrow-icon-png-transparent-png.png" width="20px"> Back To Login Page</a>
                 </form></center>
             </div>
@@ -65,21 +65,22 @@
     </div>
     <script>
         function validation(){
-            pass1 = document.getElementById('password1')
-            pass2 = document.getElementById('password2')
+            var status = 1
+            var pass1 = document.getElementById('password1')
+            var pass2 = document.getElementById('password2')
             
             if(pass1.value == ""){
                 document.getElementById('password1').style.borderColor="red"
                 document.getElementById('password_error').innerHTML="** Please Enter New Password **"
                 document.getElementById('password_error').style.color="red"
                 document.getElementById('password_error').style.display="block"
-                status = 1
+                var status = 0
             }
             
             else{
                 document.getElementById('password2').style.borderColor="black" 
                 document.getElementById('password_error2').style.display="none"
-                status = 0
+                var status = 1
             }
             
             if(pass2.value == ""){
@@ -87,20 +88,20 @@
                 document.getElementById('password_error2').innerHTML="** Please Enter Confirm Password **"
                 document.getElementById('password_error2').style.color="red"
                 document.getElementById('password_error2').style.display="block"
-                status = 1
+                var status = 0
             }
             
             else{
                 document.getElementById('password2').style.borderColor="black" 
                 document.getElementById('password_error2').style.display="none"
-                status = 0
+                var status = 1
             }
 
             if(status == 1){
                 return true
             }
             
-            else if (status == 0){
+            if (status == 0){
                 return false
             }
         

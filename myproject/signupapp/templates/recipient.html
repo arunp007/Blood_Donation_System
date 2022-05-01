@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <style>
         body{
-        background: linear-gradient(#cc2b5e,#753a88);
+        background: linear-gradient(#42275a,#734b6d);
         background-repeat: no-repeat;
         background-size: cover;
         padding-top: 30px;
@@ -57,10 +57,10 @@
                           </div>
                         </div>
                         <div class="form-row">
-                          <div class="form-group col-md-4">
+                          <div class="form-group col-md-5">
                                 <label for="inputBloodGroup">Blood Group</label>
                                 <select id="bloodgroup" class="form-control">
-                                    <option selected>Choose...</option>
+                                    <option  value="" value="">Choose...</option>
                                     <option>A+</option>
                                     <option>A-</option>
                                     <option>B+</option>
@@ -70,8 +70,10 @@
                                     <option>AB+</option>
                                     <option>AB-</option>
                                 </select>
+
+                                <label id="blood_error"></label>
                            </div>
-                            <div class="form-group col-md-8">
+                            <div class="form-group col-md-7">
                                 <label for="inputAadhaar">Aadhaar Card Number</label>
                                 <input type="text" class="form-control" id="aadhaar" placeholder="Aadhaar Card Number">
                                 <label id="aadhaar_error"></label>
@@ -91,7 +93,7 @@
                                     <div class="form-group col-md-4">
                                       <label for="inputDay">Day</label>
                                       <select id="day" class="form-control">
-                                          <option selected>Choose...</option>
+                                          <option value="" value="">Choose...</option>
                                           <option>1</option>
                                           <option>2</option>
                                           <option>3</option>
@@ -124,11 +126,12 @@
                                           <option>30</option>
                                           <option>31</option>
                                         </select>
+                                        <label id="dob_error1"></label>
                                     </div>
                                     <div class="form-group col-md-4">
                                        <label for="inputMonth">Month</label>
                                        <select id="month" class="form-control">
-                                            <option selected>Choose...</option>
+                                            <option value="" value="">Choose...</option>
                                             <option>January</option>
                                             <option>February</option>
                                             <option>March</option>
@@ -142,11 +145,12 @@
                                             <option>November</option>
                                             <option>December</option>
                                         </select>
+                                        <label id="dob_error2"></label>
                                     </div>
                                     <div class="form-group col-md-4">
                                         <label for="inputYear">Year</label>
                                         <select id="year" class="form-control">
-                                            <option selected>Choose...</option>
+                                            <option value="" value="">Choose...</option>
                                             <option>1950</option>
                                             <option>1951</option>
                                             <option>1952</option>
@@ -221,6 +225,7 @@
                                             <option>2021</option>
                                             <option>2022</option>
                                         </select>
+                                        <label id="dob_error3"></label>
                                     </div>
                                 </div>
                             
@@ -253,19 +258,20 @@
                               <div class="form-group col-md-4">
                                  <label for="inputState">State</label>
                                  <select id="state" class="form-control">
-                                       <option selected>Choose...</option>
+                                       <option value="" value="">Choose...</option>
                                        <option>Kerala</option>
                                        <option>Tamilnadu</option>
                                        <option>Karnataka</option>
                                        <option>Andra Pradesh</option>
                                        <option>Telangana</option>
                                     </select>
+                                    <label id="state_error"></label>
                                 </div> 
 
                                <div class="form-group col-md-4">
                                   <label for="inputDistrict">District</label>
-                                  <select id="state" class="form-control">
-                                        <option selected>Choose...</option>
+                                  <select id="district" class="form-control">
+                                        <option value="" value="">Choose...</option>
                                         <option>Alappuzha</option>
                                         <option>Eranakulam</option>
                                         <option>Idukki</option>
@@ -281,6 +287,7 @@
                                         <option>Thrissur</option>
                                         <option>Wayanad</option>
                                     </select>
+                                    <label id="district_error"></label>
                                 </div> 
                                 <div class="form-group col-md-4">
                                   <label for="inputPin">Pin Code</label>
@@ -310,14 +317,15 @@
                                <div class="form-group col-md-6">
                                     <label for="inputConfirmPassword">Confirm Password</label>
                                     <input type="password" class="form-control" id="cpassword" placeholder="Confirm Password">
-                                    <label for="cpassword_error"></label>
+                                    <label id="cpassword_error"></label>
                                </div>
                             </div>
                             <div class="form-group">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="authentication">
+                                    <input class="form-check-input" type="checkbox" value="" id="auth">
                                     <label class="form-check-label" for="invalidCheck2">
                                     I authorize this website to display my name and phone number, so that the needy could contact me when there is an emergency.</label><br><br>
+                                    <label id="auth_error"></label>
                                 </div>
                             </div>
                             <button class="btn btn-primary col-md-12" type="submit" onclick="return validation()">Sign Up</button>&nbsp;
@@ -330,28 +338,37 @@
     
     <script>
         function validation(){
+            var status = 1
             var fname = document.getElementById('firstname')
             var lname = document.getElementById('lastname')
+            var blood = document.getElementById('bloodgroup')
             var aadhaar = document.getElementById('aadhaar')
+            var file = document.getElementById('file')
+            var day = document.getElementById('day')
+            var month = document.getElementById('month')
+            var year = document.getElementById('year')
             var address = document.getElementById('permanentaddress')
+            var state = document.getElementById('state')
+            var district = document.getElementById('district')
             var pin = document.getElementById('pincode')
             var phone = document.getElementById('phonenumber')
             var email = document.getElementById('emailid')
             var pass = document.getElementById('password')
             var cpass = document.getElementById('cpassword')
+            var auth = document.getElementById('auth')
 
             if(fname.value == ""){
                 document.getElementById('firstname').style.borderColor="red"
                 document.getElementById('first_error').innerHTML="** Please Enter Your First Name **"
                 document.getElementById('first_error').style.color="red"
                 document.getElementById('first_error').style.display="block"
-                status = 0
+                var status = 0
             }
 
             else{
                 document.getElementById('firstname').style.borderColor="black"
                 document.getElementById('first_error').style.display="none"
-                status = 1
+                var status = 1
           
             }
 
@@ -360,27 +377,98 @@
                 document.getElementById('last_error').innerHTML="** Please Enter Your Last Name **"
                 document.getElementById('last_error').style.color="red"
                 document.getElementById('last_error').style.display="block"
-                status = 0
+                var status = 0
             }
 
             else{
                 document.getElementById('lastname').style.borderColor="black"
-                document.getElementById('last_error').style.display='none'
-                status = 1
+                document.getElementById('last_error').style.display="none"
+                var status = 1
             }
+
+            if(blood.value == ""){
+                document.getElementById('bloodgroup').style.borderColor="red"
+                document.getElementById('blood_error').innerHTML="** Please Enter Your Blood Group **"
+                document.getElementById('blood_error').style.color="red"
+                document.getElementById('blood_error').style.display="block"
+                var status = 0
+            }
+
+            else{
+                document.getElementById('bloodgroup').style.borderColor="black"
+                document.getElementById('blood_error').style.display="none"
+                var status = 1
+            }
+
 
             if(aadhaar.value == ""){
                 document.getElementById('aadhaar').style.borderColor="red"
                 document.getElementById('aadhaar_error').innerHTML="** Please Enter Your Aadhaar Number **"
                 document.getElementById('aadhaar_error').style.color="red"
                 document.getElementById('aadhaar_error').style.display="block"
-                status = 0
+                var status = 0
             }
 
             else{
                 document.getElementById('aadhaar').style.borderColor="black"
-                document.getElementById('aadhaar_error').style.display='none'
-                status = 1
+                document.getElementById('aadhaar_error').style.display="none"
+                var status = 1
+            }
+
+            if(file.value == ""){
+                document.getElementById('file').style.borderColor="red"
+                document.getElementById('file_error').innerHTML="** Please Upload File **"
+                document.getElementById('file_error').style.color="red"
+                document.getElementById('file_error').style.display="block"
+                var status = 0
+            }
+
+            else{
+                document.getElementById('file').style.borderColor="black"
+                document.getElementById('file_error').style.display="none"
+                var status = 1
+            }
+
+            if(day.value == ""){
+                document.getElementById('day').style.borderColor="red"
+                document.getElementById('dob_error1').innerHTML="** Please Enter Your Day **"
+                document.getElementById('dob_error1').style.color="red"
+                document.getElementById('dob_error1').style.display="block"
+                var status = 0
+            }
+
+            else{
+                document.getElementById('day').style.borderColor="black"
+                document.getElementById('dob_error1').style.display="none"
+                var status = 1
+            }
+
+            if(month.value == ""){
+                document.getElementById('month').style.borderColor="red"
+                document.getElementById('dob_error2').innerHTML="** Please Enter Your Month **"
+                document.getElementById('dob_error2').style.color="red"
+                document.getElementById('dob_error2').style.display="block"
+                var status = 0
+            }
+
+            else{
+                document.getElementById('month').style.borderColor="black"
+                document.getElementById('dob_error2').style.display="none"
+                var status = 1
+            }
+
+            if(year.value == ""){
+                document.getElementById('year').style.borderColor="red"
+                document.getElementById('dob_error3').innerHTML="** Please Enter Your Year **"
+                document.getElementById('dob_error3').style.color="red"
+                document.getElementById('dob_error3').style.display="block"
+                var status = 0
+            }
+
+            else{
+                document.getElementById('year').style.borderColor="black"
+                document.getElementById('dob_error3').style.display="none"
+                var status = 1
             }
 
             if(address.value == ""){
@@ -388,13 +476,41 @@
                 document.getElementById('address_error').innerHTML="** Please Enter Your Permanent Address **"
                 document.getElementById('address_error').style.color="red"
                 document.getElementById('address_error').style.display="block"
-                status = 0
+                var status = 0
             }
 
             else{
                 document.getElementById('permanentaddress').style.borderColor="black"
-                document.getElementById('address_error').style.display='none'
-                status = 1
+                document.getElementById('address_error').style.display="none"
+                var status = 1
+            }
+
+            if(state.value == ""){
+                document.getElementById('state').style.borderColor="red"
+                document.getElementById('state_error').innerHTML="** Please Enter Your State **"
+                document.getElementById('state_error').style.color="red"
+                document.getElementById('state_error').style.display="block"
+                var status = 0
+            }
+
+            else{
+                document.getElementById('state').style.borderColor="black"
+                document.getElementById('state_error').style.display="none"
+                var status = 1
+            }
+
+            if(district.value == ""){
+                document.getElementById('district').style.borderColor="red"
+                document.getElementById('district_error').innerHTML="** Please Enter Your State **"
+                document.getElementById('district_error').style.color="red"
+                document.getElementById('district_error').style.display="block"
+                var status = 0
+            }
+
+            else{
+                document.getElementById('district').style.borderColor="black"
+                document.getElementById('district_error').style.display="none"
+                var status = 1
             }
 
             if(pin.value == ""){
@@ -402,13 +518,13 @@
                 document.getElementById('pincode_error').innerHTML="** Please Enter Your Pincode **"
                 document.getElementById('pincode_error').style.color="red"
                 document.getElementById('pincode_error').style.display="block"
-                status = 0
+                var status = 0
             }
 
             else{
                 document.getElementById('pincode').style.borderColor="black"
-                document.getElementById('pincode_error').style.display='none'
-                status = 1
+                document.getElementById('pincode_error').style.display="none"
+                var status = 1
             }
 
             if(phone.value == ""){
@@ -416,13 +532,13 @@
                 document.getElementById('phone_error').innerHTML="** Please Enter Your Mobile Number **"
                 document.getElementById('phone_error').style.color="red"
                 document.getElementById('phone_error').style.display="block"
-                status = 0
+                var status = 0
             }
 
             else{
                 document.getElementById('phonenumber').style.borderColor="black"
-                document.getElementById('phone_error').style.display='none'
-                status = 1
+                document.getElementById('phone_error').style.display="none"
+                var status = 1
             }
 
             if(email.value == ""){
@@ -430,13 +546,13 @@
                 document.getElementById('email_error').innerHTML="** Please Enter Your Email Id **"
                 document.getElementById('email_error').style.color="red"
                 document.getElementById('email_error').style.display="block"
-                status = 0
+                var status = 0
             }
 
             else{
                 document.getElementById('emailid').style.borderColor="black"
-                document.getElementById('email_error').style.display='none'
-                status = 1
+                document.getElementById('email_error').style.display="none"
+                var status = 1
             }
 
             if(pass.value == ""){
@@ -444,33 +560,48 @@
                 document.getElementById('password_error').innerHTML="** Please Enter Your Password **"
                 document.getElementById('password_error').style.color="red"
                 document.getElementById('password_error').style.display="block"
-                status = 0
+                var status = 0
             }
 
             else{
                 document.getElementById('password').style.borderColor="black"
-                document.getElementById('password_error').style.display='none'
-                status = 1
+                document.getElementById('password_error').style.display="none"
+                var status = 1
             }
 
-            // if(cpass.value == ""){
-            //     document.getElementById('cpassword').style.borderColor="red"
-            //     document.getElementById('cpassword_error').innerHTML="** Please Enter Your Confirm Password **"
-            //     document.getElementById('cpassword_error').style.color="red"
-            //     document.getElementById('cpassword_error').style.display="block"
-            //     status = 0
-            // }
+            if(cpass.value == ""){
+                document.getElementById('cpassword').style.borderColor="red"
+                document.getElementById('cpassword_error').innerHTML="** Please Enter Your Confirm Password **"
+                document.getElementById('cpassword_error').style.color="red"
+                document.getElementById('cpassword_error').style.display="block"
+                var status = 0
+            }
 
-            // else{
-            //     document.getElementById('cpassword').style.borderColor="black"
-            //     document.getElementById('cpassword_error').style.display='none'
-            //     status = 1
-            // }
+            else{
+                document.getElementById('cpassword').style.borderColor="black"
+                document.getElementById('cpassword_error').style.display="none"
+                var status = 1
+            }
+
+            if(auth.value == ""){
+                document.getElementById('auth').style.borderColor="red"
+                document.getElementById('auth_error').innerHTML="** Please Enter Your Authentication **"
+                document.getElementById('auth_error').style.color="red"
+                document.getElementById('auth_error').style.display="block"
+                var status = 0
+            }
+
+            else{
+                document.getElementById('auth').style.borderColor="black"
+                document.getElementById('auth_error').style.display="none"
+                var status = 1
+            }
 
             if(status == 0){
                 return false
             }
-            else if(status == 1){
+
+            if(status == 1){
                 return true
             }
 

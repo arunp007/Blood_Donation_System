@@ -49,6 +49,7 @@
    </div>
    <script>
     function validation(){
+      var status = 1
       var email = document.getElementById('emailid')
       var password = document.getElementById('password')
 
@@ -57,13 +58,13 @@
         document.getElementById('email_error').innerHTML="** Please Enter Your Email Id **"
         document.getElementById('email_error').style.color="red"
         document.getElementById('email_error').style.display="block"
-        status = 0
+        var status = 0
       }
 
       else{
         document.getElementById('emailid').style.borderColor="black"
         document.getElementById('email_error').style.display="none"
-        status = 1
+        var status = 1
       }
 
       if(password.value == ""){
@@ -71,20 +72,20 @@
         document.getElementById('password_error').innerHTML="** Please Enter Your Password **"
         document.getElementById('password_error').style.color="red"
         document.getElementById('password_error').style.display="block"
-        status = 0
+        var status = 0
       }
 
       else{
         document.getElementById('password').style.borderColor="black"
         document.getElementById('password_error').style.display="none"
-        status = 1
+        var status = 1
       }
 
       if(status == 0){
         return false
       }
 
-      else if(status == 1){
+      if(status == 1){
         return true
       }
 
