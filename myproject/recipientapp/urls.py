@@ -3,5 +3,5 @@ from.import views
 
 urlpatterns = [
     path('recipient',views.recipient),
-    path('search',views.search)
+    path('search',views.search, name = "search")
 ]
