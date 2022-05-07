@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'recipientapp',
     'hospitalapp',
     'forgotapp',
+    'mainhomeapp',
 ]
 
 MIDDLEWARE = [

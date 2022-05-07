@@ -24,5 +24,6 @@ urlpatterns = [
     path('donorapp/', include('donorapp.urls')),
     path('recipientapp/', include('recipientapp.urls')),
     path('hospitalapp/', include('hospitalapp.urls')),
-    path('forgotapp/', include('forgotapp.urls'))
+    path('forgotapp/', include('forgotapp.urls')),
+    path('mainhomeapp/', include('mainhomeapp.urls'))
 ]

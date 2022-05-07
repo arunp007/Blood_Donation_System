@@ -3,7 +3,7 @@ from.import views
 
 urlpatterns = [
 
-    path('donor',views.donor, name = "donor"),
-    path('recipient',views.recipient, name = "recipient"),
-    path('hospital',views.hospital, name = "hospital")
+    path('donor',views.donor, name = "donorsignup"),
+    path('recipient',views.recipient, name = "recipientsignup"),
+    path('hospital',views.hospital, name = "hospitalsignup")
 ]
