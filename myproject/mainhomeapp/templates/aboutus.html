@@ -1,0 +1,202 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <style>
+        .container-fluid{
+            background-color: white;
+        }
+
+        a{
+            font-size: 20px;
+            color: white;
+        }
+
+        a:hover{
+            color: red;
+            text-decoration: none;
+        }
+
+        .head{
+            color: red;
+            padding-top: 100px;
+            padding-bottom: 30px;
+            font-size: 40px;
+            text-align: center;
+        }
+
+        .head1{
+            color: black;
+            font-size: 25px;
+            text-align: center;
+        }
+
+        .content{
+            color: gray;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        .grid1{
+            background-color: aliceblue;
+            margin-left: 30px;
+            margin-top: 100px;
+            margin-bottom: 100px;
+            border-radius: 15px;
+            border: 2px solid ghostwhite;
+        }
+
+        .grid1:hover{
+            border-color: gainsboro;
+            box-shadow: 0 0 20px gray;
+        }
+
+        .top{
+            position: fixed;
+            top: 70%;
+            transform: translateY(-70%);
+            padding-left: 1300px;
+        }
+
+        .container1{
+          background-color: #323949;
+          height: 110px;
+        }
+
+        .footer1{
+          padding-top: 30px;
+          padding-bottom: 30px;
+          padding-left: 10px;
+          text-align: center;
+        }
+
+        .container2{
+          background-color: black;
+          height: 110px;
+        }
+        
+        .footer2{
+          padding-top: 30px;
+          padding-bottom: 30px;
+          padding-left: 10px;
+          text-align: center;
+
+        }
+
+        label{
+          margin-left: 30px;
+          font-size: 22px;
+        }
+        
+    </style>
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-danger" style="height: 180px">
+        <img src="{% static 'images/donation.png' %}" class="navbar-brand" width="150px">
+        <a class="navbar-brand"><h1 style="font-size: 30px;">Blood Donation System</h1></a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'main' %}">Home</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="{% url 'about' %}">About Us</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'contact' %}">Contact Us</a>
+              </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+                 Login
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: grey;">
+                  <a class="dropdown-item" href="{% url 'donorlogin' %}">Donor</a>
+                  <a class="dropdown-item" href="{% url 'recipientlogin' %}">Recipient</a>
+                  <a class="dropdown-item" href="{% url 'hospitallogin' %}">Hospital</a>
+                  <a class="dropdown-item" href="{% url 'adminlogin' %}">Admin</a>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+                 Sign Up
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: grey;">
+                  <a class="dropdown-item" href="{% url 'donorsignup' %}">Donor</a>
+                  <a class="dropdown-item" href="{% url 'recipientsignup' %}">Recipient</a>
+                  <a class="dropdown-item" href="{% url 'hospitalsignup' %}">Hospital</a>
+            </li>
+
+          </ul>
+         
+        </div>
+    </nav>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-6 col-lg-6">
+                    <img src="{% static 'images/aboutmain.webp' %}" width="500px" height="400px">
+                </div><br><br><br>
+                <div class="col-xs-6 col-lg-6">
+                    
+                    <h1 class="head">What Is This All About?</h1>
+                    <center><img src="{% static 'images/love.svg' %}" style="width: 50px;"></center>
+                    <p class="content">We solve the problem of blood emergencies by connecting blood donors directly with people in blood need.</p>
+                </div>
+                
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-4 col-lg-4">
+                    <div class="grid1">
+                        <center><img src="{% static 'images/blooddonors.svg' %}" width="80px" style="padding-top: 20px;"></center><br><br>
+                        <h1 class="head1">What We Do ?</h1><br>
+                        <p style="color: grey; font-size: 15px; text-align: center;"> We connect blood donors with recipients. Donors and Recipient can see blood donation camp near there location.</p><br><br><br>
+                    </div>
+                </div>
+
+                <div class="col-xs-4 col-lg-4">
+                    <div class="grid1">
+                        <center><img src="{% static 'images/phone.svg' %}" width="80px" style="padding-top: 20px;"></center><br><br>
+                        <h1 class="head1">Get Notified</h1><br>
+                        <p style="color: grey; font-size: 15px; text-align: center;">Get Notified urgent blood requests instandly.</p><br><br><br><br>
+                    </div>
+                </div>
+
+                <div class="col-xs-4 col-lg-4">
+                    <div class="grid1">
+                        <center><img src="{% static 'images/freecost.svg' %}" width="80px" style="padding-top: 20px;"></center><br><br>
+                        <h1 class="head1">For Free</h1><br>
+                        <p style="color: grey; font-size: 15px; text-align: center;">You dont need to pay to get blood it absolutely free.</p><br><br><br><br>
+                    </div>
+                </div><br><br><br><br>
+
+                <div class="top">
+                    <a href="#top"><img src="{% static 'images/topnavigation.png' %}" width="90px"></a>
+                </div>
+            </div>
+        </div>
+        <div class="container1">
+            <div class="col-xs-12 col-lg-12">
+              <div class="footer1">
+                <a href=""><label for="">Terms And Conditions</label></a><a href="{% url 'about' %}"><label for="">About Us</label></a><a href="{% url 'contact' %}"><label for="">Contact Us</label></a><a href="{% url 'donorlogin' %}"><label for="">Donor Login</label></a>
+              </div>
+            </div>
+          </div>
+          <div class="container2">
+            <div class="col-xs-12 col-lg-12">
+              <div class="footer2">
+                <a href=""><label for="">© Blood Donation System</label></a><a href=""><label for="">Designed And Developed By Arun Pacheeri</label></a>
+            </div>
+          </div>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script> 
+</body>
+</html>

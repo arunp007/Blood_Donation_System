@@ -33,22 +33,41 @@
           text-align: center;
         }
 
+        .head3{
+          color: red;
+          font-size: 50px;
+          text-align: center;
+          padding-top: 100px;
+        }
+
        .paragraph{
           font-size: 15px;
           color: grey;
           text-align: center;
         }
 
+        .grid{
+            background-color: pink;
+            padding-left: 30px;
+            padding-top: 100px;
+            margin-bottom: 100px;
+            border-radius: 15px;
+        }
+
+        .grid:hover{
+            box-shadow: 0 0 20px gray;
+        }
+
         .top{
           position: fixed;
           top: 60%;
           transform: translateY(-60%);
-          padding-left: 1200px;
+          padding-left: 1300px;
         }
 
         .container1{
-          background-color: lightslategray;
-          height: 80px;
+          background-color: #323949;
+          height: 110px;
         }
 
         .footer1{
@@ -60,7 +79,7 @@
 
         .container2{
           background-color: black;
-          height: 100px;
+          height: 110px;
         }
         
         .footer2{
@@ -85,10 +104,13 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="{% url 'main' %}">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#"></a>
+              <a class="nav-link" href="{% url 'about' %}">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'contact' %}">Contact Us</a>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
@@ -111,29 +133,29 @@
                   <a class="dropdown-item" href="{% url 'hospitalsignup' %}">Hospital</a>
             </li>
 
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
-               More
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: grey;">
-                <a class="dropdown-item" href="#">About Us</a>
-                <a class="dropdown-item" href="#">Contact Us</a>
-                <a class="dropdown-item" href="#"></a>
-            </li>
-            <li class="nav-item">
-                
-            </li>
           </ul>
          
         </div>
       </nav><br>
       <div class="container-fluid">
           <div class="row">
-              <div class="col-xs-12 col-lg-12">
-                  <img src="{% static 'images/cover.jpg' %}" style="width: 100%; height: 500px; border-radius: 10px;">
+              <div class="col-xs-6 col-lg-6">
+                <center><img src="{% static 'images/about.jpg' %}" width="450px" height="400px;"></center>
               </div>
-          </div>
-      </div><br><br><br><br><br>
+              <div class="col-xs-6 col-lg-6">
+                <h1 class="head3">About Us</h1>
+                <p style="color: grey; font-size: 20px; font-weight: light; padding-top: 20px;">Our Main Goal Is To Provide Blood To The Needed People. Simplify The Blood Donation Process And Give Right Donor To The Needy On Time.</p><br>
+                <center><a class="btn btn-danger" style="width: 25%; height: 40px;" href="{% url 'about' %}">Read More</a></center>
+              </div>
+           </div>
+             
+      </div><br><br><br>
+      
+      
+      
+      
+      
+      <br><br><br><br><br>
       <center><img src="{% static 'images/love.svg' %}" style="width: 50px;"></center>
       <div class="container-fluid">
           <div class="row">
@@ -147,19 +169,25 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-xs-4 col-lg-4">
-            <center><img src="{% static 'images/blood.svg' %}" width="50px"></center><br>
-            <h1 class="head2">Find Blood</h1>
-            <p class="paragraph">Find Donors Near Your Location And Request Needed Blood Group.</p><br><br>
+            <div class="grid">
+              <center><img src="{% static 'images/blood.svg' %}" width="50px"></center><br>
+              <h1 class="head2">Find Blood</h1>
+              <p class="paragraph">Find Donors Near Your Location And Request Needed Blood Group.</p><br>
+            </div> 
           </div>
           <div class="col-xs-4 col-lg-4" >
-            <center><img src="{% static 'images/Notification.svg' %}" width="50px"></center><br>
-            <h1 class="head2">Get Notified</h1>
-            <p class="paragraph">Get Notified Urgent Blood Requests Instandly.</p><br><br>
+            <div class="grid">
+              <center><img src="{% static 'images/Notification.svg' %}" width="50px"></center><br>
+              <h1 class="head2">Get Notified</h1>
+              <p class="paragraph">Get Notified Urgent Blood Requests Instandly.</p><br><br>
+            </div>
           </div>
           <div class="col-xs-4 col-lg-4">
-            <center><img src="{% static 'images/free.svg' %}" width="50px"></center><br>
-            <h1 class="head2">For Free</h1>
-            <p class="paragraph">You Don't Need To Pay Anything.</p><br><br>
+            <div class="grid">
+              <center><img src="{% static 'images/free.svg' %}" width="50px"></center><br>
+              <h1 class="head2">For Free</h1>
+              <p class="paragraph">You Don't Need To Pay Anything.</p><br><br>
+            </div> 
           </div>
         </div>
       </div><br><br><br><br><br><br><br>
@@ -236,7 +264,7 @@
       <div class="container1">
         <div class="col-xs-12 col-lg-12">
           <div class="footer1">
-            <a href=""><label for="">Terms And Conditions</label></a><a href=""><label for="">About Us</label></a><a href=""><label for="">Contact Us</label></a><a href=""><label for="">Donor Login</label></a>
+            <a href=""><label for="">Terms And Conditions</label></a><a href="{% url 'about' %}"><label for="">About Us</label></a><a href="{% url 'contact' %}"><label for="">Contact Us</label></a><a href="{% url 'donorlogin' %}"><label for="">Donor Login</label></a>
           </div>
         </div>
       </div>
