@@ -667,7 +667,7 @@
                     <div class="collapse" id="navbarToggleExternalContent">
                       <div class="bg-dark p-5">
                        <ul class="navbar-nav">
-                           <li class="nav-item"><a href="#home" style="text-decoration: none;">Home</a></li>
+                           <li class="nav-item"><a href="{% url 'donor_home' %}" style="text-decoration: none;">Home</a></li>
                        </ul>
                         <ul class="navbar-nav">
                             <li class="nav-item">
@@ -688,11 +688,11 @@
                        </ul>
                        <ul class="navbar-nav">
                         <li class="nav-item">
-                          <a class="nav-link" href="{% url 'search' %}">Search</a>
+                          <a class="nav-link" href="{% url 'donor_search' %}">Search</a>
                         </li>
                       </ul>
                        <ul class="navbar-nav">
-                        <li class="nav-item"><a href="" style="text-decoration: none;">Notification</a></li>
+                        <li class="nav-item"><a href="{% url 'donornotification' %}" style="text-decoration: none;">Notification</a></li>
                        </ul>
                         <ul class="navbar-nav">
                         <li class="nav-item"><a href="#" style="text-decoration: none;">Logout</a></li>
@@ -710,7 +710,7 @@
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                           <ul class="navbar-nav mr-auto">
                             <li class="nav-item active">
-                              <a class="nav-link" href="#home">Home <span class="sr-only">(current)</span></a>
+                              <a class="nav-link" href="{% url 'donor_home' %}">Home <span class="sr-only">(current)</span></a>
                             </li>
                             <ul class="navbar-nav">
                                 <li class="nav-item">
@@ -730,10 +730,10 @@
                                 </li>
                            </ul>
                            <li class="nav-item">
-                            <a class="nav-link" href="{% url 'search' %}">Search</a>
+                            <a class="nav-link" href="{% url 'donor_search' %}">Search</a>
                           </li>
                             <li class="nav-item">
-                              <a class="nav-link" href="#">Notification</a>
+                              <a class="nav-link" href="{% url 'donornotification' %}">Notification</a>
                             </li>
                             
                           </ul>
