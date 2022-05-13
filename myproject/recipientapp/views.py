@@ -7,7 +7,7 @@ def recipient(request):
 def recipientsearch(request):
     return render(request,'recipient_search.html')
 
-def bloodrequest(request):
+def recipientbloodrequest(request):
     if request.method == 'POST':
         blood = request.POST['blood']
         name = request.POST['name']
@@ -15,6 +15,10 @@ def bloodrequest(request):
         location = request.POST['location']
         details = Blood(blood=blood,name=name,phone=phone,location=location)
         details.save()
-    return render(request, 'bloodrequest.html')
+    return render(request, 'recipient_bloodrequest.html')
+
+def recipient_notification(request):
+    infodetails = Blood.objects.all()
+    return render(request, 'recipient_notification.html',{'info': infodetails})
 
 

@@ -1,0 +1,316 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Request</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <style>
+        .container-fluid{
+            background-color: white;
+        }
+
+        a{
+            color: white;
+            font-size: 20px;
+            text-decoration: none;
+        }
+
+        a:hover{
+            color: red;
+        }
+
+        button.btn-success:hover{
+            background-color: red;
+            border: 2px solid white;
+        }
+
+        .image{
+          margin-top: 100px;
+          margin-left: 120px;
+        }
+
+        .footer1{
+        background-color: 	#323949;
+        color: white;
+        height: 80px;
+        text-align: center;
+      }
+      .container-fluid1{
+        background-color: #323949;
+      }
+      .label{
+        padding-top: 30px;
+        font-size: 20px;
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+
+      .footer2{
+        background-color: black;
+        color: white;
+        height: 70px;
+        text-align: center;
+      }
+      .container-fluid2{
+        background-color: black;
+        
+      }
+
+      .top{
+        position: fixed;
+        top: 70%;
+        transform: translateY(-70%);
+        background-color: red;
+        border-radius: 200px;
+        border: 2px solid black;
+        width: 80px;
+        height: 80px;
+        margin-left: 1300px;
+        
+      }
+
+
+      .topimage{
+        width: 50px;
+        margin-left: 15px;
+        margin-top: 10px;
+      }
+
+      .top:hover{
+        background-color: grey;
+        border-radius: 200px;
+        width: 80px;
+        height: 80px;
+      }
+
+        
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12 col-lg-12">
+                <div class="fixed-top">
+                    <div class="collapse" id="navbarToggleExternalContent">
+                      <div class="bg-dark p-5">
+                       <ul class="navbar-nav">
+                           <li class="nav-item"><a href="{% url 'donor_home' %}" style="text-decoration: none;">Home</a></li>
+                       </ul>
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">Create</a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                  <a class="dropdown-item" href="#">Blood Request</a>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">View</a>
+                              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#">Camps</a>
+                                <a class="dropdown-item" href="#">Hospitals</a>
+                                <a class="dropdown-item" href="#">Recipients</a>
+                                <a class="dropdown-item" href="#">Blood Requests</a>
+                              </div>
+                            </li>
+                       </ul>
+                       <ul class="navbar-nav">
+                        <li class="nav-item">
+                          <a class="nav-link" href="{% url 'donor_search' %}">Search</a>
+                        </li>
+                      </ul>
+                       <ul class="navbar-nav">
+                        <li class="nav-item"><a href="{% url 'donornotification' %}" style="text-decoration: none;">Notification</a></li>
+                       </ul>
+                        <ul class="navbar-nav">
+                        <li class="nav-item"><a href="#" style="text-decoration: none;">Logout</a></li>
+                       </ul>
+                      </div>
+                    </div>
+                    <nav class="navbar navbar-dark bg-danger">
+                      <h1 style="color: white; font-size: 40px;">Blood Donation System</h1>
+                      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent">
+                        <span class="navbar-toggler-icon"></span>
+                      </button>
+                    </nav>
+                    <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+                        <img src="{% static 'images/donation.png' %}" class="navbar-brand" alt="" width="150px">
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                          <ul class="navbar-nav mr-auto">
+                            <li class="nav-item">
+                              <a class="nav-link" href="{% url 'donor_home' %}">Home <span class="sr-only">(current)</span></a>
+                            </li>
+                            <ul class="navbar-nav">
+                                <li class="nav-item active">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">Create</a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                      <a class="dropdown-item" href="#">Blood Request</a>
+                                    </div>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">View</a>
+                                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="#">Camps</a>
+                                    <a class="dropdown-item" href="#">Hospitals</a>
+                                    <a class="dropdown-item" href="#">Recipients</a>
+                                    <a class="dropdown-item" href="#">Blood Requests</a>
+                                  </div>
+                                </li>
+                           </ul>
+                           <li class="nav-item">
+                            <a class="nav-link" href="{% url 'donor_search' %}">Search</a>
+                          </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="{% url 'donornotification' %}">Notification</a>
+                            </li>
+                            
+                          </ul>
+                            <button class="btn btn-success" type="submit"><img src="https://www.iconsdb.com/icons/preview/white/logout-xxl.png" width="30px">&nbsp;Logout</button>
+                          </form>
+                        </div>
+                      </nav>
+                  </div>
+             </div>
+           </div>
+          </div><br><br><br><br><br><br><br><br>
+          <div class="container-fluid">
+              <div class="row">
+                  <div class="col-xs-12 col-lg-12">
+                      <img src="{% static 'images\notification_icon.png' %}" width="250px" class="image">
+                    </div>
+                    <div class="col-xs-7 col-lg-7" style="margin-top: 50px;">
+                      <form method="post">
+                        {% csrf_token %}
+                        <div class="form-row" style="margin-left: 5px;">
+                          <div class="form-group col-md-6">
+                                <label for="inputBloodGroup">Blood Group</label>
+                                <input type="text" class="form-control" name="blood" id="blood">
+                                <label id="blood_error"></label>
+                          </div>
+                            <div class="form-group col-md-6">
+                              <label for="inputName">Name</label>
+                              <input type="text" class="form-control" name="name" id="name">
+                              <label id="name_error"></label>
+                            </div>
+                            <div class="form-group col-md-6">
+                              <label for="inputContact">Phone</label>
+                              <input type="text" class="form-control" name="phone" id="phone">
+                              <label id="phone_error"></label>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="inputLocation">Location</label>
+                                <input type="text" class="form-control" name="location" id="location" placeholder="Location">
+                                <label id="location_error"></label>
+                            </div>
+                            <button class="btn btn-danger col-md-2" type="submit" onclick="return validation()">Enter</button>
+                            </div> 
+                          </div>
+                        </div>
+                      </form>
+                      <div class="col-xs-5 col-lg-5">
+                        <img src="{% static 'images/notifi.webp' %}" width="450px" style="margin-top: 100px; margin-bottom: 200px;">
+                      </div>
+                  </div>
+                  <div class="col-xs-12 col-lg-12">
+                    <a href="#top">
+                    <div class="top">
+                      <img src="{% static 'images/topnav.png' %}" class="topimage"></a>
+                    </div>
+                  </div>
+                  <div class="container-fluid1">
+                    <div class="col-xs-12 col-lg-12" class="label">
+                        <div class="footer1">
+                          <a href=""><label class="label">Terms And Conditions</label></a><a href="{% url 'about' %}"><label class="label">About Us</label></a><a href="{% url 'contact' %}"><label class="label">Contact Us</label></a><a href="{% url 'donorlogin' %}"><label class="label">Donor Login</label></a>
+                        </div>
+                      </div>
+                  </div>
+                  <div class="container-fluid2">
+                    <div class="col-xs-12 col-lg-12" >
+                        <div class="footer2">
+                          <a href=""><label class="label">©Blood Donation System</label></a> <a href=""><label class="label">Designed And Developed By Arun Pacheeri</label></a>
+                        </div>
+                    </div>
+                  </div>
+
+    <script>
+      function validation(){
+        var status = 1
+        var blood = document.getElementById('blood')
+        var name = document.getElementById('name')
+        var phone = document.getElementById('phone')
+        var location = document.getElementById('location')
+
+        if(blood.value == ""){
+          document.getElementById('blood').style.borderColor="red"
+          document.getElementById('blood_error').innerHTML="** Please Enter Your Blood Group **"
+          document.getElementById('blood_error').style.color="red"
+          document.getElementById('blood_error').style.display="block"
+          var status = 0
+        }
+
+        else{
+          document.getElementById('blood').style.borderColor="black"
+          document.getElementById('blood_error').style.display="none"
+          var status = 1
+        }
+
+        if(name.value == ""){
+          document.getElementById('name').style.borderColor="red"
+          document.getElementById('name_error').innerHTML="** Please Enter Your Name **"
+          document.getElementById('name_error').style.color="red"
+          document.getElementById('name_error').style.display="block"
+          var status = 0
+        }
+
+        else{
+          document.getElementById('name').style.borderColor="black"
+          document.getElementById('name_error').style.display="none"
+          var status = 1
+        }
+
+        if(phone.value == ""){
+          document.getElementById('phone').style.borderColor="red"
+          document.getElementById('phone_error').innerHTML="** Please Enter Your Phone Number **"
+          document.getElementById('phone_error').style.color="red"
+          document.getElementById('phone_error').style.display="block"
+          var status = 0
+        }
+
+        else{
+          document.getElementById('phone').style.borderColor="black"
+          document.getElementById('phone_error').style.display="none"
+          var status = 1
+        }
+
+        if(location.value == ""){
+          document.getElementById('location').style.borderColor="red"
+          document.getElementById('location_error').innerHTML="** Please Enter Your Location **"
+          document.getElementById('location_error').style.color="red"
+          document.getElementById('location_error').style.display="block"
+          var status = 0
+        }
+
+        else{
+          document.getElementById('location').style.borderColor="black"
+          document.getElementById('location_error').style.display="none"
+          var status = 1
+        }
+
+        if(status == 1){
+          return true
+        }
+
+        if(status === 0){
+          return false
+        }
+
+
+
+      }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script> 
+</body>
+</html>

@@ -4,5 +4,6 @@ from.import views
 urlpatterns = [
     path('recipient',views.recipient,name="recipient_home"),
     path('recipientsearch',views.recipientsearch,name="recipient_search"),
-    path('bloodrequest',views.bloodrequest,name="blood_request")
+    path('recipientbloodrequest',views.recipientbloodrequest,name="recipient_bloodrequest"),
+    path('recipient_notification',views.recipient_notification,name="recipient_notification")
 ]

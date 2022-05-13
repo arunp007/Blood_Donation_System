@@ -7,4 +7,4 @@ class Blood(models.Model):
     location = models.TextField(max_length=20)
 
     class Meta:
-        db_table = 'bloodrequest'
+        db_table = 'recipientbloodrequest'
