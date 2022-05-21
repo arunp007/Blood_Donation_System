@@ -21,5 +21,8 @@ def donorbloodrequest(request):
         details.save()
     return render(request, 'donor_bloodrequest.html')
 
+def donorurgent(request):
+    return render(request, 'donor_urgent_blood.html')
+
 
 

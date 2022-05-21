@@ -21,4 +21,7 @@ def recipient_notification(request):
     infodetails = Blood.objects.all()
     return render(request, 'recipient_notification.html',{'info': infodetails})
 
+def recipienturgent(request):
+    return render(request, 'recipient_urgent_blood.html')
+
 

@@ -1,0 +1,422 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camp Registration</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <style>
+        .container-fluid{
+            background: linear-gradient(#141e30,#243b55);
+        }
+
+        a{
+            color: white;
+            font-size: 20px;
+            text-decoration: none;
+        }
+
+        a:hover{
+            color: red;
+        }
+
+        button.btn-success:hover{
+            background-color: red;
+            border: 2px solid white;
+        }
+
+       form{
+           background-color: white;
+           margin-top: 100px;
+           margin-bottom: 100px;
+           padding-top: 50px;
+           padding-left: 20px;
+           padding-right: 20px;
+           border-radius: 20px;
+       }
+
+       .btn-dark{
+         margin-top: 50px; 
+         margin-bottom: 100px; 
+       }
+
+       .footer1{
+            background-color: 	#323949;
+            color: white;
+            height: 80px;
+            text-align: center;
+        }
+        
+        .container-fluid1{
+            background-color: #323949;
+        }
+        
+        .label{
+            padding-top: 30px;
+            font-size: 20px;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        .footer2{
+            background-color: black;
+            color: white;
+            height: 70px;
+            text-align: center;
+        }
+        .container-fluid2{
+            background-color: black;
+        
+        }
+
+        .top{
+            position: fixed;
+            top: 70%;
+            transform: translateY(-70%);
+            background-color: red;
+            border-radius: 200px;
+            border: 2px solid black;
+            width: 80px;
+            height: 80px;
+            margin-left: 1300px;
+        
+        }
+
+        .topimage{
+            width: 50px;
+            margin-left: 15px;
+            margin-top: 10px;
+        }
+
+        .top:hover{
+            background-color: grey;
+            border-radius: 200px;
+            width: 80px;
+            height: 80px;
+        }
+
+    </style>
+
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12 col-lg-12">
+                <div class="fixed-top">
+                    <div class="collapse" id="navbarToggleExternalContent">
+                      <div class="bg-dark p-5">
+                       <ul class="navbar-nav">
+                           <li class="nav-item"><a href="{% url 'hospital_home' %}" style="text-decoration: none;">Home</a></li>
+                       </ul>
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">Create</a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                  <a class="dropdown-item" href="{% url 'hospitalbloodrequest' %}">Blood Request</a>
+                                  <a class="dropdown-item" href="{% url 'hospitalcamp' %}">Camps</a>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">View</a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                  <a class="dropdown-item" href="#">Camps</a>
+                                  <a class="dropdown-item" href="#">Donors</a>
+                                  <a class="dropdown-item" href="#">Recipients</a>
+                                </div>
+                              </li>
+                           <li class="nav-item">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">Urgent</a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                              <a class="dropdown-item" href="#">Call Admin</a>
+                              <a class="dropdown-item" href="{% url 'hospitalurgent' %}">Blood Request</a>
+                            </div>
+                          </li>
+                        </ul>
+                        <ul class="navbar-nav">
+                          <li class="nav-item">
+                            <a class="nav-link" href="{% url 'hospital_search' %}">Search</a>
+                          </li>
+                        </ul>
+                       <ul class="navbar-nav">
+                        <li class="nav-item"><a href="{% url 'hospitalnotification' %}" style="text-decoration: none;">Notification</a></li>
+                       </ul>
+                        <ul class="navbar-nav">
+                        <li class="nav-item"><a href="#" style="text-decoration: none;">Logout</a></li>
+                       </ul>
+                      </div>
+                    </div>
+                    <nav class="navbar navbar-dark bg-danger">
+                      <h1 style="color: white; font-size: 40px;">Blood Donation System</h1>
+                      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent">
+                        <span class="navbar-toggler-icon"></span>
+                      </button>
+                    </nav>
+                    <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+                        <img src="{% static 'images/donation.png' %}" class="navbar-brand" alt="" width="150px">
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                          <ul class="navbar-nav mr-auto">
+                            <li class="nav-item">
+                              <a class="nav-link" href="{% url 'hospital_home' %}">Home <span class="sr-only">(current)</span></a>
+                            </li>
+                            <ul class="navbar-nav">
+                                <li class="nav-item active">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">Create</a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                      <a class="dropdown-item" href="{% url 'hospitalbloodrequest' %}">Blood Request</a>
+                                      <a class="dropdown-item" href="{% url 'hospitalcamp' %}">Camps</a>
+                                    </div>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">View</a>
+                                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="#">Camps</a>
+                                    <a class="dropdown-item" href="#">Donors</a>
+                                    <a class="dropdown-item" href="#">Recipients</a>
+                                  </div>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">Urgent</a>
+                                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="#">Call Admin</a>
+                                    <a class="dropdown-item" href="{% url 'hospitalurgent' %}">Blood Request</a>
+                                  </div>
+                                </li>
+                           </ul>
+                           <li class="nav-item">
+                            <a class="nav-link" href="{% url 'hospital_search' %}">Search</a>
+                          </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="{% url 'hospitalnotification' %}">Notification</a>
+                            </li>
+                            
+                          </ul>
+                            <button class="btn btn-success" type="submit"><img src="https://www.iconsdb.com/icons/preview/white/logout-xxl.png" width="30px">&nbsp;Logout</button>
+                          </form>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div><br><br><br><br><br><br><br><br>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-7 col-lg-7">
+                <form action="">
+                    <h1 style="font-size: 45px; font-family:Verdana; font-weight:bolder; margin-bottom: 50px; text-align: center;">Blood Donation Camp</h1>
+                    <div class="form-row">
+                        <div class="col-md-6">
+                            <label for="inputNameOfHospital">Name Of Organization/Camp</label>
+                            <input type="text" class="form-control" id="organization" placeholder="Name Of Organization">
+                            <label id="organization_error"></label>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="inputDate">When Would You Like To Organize A Camp</label>
+                            <input type="datetime-local" id="datetime" class="form-control">
+                            <label id="datetime_error"></label>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputAddress">Permanent Address</label>
+                            <input type="text" class="form-control" id="address" placeholder="Permanent Address">
+                            <label id="address_error"></label>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputState">State</label>
+                            <input type="text" class="form-control" id="state" placeholder="State">
+                            <label id="state_error"></label>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputDistrict">District</label>
+                            <input type="text" class="form-control" id="district" placeholder="District">
+                            <label id="district_error"></label>
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label for="inputName">Name</label>
+                            <input type="text" class="form-control" id="name" placeholder="Name">
+                            <label id="name_error"></label>
+                        </div>
+ 
+                        <div class="form-group col-md-6">
+                            <label for="inputContact">Contact Number</label>
+                            <input type="text" class="form-control" id="phone" placeholder="Contact Number">
+                            <label id="phone_error"></label>
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label for="inputPostalCode">Email Id</label>
+                            <input type="text" class="form-control" id="emailid" placeholder="Email Id">
+                            <label id="email_error"></label>
+                        </div>
+
+                    </div>
+                    <button type="submit" onclick="return validation()" class="btn btn-dark col-md-12">Enter</button>
+                </form>
+            </div>
+            <div class="col-xs-12 col-lg-12">
+                <a href="#top">
+                <div class="top">
+                    <img src="{% static 'images/topnav.png' %}" class="topimage"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid1">
+        <div class="col-xs-12 col-lg-12">
+            <div class="footer1">
+                <a href=""><label class="label">Terms And Conditions</label></a><a href="{% url 'about' %}"><label class="label">About Us</label></a><a href="{% url 'contact' %}"><label class="label">Contact Us</label></a><a href="{% url 'donorlogin' %}"><label class="label">Donor Login</label></a>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid2">
+        <div class="col-xs-12 col-lg-12">
+            <div class="footer2">
+                <a href=""><label class="label">©Blood Donation System</label></a> <a href=""><label class="label">Designed And Developed By Arun Pacheeri</label></a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function validation(){
+            var status = 1
+            var organization = document.getElementById('organization')
+            var datetime = document.getElementById('datetime')
+            var address = document.getElementById('address')
+            var state = document.getElementById('state')
+            var district = document.getElementById('district')
+            var name = document.getElementById('name')
+            var phone = document.getElementById('phone')
+            var email = document.getElementById('emailid')
+
+            if(organization.value == ""){
+                document.getElementById('organization').style.borderColor="red"
+                document.getElementById('organization_error').innerHTML="** Please Enter Your Organization Name **"
+                document.getElementById('organization_error').style.color="red"
+                document.getElementById('organization_error').style.display="block"
+                var status = 0
+            }
+
+            else{
+                document.getElementById('organization').style.borderColor="black"
+                document.getElementById('organization_error').style.display="none"
+                var status = 1
+            }
+
+            if(datetime.value == ""){
+                document.getElementById('datetime').style.borderColor="red"
+                document.getElementById('datetime_error').innerHTML="** Please Enter Date And Time **"
+                document.getElementById('datetime_error').style.color="red"
+                document.getElementById('datetime_error').style.display="block"
+                var status = 0
+            }
+
+            else{
+                document.getElementById('datetime').style.borderColor="black"
+                document.getElementById('datetime_error').style.display="none"
+                var status = 1
+            }
+
+            if(address.value == ""){
+                document.getElementById('address').style.borderColor="red"
+                document.getElementById('address_error').innerHTML="** Please Enter Permanent Address **"
+                document.getElementById('address_error').style.color="red"
+                document.getElementById('address_error').style.display="block"
+                var status = 0
+            }
+
+            else{
+                document.getElementById('address').style.borderColor="black"
+                document.getElementById('address_error').style.display="none"
+                var status = 1
+            }
+
+            if(state.value == ""){
+                document.getElementById('state').style.borderColor="red"
+                document.getElementById('state_error').innerHTML="** Please Enter Your State **"
+                document.getElementById('state_error').style.color="red"
+                document.getElementById('state_error').style.display="block"
+                var status = 0
+            }
+
+            else{
+                document.getElementById('state').style.borderColor="black"
+                document.getElementById('state_error').style.display="none"
+                var status = 1
+            }
+
+            if(district.value == ""){
+                document.getElementById('district').style.borderColor="red"
+                document.getElementById('district_error').innerHTML="** Please Enter Your District **"
+                document.getElementById('district_error').style.color="red"
+                document.getElementById('district_error').style.display="block"
+                var status = 0
+            }
+
+            else{
+                document.getElementById('district').style.borderColor="black"
+                document.getElementById('district_error').style.display="none"
+                var status = 1
+            }
+
+            if(name.value == ""){
+                document.getElementById('name').style.borderColor="red"
+                document.getElementById('name_error').innerHTML="** Please Enter Your Name **"
+                document.getElementById('name_error').style.color="red"
+                document.getElementById('name_error').style.display="block"
+                var status = 0
+            }
+
+            else{
+                document.getElementById('name').style.borderColor="black"
+                document.getElementById('name_error').style.display="none"
+                var status = 1
+            }
+
+            if(phone.value == ""){
+                document.getElementById('phone').style.borderColor="red"
+                document.getElementById('phone_error').innerHTML="** Please Enter Your Phone Number **"
+                document.getElementById('phone_error').style.color="red"
+                document.getElementById('phone_error').style.display="block"
+                var status = 0
+            }
+
+            else{
+                document.getElementById('phone').style.borderColor="black"
+                document.getElementById('phone_error').style.display="none"
+                var status = 1
+            }
+
+            if(email.value == ""){
+                document.getElementById('emailid').style.borderColor="red"
+                document.getElementById('email_error').innerHTML="** Please Enter Your Email Id **"
+                document.getElementById('email_error').style.color="red"
+                document.getElementById('email_error').style.display="block"
+                var status = 0
+            }
+
+            else{
+                document.getElementById('emailid').style.borderColor="black"
+                document.getElementById('email_error').style.display="none"
+                var status = 1
+            }
+
+            if(status == 0){
+                return false
+            }
+
+            if(status == 1){
+                return true
+            }
+            
+        }
+    </script>
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>      
+</body>
+</html>

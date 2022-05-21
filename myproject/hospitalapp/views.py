@@ -21,3 +21,8 @@ def hospitalnotification(request):
     infodetails = Blood.objects.all()
     return render(request, 'hospital_notification.html',{'info': infodetails})
 
+def hospitalcamp(request):
+    return render(request, 'hospital_camp.html')
+
+def hospitalurgent(request):
+    return render(request, 'hospital_urgent_blood.html')

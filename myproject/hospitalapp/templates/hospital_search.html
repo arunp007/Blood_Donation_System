@@ -119,6 +119,7 @@
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">Create</a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                               <a class="dropdown-item" href="{% url 'hospitalbloodrequest' %}">Blood Request</a>
+                              <a class="dropdown-item" href="{% url 'hospitalcamp' %}">Camps</a>
                             </div>
                         </li>
                         <li class="nav-item">
@@ -126,12 +127,14 @@
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                               <a class="dropdown-item" href="#">Camps</a>
                               <a class="dropdown-item" href="#">Donors</a>
+                              <a class="dropdown-item" href="#">Recipients</a>
                             </div>
                           </li>
                           <li class="nav-item">
                               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">Urgent</a>
                               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="#">Call Admin</a>
+                                <a class="dropdown-item" href="{% url 'hospitalurgent' %}">Blood Request</a>
                               </div>
                        </li>
                     </ul>
@@ -166,7 +169,7 @@
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">Create</a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                   <a class="dropdown-item" href="{% url 'hospitalbloodrequest' %}">Blood Request</a>
-                                  <a class="dropdown-item" href="#">Camps</a>
+                                  <a class="dropdown-item" href="{% url 'hospitalcamp' %}">Camps</a>
                                 </div>
                             </li>
                             <li class="nav-item">
@@ -177,6 +180,13 @@
                                 <a class="dropdown-item" href="#">Recipients</a>
                               </div>
                             </li>
+                            <li class="nav-item">
+                              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">Urgent</a>
+                              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#">Call Admin</a>
+                                <a class="dropdown-item" href="{% url 'hospitalurgent' %}">Blood Request</a>
+                              </div>
+                       </li>
                        </ul>
                        <li class="nav-item active">
                         <a class="nav-link" href="{% url 'hospital_search' %}">Search</a>
@@ -256,7 +266,7 @@
 
         if(blood.value == ""){
           document.getElementById('bloodgroup').style.borderColor="red"
-          document.getElementById('blood_error').innerHTML="* Please Select Your Blood Group *"
+          document.getElementById('blood_error').innerHTML="** Please Select Your Blood Group **"
           document.getElementById('blood_error').style.color="red"
           document.getElementById('blood_error').style.display="block"
           var status = 0
@@ -270,7 +280,7 @@
 
         if(location.value == ""){
           document.getElementById('location').style.borderColor="red"
-          document.getElementById('location_error').innerHTML="*Please Select Your Location"
+          document.getElementById('location_error').innerHTML="** Please Select Your Location **"
           document.getElementById('location_error').style.color="red"
           document.getElementById('location_error').style.display="block"
           var status = 0

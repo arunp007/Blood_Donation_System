@@ -110,16 +110,16 @@
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">View</a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                   <a class="dropdown-item" href="#">Camps</a>
-                                  <a class="dropdown-item" href="#">Hospitals</a>
                                   <a class="dropdown-item" href="#">Donors</a>
                                 </div>
                               </li>
                               <li class="nav-item">
-                                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">Urgent</a>
-                                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="#">Call Admin</a>
-                                  </div>
-                           </li>
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">Urgent</a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                  <a class="dropdown-item" href="#">Call Admin</a>
+                                  <a class="dropdown-item" href="{% url 'recipienturgent' %}">Blood Request</a>
+                                </div>
+                              </li>
                         </ul>
                         <ul class="navbar-nav">
                         <li class="nav-item">
@@ -158,16 +158,16 @@
                                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">View</a>
                                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="#">Camps</a>
-                                    <a class="dropdown-item" href="#">Hospitals</a>
                                     <a class="dropdown-item" href="#">Donors</a>
                                   </div>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">Urgent</a>
-                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                      <a class="dropdown-item" href="#">Call Admin</a>
-                                    </div>
-                                  </li>
+                                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">Urgent</a>
+                                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="#">Call Admin</a>
+                                    <a class="dropdown-item" href="{% url 'recipienturgent' %}">Blood Request</a>
+                                  </div>
+                                </li>
                            </ul>
                            <li class="nav-item">
                             <a class="nav-link" href="{% url 'recipient_search' %}">Search</a>
