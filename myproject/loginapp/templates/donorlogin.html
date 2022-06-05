@@ -7,46 +7,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Donor Login</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-    <link rel="stylesheet" href="{% static 'css/login1.css' %}">
+    <style>
+      body{
+        background: linear-gradient(#02aab0, #00cdac);
+      }
+
+      h1{
+        font-size: 50px;
+        font-family: 'Times New Roman', Times, serif;
+        font-weight: bolder;
+        color: red;
+        margin-top: 100px;
+        padding-top: 30px;
+        margin-bottom: 50px;
+      }
+
+      form{
+        background-color: white;
+        border-radius: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-bottom: 100px;
+
+      }
+    </style>
 </head>
 <body>
-    
-   <div class="container">
-    
-       <div class="row">
-        <div class="header" style="background-color: red; color: white;">
-           <img src="{% static 'images/heart.png' %}" alt="" width="550px" height="310ps"><br>
-           <h1>Donate Blood Save Life</h1>
-           <img src="{% static 'images/blood2.png' %}" alt="" width="550px" height="310ps">
-        </div>
-           <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" >
-              <h1 style="text-align: center; color: maroon; font-size: 70px; padding-left: 150px; padding-top: 20px;">LOGIN</h1>
-             </div>
-              
-            <form style="margin-bottom:10px; padding-left: 50px; padding-top: 100px;">
-                <div class="form-group">
-                  <label for="InputEmail1">Email Address</label>
-                  <input type="email" class="form-control" id="emailid" aria-describedby="email" placeholder="Email" class="bi bi-envelope-fill">
-                  <label id="email_error"></label>
-                </div>
-                <div class="form-group">
-                  <label for="InputPassword1">Password</label>
-                  <input type="password" class="form-control" id="password" placeholder="Password">
-                  <label id="password_error"></label>
-                </div>
-                <div class="form-group form-check">
-                  <input type="checkbox" class="form-check-input" id="Check1">
-                  <label class="form-check-label" for="Check1">Remember Me</label><br>
-                </div>
-                <button type="submit" onclick="return validation()" class="btn btn-danger col-md-12">Login</button><br><br><br>
-                  
-                  <center><label>Don't Have An Account?&nbsp;&nbsp;&nbsp;<a href="{% url 'donorsignup' %}" style="text-decoration: none; color: red;">Sign Up</a></label><br>
-                  <a href="{% url 'forgot' %}" style="text-decoration: none; color: red;">Forgot Password?</a></center><br><br>
-              </form>
-        </div>
-       </div>
-   </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-5 col-lg-5">
+       <form method="post">
+          <center><h1>LOGIN</h1></center>
+          <div class="form-group">
+            <label for="InputEmail1">Email Address</label>
+            <center></center><input type="email" class="form-control" id="emailid" aria-describedby="email" placeholder="Email" class="bi bi-envelope-fill">
+            <label id="email_error"></label>
+          </div>
+          <div class="form-group">
+            <label for="InputPassword1">Password</label>
+            <input type="password" class="form-control" id="password" placeholder="Password">
+            <label id="password_error"></label>
+          </div>
+          <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="Check1">
+            <label class="form-check-label" for="Check1">Remember Me</label><br>
+          </div>
+          <button type="submit" onclick="return validation()" class="btn btn-danger col-md-12">Login</button><br><br><br>
+            
+            <center><label>Don't Have An Account?&nbsp;&nbsp;&nbsp;<a href="{% url 'donorsignup' %}" style="text-decoration: none; color: red;">Sign Up</a></label><br>
+            <a href="{% url 'forgot' %}" style="text-decoration: none; color: red;">Forgot Password?</a></center><br><br>
+        </form>
+      </div>
+    </div>
+  </div>
+
    <script>
     function validation(){
       var status = 1

@@ -26,9 +26,10 @@
       }
 
       .image{
-        width: 400px;
+        width: 330px;
         height: 300px;
-        margin-left: 30px;
+        margin-left: 15px;
+        margin-top: 50px ;
         border-radius: 10px;
     
       }
@@ -606,7 +607,7 @@
       .footer1{
         background-color: 	#323949;
         color: white;
-        height: 80px;
+        height: 150px;
         text-align: center;
       }
       .container-fluid1{
@@ -622,7 +623,7 @@
       .footer2{
         background-color: black;
         color: white;
-        height: 70px;
+        height: 160px;
         text-align: center;
       }
       .container-fluid2{
@@ -660,165 +661,121 @@
     </style>
   </head>
 <body>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-xs-12 col-lg-12">
-                <div class="fixed-top">
-                    <div class="collapse" id="navbarToggleExternalContent">
-                      <div class="bg-dark p-5">
-                       <ul class="navbar-nav">
-                           <li class="nav-item"><a href="{% url 'donor_home' %}" style="text-decoration: none;">Home</a></li>
-                       </ul>
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">Create</a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                  <a class="dropdown-item" href="{% url 'donorbloodrequest' %}">Blood Request</a>
-                                </div>
-                            </li>
-                            <li class="nav-item">
-                              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">View</a>
-                              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#">Camps</a>
-                                <a class="dropdown-item" href="#">Recipients</a>
-                              </div>
-                            </li>
-                            <li class="nav-item">
-                              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">Urgent</a>
-                              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#">Call Admin</a>
-                                <a class="dropdown-item" href="{% url 'donorurgentblood' %}">Blood Request</a>
-                              </div>
-                            </li>
-                       </ul>
-                       <ul class="navbar-nav">
-                        <li class="nav-item">
-                          <a class="nav-link" href="{% url 'donor_search' %}">Search</a>
-                        </li>
-                      </ul>
-                       <ul class="navbar-nav">
-                        <li class="nav-item"><a href="{% url 'donornotification' %}" style="text-decoration: none;">Notification</a></li>
-                       </ul>
-                        <ul class="navbar-nav">
-                        <li class="nav-item"><a href="#" style="text-decoration: none;">Logout</a></li>
-                       </ul>
-                      </div>
-                    </div>
-                    <nav class="navbar navbar-dark bg-danger">
-                      <h1 style="color: white; font-size: 40px;">Blood Donation System</h1>
-                      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent">
-                        <span class="navbar-toggler-icon"></span>
-                      </button>
-                    </nav>
-                    <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
-                        <img src="{% static 'images/donation.png' %}" class="navbar-brand" alt="" width="150px">
-                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                          <ul class="navbar-nav mr-auto">
-                            <li class="nav-item active">
-                              <a class="nav-link" href="{% url 'donor_home' %}">Home <span class="sr-only">(current)</span></a>
-                            </li>
-                            <ul class="navbar-nav">
-                                <li class="nav-item">
-                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">Create</a>
-                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                      <a class="dropdown-item" href="{% url 'donorbloodrequest' %}">Blood Request</a>
-                                    </div>
-                                </li>
-                                <li class="nav-item">
-                                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">View</a>
-                                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="#">Camps</a>
-                                    <a class="dropdown-item" href="#">Recipients</a>
-                                  </div>
-                                </li>
-                                <li class="nav-item">
-                                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">Urgent</a>
-                                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="#">Call Admin</a>
-                                    <a class="dropdown-item" href="{% url 'donorurgentblood' %}">Blood Request</a>
-                                  </div>
-                                </li>
-                           </ul>
-                           <li class="nav-item">
-                            <a class="nav-link" href="{% url 'donor_search' %}">Search</a>
-                          </li>
-                            <li class="nav-item">
-                              <a class="nav-link" href="{% url 'donornotification' %}">Notification</a>
-                            </li>
-                            
-                          </ul>
-                            <button class="btn btn-success" type="submit"><img src="https://www.iconsdb.com/icons/preview/white/logout-xxl.png" width="30px">&nbsp;Logout</button>
-                          </form>
-                        </div>
-                      </nav>
-                  </div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+      <img src="{% static 'images/donation.png' %}" class="navbar-brand" alt="" width="150px">
+      <a class="navbar-brand" style="font-size: 30px;" href="#">Blood Donation System</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="{% url 'donor_home' %}">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+               Create
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: grey;">
+                <a class="dropdown-item" href="{% url 'donorbloodrequest' %}">Blood Request</a>
+              </div>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+               View
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: grey;">
+                <a class="dropdown-item" href="#">Camps</a>
+                <a class="dropdown-item" href="#">Recipients</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+               Urgent
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: grey;">
+                <a class="dropdown-item" href="#">Call Admin</a>
+                <a class="dropdown-item" href="{% url 'donorurgentblood' %}">Blood Request</a>
              </div>
-           </div>
-          </div><br><br><br><br><br><br><br><br>
-            <div class="col-xs-12 col-lg-12" style="margin-top: 30px;">
-               <div id="carouselExampleCaptions" class="carousel slide mr-auto" data-ride="carousel">
-                <ol class="carousel-indicators">
-                  <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-                  <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-                  <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
-                </ol>
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <img src="{% static 'images/home1.jpg'%}" class="d-block w-100 h-100-image" style="border-radius: 30px;">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="{% static 'images/home2.jpg'%}" class="d-block w-100 h-100" style="width:1000px; height:1000px; border-radius: 30px;">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="{% static 'images/home4.jpg'%}" class="d-block w-100 h-100" style="border-radius: 30px;">
-                  </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-target="#carouselExampleCaptions" data-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="sr-only">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-target="#carouselExampleCaptions" data-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="sr-only">Next</span>
-                </button>
-              </div><br><br><br><br>
-          
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'donor_search' %}">Search</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'donornotification' %}">Notification</a>
+            </li>
+        </ul>
+        <button class="btn btn-success" type="submit"><img src="https://www.iconsdb.com/icons/preview/white/logout-xxl.png" width="30px">&nbsp;Logout</button>
+     </div>
+   </nav>
+   <div class="col-xs-12 col-lg-12" style="margin-top: 30px;">
+    <center>
+     <div id="carouselExampleCaptions" class="carousel slide mr-auto" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+          <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="{% static 'images/home1.jpg'%}" class="d-block w-100 h-100-image" style="border-radius: 10px;">
+            </div>
+            <div class="carousel-item">
+              <img src="{% static 'images/home2.jpg'%}" class="d-block w-100 h-100" style="width:1000px; height:1000px; border-radius: 10px;">
+            </div>
+            <div class="carousel-item">
+              <img src="{% static 'images/home4.jpg'%}" class="d-block w-100 h-100" style="border-radius: 10px;">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-target="#carouselExampleCaptions" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-target="#carouselExampleCaptions" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </button>
+        </div><br><br><br><br>
+      </div>
+    </center>    
           <div class="row">
-            <div class="col-xs-4 col-lg-4">
+            <div class="col-xs-5 col-lg-5">
               <img src="{% static 'images/blood.jpg'%}" class="image">
             </div>
-            <div class="col-xs-8 col-lg-8" style="padding-bottom: 60px;">
-              <h1 class="head">Benefits Of Blood Donation</h1>
-              <p>Blood donation not only helps the recipient but also has numerous advantages to the donor.<br> The benefits of regular blood donation are multi-folded.</p>
+            <div class="col-xs-7 col-lg-7" style="padding-bottom: 60px;">
+              <center><h1 class="head">Benefits Of Blood Donation</h1></center>
+              <center><p>Blood donation not only helps the recipient but also has numerous advantages to the donor. The benefits of regular blood donation are multi-folded.</p></center>
                 <ul>
-                  <li>It improves the emotional and physical health of the donor.</li>
-                  <li>Since every blood donated is screened, it acts as a major health screening and health checkup for the donor.</li>
-                  <li>Donors can know the status of their HIV, Hepatitis B C, Malaria, syphilis along TTI pre-donation.</li>
-                  <li>A Mini health check-up is known with the pulse, temperature, Haemoglobin, Blood pressure, etc
-                    <br>Decrease the risk of cardiac diseases.</li>
-                  <li>Improves liver health</li>
-                  <li>Boosts immune system.</li>
-                  <li>Decreases the risk of iron overload.</li>
-                  <li>Lowered risk of cancer and replenishment of blood cells.</li>
+                  <li style="margin-left: 20px;">It improves the emotional and physical health of the donor.</li>
+                  <li style="margin-left: 20px;">Since every blood donated is screened, it acts as a major health screening and health checkup for the donor.</li>
+                  <li style="margin-left: 20px;">Donors can know the status of their HIV, Hepatitis B C, Malaria, syphilis along TTI pre-donation.</li>
+                  <li style="margin-left: 20px;">A Mini health check-up is known with the pulse, temperature, Haemoglobin, Blood pressure, etc
+                    <br> Decrease the risk of cardiac diseases.</li>
+                  <li style="margin-left: 20px;">Improves liver health</li>
+                  <li style="margin-left: 20px;">Boosts immune system.</li>
+                  <li style="margin-left: 20px;">Decreases the risk of iron overload.</li>
+                  <li style="margin-left: 20px;">Lowered risk of cancer and replenishment of blood cells.</li>
                 </ul>
             </div>
-            <div class="col-xs-4 col-lg-4">
+            <div class="col-xs-5 col-lg-5">
               <img src="{% static 'images/5.png' %}" class="image">
             </div>
-            <div class="col-xs-8 col-lg-8">
-              <h1 class="head">Eligibility Criteria For Blood Donation</h1>
-              <p>According to the guidelines by the National Blood transfusion council, National Aids control organization, and ministry of health and family welfare, the Govt of India released in October 2022, the following are the eligibility criteria for blood donation.</p>
+            <div class="col-xs-7 col-lg-7">
+              <center><h1 class="head">Eligibility Criteria For Donation</h1></center>
+              <center><p>According to the guidelines by the National Blood transfusion council, National Aids control organization, and ministry of health and family welfare, the Govt of India released in October 2022, the following are the eligibility criteria for blood donation.</p></center>
               <ul>
-                <li>Well-being – The donor has to be in good health, mentally alert, and physically fit.</li>
-                <li>Age limit- Minimum age of 18 years to a maximum age of 65 years.<br>
-                  For apheresis donation, it is 18-60 years.  Apheresis donation- where only one of the blood components is donated through the process of cell separation for example plasma donation, platelet donation, etc.</li>
-                <li>Volume of collected blood and weight of donor – 350mL for 45kg 450mL for more than 55kg.<br> Apheresis donor – minimum 50kg.</li>  
-                <li>Donation interval- Whole blood donation once in 3 months for males and once in 4 months for females.</li>  
-                <li>Blood pressure- 100-140mmhg systolic and 60-90mmhg diastolic with or without medications.</li>  
-                <li>Pulse – 60-100, Regular.</li>  
-                <li>Temperature- Afebrile, 37° Celsius.</li>
-                <li>Haemoglobin –  > or = 12.5g/dL.</li>
-                <li>Risk behavior- Donors must be free from any disease transmissible by blood.</li>
+                <li style="margin-left: 20px;">Well-being – The donor has to be in good health, mentally alert, and physically fit.</li>
+                <li style="margin-left: 20px;">Age limit- Minimum age of 18 years to a maximum age of 65 years.<br>
+                  For apheresis donation, it is 18-60 years.  Apheresis donation- where only one of the blood components <br> is donated through the process of cell separation for example plasma donation, platelet donation, etc.</li>
+                <li style="margin-left: 20px;">Volume of collected blood and weight of donor – 350mL for 45kg 450mL for more than 55kg.<br> Apheresis donor – minimum 50kg.</li>  
+                <li style="margin-left: 20px;">Donation interval- Whole blood donation once in 3 months for males and once in 4 months for females.</li>  
+                <li style="margin-left: 20px;">Blood pressure- 100-140mmhg systolic and 60-90mmhg diastolic with or without medications.</li>  
+                <li style="margin-left: 20px;">Pulse – 60-100, Regular.</li>  
+                <li style="margin-left: 20px;">Temperature- Afebrile, 37° Celsius.</li>
+                <li style="margin-left: 20px;">Haemoglobin –  > or = 12.5g/dL.</li>
+                <li style="margin-left: 20px;">Risk behavior- Donors must be free from any disease transmissible by blood.</li>
               </ul>
             </div>
             <div class="col-xs-6 col-lg-6">
@@ -940,18 +897,14 @@
       </div>
     </div>
     <div class="container-fluid1">
-      <div class="col-xs-12 col-lg-12">
         <div class="footer1">
           <a href=""><label for="">Terms And Conditions</label></a><a href="{% url 'about' %}"><label for="">About Us</label></a><a href="{% url 'contact' %}"><label for="">Contact Us</label></a><a href="{% url 'donorlogin' %}"><label for="">Donor Login</label></a>
         </div>
-      </div>
     </div>
     <div class="container-fluid2">
-      <div class="col-xs-12 col-lg-12">
         <div class="footer2">
           <a href=""><label>©Blood Donation System</label></a> <a href=""><label>Designed And Developed By Arun Pacheeri</label></a>
         </div>
-      </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script> 

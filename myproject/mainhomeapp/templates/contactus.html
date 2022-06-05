@@ -70,95 +70,50 @@
 
 </head>
 <body>
-  <div class="container-fluid">
-    <div class="row">
-        <div class="col-xs-12 col-lg-12">
-            <div class="fixed-top">
-                <div class="collapse" id="navbarToggleExternalContent">
-                  <div class="bg-dark p-5">
-                   <ul class="navbar-nav">
-                    <li class="nav-item active">
-                      <a class="nav-link" href="{% url 'main' %}">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="{% url 'about' %}">About Us</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="{% url 'contact' %}">Contact Us</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
-                         Login
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: grey;">
-                          <a class="dropdown-item" href="{% url 'donorlogin' %}">Donor</a>
-                          <a class="dropdown-item" href="{% url 'recipientlogin' %}">Recipient</a>
-                          <a class="dropdown-item" href="{% url 'hospitallogin' %}">Hospital</a>
-                          <a class="dropdown-item" href="{% url 'adminlogin' %}">Admin</a>
-                    </li>
-        
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
-                         Sign Up
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: grey;">
-                          <a class="dropdown-item" href="{% url 'donorsignup' %}">Donor</a>
-                          <a class="dropdown-item" href="{% url 'recipientsignup' %}">Recipient</a>
-                          <a class="dropdown-item" href="{% url 'hospitalsignup' %}">Hospital</a>
-                    </li>
-                   </ul>
-                  </div>
-                </div>
-                <nav class="navbar navbar-dark bg-danger">
-                  <h1 style="color: white; font-size: 40px;">Blood Donation System</h1>
-                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent">
-                    <span class="navbar-toggler-icon"></span>
-                  </button>
-                </nav>
-                <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
-                    <img src="{% static 'images/donation.png' %}" class="navbar-brand" alt="" width="150px">
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                      <ul class="navbar-nav mr-auto">
-                        <li class="nav-item">
-                          <a class="nav-link" href="{% url 'main' %}">Home <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="{% url 'about' %}">About Us</a>
-                        </li>
-                        <li class="nav-item active">
-                          <a class="nav-link" href="{% url 'contact' %}">Contact Us</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
-                             Login
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: grey;">
-                              <a class="dropdown-item" href="{% url 'donorlogin' %}">Donor</a>
-                              <a class="dropdown-item" href="{% url 'recipientlogin' %}">Recipient</a>
-                              <a class="dropdown-item" href="{% url 'hospitallogin' %}">Hospital</a>
-                              <a class="dropdown-item" href="{% url 'adminlogin' %}">Admin</a>
-                        </li>
-            
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
-                             Sign Up
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: grey;">
-                              <a class="dropdown-item" href="{% url 'donorsignup' %}">Donor</a>
-                              <a class="dropdown-item" href="{% url 'recipientsignup' %}">Recipient</a>
-                              <a class="dropdown-item" href="{% url 'hospitalsignup' %}">Hospital</a>
-                        </li>
-                      </ul>
-                      </form>
-                    </div>
-                  </nav>
-              </div>
-         </div>
-      </div>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+    <img src="{% static 'images/donation.png' %}" class="navbar-brand" alt="" width="150px">
+    <a class="navbar-brand" href="#" style="font-size: 30px;">Blood Donation System</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'main' %}">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'about' %}">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="{% url 'contact' %}">Contact Us</a>
+            </li><br>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+                 Login
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: grey;">
+                  <a class="dropdown-item" href="{% url 'donorlogin' %}">Donor</a>
+                  <a class="dropdown-item" href="{% url 'recipientlogin' %}">Recipient</a>
+                  <a class="dropdown-item" href="{% url 'hospitallogin' %}">Hospital</a>
+                  <a class="dropdown-item" href="{% url 'adminlogin' %}">Admin</a>
+            </li><br>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+                 Sign Up
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: grey;">
+                  <a class="dropdown-item" href="{% url 'donorsignup' %}">Donor</a>
+                  <a class="dropdown-item" href="{% url 'recipientsignup' %}">Recipient</a>
+                  <a class="dropdown-item" href="{% url 'hospitalsignup' %}">Hospital</a>
+            </li><br>
+        </ul>
     </div>
+  </nav>
       <div class="container-fluid">
           <div class="row">
-              <div class="col-xs-6 col-lg-6" style="margin-top: 290px;">
+              <div class="col-xs-6 col-lg-6" style="margin-top: 50px;">
                 <form method="post">
                     <h1 class="head">Contact Us</h1>
                     <div class="form-group" style="margin-top: 100px;">
@@ -175,7 +130,7 @@
                     </div><br><br>
                     <center><input type="button" onclick="return validation()" class="btn btn-danger" value="Submit" style="border-radius: 100px; width: 35%; height: 50px;"></center><br><br><br>
                 </div>
-                <div class="col-xs-6 col-lg-6" style="margin-top: 180px;">
+                <div class="col-xs-6 col-lg-6" style="margin-top: 10px;">
                     <center><img src="{% static 'images/tech.jpg' %}" width="330px" style="margin-top: 100px;"></center>
                 </div>
           </div>

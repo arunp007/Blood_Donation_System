@@ -58,7 +58,7 @@
         .footer1{
             background-color: 	#323949;
             color: white;
-            height: 80px;
+            height: 150px;
             text-align: center;
         }
         .container-fluid1{
@@ -75,7 +75,7 @@
         .footer2{
             background-color: black;
             color: white;
-            height: 70px;
+            height: 160px;
             text-align: center;
         }
         .container-fluid2{
@@ -113,105 +113,53 @@
     </style>
 </head>
 <body>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-xs-12 col-lg-12">
-                <div class="fixed-top">
-                    <div class="collapse" id="navbarToggleExternalContent">
-                      <div class="bg-dark p-5">
-                       <ul class="navbar-nav">
-                           <li class="nav-item"><a href="{% url 'hospital_home' %}" style="text-decoration: none;">Home</a></li>
-                       </ul>
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">Create</a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                  <a class="dropdown-item" href="{% url 'hospitalbloodrequest' %}">Blood Request</a>
-                                  <a class="dropdown-item" href="{% url 'hospitalcamp' %}">Camps</a>
-                                </div>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">View</a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                  <a class="dropdown-item" href="#">Camps</a>
-                                  <a class="dropdown-item" href="#">Donors</a>
-                                  <a class="dropdown-item" href="#">Recipients</a>
-                                </div>
-                              </li>
-                           <li class="nav-item">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">Urgent</a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                              <a class="dropdown-item" href="#">Call Admin</a>
-                              <a class="dropdown-item" href="{% url 'hospitalurgent' %}">Blood Request</a>
-                            </div>
-                          </li>
-                        </ul>
-                        <ul class="navbar-nav">
-                          <li class="nav-item">
-                            <a class="nav-link" href="{% url 'hospital_search' %}">Search</a>
-                          </li>
-                        </ul>
-                       <ul class="navbar-nav">
-                        <li class="nav-item"><a href="{% url 'hospitalnotification' %}" style="text-decoration: none;">Notification</a></li>
-                       </ul>
-                        <ul class="navbar-nav">
-                        <li class="nav-item"><a href="#" style="text-decoration: none;">Logout</a></li>
-                       </ul>
-                      </div>
-                    </div>
-                    <nav class="navbar navbar-dark bg-danger">
-                      <h1 style="color: white; font-size: 40px;">Blood Donation System</h1>
-                      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent">
-                        <span class="navbar-toggler-icon"></span>
-                      </button>
-                    </nav>
-                    <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
-                        <img src="{% static 'images/donation.png' %}" class="navbar-brand" alt="" width="150px">
-                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                          <ul class="navbar-nav mr-auto">
-                            <li class="nav-item">
-                              <a class="nav-link" href="{% url 'hospital_home' %}">Home <span class="sr-only">(current)</span></a>
-                            </li>
-                            <ul class="navbar-nav">
-                                <li class="nav-item">
-                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">Create</a>
-                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                      <a class="dropdown-item" href="{% url 'hospitalbloodrequest' %}">Blood Request</a>
-                                      <a class="dropdown-item" href="{% url 'hospitalcamp' %}">Camps</a>
-                                    </div>
-                                </li>
-                                <li class="nav-item">
-                                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">View</a>
-                                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="#">Camps</a>
-                                    <a class="dropdown-item" href="#">Donors</a>
-                                    <a class="dropdown-item" href="#">Recipients</a>
-                                  </div>
-                                </li>
-                                <li class="nav-item active">
-                                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">Urgent</a>
-                                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="#">Call Admin</a>
-                                    <a class="dropdown-item" href="{% url 'hospitalurgent' %}">Blood Request</a>
-                                  </div>
-                                </li>
-                           </ul>
-                           <li class="nav-item">
-                            <a class="nav-link" href="{% url 'hospital_search' %}">Search</a>
-                          </li>
-                            <li class="nav-item">
-                              <a class="nav-link" href="{% url 'hospitalnotification' %}">Notification</a>
-                            </li>
-                            
-                          </ul>
-                            <button class="btn btn-success" type="submit"><img src="https://www.iconsdb.com/icons/preview/white/logout-xxl.png" width="30px">&nbsp;Logout</button>
-                          </form>
-                        </div>
-                    </nav>
-                </div>
-            </div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+        <img src="{% static 'images/donation.png' %}" class="navbar-brand" alt="" width="150px">
+        <a class="navbar-brand" style="font-size: 30px;" href="#">Blood Donation System</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'hospital_home' %}">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+                   Create
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: grey;">
+                    <a class="dropdown-item" href="{% url 'hospitalbloodrequest' %}">Blood Request</a>
+                    <a class="dropdown-item" href="{% url 'hospitalcamp' %}">Camps</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+                   View
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: grey;">
+                    <a class="dropdown-item" href="#">Camps</a>
+                    <a class="dropdown-item" href="#">Donors</a>
+                    <a class="dropdown-item" href="#">Recipients</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+                   Urgent
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: grey;">
+                    <a class="dropdown-item" href="#">Call Admin</a>
+                    <a class="dropdown-item" href="{% url 'hospitalurgent' %}">Blood Request</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'hospital_search' %}">Search</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'hospitalnotification' %}">Notification</a>
+                </li>
+            </ul>
+            <button class="btn btn-success" type="submit"><img src="https://www.iconsdb.com/icons/preview/white/logout-xxl.png" width="30px">&nbsp;Logout</button>
         </div>
-    </div><br><br><br><br><br><br><br><br>
+      </nav>
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-7 col-lg-7">
@@ -261,17 +209,13 @@
         </div>
     </div>
     <div class="container-fluid1">
-        <div class="col-xs-12 col-lg-12">
-            <div class="footer1">
-                <a href=""><label class="label">Terms And Conditions</label></a><a href="{% url 'about' %}"><label class="label">About Us</label></a><a href="{% url 'contact' %}"><label class="label">Contact Us</label></a><a href="{% url 'donorlogin' %}"><label class="label">Donor Login</label></a>
-            </div>
+        <div class="footer1">
+            <a href=""><label class="label">Terms And Conditions</label></a><a href="{% url 'about' %}"><label class="label">About Us</label></a><a href="{% url 'contact' %}"><label class="label">Contact Us</label></a><a href="{% url 'donorlogin' %}"><label class="label">Donor Login</label></a>
         </div>
     </div>
     <div class="container-fluid2">
-        <div class="col-xs-12 col-lg-12">
-            <div class="footer2">
-                <a href=""><label class="label">©Blood Donation System</label></a> <a href=""><label class="label">Designed And Developed By Arun Pacheeri</label></a>
-            </div>
+        <div class="footer2">
+            <a href=""><label class="label">©Blood Donation System</label></a> <a href=""><label class="label">Designed And Developed By Arun Pacheeri</label></a>
         </div>
     </div>
 

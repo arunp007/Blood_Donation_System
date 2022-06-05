@@ -11,20 +11,32 @@
     <style>
       body{
         background: linear-gradient(#eecda3,#ef629f);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
       }
-     
+
+      form{
+        background: linear-gradient(#141e30,#243b55);
+        margin-top: 100px;
+        margin-bottom: 50px;
+        padding-right: 50px;
+        padding-left: 15px;
+        border-radius: 20px;
+    
+      }
+
+      .header{
+        text-align: center;   
+      }
+
     </style>
 </head>
 <body>
-   <div class="container">  
+   <div class="container-fluid">  
         <div class="row">
-                <div class="header">
-                    <img src="{% static 'images/heart.png' %}" alt="" width="550px" height="310ps"><br>
-                    <img src="{% static 'images/blood.png' %}" alt="" width="550px" height="320ps">
-                 </div>
-            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                <h1 style="color: white; padding-left: 120px; padding-top: 40px; font-family: 'Times New Roman', Times, serif;">ADMIN LOGIN</h1><br><br><br>
-                <form style="margin-bottom:10px; padding-left: 50px; padding-top: 60px;">
+            <div class="col-xs-5 col-lg-5">
+                <form style="margin-bottom:10px; padding-left: 50px; padding-top: 30px;">
+                    <center><h1 style="color: white; padding-top: 40px; padding-bottom: 40px; font-family: 'Times New Roman', Times, serif;">ADMIN LOGIN</h1></center>
                     <div class="form-group" style="color: white;">
                       <label for="InputEmail1">Username</label>
                       <input type="user" class="form-control col-md-12" id="username" aria-describedby="user" placeholder="Username">
