@@ -22,9 +22,13 @@
             color: red;
         }
 
-        button.btn-success:hover{
-            background-color: red;
-            border: 2px solid white;
+        .btn-warning{
+          color:white;
+          border-radius: 20px;
+        }
+
+        .btn-warning:hover{
+          color: white;
         }
 
         .image{
@@ -35,7 +39,7 @@
         .footer1{
         background-color: 	#323949;
         color: white;
-        height: 150px;
+        height: 300px;
         text-align: center;
       }
       .container-fluid1{
@@ -48,17 +52,6 @@
         padding-right: 10px;
       }
 
-      .footer2{
-        background-color: black;
-        color: white;
-        height: 160px;
-        text-align: center;
-      }
-      .container-fluid2{
-        background-color: black;
-        
-      }
-
       .top{
         position: fixed;
         top: 70%;
@@ -68,7 +61,7 @@
         border: 2px solid black;
         width: 80px;
         height: 80px;
-        margin-left: 1300px;
+        margin-left: 1200px;
         
       }
 
@@ -132,7 +125,7 @@
               <a class="nav-link" href="{% url 'recipient_notification' %}">Notification</a>
             </li>
         </ul>
-        <button class="btn btn-success" type="submit"><img src="https://www.iconsdb.com/icons/preview/white/logout-xxl.png" width="30px">&nbsp;Logout</button>
+        <button class="btn btn-warning" type="submit"><img src="https://www.iconsdb.com/icons/preview/white/logout-xxl.png" width="30px">&nbsp;Logout</button>
     </div>
   </nav>
           <div class="container-fluid">
@@ -180,14 +173,12 @@
                     </div>
                   </div>
                   <div class="container-fluid1">
+                    <div class="col-xs-12 col-lg-12">
                       <div class="footer1">
-                        <a href=""><label class="label">Terms And Conditions</label></a><a href="{% url 'about' %}"><label class="label">About Us</label></a><a href="{% url 'contact' %}"><label class="label">Contact Us</label></a><a href="{% url 'donorlogin' %}"><label class="label">Donor Login</label></a>
-                      </div>
-                  </div>
-                  <div class="container-fluid2">
-                      <div class="footer2">
+                        <a href=""><label class="label">Terms And Conditions</label></a><a href="{% url 'about' %}"><label class="label">About Us</label></a><a href="{% url 'contact' %}"><label class="label">Contact Us</label></a><a href="{% url 'donorlogin' %}"><label class="label">Donor Login</label></a><br>
                         <a href=""><label class="label">©Blood Donation System</label></a> <a href=""><label class="label">Designed And Developed By Arun Pacheeri</label></a>
                       </div>
+                    </div>
                   </div>
 
     <script>

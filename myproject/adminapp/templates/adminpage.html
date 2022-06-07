@@ -9,21 +9,24 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
  </head>
  <style>
-     .btn-success{
-        border: 2px solid white;
-     }
-    .btn-success:hover{
-     background-color: red;
-     color: white;
-     border: 2px solid white;
-     } 
+      .container-fluid{
+        margin-bottom: 200px;
+      }
 
-     .navbar-brand{
-         font-family: 'Times New Roman', Times, serif;
-         font-size: 28px;
-     }
+     .btn-warning{
+        color: white;
+        border-radius: 20px;
+      }
+      .btn-warning:hover{
+        color: white;
+      } 
 
-     a{
+      a{
+        font-size: 20px;
+        color: white;
+      }
+
+     .link{
         color: white;
         text-decoration: none;
         font-size: 20px;
@@ -203,37 +206,34 @@
        border-radius: 20px;
      }
 
-     .container7{
+     .footer1{
+        background-color: 	#323949;
+        color: white;
+        height: 300px;
+        text-align: center;
+      }
+
+      .container-fluid1{
         background-color: #323949;
       }
-      .label1{
+      
+      label{
         padding-top: 30px;
         font-size: 20px;
         padding-left: 10px;
         padding-right: 10px;
       }
 
-      .footer2{
-        background-color: black;
-        color: white;
-        height: 70px;
-        text-align: center;
-      }
-      .container-fluid2{
-        background-color: black;
-        
-      }
-
       .top{
         position: fixed;
-        top: 70%;
-        transform: translateY(-70%);
+        top: 60%;
+        transform: translateY(-60%);
         background-color: red;
         border-radius: 200px;
         border: 2px solid black;
         width: 80px;
         height: 80px;
-        margin-left: 1300px;
+        margin-left: 1200px;
         
       }
 
@@ -251,143 +251,146 @@
       }
 
  </style>
-
-
  <body>
-     <div class="row">
-         <div class="col-xs-12 col-lg-12">
-            <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-                    <a class="navbar-brand" href="#"><img src="{% static 'images/donation.png' %}" width="150px">Blood Donation System</a>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <div class="collapse navbar-collapse" id="navbarText">
-                        <ul class="navbar-nav mr-auto">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"><img src="{% static 'images/admin.png' %}" style="width: 50px; margin-left: 810px;"></a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                              <a class="dropdown-item" href="#">Dashboard</a>
-                              <a class="dropdown-item" href="#">Donor</a>
-                              <a class="dropdown-item" href="#">Hospital</a>
-                              <a class="dropdown-item" href="#">Recipient</a>
-                            </div>
-                        </ul>
-                    </div>
-                  <form class="form-inline">
-                    <button class="btn btn-success" type="submit">Logout</button>
-                  </form>
-                </div>
-            </nav>
-         </div>
-         <div class="col-xs-2 col-lg-2" style="background:linear-gradient(#000428,#004e92); margin-left: 15px; height: 400px; width:455px;">
-                 <ul class="navbar-nav">
-                     <li class="nav-item"><a href="#home" style="text-decoration: none;">Dashboard</a></li>
-                 </ul>
-                  <ul class="navbar-nav">
-                      <li class="nav-item"><a href="#" style="text-decoration: none;">Donor</a></li>
-                      <li class="nav-item"><a href="#" style="text-decoration: none;">Recipient</a></li>
-                      <li class="nav-item"><a href="#" style="text-decoration: none;">Hospital</a></li>
-                    </ul>
-                    <ul class="navbar-nav">
-                     <li class="nav-item"><a href="" style="text-decoration: none;">Camps</a></li>
-                    </ul>
-                  </ul>
-                  <ul class="navbar-nav">
-                   <li class="nav-item"><a href="" style="text-decoration: none;">Blood Request</a></li>
-                  </ul>
-                </ul>
-                <ul class="navbar-nav">
-                 <li class="nav-item"><a href="" style="text-decoration: none;">Urgent Request</a></li>
-                </ul>
-                 </ul>
-                  <ul class="navbar-nav">
-                  <li class="nav-item"><a href="#" style="text-decoration: none;">Logout</a></li>
-                 </ul>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <img src="{% static 'images/donation.png' %}" class="navbar-brand" alt="" width="150px">
+    <a class="navbar-brand" style="font-size: 30px;" href="#">Blood Donation System</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="{% url 'admin_home' %}">Dashboard</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+               View
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: grey;">
+                <a class="dropdown-item" href="#">Donors</a>
+                <a class="dropdown-item" href="#">Recipients</a>
+                <a class="dropdown-item" href="#">Hospitals</a>
+                <a class="dropdown-item" href="#">Recipients</a>
+                <a class="dropdown-item" href="#">Blood Requests</a>
+                <a class="dropdown-item" href="#">Camps</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+               Urgent
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: grey;">
+                <a class="dropdown-item" href="">Blood Requests</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url  'admin_notification' %}">Notification</a>
+            </li>
+        </ul>
+        <button class="btn btn-warning" type="submit"><img src="https://www.iconsdb.com/icons/preview/white/logout-xxl.png" width="30px">&nbsp;Logout</button>
+    </div>
+  </nav>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12 col-lg-12">
+        <h1 style="margin-top: 10px; margin-bottom: 100px;">Admin Dashboard</h1>
+      </div>
+      
+
+      <div class="col-xs-4 col-lg-4" width="330px" style="margin-top: 10px; margin-bottom: 30px;">
+        <div class="container1">
+          <img src="{% static 'images/donors.png' %}" class="donorimage"><br>
+          <label for="" style="margin-left: 250px;font-size: 30px;">6</label><br>
+          <label for="" style="margin-left: 200px;padding-bottom: 10px;">Total Donors</label>
+          <div class="textarea1">
+            <a href="" class="link" style="text-decoration: none;">View Details</a>
+            <img src="{% static 'images/left.png' %}" style="width:40px; margin-left: 130px;">
           </div>
-          <div class="col-xs-3 col-lg-3">
-            <h1>Admin Dashboard</h1>
-            <div class="container1">
-              <img src="{% static 'images/donors.png' %}" class="donorimage"><br>
-              <label for="" style="margin-left: 250px;font-size: 30px;">6</label><br>
-              <label for="" style="margin-left: 200px;padding-bottom: 10px;">Total Donors</label>
-              <div class="textarea1">
-                <a href="" style="text-decoration: none;">View Details</a>
-                <img src="{% static 'images/left.png' %}" style="width:40px; margin-left: 130px;">
-              </div>
-           </div>
+       </div>
+      </div>
+
+      <div class="col-xs-4 col-lg-4" width="330px" style="margin-top: 10px; margin-bottom: 30px;">
+        <div class="container2">
+          <img src="{% static 'images/camps.png' %}" class="campimage"><br>
+          <label for="" style="margin-left: 250px;font-size: 30px;">10</label><br>
+          <label for="" style="margin-left: 100px;padding-bottom: 10px;">Blood Donation Camps</label>
+          <div class="textarea2">
+            <a href="" class="link" style="text-decoration: none;">View Details</a>
+            <img src="{% static 'images/left.png' %}" style="width:40px; margin-left: 130px;">
           </div>
-          <div class="col-xs-3 col-lg-3" style="margin-top: 56px;">
-            <div class="container2">
-              <img src="{% static 'images/camps.png' %}" class="campimage"><br>
-              <label for="" style="margin-left: 250px;font-size: 30px;">10</label><br>
-              <label for="" style="margin-left: 100px;padding-bottom: 10px;">Blood Donation Camps</label>
-              <div class="textarea2">
-                <a href="" style="text-decoration: none;">View Details</a>
-                <img src="{% static 'images/left.png' %}" style="width:40px; margin-left: 130px;">
-              </div>
-           </div>
+       </div>
+      </div>
+
+      <div class="col-xs-4 col-lg-4" width="330px" style="margin-top: 10px; margin-bottom: 30px;">
+        <div class="container3">
+          <img src="{% static 'images/hospital.png' %}" class="hospitalimage"><br>
+          <label for="" style="margin-left: 250px;font-size: 30px;">9</label><br>
+          <label for="" style="margin-left: 175px;padding-bottom: 10px;">Total Hospitals</label>
+          <div class="textarea3">
+            <a href="" class="link" style="text-decoration: none;">View Details</a>
+            <img src="{% static 'images/left.png' %}" style="width:40px; margin-left: 130px;">
           </div>
-          <div class="col-xs-3 col-lg-3" style="margin-top: 57px;">
-            <div class="container3">
-              <img src="{% static 'images/hospital.png' %}" class="hospitalimage"><br>
-              <label for="" style="margin-left: 250px;font-size: 30px;">9</label><br>
-              <label for="" style="margin-left: 175px;padding-bottom: 10px;">Total Hospitals</label>
-              <div class="textarea3">
-                <a href="" style="text-decoration: none;">View Details</a>
-                <img src="{% static 'images/left.png' %}" style="width:40px; margin-left: 130px;">
-              </div>
-           </div>
+       </div>
+      </div>
+
+      <div class="col-xs-4 col-lg-4" width="330px" style="margin-top: 10px; margin-bottom: 30px;">
+        <div class="container4">
+          <img src="{% static 'images/request.png' %}" class="requestimage"><br>
+          <label for="" style="margin-left: 250px;font-size: 30px;">2</label><br>
+          <label for="" style="margin-left: 180px;padding-bottom: 10px;">Blood Request</label>
+          <div class="textarea4">
+            <a href="" class="link" style="text-decoration: none;">View Details</a>
+            <img src="{% static 'images/left.png' %}" style="width:40px; margin-left: 130px;">
           </div>
-          <div class="col-xs-2 col-lg-2" style="background:linear-gradient(#004e92,#004e92); margin-left: 15px; height: 400px; width:455px;"></div>
-          <div class="col-xs-3 col-lg-3">
-            <div class="container4">
-              <img src="{% static 'images/request.png' %}" class="requestimage"><br>
-              <label for="" style="margin-left: 250px;font-size: 30px;">2</label><br>
-              <label for="" style="margin-left: 180px;padding-bottom: 10px;">Blood Request</label>
-              <div class="textarea4">
-                <a href="" style="text-decoration: none;">View Details</a>
-                <img src="{% static 'images/left.png' %}" style="width:40px; margin-left: 130px;">
-              </div>
-           </div>
+       </div>
+      </div>
+
+      <div class="col-xs-4 col-lg-4" width="330px" style="margin-top: 10px; margin-bottom: 30px;">
+        <div class="container5">
+          <img src="{% static 'images/urgent.png' %}" class="urgentimage"><br>
+          <label for="" style="margin-left: 250px;font-size: 30px;">4</label><br>
+          <label for="" style="margin-left: 170px;padding-bottom: 10px;">Urgent Request</label>
+          <div class="textarea5">
+            <a href="" class="link" style="text-decoration: none;">View Details</a>
+            <img src="{% static 'images/left.png' %}" style="width:40px; margin-left: 130px;">
           </div>
-          <div class="col-xs-3 col-lg-3">
-            <div class="container5">
-              <img src="{% static 'images/urgent.png' %}" class="urgentimage"><br>
-              <label for="" style="margin-left: 250px;font-size: 30px;">4</label><br>
-              <label for="" style="margin-left: 170px;padding-bottom: 10px;">Urgent Request</label>
-              <div class="textarea5">
-                <a href="" style="text-decoration: none;">View Details</a>
-                <img src="{% static 'images/left.png' %}" style="width:40px; margin-left: 130px;">
-              </div>
-           </div>
+       </div>
+      </div>
+
+      <div class="col-xs-4 col-lg-4" width="330px" style="margin-top: 10px; margin-bottom: 30px;">
+        <div class="container6">
+          <img src="{% static 'images/notification.png' %}" class="notificationimage"><br>
+          <label for="" style="margin-left: 250px;font-size: 30px;">7</label><br>
+          <label for="" style="margin-left: 210px;padding-bottom: 10px;">Notification</label>
+          <div class="textarea6">
+            <a href="" class="link" style="text-decoration: none;">View Details</a>
+            <img src="{% static 'images/left.png' %}" style="width:40px; margin-left: 130px;">
           </div>
-          <div class="col-xs-3 col-lg-3">
-            <div class="container6">
-              <img src="{% static 'images/notification.png' %}" class="notificationimage"><br>
-              <label for="" style="margin-left: 250px;font-size: 30px;">7</label><br>
-              <label for="" style="margin-left: 210px;padding-bottom: 10px;">Notification</label>
-              <div class="textarea6">
-                <a href="" style="text-decoration: none;">View Details</a>
-                <img src="{% static 'images/left.png' %}" style="width:40px; margin-left: 130px;">
-              </div>
-           </div>
-          </div>
-          <div class="col-xs-12 col-lg-12">
-            <a href="#top">
-            <div class="top">
-              <img src="{% static 'images/topnav.png' %}" class="topimage"></a>
-            </div>
-          </div>
-            <div class="col-xs-12 col-lg-12">
-              <div class="container7">
-              <div class="footer2">
-                <a href=""><label class="label1">©Blood Donation System</label></a><a href=""><label class="label1">Designed And Developed By Arun Pacheeri</label></a>
-              </div>
-            </div>
-          </div>
-     </div>
+       </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="col-xs-12 col-lg-12">
+      <div class="top">
+        <a href="#top"><img src="{% static 'images/topnav.png' %}" class="topimage"></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid1">
+    <div class="col-xs-12 col-lg-12">
+      <div class="footer1">
+        <a href=""><label for="">Terms And Conditions</label></a><a href="{% url 'about' %}"><label for="">About Us</label></a><a href="{% url 'contact' %}"><label for="">Contact Us</label></a><br>
+        <a href=""><label>©Blood Donation System</label></a> <a href=""><label>Designed And Developed By Arun Pacheeri</label></a>
+      </div>
+    </div>
+  </div>
 
  
 
-     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script> 
  </body>
 </html>
 
