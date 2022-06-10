@@ -15,18 +15,29 @@
         background-attachment: fixed;
       }
 
-      form{
+      .header{
+        text-align: center;   
+      }
+
+      .container2{
         background: linear-gradient(#141e30,#243b55);
         margin-top: 100px;
         margin-bottom: 50px;
         padding-right: 50px;
-        padding-left: 15px;
+        padding-left: 50px;
         border-radius: 20px;
-    
       }
 
-      .header{
-        text-align: center;   
+      h1{
+        color: white;
+        padding-top: 40px;
+        padding-bottom: 40px;
+        font-family: 'Times New Roman', Times, serif;
+      }
+
+      .container1{
+        margin-top: 100px;
+        margin-left: 10px;
       }
 
     </style>
@@ -34,9 +45,17 @@
 <body>
    <div class="container-fluid">  
         <div class="row">
+          <div class="col-xs-1 col-lg-1"></div>
+          <div class="col-xs-4 col-lg-4">
+            <div class="container1">
+              <img src="{% static 'images/blood.png' %}" width="330px" height="205px" style="border-top-left-radius: 10px; border-top-right-radius: 10px;">
+              <img src="{% static 'images/heart.png' %}" width="330px" height="305px" style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
+            </div>
+          </div>
             <div class="col-xs-5 col-lg-5">
-                <form style="margin-bottom:10px; padding-left: 50px; padding-top: 30px;">
-                    <center><h1 style="color: white; padding-top: 40px; padding-bottom: 40px; font-family: 'Times New Roman', Times, serif;">ADMIN LOGIN</h1></center>
+              <div class="container2">
+                <form>
+                    <center><h1>ADMIN LOGIN</h1></center>
                     <div class="form-group" style="color: white;">
                       <label for="InputEmail1">Username</label>
                       <input type="user" class="form-control col-md-12" id="username" aria-describedby="user" placeholder="Username">
@@ -52,7 +71,8 @@
                       <label class="form-check-label" for="exampleCheck1">Remember Me</label><br><br>
                     </div>
                     <button type="submit" onclick="return validation()" class="btn btn-danger col-md-12">Login</button><br><br><br>
-                  </form>
+                </form>
+              </div>
             </div>
         </div>
     </div>

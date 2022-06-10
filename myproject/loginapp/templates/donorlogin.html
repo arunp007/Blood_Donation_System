@@ -17,48 +17,62 @@
         font-family: 'Times New Roman', Times, serif;
         font-weight: bolder;
         color: red;
-        margin-top: 100px;
         padding-top: 30px;
-        margin-bottom: 50px;
+        padding-bottom: 20px;
+        
       }
 
-      form{
+      .container2{
         background-color: white;
         border-radius: 20px;
         padding-left: 20px;
         padding-right: 20px;
         margin-bottom: 100px;
-
+        margin-top: 50px;
       }
+
+      .container1{
+        margin-top: 50px;
+      }
+
     </style>
 </head>
 <body>
   <div class="container-fluid">
     <div class="row">
+      <div class="col-xs-1 col-lg-1"></div>
+          <div class="col-xs-4 col-lg-4">
+            <div class="container1">
+              <img src="{% static 'images/blood.png' %}" width="330px" height="250px" style="border-top-left-radius: 10px; border-top-right-radius: 10px; margin-left: 5px;">
+              <img src="{% static 'images/heart.png' %}" width="330px" height="320px" style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; margin-left: 5px;">
+            </div>
+          </div>
       <div class="col-xs-5 col-lg-5">
-       <form method="post">
-          <center><h1>LOGIN</h1></center>
-          <div class="form-group">
-            <label for="InputEmail1">Email Address</label>
-            <center></center><input type="email" class="form-control" id="emailid" aria-describedby="email" placeholder="Email" class="bi bi-envelope-fill">
-            <label id="email_error"></label>
-          </div>
-          <div class="form-group">
-            <label for="InputPassword1">Password</label>
-            <input type="password" class="form-control" id="password" placeholder="Password">
-            <label id="password_error"></label>
-          </div>
-          <div class="form-group form-check">
-            <input type="checkbox" class="form-check-input" id="Check1">
-            <label class="form-check-label" for="Check1">Remember Me</label><br>
-          </div>
-          <button type="submit" onclick="return validation()" class="btn btn-danger col-md-12">Login</button><br><br><br>
+        <div class="container2">
+          <form method="post">
+            <center><h1>LOGIN</h1></center>
+            <div class="form-group">
+              <label for="InputEmail1">Email Address</label>
+              <center></center><input type="email" class="form-control" id="emailid" aria-describedby="email" placeholder="Email" class="bi bi-envelope-fill">
+              <label id="email_error"></label>
+            </div>
+            <div class="form-group">
+              <label for="InputPassword1">Password</label>
+              <input type="password" class="form-control" id="password" placeholder="Password">
+              <label id="password_error"></label>
+            </div>
+            <div class="form-group form-check">
+              <input type="checkbox" class="form-check-input" id="Check1">
+              <label class="form-check-label" for="Check1">Remember Me</label><br>
+            </div>
+            <button type="submit" onclick="return validation()" class="btn btn-danger col-md-12">Login</button><br><br><br>
             
             <center><label>Don't Have An Account?&nbsp;&nbsp;&nbsp;<a href="{% url 'donorsignup' %}" style="text-decoration: none; color: red;">Sign Up</a></label><br>
             <a href="{% url 'forgot' %}" style="text-decoration: none; color: red;">Forgot Password?</a></center><br><br>
-        </form>
-      </div>
-    </div>
+         </form>
+       </div>
+     </div>
+   </div>
   </div>
 
    <script>
