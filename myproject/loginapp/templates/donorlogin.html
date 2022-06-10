@@ -40,25 +40,26 @@
 <body>
   <div class="container-fluid">
     <div class="row">
-      <div class="col-xs-1 col-lg-1"></div>
-          <div class="col-xs-4 col-lg-4">
-            <div class="container1">
-              <img src="{% static 'images/blood.png' %}" width="330px" height="250px" style="border-top-left-radius: 10px; border-top-right-radius: 10px; margin-left: 5px;">
-              <img src="{% static 'images/heart.png' %}" width="330px" height="320px" style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; margin-left: 5px;">
-            </div>
+      <div class="col-xs-1 col-lg-1">
+      </div>
+        <div class="col-xs-4 col-lg-4">
+          <div class="container1">
+            <img src="{% static 'images/blood.png' %}" width="330px" height="250px" style="border-top-left-radius: 10px; border-top-right-radius: 10px; margin-left: 5px;">
+            <img src="{% static 'images/heart.png' %}" width="330px" height="320px" style="border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; margin-left: 5px;">
           </div>
+        </div>
       <div class="col-xs-5 col-lg-5">
         <div class="container2">
           <form method="post">
             <center><h1>LOGIN</h1></center>
             <div class="form-group">
               <label for="InputEmail1">Email Address</label>
-              <center></center><input type="email" class="form-control" id="emailid" aria-describedby="email" placeholder="Email" class="bi bi-envelope-fill">
+              <center></center><input type="email" class="form-control" id="emailid" aria-describedby="email" placeholder="Email" class="bi bi-envelope-fill" onkeyup="emailvalid()">
               <label id="email_error"></label>
             </div>
             <div class="form-group">
               <label for="InputPassword1">Password</label>
-              <input type="password" class="form-control" id="password" placeholder="Password">
+              <input type="password" class="form-control" id="password" placeholder="Password" onkeyup="passvalid()">
               <label id="password_error"></label>
             </div>
             <div class="form-group form-check">
@@ -118,6 +119,36 @@
       }
 
     }
+
+    function emailvalid(){
+      var email = document.getElementById('emailid').value
+      if(email.value = Number){
+        document.getElementById('emailid').style.borderColor="red"
+        document.getElementById('email_error').innerHTML="** Please Enter A Valid Email Id **"
+        document.getElementById('email_error').style.color="red"
+      }
+
+      else{
+        document.getElementById('emailid').style.borderColor="black"
+        document.getElementById('email_error').style.display="none"
+      }
+    }
+
+    function passvalid(){
+       var password = document.getElementById('password').value
+       if(password.length <= 8){
+         document.getElementById('password').style.borderColor="red"
+         document.getElementById('password_error').innerHTML="** Password Must Contain 8 Characters **"
+         document.getElementById('password_error').style.color="red"
+         document.getElementById('password_error').style.display="block"
+       }
+
+       else{
+         document.getElementById('password').style.borderColor="black"
+         document.getElementById('password_error').style.display="none"
+       }
+    }
+
 
 
   </script>
