@@ -48,7 +48,7 @@
                         <div class="form-row">
                           <div class="form-group col-md-12">
                                 <label for="inputHospitalName">Hospital Name</label>
-                                <input type="text" class="form-control" id="hospital" placeholder="Hospital Name">
+                                <input type="text" class="form-control" id="hospital" placeholder="Hospital Name" onkeyup="hospitalvalid()">
                                 <label id="hospital_error"></label>
                             </div>
                         </div>
@@ -60,7 +60,7 @@
                             </div>
                                 <div class="form-group col-md-12">
                                       <label for="inputHospitalLocation">Location</label>
-                                      <input type="text" class="form-control" id="location" placeholder="Location">
+                                      <input type="text" class="form-control" id="location" placeholder="Location" onkeyup="locationvalid()">
                                       <label id="location_error"></label>
                                 </div>
                                 <div class="form-row">
@@ -106,7 +106,7 @@
                                  </div> 
                                  <div class="form-group col-md-4">
                                    <label for="inputPin">Pin Code</label>
-                                   <input type="number" class="form-control" id="pincode" placeholder="Pin Code">
+                                   <input type="text" class="form-control" id="pincode" placeholder="Pincode" onkeyup="pincodevalid()">
                                    <label id="pincode_error"></label>
                                </div>
                            </div>
@@ -114,24 +114,24 @@
                          <div class="form-row">
                              <div class="form-group col-md-6">
                                  <label for="inputPhoneNumber">Mobile Number</label>
-                                 <input type="text" class="form-control" id="phone" placeholder="Mobile Number">
+                                 <input type="text" class="form-control" id="phone" placeholder="Mobile Number" onkeyup="phonevalid()">
                                  <label id="phone_error"></label>
                              </div>
                              <div class="form-group col-md-6">
                                  <label for="inputEmail">Email Address</label>
-                                 <input type="text" class="form-control" id="emailid" placeholder="Email">
+                                 <input type="text" class="form-control" id="emailid" placeholder="Email Id" onkeyup="emailvalid()">
                                  <label id="email_error"></label>
                              </div>
                          </div>
                            <div class="form-row">
                                 <div class="form-group col-md-6">
                                      <label for="inputPassword">Password</label>
-                                     <input type="password" class="form-control" id="password" placeholder="Password">
+                                     <input type="password" class="form-control" id="password" placeholder="Password" onkeyup="passwordvalid()">
                                      <label id="password_error"></label>
                                 </div>
                                 <div class="form-group col-md-6">
                                      <label for="inputConfirmPassword">Confirm Password</label>
-                                     <input type="password" class="form-control" id="cpassword" placeholder="Confirm Password">
+                                     <input type="password" class="form-control" id="cpassword" placeholder="Confirm Password" onkeyup="confirmpassvalid()">
                                      <label id="cpassword_error"></label>
                                 </div>
                             </div>
@@ -330,10 +330,10 @@
             var status = 0
         }
 
-        else{
+        if(auth.checked){
             document.getElementById('auth').style.borderColor="black"
             document.getElementById('auth_error').style.display="none"
-            var status = 1
+            var status = 0
         }
 
 
@@ -344,8 +344,176 @@
         if(status == 1){
             return true
         }
-
      }
+
+     function hospitalvalid(){
+            var hospital = document.getElementById('hospital').value
+
+        if(isNaN(hospital)){
+          document.getElementById('hospital').style.borderColor="black"
+          document.getElementById('hospital_error').style.display="none" 
+        }
+       
+       else{
+          document.getElementById('hospital').style.borderColor="red"
+          document.getElementById('hospital_error').innerHTML="** Please Enter A Valid Hospital Name **"
+          document.getElementById('hospital_error').style.color="red"
+          document.getElementById('hospital_error').style.display="block"
+        }
+
+                
+        }
+
+       function locationvalid(){
+        var location = document.getElementById('location').value
+        if(isNaN(location)){
+          document.getElementById('location').style.borderColor="black"
+          document.getElementById('location_error').style.display="none" 
+        }
+       
+       else{
+          document.getElementById('location').style.borderColor="red"
+          document.getElementById('location_error').innerHTML="** Please Enter A Valid Location **"
+          document.getElementById('location_error').style.color="red"
+          document.getElementById('location_error').style.display="block"
+        }
+       }
+
+       function pincodevalid(){
+        var pin = document.getElementById('pincode').value
+        if(isNaN(pin)){
+            document.getElementById('pincode').style.borderColor="red"
+            document.getElementById('pincode_error').innerHTML="** Please Enter A Valid Pincode **"
+            document.getElementById('pincode_error').style.color="red"
+            document.getElementById('pincode_error').style.display="block"
+        }
+
+        if(pin.length <= 0){
+            document.getElementById('pincode').style.borderColor="red"
+            document.getElementById('pincode_error').innerHTML="** Pincode Must Have 6 Digits **"
+            document.getElementById('pincode_error').style.color="red"
+            document.getElementById('pincode_error').style.display="block"
+        }
+
+        if(pin.length == 6){
+            document.getElementById('pincode').style.borderColor="green"
+            document.getElementById('pincode_error').innerHTML="** You Entered A Perfect Pincode **"
+            document.getElementById('pincode_error').style.color="green"
+            document.getElementById('pincode_error').style.display="block" 
+        }
+
+        if(pin.length == 7){
+            document.getElementById('pincode').style.borderColor="red"
+            document.getElementById('pincode_error').innerHTML="** Pincode Must Have 6 Digits **"
+            document.getElementById('pincode_error').style.color="red"
+            document.getElementById('pincode_error').style.display="block"
+        }
+
+       }
+
+       function phonevalid(){
+        var phone = document.getElementById('phone').value
+        if(isNaN(phone)){
+            document.getElementById('phone').style.borderColor="red"
+            document.getElementById('phone_error').innerHTML="** Please Enter A Valid Mobile Number **"
+            document.getElementById('phone_error').style.color="red"
+            document.getElementById('phone_error').style.display="block"
+        }
+
+        if(phone.length <= 0){
+            document.getElementById('phone').style.borderColor="red"
+            document.getElementById('phone_error').innerHTML="** Mobile Number Must Have 10 Digits **"
+            document.getElementById('phone_error').style.color="red"
+            document.getElementById('phone_error').style.display="block"
+        }
+
+        if(phone.length == 10){
+            document.getElementById('phone').style.borderColor="green"
+            document.getElementById('phone_error').innerHTML="** You Entered A Perfect Mobile Number **"
+            document.getElementById('phone_error').style.color="green"
+            document.getElementById('phone_error').style.display="block" 
+        }
+
+        if(phone.length == 11){
+            document.getElementById('phone').style.borderColor="red"
+            document.getElementById('phone_error').innerHTML="** Mobile Number Must Have 10 Digits **"
+            document.getElementById('phone_error').style.color="red"
+            document.getElementById('phone_error').style.display="block"  
+        }
+
+       }
+
+       function emailvalid(){
+        var email = document.getElementById('emailid').value
+        if(isNaN(email)){
+          document.getElementById('emailid').style.borderColor="black"
+          document.getElementById('email_error').style.display="none" 
+       }
+       
+       else{
+          document.getElementById('emailid').style.borderColor="red"
+          document.getElementById('email_error').innerHTML="** Please Enter A Valid Email Id **"
+          document.getElementById('email_error').style.color="red"
+          document.getElementById('email_error').style.display="block"
+       }
+       }
+
+       function passwordvalid(){
+        var pass = document.getElementById('password').value
+        if(pass.length <= 8){
+           document.getElementById('password').style.borderColor="red"
+           document.getElementById('password_error').innerHTML="** Password Must Have 8 Characters **"
+           document.getElementById('password_error').style.color="red"
+           document.getElementById('password_error').style.display="block" 
+        }
+
+        if(pass.length == 8){
+            document.getElementById('password').style.borderColor="green"
+            document.getElementById('password_error').innerHTML="** You Entered A Perfect Password **"
+            document.getElementById('password_error').style.color="green"
+            document.getElementById('password_error').style.display="block"
+        }
+
+        if(pass.length == 9){
+            document.getElementById('password').style.borderColor="red"
+            document.getElementById('password_error').innerHTML="** Password Must Have 8 Characters **"
+            document.getElementById('password_error').style.color="red"
+            document.getElementById('password_error').style.display="block" 
+        }
+        
+       }
+
+       function confirmpassvalid(){
+        var pass = document.getElementById('password').value
+        var cpass = document.getElementById('cpassword').value
+        if(cpass.length <= 8){
+           document.getElementById('cpassword').style.borderColor="red"
+           document.getElementById('cpassword_error').innerHTML="** Confirm Password Must Have 8 Characters **"
+           document.getElementById('cpassword_error').style.color="red"
+           document.getElementById('cpassword_error').style.display="block" 
+        }
+
+        if(cpass.length == 8){
+            document.getElementById('cpassword').style.borderColor="green"
+            document.getElementById('cpassword_error').innerHTML="** You Entered A Perfect Confirm Password **"
+            document.getElementById('cpassword_error').style.color="green"
+            document.getElementById('cpassword_error').style.display="block"
+        }
+
+        if(cpass.length == 9){
+            document.getElementById('cpassword').style.borderColor="red"
+            document.getElementById('cpassword_error').innerHTML="** Confirm Password Must Have 8 Characters **"
+            document.getElementById('cpassword_error').style.color="red"
+            document.getElementById('cpassword_error').style.display="block" 
+        }
+
+        if(pass != cpass){
+            document.getElementById('cpassword').style.borderColor="red"
+            document.getElementById('cpassword_error').innerHTML="** Password And Confirm Password Must Be Same **"
+            document.getElementById('cpassword_error').style.color="red"
+            document.getElementById('cpassword_error').style.display="block"   
+        }
+       }
  </script>
 
 

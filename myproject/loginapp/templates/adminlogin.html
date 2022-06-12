@@ -125,16 +125,16 @@
      function uservalid(){
        var user = document.getElementById('username').value
 
-       if(user.value = Number){
+       if(isNaN(user)){
+          document.getElementById('username').style.borderColor="black"
+          document.getElementById('user_error').style.display="none" 
+       }
+       
+       else{
           document.getElementById('username').style.borderColor="red"
           document.getElementById('user_error').innerHTML="** Please Enter A Valid Username **"
           document.getElementById('user_error').style.color="red"
           document.getElementById('user_error').style.display="block"
-       }
-       
-       else{
-        document.getElementById('username').style.borderColor="black"
-        document.getElementById('user_error').style.display="none" 
        }
 
      }
@@ -154,6 +154,14 @@
          document.getElementById('password_error').style.color="green"
          document.getElementById('password_error').style.display="block"
        }
+
+       if(pass.length == 9){
+            document.getElementById('password').style.borderColor="red"
+            document.getElementById('password_error').innerHTML="** Password Must Have 8 characters **"
+            document.getElementById('password_error').style.color="red"
+            document.getElementById('password_error').style.display="block" 
+        }
+
      }
 
 

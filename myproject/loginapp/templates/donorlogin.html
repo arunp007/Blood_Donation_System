@@ -124,16 +124,18 @@
 
     function emailvalid(){
       var email = document.getElementById('emailid').value
-      if(email.value = Number){
-        document.getElementById('emailid').style.borderColor="red"
-        document.getElementById('email_error').innerHTML="** Please Enter A Valid Email Id **"
-        document.getElementById('email_error').style.color="red"
-      }
+      if(isNaN(email)){
+          document.getElementById('emailid').style.borderColor="black"
+          document.getElementById('email_error').style.display="none" 
+       }
+       
+       else{
+          document.getElementById('emailid').style.borderColor="red"
+          document.getElementById('email_error').innerHTML="** Please Enter A Valid Email Id **"
+          document.getElementById('email_error').style.color="red"
+          document.getElementById('email_error').style.display="block"
+       }
 
-      else{
-        document.getElementById('emailid').style.borderColor="black"
-        document.getElementById('email_error').style.display="none"
-      }
     }
 
     function passvalid(){
@@ -151,6 +153,14 @@
          document.getElementById('password_error').style.color="green"
          document.getElementById('password_error').style.display="block"
        }
+
+       if(pass.length == 9){
+            document.getElementById('password').style.borderColor="red"
+            document.getElementById('password_error').innerHTML="** Password Must Have 8 characters **"
+            document.getElementById('password_error').style.color="red"
+            document.getElementById('password_error').style.display="block" 
+        }
+
 
     }
 

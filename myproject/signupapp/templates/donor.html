@@ -305,19 +305,19 @@
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="inputEmail">Email Address</label>
-                                <input type="email" class="form-control" id="emailid" placeholder="Email">
+                                <input type="email" class="form-control" id="emailid" placeholder="Email Id" onkeyup="emailvalid()">
                                 <label id="email_error"></label>
                             </div>
                         </div>
                           <div class="form-row">
                                <div class="form-group col-md-6">
                                     <label for="inputPassword">Password</label>
-                                    <input type="password" class="form-control" id="password" placeholder="Password">
+                                    <input type="password" class="form-control" id="password" placeholder="Password" onkeyup="passwordvalid()">
                                     <label id="password_error"></label>
                                </div>
                                <div class="form-group col-md-6">
                                     <label for="inputConfirmPassword">Confirm Password</label>
-                                    <input type="password" class="form-control" id="cpassword" placeholder="Confirm Password">
+                                    <input type="password" class="form-control" id="cpassword" placeholder="Confirm Password" onkeyup="confirmpassvalid()">
                                     <label id="cpassword_error"></label>
                                </div>
                             </div>
@@ -592,10 +592,10 @@
                 var status = 0
             }
 
-            else{
+            if(auth.checked){
                 document.getElementById('auth').style.borderColor="black"
                 document.getElementById('auth_error').style.display="none"
-                var status = 1
+                var status = 0
             }
 
             if(status == 0){
@@ -611,32 +611,33 @@
         function firstnamevalid(){
             var fname = document.getElementById('firstname').value
 
-            if(fname.value = Number){
-                document.getElementById('firstname').style.borderColor="red"
-                document.getElementById('first_error').innerHTML="** Please Enter A Valid First Name **"
-                document.getElementById('first_error').style.color="red"
-                
-            }
-            
-            else{
-                document.getElementById('firstname').style.borderColor="black"
-                document.getElementById('first_error').style.display="none"
-            }
+        if(isNaN(fname)){
+          document.getElementById('firstname').style.borderColor="black"
+          document.getElementById('first_error').style.display="none" 
+        }
+       
+       else{
+          document.getElementById('firstname').style.borderColor="red"
+          document.getElementById('first_error').innerHTML="** Please Enter A Valid Email Id **"
+          document.getElementById('first_error').style.color="red"
+          document.getElementById('first_error').style.display="block"
+        }
+
                 
         }
 
        function lastnamevalid(){
         var lname = document.getElementById('lastname').value
-        if(lname.value = Number){
-            document.getElementById('lastname').style.borderColor="red"
-            document.getElementById('last_error').innerHTML="** Please Enter A Valid Last Name **"
-            document.getElementById('last_error').style.color="red"
-            document.getElementById('last_error').style.display="block"
+        if(isNaN(lname)){
+          document.getElementById('lastname').style.borderColor="black"
+          document.getElementById('last_error').style.display="none" 
         }
-        
-        else{
-            document.getElementById('lastname').style.borderColor="black"
-            document.getElementById('last_error').style.display="none"
+       
+       else{
+          document.getElementById('lastname').style.borderColor="red"
+          document.getElementById('last_error').innerHTML="** Please Enter A Valid Email Id **"
+          document.getElementById('last_error').style.color="red"
+          document.getElementById('last_error').style.display="block"
         }
        }
 
@@ -660,6 +661,13 @@
             document.getElementById('aadhaar').style.borderColor="green"
             document.getElementById('aadhaar_error').innerHTML="** You Entered A Perfect Aadhaar Number **"
             document.getElementById('aadhaar_error').style.color="green"
+            document.getElementById('aadhaar_error').style.display="block"
+        }
+
+        if(aadhaar.length == 13){
+            document.getElementById('aadhaar').style.borderColor="red"
+            document.getElementById('aadhaar_error').innerHTML="** Aadhaar Number Must Have 12 Digits **"
+            document.getElementById('aadhaar_error').style.color="red"
             document.getElementById('aadhaar_error').style.display="block"
         }
         
@@ -688,6 +696,13 @@
             document.getElementById('pincode_error').style.display="block" 
         }
 
+        if(pin.length == 7){
+            document.getElementById('pincode').style.borderColor="red"
+            document.getElementById('pincode_error').innerHTML="** Pincode Must Have 6 Digits **"
+            document.getElementById('pincode_error').style.color="red"
+            document.getElementById('pincode_error').style.display="block"
+        }
+
        }
 
        function phonevalid(){
@@ -712,8 +727,86 @@
             document.getElementById('phone_error').style.color="green"
             document.getElementById('phone_error').style.display="block" 
         }
-       
 
+        if(phone.length == 11){
+            document.getElementById('phonenumber').style.borderColor="red"
+            document.getElementById('phone_error').innerHTML="** Mobile Number Must Have 10 Digits **"
+            document.getElementById('phone_error').style.color="red"
+            document.getElementById('phone_error').style.display="block"  
+        }
+
+       }
+
+       function emailvalid(){
+        var email = document.getElementById('emailid').value
+        if(isNaN(email)){
+          document.getElementById('emailid').style.borderColor="black"
+          document.getElementById('email_error').style.display="none" 
+       }
+       
+       else{
+          document.getElementById('emailid').style.borderColor="red"
+          document.getElementById('email_error').innerHTML="** Please Enter A Valid Email Id **"
+          document.getElementById('email_error').style.color="red"
+          document.getElementById('email_error').style.display="block"
+       }
+       }
+
+       function passwordvalid(){
+        var pass = document.getElementById('password').value
+        if(pass.length <= 8){
+           document.getElementById('password').style.borderColor="red"
+           document.getElementById('password_error').innerHTML="** Password Must Have 8 Characters **"
+           document.getElementById('password_error').style.color="red"
+           document.getElementById('password_error').style.display="block" 
+        }
+
+        if(pass.length == 8){
+            document.getElementById('password').style.borderColor="green"
+            document.getElementById('password_error').innerHTML="** You Entered A Perfect Password **"
+            document.getElementById('password_error').style.color="green"
+            document.getElementById('password_error').style.display="block"
+        }
+
+        if(pass.length == 9){
+            document.getElementById('password').style.borderColor="red"
+            document.getElementById('password_error').innerHTML="** Password Must Have 8 Characters **"
+            document.getElementById('password_error').style.color="red"
+            document.getElementById('password_error').style.display="block" 
+        }
+        
+       }
+
+       function confirmpassvalid(){
+        var pass = document.getElementById('password').value
+        var cpass = document.getElementById('cpassword').value
+        if(cpass.length <= 8){
+           document.getElementById('cpassword').style.borderColor="red"
+           document.getElementById('cpassword_error').innerHTML="** Confirm Password Must Have 8 Characters **"
+           document.getElementById('cpassword_error').style.color="red"
+           document.getElementById('cpassword_error').style.display="block" 
+        }
+
+        if(cpass.length == 8){
+            document.getElementById('cpassword').style.borderColor="green"
+            document.getElementById('cpassword_error').innerHTML="** You Entered A Perfect Confirm Password **"
+            document.getElementById('cpassword_error').style.color="green"
+            document.getElementById('cpassword_error').style.display="block"
+        }
+
+        if(cpass.length == 9){
+            document.getElementById('cpassword').style.borderColor="red"
+            document.getElementById('cpassword_error').innerHTML="** Confirm Password Must Have 8 Characters **"
+            document.getElementById('cpassword_error').style.color="red"
+            document.getElementById('cpassword_error').style.display="block" 
+        }
+
+        if(pass != cpass){
+            document.getElementById('cpassword').style.borderColor="red"
+            document.getElementById('cpassword_error').innerHTML="** Password And Confirm Password Must Be Same **"
+            document.getElementById('cpassword_error').style.color="red"
+            document.getElementById('cpassword_error').style.display="block"   
+        }
        }
     </script>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
