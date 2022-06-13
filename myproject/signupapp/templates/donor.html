@@ -41,25 +41,25 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-7 col-lg-7">
-                <form> 
+                <form method="post"> 
                     <h1>Donor Registration</h1>
                     <hr color="red">
                         <div class="form-row">
                           <div class="form-group col-md-6">
                                 <label for="inputFirstName">First Name</label>
-                                <input type="text" class="form-control" id="firstname" placeholder="First Name" onkeyup="firstnamevalid()">
+                                <input type="text" name="firstname" class="form-control" id="firstname" placeholder="First Name" onkeyup="firstnamevalid()">
                                 <label id="first_error"></label>
                           </div>
                           <div class="form-group col-md-6">
                                 <label for="inputLastName">Last Name</label>
-                                <input type="text" class="form-control" id="lastname" placeholder="Last Name" onkeyup="lastnamevalid()">
+                                <input type="text" name="lastname" class="form-control" id="lastname" placeholder="Last Name" onkeyup="lastnamevalid()">
                                 <label id="last_error"></label>
                           </div>
                         </div>
                         <div class="form-row">
                           <div class="form-group col-md-5">
                                 <label for="inputBloodGroup">Blood Group</label>
-                                <select id="bloodgroup" class="form-control">
+                                <select id="bloodgroup" name="bloodgroup" class="form-control">
                                     <option  value="" value="">Choose...</option>
                                     <option>A+</option>
                                     <option>A-</option>
@@ -75,13 +75,13 @@
                            </div>
                             <div class="form-group col-md-7">
                                 <label for="inputAadhaar">Aadhaar Card Number</label>
-                                <input type="text" class="form-control" id="aadhaar" placeholder="Aadhaar Card Number" onkeyup="aadhaarvalid()">
+                                <input type="text" name="aadhaar" class="form-control" id="aadhaar" placeholder="Aadhaar Card Number" onkeyup="aadhaarvalid()">
                                 <label id="aadhaar_error"></label>
                             </div>
                         </div>
                         <div class="form-row">
                            <div class="form-group col-md-6">
-                              <input type="file" name="" id="file">
+                              <input type="file" name="image" id="file">
                               <label id="file_error"></label>
                             </div>
                         </div>
@@ -89,7 +89,7 @@
                           <div class="form-inline">
                                &nbsp;<label for="dob">Date Of Birth</label>
                             </div>&nbsp;
-                               <div class="form-row">
+                               <div class="form-row" name="dateofbirth">
                                     <div class="form-group col-md-4">
                                       <label for="inputDay">Day</label>
                                       <select id="day" class="form-control">
@@ -231,7 +231,7 @@
                             
                         </div>
                         <div class="form-row">
-                           <div class="form-group">
+                           <div class="form-group" name="gender">
                               <label for="gender">Gender</label>
                               <div class="custom-control custom-radio custom-control-inline">
                                   <input type="radio" id="customRadioInline1" name="customRadioInline" class="custom-control-input">
@@ -251,12 +251,12 @@
                         <div class="form-row">
                            <div class="form-group col-md-12">
                                 <label for="inputAddress">Permanent Address</label>
-                                <textarea class="form-control" id="permanentaddress" cols="10" rows="2" placeholder="Permanent Address"></textarea>
+                                <textarea class="form-control" id="permanentaddress" name="address" cols="10" rows="2" placeholder="Permanent Address"></textarea>
                                 <label id="address_error"></label>
                            </div>
                         
                            <div class="form-row">
-                              <div class="form-group col-md-4">
+                              <div class="form-group col-md-4" name="state">
                                  <label for="inputState">State</label>
                                  <select id="state" class="form-control">
                                        <option value="" value="">Choose...</option>
@@ -269,7 +269,7 @@
                                     <label id="state_error"></label>
                                 </div> 
 
-                               <div class="form-group col-md-4">
+                               <div class="form-group col-md-4" name="district">
                                   <label for="inputDistrict">District</label>
                                   <select id="district" class="form-control">
                                         <option value="" value="">Choose...</option>
@@ -292,7 +292,7 @@
                                 </div> 
                                 <div class="form-group col-md-4">
                                   <label for="inputPin">Pin Code</label>
-                                  <input type="text" class="form-control" id="pincode" placeholder="Pincode" onkeyup="pincodevalid()">
+                                  <input type="text" class="form-control" name="pincode" id="pincode" placeholder="Pincode" onkeyup="pincodevalid()">
                                   <label id="pincode_error"></label>
                               </div>
                           </div>
@@ -300,24 +300,24 @@
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="inputPhoneNumber">Mobile Number</label>
-                                <input type="text" class="form-control" id="phonenumber" placeholder="Mobile Number" onkeyup="phonevalid()">
+                                <input type="text" class="form-control" name="phone" id="phonenumber" placeholder="Mobile Number" onkeyup="phonevalid()">
                                 <label id="phone_error"></label>
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="inputEmail">Email Address</label>
-                                <input type="email" class="form-control" id="emailid" placeholder="Email Id" onkeyup="emailvalid()">
+                                <input type="email" class="form-control" name="email" id="emailid" placeholder="Email Id" onkeyup="emailvalid()">
                                 <label id="email_error"></label>
                             </div>
                         </div>
                           <div class="form-row">
                                <div class="form-group col-md-6">
                                     <label for="inputPassword">Password</label>
-                                    <input type="password" class="form-control" id="password" placeholder="Password" onkeyup="passwordvalid()">
+                                    <input type="password" class="form-control" name="password" id="password" placeholder="Password" onkeyup="passwordvalid()">
                                     <label id="password_error"></label>
                                </div>
                                <div class="form-group col-md-6">
                                     <label for="inputConfirmPassword">Confirm Password</label>
-                                    <input type="password" class="form-control" id="cpassword" placeholder="Confirm Password" onkeyup="confirmpassvalid()">
+                                    <input type="password" class="form-control" name="cpassword" id="cpassword" placeholder="Confirm Password" onkeyup="confirmpassvalid()">
                                     <label id="cpassword_error"></label>
                                </div>
                             </div>

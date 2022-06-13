@@ -49,7 +49,7 @@
        .footer1{
             background-color: 	#323949;
             color: white;
-            height: 300px;
+            height: 320px;
             text-align: center;
         }
         
@@ -111,7 +111,6 @@
                    Create
                   </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: grey;">
-                    <a class="dropdown-item" href="{% url 'hospitalbloodrequest' %}">Blood Request</a>
                     <a class="dropdown-item" href="{% url 'hospitalcamp' %}">Camps</a>
                 </li>
                 <li class="nav-item dropdown">
@@ -119,17 +118,8 @@
                    View
                   </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: grey;">
-                    <a class="dropdown-item" href="#">Camps</a>
-                    <a class="dropdown-item" href="#">Donors</a>
-                    <a class="dropdown-item" href="#">Recipients</a>
-                </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
-                   Urgent
-                  </a>
-                  <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: grey;">
-                    <a class="dropdown-item" href="#">Call Admin</a>
-                    <a class="dropdown-item" href="{% url 'hospitalurgent' %}">Blood Request</a>
+                    <a class="dropdown-item" href="{% url 'camptable' %}">Camps</a>
+                    <a class="dropdown-item" href="{% url 'bloodrequest' %}">Blood Requests</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="{% url 'hospital_search' %}">Search</a>
@@ -144,50 +134,51 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-7 col-lg-7">
-                <form action="">
+                <form method="post">
+                    {% csrf_token %} 
                     <h1 style="font-size: 45px; font-family:Verdana; font-weight:bolder; margin-bottom: 50px; text-align: center;">Blood Donation Camp</h1>
                     <div class="form-row">
                         <div class="col-md-6">
-                            <label for="inputNameOfHospital">Name Of Organization/Camp</label>
-                            <input type="text" class="form-control" id="organization" placeholder="Name Of Organization">
+                            <label for="inputNameOfOrganization">Name Of Organization/Camp</label>
+                            <input type="text" name="camp" class="form-control" id="organization" placeholder="Name Of Organization" onkeyup="campvalid()">
                             <label id="organization_error"></label>
                         </div>
                         <div class="col-md-6">
                             <label for="inputDate">When Would You Like To Organize A Camp</label>
-                            <input type="datetime-local" id="datetime" class="form-control">
+                            <input type="datetime-local" name="date" id="datetime" class="form-control">
                             <label id="datetime_error"></label>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputAddress">Permanent Address</label>
-                            <input type="text" class="form-control" id="address" placeholder="Permanent Address">
+                            <input type="text" class="form-control" name="address" id="address" placeholder="Permanent Address" onkeyup="addressvalid()">
                             <label id="address_error"></label>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputState">State</label>
-                            <input type="text" class="form-control" id="state" placeholder="State">
+                            <input type="text" class="form-control" name="state" id="state" placeholder="State" onkeyup="statevalid()">
                             <label id="state_error"></label>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputDistrict">District</label>
-                            <input type="text" class="form-control" id="district" placeholder="District">
+                            <input type="text" class="form-control" name="district" id="district" placeholder="District" onkeyup="districtvalid()">
                             <label id="district_error"></label>
                         </div>
 
                         <div class="form-group col-md-6">
                             <label for="inputName">Name</label>
-                            <input type="text" class="form-control" id="name" placeholder="Name">
+                            <input type="text" class="form-control" name="name" id="name" placeholder="Name" onkeyup="namevalid()">
                             <label id="name_error"></label>
                         </div>
  
                         <div class="form-group col-md-6">
                             <label for="inputContact">Contact Number</label>
-                            <input type="text" class="form-control" id="phone" placeholder="Contact Number">
+                            <input type="text" class="form-control" name="phone" id="phone" placeholder="Contact Number" onkeyup="phonevalid()">
                             <label id="phone_error"></label>
                         </div>
 
                         <div class="form-group col-md-6">
                             <label for="inputPostalCode">Email Id</label>
-                            <input type="text" class="form-control" id="emailid" placeholder="Email Id">
+                            <input type="text" class="form-control" name="email" id="emailid" placeholder="Email Id" onkeyup="emailvalid()">
                             <label id="email_error"></label>
                         </div>
 
@@ -206,7 +197,7 @@
     <div class="container-fluid1">
         <div class="col-xs-12 col-lg-12">
             <div class="footer1">
-                <a href=""><label class="label">Terms And Conditions</label></a><a href="{% url 'about' %}"><label class="label">About Us</label></a><a href="{% url 'contact' %}"><label class="label">Contact Us</label></a><a href="{% url 'donorlogin' %}"><label class="label">Donor Login</label></a><br>
+                <a href=""><label class="label">Terms And Conditions</label></a><a href="{% url 'about' %}"><label class="label">About Us</label></a><a href="{% url 'contact' %}"><label class="label">Contact Us</label></a><br>
                 <a href=""><label class="label">©Blood Donation System</label></a> <a href=""><label class="label">Designed And Developed By Arun Pacheeri</label></a>
             </div>
         </div>
@@ -344,6 +335,128 @@
                 return true
             }
             
+        }
+
+        function campvalid(){
+            var camp = document.getElementById('organization').value
+            if(isNaN(camp)){
+                document.getElementById('organization').style.borderColor="black"
+                document.getElementById('organization_error').style.display="none"
+            }
+
+            else{
+                document.getElementById('organization').style.borderColor="red"
+                document.getElementById('organization_error').innerHTML="** Please Enter A Valid Camp Name **"
+                document.getElementById('organization_error').style.color="red"
+                document.getElementById('organization_error').style.display="block"
+            }
+        }
+
+        function addressvalid(){
+            var address = document.getElementById('address').value
+            if(isNaN(address)){
+                document.getElementById('address').style.borderColor="black"
+                document.getElementById('address_error').style.display="none"
+            }
+
+            else{
+                document.getElementById('address').style.borderColor="red"
+                document.getElementById('address_error').innerHTML="** Please Enter A Valid Address **"
+                document.getElementById('address_error').style.color="red"
+                document.getElementById('address_error').style.display="block"
+            }
+        }
+
+        function statevalid(){
+            var state = document.getElementById('state').value
+            if(isNaN(state)){
+                document.getElementById('state').style.borderColor="black"
+                document.getElementById('state_error').style.display="none"
+            }
+
+            else{
+                document.getElementById('state').style.borderColor="red"
+                document.getElementById('state_error').innerHTML="** Please Enter A Valid State **"
+                document.getElementById('state_error').style.color="red"
+                document.getElementById('state_error').style.display="block"
+            }
+        }
+
+        function districtvalid(){
+            var district = document.getElementById('district').value
+            if(isNaN(district)){
+                document.getElementById('district').style.borderColor="black"
+                document.getElementById('district_error').style.display="none"
+            }
+
+            else{
+                document.getElementById('district').style.borderColor="red"
+                document.getElementById('district_error').innerHTML="** Please Enter A Valid District **"
+                document.getElementById('district_error').style.color="red"
+                document.getElementById('district_error').style.display="block"
+            }
+        }
+
+        function namevalid(){
+            var name = document.getElementById('name').value
+            if(isNaN(name)){
+                document.getElementById('name').style.borderColor="black"
+                document.getElementById('name_error').style.display="none"
+            }
+
+            else{
+                document.getElementById('name').style.borderColor="red"
+                document.getElementById('name_error').innerHTML="** Please Enter A Valid Name **"
+                document.getElementById('name_error').style.color="red"
+                document.getElementById('name_error').style.display="block"
+            }
+        }
+
+        function phonevalid(){
+            var phone = document.getElementById('phone').value
+            if(isNaN(phone)){
+                document.getElementById('phone').style.borderColor="red"
+                document.getElementById('phone_error').innerHTML="** Please Enter A Valid Mobile Number **"
+                document.getElementById('phone_error').style.color="red"
+                document.getElementById('phone_error').style.display="block"
+            }
+
+            if(phone.length<=0){
+                document.getElementById('phone').style.borderColor="red"
+                document.getElementById('phone_error').innerHTML="** Mobile Number Must Have 10 Digits **"
+                document.getElementById('phone_error').style.color="red"
+                document.getElementById('phone_error').style.display="block"
+            }
+
+            if(phone.length == 10){
+                document.getElementById('phone').style.borderColor="green"
+                document.getElementById('phone_error').innerHTML="** You Entered A Perfect Mobile Number **"
+                document.getElementById('phone_error').style.color="green"
+                document.getElementById('phone_error').style.display="block"
+            }
+
+            if(phone.length == 11){
+                document.getElementById('phone').style.borderColor="red"
+                document.getElementById('phone_error').innerHTML="** Mobile Number Must Have 10 Digits **"
+                document.getElementById('phone_error').style.color="red"
+                document.getElementById('phone_error').style.display="block"
+            }
+
+        }
+
+        function emailvalid(){
+            var email = document.getElementById('emailid').value
+            if(isNaN(email)){
+                document.getElementById('emailid').style.borderColor="black"
+                document.getElementById('email_error').style.display="none"
+            }
+
+            else{
+                document.getElementById('emailid').style.borderColor="red"
+                document.getElementById('email_error').innerHTML="** Please Enter A Valid Email Id **"
+                document.getElementById('email_error').style.color="red"
+                document.getElementById('email_error').style.display="block"
+            }
         }
     </script>
 

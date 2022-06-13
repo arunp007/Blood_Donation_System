@@ -65,7 +65,7 @@
       .footer1{
         background-color: 	#323949;
         color: white;
-        height: 300px;
+        height: 320px;
         text-align: center;
       }
       .container-fluid1{
@@ -134,7 +134,7 @@
                View
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: grey;">
-                <a class="dropdown-item" href="#">Camps</a>
+                <a class="dropdown-item" href="{% url 'camptable' %}">Camps</a>
                 <a class="dropdown-item" href="#">Donors</a>
             </li>
             <li class="nav-item dropdown">
@@ -180,7 +180,7 @@
     <div class="container-fluid1">
       <div class="col-xs-12 col-lg-12">
         <div class="footer1">
-          <a href=""><label for="">Terms And Conditions</label></a><a href="{% url 'about' %}"><label for="">About Us</label></a><a href="{% url 'contact' %}"><label for="">Contact Us</label></a><a href="{% url 'donorlogin' %}"><label for="">Donor Login</label></a><br>
+          <a href=""><label for="">Terms And Conditions</label></a><a href="{% url 'about' %}"><label for="">About Us</label></a><a href="{% url 'contact' %}"><label for="">Contact Us</label></a><br>
           <a href=""><label>©Blood Donation System</label></a> <a href=""><label>Designed And Developed By Arun Pacheeri</label></a>
         </div>
       </div>

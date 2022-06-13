@@ -273,15 +273,15 @@
                 <a class="dropdown-item" href="#">Recipients</a>
                 <a class="dropdown-item" href="#">Hospitals</a>
                 <a class="dropdown-item" href="#">Recipients</a>
-                <a class="dropdown-item" href="#">Blood Requests</a>
-                <a class="dropdown-item" href="#">Camps</a>
+                <a class="dropdown-item" href="{% url 'bloodrequest' %}">Blood Requests</a>
+                <a class="dropdown-item" href="{% url 'camptable' %}">Camps</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
                Urgent
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: grey;">
-                <a class="dropdown-item" href="">Blood Requests</a>
+                <a class="dropdown-item" href="{% url 'urgentblood' %}">Blood Requests</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{% url  'admin_notification' %}">Notification</a>
@@ -315,7 +315,7 @@
           <label for="" style="margin-left: 250px;font-size: 30px;">10</label><br>
           <label for="" style="margin-left: 100px;padding-bottom: 10px;">Blood Donation Camps</label>
           <div class="textarea2">
-            <a href="" class="link" style="text-decoration: none;">View Details</a>
+            <a href="{% url 'camptable' %}" class="link" style="text-decoration: none;">View Details</a>
             <img src="{% static 'images/left.png' %}" style="width:40px; margin-left: 130px;">
           </div>
        </div>
@@ -339,7 +339,7 @@
           <label for="" style="margin-left: 250px;font-size: 30px;">2</label><br>
           <label for="" style="margin-left: 180px;padding-bottom: 10px;">Blood Request</label>
           <div class="textarea4">
-            <a href="" class="link" style="text-decoration: none;">View Details</a>
+            <a href="{% url 'bloodrequest' %}" class="link" style="text-decoration: none;">View Details</a>
             <img src="{% static 'images/left.png' %}" style="width:40px; margin-left: 130px;">
           </div>
        </div>
@@ -351,7 +351,7 @@
           <label for="" style="margin-left: 250px;font-size: 30px;">4</label><br>
           <label for="" style="margin-left: 170px;padding-bottom: 10px;">Urgent Request</label>
           <div class="textarea5">
-            <a href="" class="link" style="text-decoration: none;">View Details</a>
+            <a href="{% url 'urgentblood' %}" class="link" style="text-decoration: none;">View Details</a>
             <img src="{% static 'images/left.png' %}" style="width:40px; margin-left: 130px;">
           </div>
        </div>

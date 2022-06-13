@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from.models import Blood
+from.models import *
 
 def recipient(request):
     return render(request,'recipientpage.html')
@@ -17,11 +17,25 @@ def recipientbloodrequest(request):
         details.save()
     return render(request, 'recipient_bloodrequest.html')
 
+def bloodrequest(request):
+    bloodrequest = Blood.objects.all()
+    return render(request, 'bloodrequest.html', {'details': bloodrequest})
+
 def recipient_notification(request):
-    infodetails = Blood.objects.all()
-    return render(request, 'recipient_notification.html',{'info': infodetails})
+    return render(request, 'recipient_notification.html')
 
 def recipienturgent(request):
+    if request.method == 'POST':
+        name = request.POST['name']
+        blood = request.POST['bloodgroup']
+        phone = request.POST['phone']
+        location = request.POST['location']
+        blooddetails = Urgent(name=name,blood=blood,phone=phone,location=location)
+        blooddetails.save()
     return render(request, 'recipient_urgent_blood.html')
+
+def urgentblood(request):
+    urgentdetails = Urgent.objects.all()
+    return render(request, 'urgentblood.html', {'urgent': urgentdetails})
 
 

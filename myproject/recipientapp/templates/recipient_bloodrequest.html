@@ -39,7 +39,7 @@
         .footer1{
         background-color: 	#323949;
         color: white;
-        height: 300px;
+        height: 320px;
         text-align: center;
       }
       .container-fluid1{
@@ -107,7 +107,7 @@
                View
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: grey;">
-                <a class="dropdown-item" href="#">Camps</a>
+                <a class="dropdown-item" href="{% url 'camptable' %}">Camps</a>
                 <a class="dropdown-item" href="#">Donors</a>
             </li>
             <li class="nav-item dropdown">
@@ -139,22 +139,22 @@
                         <div class="form-row" style="margin-left: 5px;">
                           <div class="form-group col-md-6">
                                 <label for="inputBloodGroup">Blood Group</label>
-                                <input type="text" class="form-control" name="blood" id="blood" placeholder="Blood Group">
+                                <input type="text" class="form-control" name="blood" id="blood" placeholder="Blood Group" onkeyup="bloodvalid()">
                                 <label id="blood_error"></label>
                           </div>
                             <div class="form-group col-md-6">
                               <label for="inputName">Name</label>
-                              <input type="text" class="form-control" name="name" id="name" placeholder="Name">
+                              <input type="text" class="form-control" name="name" id="name" placeholder="Name" onkeyup="namevalid()">
                               <label id="name_error"></label>
                             </div>
                             <div class="form-group col-md-6">
                               <label for="inputContact">Phone</label>
-                              <input type="text" class="form-control" name="phone" id="phone" placeholder="Mobile Number">
+                              <input type="text" class="form-control" name="phone" id="phone" placeholder="Mobile Number" onkeyup="phonevalid()">
                               <label id="phone_error"></label>
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="inputLocation">Location</label>
-                                <input type="text" class="form-control" name="location" id="location" placeholder="Location">
+                                <input type="text" class="form-control" name="location" id="location" placeholder="Location" onkeyup="locationvalid()">
                                 <label id="location_error"></label>
                             </div>
                             <button class="btn btn-danger col-md-2" type="submit" onclick="return validation()">Enter</button>
@@ -175,7 +175,7 @@
                   <div class="container-fluid1">
                     <div class="col-xs-12 col-lg-12">
                       <div class="footer1">
-                        <a href=""><label class="label">Terms And Conditions</label></a><a href="{% url 'about' %}"><label class="label">About Us</label></a><a href="{% url 'contact' %}"><label class="label">Contact Us</label></a><a href="{% url 'donorlogin' %}"><label class="label">Donor Login</label></a><br>
+                        <a href=""><label class="label">Terms And Conditions</label></a><a href="{% url 'about' %}"><label class="label">About Us</label></a><a href="{% url 'contact' %}"><label class="label">Contact Us</label></a><br>
                         <a href=""><label class="label">©Blood Donation System</label></a> <a href=""><label class="label">Designed And Developed By Arun Pacheeri</label></a>
                       </div>
                     </div>
@@ -252,10 +252,85 @@
         if(status === 0){
           return false
         }
-
-
-
       }
+
+      function bloodvalid(){
+        var blood = document.getElementById('blood').value
+        if(isNaN(blood)){
+          document.getElementById('blood').style.borderColor="black"
+          document.getElementById('blood_error').style.display="none"
+        }
+
+        else{
+          document.getElementById('blood').style.borderColor="red"
+          document.getElementById('blood_error').innerHTML="** Please Enter A Valid Blood Group **"
+          document.getElementById('blood_error').style.color="red"
+          document.getElementById('blood_error').style.display="block"
+        }
+      }
+
+      function namevalid(){
+        var name = document.getElementById('name').value
+        if(isNaN(name)){
+          document.getElementById('name').style.borderColor="black"
+          document.getElementById('name_error').style.display="none"
+        }
+
+        else{
+          document.getElementById('name').style.borderColor="red"
+          document.getElementById('name_error').innerHTML="** Please Enter A Valid Name **"
+          document.getElementById('name_error').style.color="red"
+          document.getElementById('name_error').style.display="block"
+        }
+      }
+
+      
+      function phonevalid(){
+            var phone = document.getElementById('phone').value
+            if(isNaN(phone)){
+                document.getElementById('phone').style.borderColor="red"
+                document.getElementById('phone_error').innerHTML="** Please Enter A Valid Mobile Number **"
+                document.getElementById('phone_error').style.color="red"
+                document.getElementById('phone_error').style.display="block"
+            }
+
+            if(phone.length<=0){
+                document.getElementById('phone').style.borderColor="red"
+                document.getElementById('phone_error').innerHTML="** Mobile Number Must Have 10 Digits **"
+                document.getElementById('phone_error').style.color="red"
+                document.getElementById('phone_error').style.display="block"
+            }
+
+            if(phone.length == 10){
+                document.getElementById('phone').style.borderColor="green"
+                document.getElementById('phone_error').innerHTML="** You Entered A Perfect Mobile Number **"
+                document.getElementById('phone_error').style.color="green"
+                document.getElementById('phone_error').style.display="block"
+            }
+
+            if(phone.length == 11){
+                document.getElementById('phone').style.borderColor="red"
+                document.getElementById('phone_error').innerHTML="** Mobile Number Must Have 10 Digits **"
+                document.getElementById('phone_error').style.color="red"
+                document.getElementById('phone_error').style.display="block"
+            }
+
+        }
+
+        function locationvalid(){
+            var location = document.getElementById('location').value
+            if(isNaN(location)){
+                document.getElementById('location').style.borderColor="black"
+                document.getElementById('location_error').style.display="none"
+            }
+
+            else{
+                document.getElementById('location').style.borderColor="red"
+                document.getElementById('location_error').innerHTML="** Please Enter A Valid Location **"
+                document.getElementById('location_error').style.color="red"
+                document.getElementById('location_error').style.display="block"
+            }
+        }
     </script>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script> 

@@ -612,7 +612,7 @@
       .footer1{
         background-color: 	#323949;
         color: white;
-        height: 300px;
+        height: 320px;
         text-align: center;
       }
       .container-fluid1{
@@ -669,30 +669,13 @@
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
-               Create
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: grey;">
-                <a class="dropdown-item" href="{% url 'donorbloodrequest' %}">Blood Request</a>
-              </div>
-            </li>
-
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
                View
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: grey;">
-                <a class="dropdown-item" href="#">Camps</a>
-                <a class="dropdown-item" href="#">Recipients</a>
+                <a class="dropdown-item" href="{% url 'camptable' %}">Camps</a>
+                <a class="dropdown-item" href="{% url 'bloodrequest' %}">Blood Requests</a>
+                <a class="dropdown-item" href="{% url 'urgentblood' %}">Urgent Blood Requests</a>
               </div>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
-               Urgent
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: grey;">
-                <a class="dropdown-item" href="#">Call Admin</a>
-                <a class="dropdown-item" href="{% url 'donorurgentblood' %}">Blood Request</a>
-             </div>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{% url 'donor_search' %}">Search</a>
@@ -895,7 +878,7 @@
     <div class="container-fluid1">
       <div class="col-xs-12 col-lg-12">
         <div class="footer1">
-          <a href=""><label for="">Terms And Conditions</label></a><a href="{% url 'about' %}"><label for="">About Us</label></a><a href="{% url 'contact' %}"><label for="">Contact Us</label></a><a href="{% url 'donorlogin' %}"><label for="">Donor Login</label></a><br>
+          <a href=""><label for="">Terms And Conditions</label></a><a href="{% url 'about' %}"><label for="">About Us</label></a><a href="{% url 'contact' %}"><label for="">Contact Us</label></a><br>
           <a href=""><label>©Blood Donation System</label></a> <a href=""><label>Designed And Developed By Arun Pacheeri</label></a>
         </div>
       </div>
