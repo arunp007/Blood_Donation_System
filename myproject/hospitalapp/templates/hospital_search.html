@@ -7,115 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Search Page</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-    <style>
-      .container-fluid{
-        background-color: white;
-      }
-
-      a{
-        color: white;
-        font-size: 20px;
-        text-decoration: none;
-      }
-      a:hover{
-        color: red;
-      }
-
-      .btn-warning{
-        color: white;
-        border-radius: 20px;
-      }
-
-      .btn-warning:hover{
-        color: white;
-      }
-
-      .image{
-        width: 300px;
-        height: 300px;
-        margin-top: 30px;
-        margin-bottom: 50px;
-        margin-left: 20px;
-        border-radius: 500px;
-    
-      }
-
-      .head{
-        color: red;
-        font-weight: bolder;
-        font-size: 50px;
-        padding-top: 20px;
-      }
-
-      p{
-        padding-top: 20px;
-        padding-bottom: 20px;
-      }
-
-      .footer1{
-        background-color: 	#323949;
-        color: white;
-        height: 320px;
-        text-align: center;
-      }
-
-      .container-fluid1{
-        background-color: #323949;
-      }
-
-      .label{
-        padding-top: 30px;
-        font-size: 20px;
-        padding-left: 10px;
-        padding-right: 10px;
-      }
-
-      .footer2{
-        background-color: black;
-        color: white;
-        height: 160px;
-        width: 100%;
-        text-align: center;
-      }
-
-      .container-fluid2{
-        background-color: black;
-        
-      }
-
-      .top{
-        position: fixed;
-        top: 70%;
-        transform: translateY(-70%);
-        background-color: red;
-        border-radius: 200px;
-        border: 2px solid black;
-        width: 80px;
-        height: 80px;
-        margin-left: 1200px;
-        
-      }
-
-
-      .topimage{
-        width: 50px;
-        margin-left: 15px;
-        margin-top: 10px;
-      }
-
-      .top:hover{
-        background-color: grey;
-        border-radius: 200px;
-        width: 80px;
-        height: 80px;
-      }
-
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'css/hospital_search.css' %}">
+    <script src="{% static 'javascript/hospital_search.js' %}"></script>
   </head>
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
-    <img src="{% static 'images/donation.png' %}" class="navbar-brand" alt="" width="150px">
-    <a class="navbar-brand" style="font-size: 30px;" href="#">Blood Donation System</a>
+    <img src="{% static 'images/hospital/donation.png' %}" class="navbar-brand" alt="" width="150px">
+    <a class="navbar-brand" style="font-size: 30px;" href="#"><span class="fa fa-heart"> Blood Donation System</span></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -123,35 +22,35 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'hospital_home' %}">Home</a>
+              <a class="nav-link" href="{% url 'hospital_home' %}"><span class="fa fa-home"> Home</span></a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
-               Create
+                <span class="fa fa-plus"> Create</span>
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: grey;">
-                <a class="dropdown-item" href="{% url 'hospitalcamp' %}">Camps</a>
+                <a class="dropdown-item" href="{% url 'hospitalcamp' %}"><span class="fa fa-hospital-o"> Camps</span></a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
-               View
+                <span class="fa fa-eye"> View</span>
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: grey;">
-                <a class="dropdown-item" href="{% url 'camptable' %}">Camps</a>
-                <a class="dropdown-item" href="{% url 'bloodrequest' %}">Blood Requests</a>
+                <a class="dropdown-item" href="{% url 'camptable' %}"><span class="fa fa-hospital-o"> Camps</span></a>
+                <a class="dropdown-item" href="{% url 'bloodrequest' %}"><span class="fa fa-heart"> Blood Requests</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="{% url 'hospital_search' %}">Search</a>
+              <a class="nav-link active" href="{% url 'hospital_search' %}"><span class="fa fa-search"> Search</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'hospitalnotification' %}">Notification</a>
+              <a class="nav-link" href="{% url 'hospitalnotification' %}"><span class="fa fa-bell"> Notification</span></a>
             </li>
         </ul>
-        <button class="btn btn-warning" type="submit"><img src="https://www.iconsdb.com/icons/preview/white/logout-xxl.png" width="30px">&nbsp;Logout</button>
+        <button class="btn btn-warning" type="submit"><span class="fa fa-sign-out">Logout</span></button>
     </div>
   </nav>
             <div class="col-xs-12 col-lg-12" style="margin-top: 30px; border-radius: 30px;">
-              <img src="https://i.ibb.co/tJR61M0/blood.webp" class="image">
+              <img src="{% static 'images/hospital/search.webp' %}" class="image">
               <form action="">
               <div class="form-row" style="margin-left: 5px;">
                 <div class="form-group col-md-3">
@@ -185,7 +84,7 @@
             <div class="col-xs-12 col-lg-12">
              <a href="#top">
              <div class="top">
-                <img src="https://i.ibb.co/k6Mgm79/top.png" class="topimage"></a>
+                <img src="{% static 'images/hospital/top.png' %}" class="topimage"></a>
               </div>
         </div>
       </div>
@@ -198,65 +97,6 @@
         </div>
       </div>
     </div>
-    <script>
-      function validation(){
-        var status = 1
-        var blood = document.getElementById('bloodgroup')
-        var location = document.getElementById('location')
-
-        if(blood.value == ""){
-          document.getElementById('bloodgroup').style.borderColor="red"
-          document.getElementById('blood_error').innerHTML="** Please Select Your Blood Group **"
-          document.getElementById('blood_error').style.color="red"
-          document.getElementById('blood_error').style.display="block"
-          var status = 0
-        }
-
-        else{
-          document.getElementById('bloodgroup').style.borderColor="black"
-          document.getElementById('blood_error').style.display="none"
-          var status = 1
-        }
-
-        if(location.value == ""){
-          document.getElementById('location').style.borderColor="red"
-          document.getElementById('location_error').innerHTML="** Please Select Your Location **"
-          document.getElementById('location_error').style.color="red"
-          document.getElementById('location_error').style.display="block"
-          var status = 0
-        }
-
-        else{
-          document.getElementById('location').style.borderColor="black"
-          document.getElementById('location_error').style.display="none"
-          var status = 1
-        }
-
-        if(status == 1){
-          return true
-        }
-        
-        if(status == 0){
-          return false
-        }
-      }
-
-      function locationvalid(){
-        var location = document.getElementById('location').value
-        if(isNaN(location)){
-          document.getElementById('location').style.borderColor="black"
-          document.getElementById('location_error').style.display="none"
-        }
-
-        else{
-          document.getElementById('location').style.borderColor="red"
-          document.getElementById('location_error').innerHTML="** Please Enter A Valid Location **"
-          document.getElementById('location_error').style.color="red"
-          document.getElementById('location_error').style.display="block"
-        }
-        
-      }
-    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script> 

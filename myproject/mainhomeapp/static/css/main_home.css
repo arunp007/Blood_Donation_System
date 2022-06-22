@@ -1,0 +1,85 @@
+.container-fluid{
+    background-color: white;
+}
+
+a{
+    font-size: 20px;
+    color: white;
+}
+
+
+a:hover{
+    color: red;
+    text-decoration: none;
+}
+
+.head{
+    color: red;
+    font-size: 50px;
+    text-align: center;
+}
+
+.head2{
+  font-size: 30px;
+  text-align: center;
+}
+
+.head3{
+  color: red;
+  font-size: 50px;
+  text-align: center;
+  padding-top: 100px;
+}
+
+.paragraph{
+  font-size: 15px;
+  color: grey;
+  text-align: center;
+}
+
+.grid{
+    background-color: pink;
+    padding-left: 30px;
+    padding-top: 100px;
+    margin-bottom: 100px;
+    border-radius: 15px;
+}
+
+.grid:hover{
+    box-shadow: 0 0 20px gray;
+}
+
+.top{
+  position: fixed;
+  top: 60%;
+  transform: translateY(-60%);
+  padding-left: 1200px;
+}
+
+.container1{
+  background-color: #323949;
+  height: 110px;
+}
+
+.footer1{
+  padding-top: 30px;
+  padding-left: 10px;
+  text-align: center;
+}
+
+.container2{
+  background-color: black;
+  height: 200px;
+}
+
+.footer2{
+  padding-top: 50px;
+  padding-left: 10px;
+  text-align: center;
+
+}
+
+label{
+  margin-left: 30px;
+  font-size: 22px;
+}

@@ -1,0 +1,29 @@
+body{
+    background: linear-gradient(#eecda3,#ef629f);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.header{
+    text-align: center;   
+}
+
+.container2{
+    background: linear-gradient(#141e30,#243b55);
+    margin-top: 100px;
+    margin-bottom: 50px;
+    padding-right: 50px;
+    padding-left: 50px;
+    border-radius: 20px;
+}
+
+h1{
+    color: white;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.container1{
+    margin-top: 100px;
+}

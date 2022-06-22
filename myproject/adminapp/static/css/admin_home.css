@@ -1,0 +1,238 @@
+.container-fluid{
+    margin-bottom: 200px;
+}
+
+.btn-warning{
+    color: white;
+    border-radius: 20px;
+}
+
+.btn-warning:hover{
+    color: white;
+} 
+
+a{
+    font-size: 20px;
+    color: white;
+}
+
+.link{
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+a:hover{
+    color: red;
+}
+
+.container1{
+   background-color: brown;
+   color: white;
+   border-radius: 20px;
+   font-size: 18px;
+   font-weight: bolder;
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.container1:hover{
+   box-shadow: 0 0 20px black;
+}
+
+.donorimage{
+   width: 150px;
+   margin-top: 20px;
+   margin-left: 20px;
+}
+
+.textarea1{
+   background-color:grey;
+   padding-top: 10px;
+   padding-left: 10px;
+   padding-bottom: 10px;
+   border-radius: 20px;
+}
+
+.container2{
+   background-color: yellowgreen;
+   color: white;
+   border-radius: 20px;
+   font-size: 18px;
+   font-weight: bolder;
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.container2:hover{
+   box-shadow: 0 0 20px black;
+}
+
+.campimage{
+   width: 110px;
+   margin-top: 15px;
+   margin-left: 15px;
+}
+
+.textarea2{
+   background-color:grey;
+   padding-top: 10px;
+   padding-left: 10px;
+   padding-bottom: 10px;
+   border-radius: 20px;
+}
+
+.container3{
+   background-color:orange;
+   color: white;
+   margin-bottom: 30px;
+   border-radius: 20px;
+   font-size: 18px;
+   font-weight: bolder;
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.container3:hover{
+   box-shadow: 0 0 20px black;
+}
+
+.hospitalimage{
+   width: 150px;
+   margin-top: 15px;
+   margin-left: 15px;
+}
+
+.textarea3{
+   background-color:grey;
+   padding-top: 10px;
+   padding-left: 10px;
+   padding-bottom: 10px;
+   border-radius: 20px;
+}
+
+.container4{
+   background-color: rosybrown;
+   color: white;
+   margin-top: 30px;
+   border-radius: 20px;
+   font-size: 18px;
+   font-weight: bolder;
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.container4:hover{
+   box-shadow: 0 0 20px black;
+}
+
+.requestimage{
+   width: 145px;
+   margin-top: 20px;
+   margin-left: 20px;
+}
+
+.textarea4{
+   background-color:grey;
+   padding-top: 10px;
+   padding-left: 10px;
+   padding-bottom: 10px;
+   border-radius: 20px;
+}
+
+.container5{
+   background-color: purple;
+   color: white;
+   margin-top: 30px;
+   border-radius: 20px;
+   font-size: 18px;
+   font-weight: bolder;
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.container5:hover{
+   box-shadow: 0 0 20px black;
+}
+
+.urgentimage{
+   width: 165px;
+   margin-top: 20px;
+   margin-left: 20px;
+}
+
+.textarea5{
+   background-color:grey;
+   padding-top: 10px;
+   padding-left: 10px;
+   padding-bottom: 10px;
+   border-radius: 20px;
+}
+
+.container6{
+   background-color: mediumblue;
+   color: white;
+   margin-top: 30px;
+   margin-bottom: 30px;
+   border-radius: 20px;
+   font-size: 18px;
+   font-weight: bolder;
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.container6:hover{
+   box-shadow: 0 0 20px black;
+}
+
+.notificationimage{
+   width: 150px;
+   margin-top: 20px;
+   margin-left: 20px;
+}
+
+.textarea6{
+   background-color:grey;
+   padding-top: 10px;
+   padding-left: 10px;
+   padding-bottom: 10px;
+   border-radius: 20px;
+}
+
+.footer1{
+    background-color: 	#323949;
+    color: white;
+    height: 310px;
+    text-align: center;
+}
+
+.container-fluid1{
+    background-color: #323949;
+}
+  
+label{
+    padding-top: 30px;
+    font-size: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.top{
+    position: fixed;
+    top: 60%;
+    transform: translateY(-60%);
+    background-color: red;
+    border-radius: 200px;
+    border: 2px solid black;
+    width: 80px;
+    height: 80px;
+    margin-left: 1200px;
+}
+
+.topimage{
+    width: 50px;
+    margin-left: 15px;
+    margin-top: 10px;
+}
+
+.top:hover{
+    background-color: grey;
+    border-radius: 200px;
+    width: 80px;
+    height: 80px;
+}

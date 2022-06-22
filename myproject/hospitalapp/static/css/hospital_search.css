@@ -1,0 +1,99 @@
+.container-fluid{
+    background-color: white;
+}
+
+a{
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+a:hover{
+    color: red;
+}
+
+.btn-warning{
+    color: white;
+    border-radius: 20px;
+}
+
+.btn-warning:hover{
+    color: white;
+}
+
+.image{
+    width: 300px;
+    height: 300px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    margin-left: 20px;
+    border-radius: 500px;
+
+}
+
+.head{
+    color: red;
+    font-weight: bolder;
+    font-size: 50px;
+    padding-top: 20px;
+}
+
+p{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.footer1{
+    background-color: 	#323949;
+    color: white;
+    height: 320px;
+    text-align: center;
+}
+
+.container-fluid1{
+    background-color: #323949;
+}
+
+.label{
+    padding-top: 30px;
+    font-size: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.footer2{
+    background-color: black;
+    color: white;
+    height: 160px;
+    width: 100%;
+    text-align: center;
+}
+
+.container-fluid2{
+    background-color: black;
+}
+
+.top{
+    position: fixed;
+    top: 70%;
+    transform: translateY(-70%);
+    background-color: red;
+    border-radius: 200px;
+    border: 2px solid black;
+    width: 80px;
+    height: 80px;
+    margin-left: 1200px;
+}
+
+.topimage{
+    width: 50px;
+    margin-left: 15px;
+    margin-top: 10px;
+}
+
+.top:hover{
+    background-color: grey;
+    border-radius: 200px;
+    width: 80px;
+    height: 80px;
+}

@@ -1,0 +1,81 @@
+.container-fluid{
+    background: linear-gradient(#141e30,#243b55);
+}
+
+a{
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+a:hover{
+    color: red;
+}
+
+.btn-warning{
+    color: white;
+    border-radius: 20px;
+}
+
+.btn-warning:hover{
+    color: white;
+}
+
+form{
+   background-color: white;
+   margin-top: 100px;
+   margin-bottom: 100px;
+   padding-top: 50px;
+   padding-left: 20px;
+   padding-right: 20px;
+   border-radius: 20px;
+}
+
+.btn-dark{
+ margin-top: 50px; 
+ margin-bottom: 100px; 
+}
+
+.footer1{
+    background-color: 	#323949;
+    color: white;
+    height: 320px;
+    text-align: center;
+}
+
+.container-fluid1{
+    background-color: #323949;
+}
+
+.label{
+    padding-top: 30px;
+    font-size: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.top{
+    position: fixed;
+    top: 70%;
+    transform: translateY(-70%);
+    background-color: red;
+    border-radius: 200px;
+    border: 2px solid black;
+    width: 80px;
+    height: 80px;
+    margin-left: 1200px;
+
+}
+
+.topimage{
+    width: 50px;
+    margin-left: 15px;
+    margin-top: 10px;
+}
+
+.top:hover{
+    background-color: grey;
+    border-radius: 200px;
+    width: 80px;
+    height: 80px;
+}

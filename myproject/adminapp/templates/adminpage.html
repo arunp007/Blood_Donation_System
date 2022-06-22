@@ -7,254 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Page</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
- </head>
- <style>
-      .container-fluid{
-        margin-bottom: 200px;
-      }
-
-     .btn-warning{
-        color: white;
-        border-radius: 20px;
-      }
-      .btn-warning:hover{
-        color: white;
-      } 
-
-      a{
-        font-size: 20px;
-        color: white;
-      }
-
-     .link{
-        color: white;
-        text-decoration: none;
-        font-size: 20px;
-        font-weight: bolder;
-     }
-
-     a:hover{
-        color: red;
-     }
-
-     .container1{
-       background-color: brown;
-       color: white;
-       border-radius: 20px;
-       font-size: 18px;
-       font-weight: bolder;
-       font-family: Verdana, Geneva, Tahoma, sans-serif;
-     }
-
-     .container1:hover{
-       box-shadow: 0 0 20px black;
-     }
-
-     .donorimage{
-       width: 150px;
-       margin-top: 20px;
-       margin-left: 20px;
-     }
-
-     .textarea1{
-       background-color:grey;
-       padding-top: 10px;
-       padding-left: 10px;
-       padding-bottom: 10px;
-       border-radius: 20px;
-     }
-
-
-     .container2{
-       background-color: yellowgreen;
-       color: white;
-       border-radius: 20px;
-       font-size: 18px;
-       font-weight: bolder;
-       font-family: Verdana, Geneva, Tahoma, sans-serif;
-     }
-
-     .container2:hover{
-       box-shadow: 0 0 20px black;
-     }
-
-     .campimage{
-       width: 110px;
-       margin-top: 15px;
-       margin-left: 15px;
-  
-     }
-
-     .textarea2{
-       background-color:grey;
-       padding-top: 10px;
-       padding-left: 10px;
-       padding-bottom: 10px;
-       border-radius: 20px;
-     }
-
-     .container3{
-       background-color:orange;
-       color: white;
-       margin-bottom: 30px;
-       border-radius: 20px;
-       font-size: 18px;
-       font-weight: bolder;
-       font-family: Verdana, Geneva, Tahoma, sans-serif;
-     }
-
-     .container3:hover{
-       box-shadow: 0 0 20px black;
-     }
-
-     .hospitalimage{
-       width: 150px;
-       margin-top: 15px;
-       margin-left: 15px;
-     }
-
-     .textarea3{
-       background-color:grey;
-       padding-top: 10px;
-       padding-left: 10px;
-       padding-bottom: 10px;
-       border-radius: 20px;
-     }
-
-     .container4{
-       background-color: rosybrown;
-       color: white;
-       margin-top: 30px;
-       border-radius: 20px;
-       font-size: 18px;
-       font-weight: bolder;
-       font-family: Verdana, Geneva, Tahoma, sans-serif;
-     }
-
-     .container4:hover{
-       box-shadow: 0 0 20px black;
-     }
-
-     .requestimage{
-       width: 145px;
-       margin-top: 20px;
-       margin-left: 20px;
-     }
-
-     .textarea4{
-       background-color:grey;
-       padding-top: 10px;
-       padding-left: 10px;
-       padding-bottom: 10px;
-       border-radius: 20px;
-     }
-
-     .container5{
-       background-color: purple;
-       color: white;
-       margin-top: 30px;
-       border-radius: 20px;
-       font-size: 18px;
-       font-weight: bolder;
-       font-family: Verdana, Geneva, Tahoma, sans-serif;
-     }
-
-     .container5:hover{
-       box-shadow: 0 0 20px black;
-     }
-
-     .urgentimage{
-       width: 165px;
-       margin-top: 20px;
-       margin-left: 20px;
-     }
-
-     .textarea5{
-       background-color:grey;
-       padding-top: 10px;
-       padding-left: 10px;
-       padding-bottom: 10px;
-       border-radius: 20px;
-     }
-
-     .container6{
-       background-color: mediumblue;
-       color: white;
-       margin-top: 30px;
-       margin-bottom: 30px;
-       border-radius: 20px;
-       font-size: 18px;
-       font-weight: bolder;
-       font-family: Verdana, Geneva, Tahoma, sans-serif;
-     }
-
-     .container6:hover{
-       box-shadow: 0 0 20px black;
-     }
-
-     .notificationimage{
-       width: 150px;
-       margin-top: 20px;
-       margin-left: 20px;
-     }
-
-     .textarea6{
-       background-color:grey;
-       padding-top: 10px;
-       padding-left: 10px;
-       padding-bottom: 10px;
-       border-radius: 20px;
-     }
-
-     .footer1{
-        background-color: 	#323949;
-        color: white;
-        height: 300px;
-        text-align: center;
-      }
-
-      .container-fluid1{
-        background-color: #323949;
-      }
-      
-      label{
-        padding-top: 30px;
-        font-size: 20px;
-        padding-left: 10px;
-        padding-right: 10px;
-      }
-
-      .top{
-        position: fixed;
-        top: 60%;
-        transform: translateY(-60%);
-        background-color: red;
-        border-radius: 200px;
-        border: 2px solid black;
-        width: 80px;
-        height: 80px;
-        margin-left: 1200px;
-        
-      }
-
-      .topimage{
-        width: 50px;
-        margin-left: 15px;
-        margin-top: 10px;
-      }
-
-      .top:hover{
-        background-color: grey;
-        border-radius: 200px;
-        width: 80px;
-        height: 80px;
-      }
-
- </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'css/admin_home.css' %}">
+</head>
  <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <img src="{% static 'images/donation.png' %}" class="navbar-brand" alt="" width="150px">
-    <a class="navbar-brand" style="font-size: 30px;" href="#">Blood Donation System</a>
+    <img src="{% static 'images/admin_/donation.png' %}" class="navbar-brand" alt="" width="150px">
+    <a class="navbar-brand" style="font-size: 30px;" href="#"><span class="fa fa-heart"> Blood Donation System</span></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -262,32 +21,31 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-              <a class="nav-link active" href="{% url 'admin_home' %}">Dashboard</a>
+              <a class="nav-link active" href="{% url 'admin_home' %}"><span class="fa fa-dashboard"> Dashboard</span></a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
-               View
+                <span class="fa fa-eye"> View</span>
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: grey;">
-                <a class="dropdown-item" href="#">Donors</a>
-                <a class="dropdown-item" href="#">Recipients</a>
-                <a class="dropdown-item" href="#">Hospitals</a>
-                <a class="dropdown-item" href="#">Recipients</a>
-                <a class="dropdown-item" href="{% url 'bloodrequest' %}">Blood Requests</a>
-                <a class="dropdown-item" href="{% url 'camptable' %}">Camps</a>
+                <a class="dropdown-item" href="#"><span class="fa fa-handshake-o"> Donors</span></a>
+                <a class="dropdown-item" href="#"><span class="fa fa-heart"> Recipients</span></a>
+                <a class="dropdown-item" href="#"><span class="fa fa-hospital-o"> Hospitals</span></a>
+                <a class="dropdown-item" href="{% url 'bloodrequest' %}"><span class="fa fa-heart"> Blood Requests</span></a>
+                <a class="dropdown-item" href="{% url 'camptable' %}"><span class="fa fa-hospital-o"> Camps</span></a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
-               Urgent
+                <span class="fa fa-warning"> Urgent</span>
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: grey;">
-                <a class="dropdown-item" href="{% url 'urgentblood' %}">Blood Requests</a>
+                <a class="dropdown-item" href="{% url 'urgentblood' %}"><span class="fa fa-heart"> Blood Requests</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url  'admin_notification' %}">Notification</a>
+              <a class="nav-link" href="{% url  'admin_notification' %}"><span class="fa fa-bell"> Notification</span></a>
             </li>
         </ul>
-        <button class="btn btn-warning" type="submit"><img src="https://www.iconsdb.com/icons/preview/white/logout-xxl.png" width="30px">&nbsp;Logout</button>
+        <button class="btn btn-warning" type="submit"><span class="fa fa-sign-out">Logout</span></button>
     </div>
   </nav>
   <div class="container-fluid">
@@ -299,72 +57,72 @@
 
       <div class="col-xs-4 col-lg-4" width="330px" style="margin-top: 10px; margin-bottom: 30px;">
         <div class="container1">
-          <img src="{% static 'images/donors.png' %}" class="donorimage"><br>
+          <img src="{% static 'images/admin_/donors.png' %}" class="donorimage"><br>
           <label for="" style="margin-left: 250px;font-size: 30px;">6</label><br>
           <label for="" style="margin-left: 200px;padding-bottom: 10px;">Total Donors</label>
           <div class="textarea1">
             <a href="" class="link" style="text-decoration: none;">View Details</a>
-            <img src="{% static 'images/left.png' %}" style="width:40px; margin-left: 130px;">
+            <img src="{% static 'images/admin_/left.png' %}" style="width:40px; margin-left: 130px;">
           </div>
        </div>
       </div>
 
       <div class="col-xs-4 col-lg-4" width="330px" style="margin-top: 10px; margin-bottom: 30px;">
         <div class="container2">
-          <img src="{% static 'images/camps.png' %}" class="campimage"><br>
+          <img src="{% static 'images/admin_/camps.png' %}" class="campimage"><br>
           <label for="" style="margin-left: 250px;font-size: 30px;">10</label><br>
           <label for="" style="margin-left: 100px;padding-bottom: 10px;">Blood Donation Camps</label>
           <div class="textarea2">
             <a href="{% url 'camptable' %}" class="link" style="text-decoration: none;">View Details</a>
-            <img src="{% static 'images/left.png' %}" style="width:40px; margin-left: 130px;">
+            <img src="{% static 'images/admin_/left.png' %}" style="width:40px; margin-left: 130px;">
           </div>
        </div>
       </div>
 
       <div class="col-xs-4 col-lg-4" width="330px" style="margin-top: 10px; margin-bottom: 30px;">
         <div class="container3">
-          <img src="{% static 'images/hospital.png' %}" class="hospitalimage"><br>
+          <img src="{% static 'images/admin_/hospital.png' %}" class="hospitalimage"><br>
           <label for="" style="margin-left: 250px;font-size: 30px;">9</label><br>
           <label for="" style="margin-left: 175px;padding-bottom: 10px;">Total Hospitals</label>
           <div class="textarea3">
             <a href="" class="link" style="text-decoration: none;">View Details</a>
-            <img src="{% static 'images/left.png' %}" style="width:40px; margin-left: 130px;">
+            <img src="{% static 'images/admin_/left.png' %}" style="width:40px; margin-left: 130px;">
           </div>
        </div>
       </div>
 
       <div class="col-xs-4 col-lg-4" width="330px" style="margin-top: 10px; margin-bottom: 30px;">
         <div class="container4">
-          <img src="{% static 'images/request.png' %}" class="requestimage"><br>
+          <img src="{% static 'images/admin_/request.png' %}" class="requestimage"><br>
           <label for="" style="margin-left: 250px;font-size: 30px;">2</label><br>
           <label for="" style="margin-left: 180px;padding-bottom: 10px;">Blood Request</label>
           <div class="textarea4">
             <a href="{% url 'bloodrequest' %}" class="link" style="text-decoration: none;">View Details</a>
-            <img src="{% static 'images/left.png' %}" style="width:40px; margin-left: 130px;">
+            <img src="{% static 'images/admin_/left.png' %}" style="width:40px; margin-left: 130px;">
           </div>
        </div>
       </div>
 
       <div class="col-xs-4 col-lg-4" width="330px" style="margin-top: 10px; margin-bottom: 30px;">
         <div class="container5">
-          <img src="{% static 'images/urgent.png' %}" class="urgentimage"><br>
+          <img src="{% static 'images/admin_/urgent.png' %}" class="urgentimage"><br>
           <label for="" style="margin-left: 250px;font-size: 30px;">4</label><br>
           <label for="" style="margin-left: 170px;padding-bottom: 10px;">Urgent Request</label>
           <div class="textarea5">
             <a href="{% url 'urgentblood' %}" class="link" style="text-decoration: none;">View Details</a>
-            <img src="{% static 'images/left.png' %}" style="width:40px; margin-left: 130px;">
+            <img src="{% static 'images/admin_/left.png' %}" style="width:40px; margin-left: 130px;">
           </div>
        </div>
       </div>
 
       <div class="col-xs-4 col-lg-4" width="330px" style="margin-top: 10px; margin-bottom: 30px;">
         <div class="container6">
-          <img src="{% static 'images/notification.png' %}" class="notificationimage"><br>
+          <img src="{% static 'images/admin_/notification.png' %}" class="notificationimage"><br>
           <label for="" style="margin-left: 250px;font-size: 30px;">7</label><br>
           <label for="" style="margin-left: 210px;padding-bottom: 10px;">Notification</label>
           <div class="textarea6">
             <a href="" class="link" style="text-decoration: none;">View Details</a>
-            <img src="{% static 'images/left.png' %}" style="width:40px; margin-left: 130px;">
+            <img src="{% static 'images/admin_/left.png' %}" style="width:40px; margin-left: 130px;">
           </div>
        </div>
       </div>
@@ -373,7 +131,7 @@
   <div class="container-fluid">
     <div class="col-xs-12 col-lg-12">
       <div class="top">
-        <a href="#top"><img src="{% static 'images/topnav.png' %}" class="topimage"></a>
+        <a href="#top"><img src="{% static 'images/admin_/topnav.png' %}" class="topimage"></a>
       </div>
     </div>
   </div>
@@ -386,9 +144,6 @@
       </div>
     </div>
   </div>
-
- 
-
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script> 
  </body>

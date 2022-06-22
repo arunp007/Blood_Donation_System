@@ -9,5 +9,4 @@ def about(request):
 def contact(request):
     return render(request, 'contactus.html')
 
-def master(request):
-    return render(request,'master.html')
+

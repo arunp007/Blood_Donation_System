@@ -7,96 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Camp Registration</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-    <style>
-        .container-fluid{
-            background: linear-gradient(#141e30,#243b55);
-        }
-
-        a{
-            color: white;
-            font-size: 20px;
-            text-decoration: none;
-        }
-
-        a:hover{
-            color: red;
-        }
-
-        .btn-warning{
-            color: white;
-            border-radius: 20px;
-        }
-
-        .btn-warning:hover{
-            color: white;
-        }
-
-       form{
-           background-color: white;
-           margin-top: 100px;
-           margin-bottom: 100px;
-           padding-top: 50px;
-           padding-left: 20px;
-           padding-right: 20px;
-           border-radius: 20px;
-       }
-
-       .btn-dark{
-         margin-top: 50px; 
-         margin-bottom: 100px; 
-       }
-
-       .footer1{
-            background-color: 	#323949;
-            color: white;
-            height: 320px;
-            text-align: center;
-        }
-        
-        .container-fluid1{
-            background-color: #323949;
-        }
-        
-        .label{
-            padding-top: 30px;
-            font-size: 20px;
-            padding-left: 10px;
-            padding-right: 10px;
-        }
-
-        .top{
-            position: fixed;
-            top: 70%;
-            transform: translateY(-70%);
-            background-color: red;
-            border-radius: 200px;
-            border: 2px solid black;
-            width: 80px;
-            height: 80px;
-            margin-left: 1200px;
-        
-        }
-
-        .topimage{
-            width: 50px;
-            margin-left: 15px;
-            margin-top: 10px;
-        }
-
-        .top:hover{
-            background-color: grey;
-            border-radius: 200px;
-            width: 80px;
-            height: 80px;
-        }
-
-    </style>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'css/hospital_camp.css' %}">
+    <script src="{% static 'javascript/hospital_camp.js' %}"></script>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
-        <img src="{% static 'images/donation.png' %}" class="navbar-brand" alt="" width="150px">
-        <a class="navbar-brand" style="font-size: 30px;" href="#">Blood Donation System</a>
+        <img src="{% static 'images/hospital/donation.png' %}" class="navbar-brand" alt="" width="150px">
+        <a class="navbar-brand" style="font-size: 30px;" href="#"><span class="fa fa-heart"> Blood Donation System</span></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -104,31 +22,31 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                  <a class="nav-link" href="{% url 'hospital_home' %}">Home</a>
+                  <a class="nav-link" href="{% url 'hospital_home' %}"><span class="fa fa-home"> Home</span></a>
                 </li>
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
-                   Create
+                    <span class="fa fa-plus"> Create</span>
                   </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: grey;">
-                    <a class="dropdown-item" href="{% url 'hospitalcamp' %}">Camps</a>
+                    <a class="dropdown-item" href="{% url 'hospitalcamp' %}"><span class="fa fa-hospital-o"> Camps</span></a>
                 </li>
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
-                   View
+                    <span class="fa fa-eye"> View</span>
                   </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: grey;">
-                    <a class="dropdown-item" href="{% url 'camptable' %}">Camps</a>
-                    <a class="dropdown-item" href="{% url 'bloodrequest' %}">Blood Requests</a>
+                    <a class="dropdown-item" href="{% url 'camptable' %}"><span class="fa fa-hospital-o"> Camps</span></a>
+                    <a class="dropdown-item" href="{% url 'bloodrequest' %}"><span class="fa fa-heart"> Blood Requests</span></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="{% url 'hospital_search' %}">Search</a>
+                  <a class="nav-link" href="{% url 'hospital_search' %}"><span class="fa fa-search"> Search</span></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="{% url 'hospitalnotification' %}">Notification</a>
+                  <a class="nav-link" href="{% url 'hospitalnotification' %}"><span class="fa fa-bell"> Notification</span></a>
                 </li>
             </ul>
-            <button class="btn btn-warning" type="submit"><img src="https://www.iconsdb.com/icons/preview/white/logout-xxl.png" width="30px">&nbsp;Logout</button>
+            <button class="btn btn-warning" type="submit"><span class="fa fa-sign-out">Logout</span></button>
         </div>
       </nav>
     <div class="container-fluid">
@@ -189,7 +107,7 @@
             <div class="col-xs-12 col-lg-12">
                 <a href="#top">
                 <div class="top">
-                    <img src="{% static 'images/topnav.png' %}" class="topimage"></a>
+                    <img src="{% static 'images/hospital/top.png' %}" class="topimage"></a>
                 </div>
             </div>
         </div>
@@ -202,267 +120,6 @@
             </div>
         </div>
     </div>
-
-    <script>
-        function validation(){
-            var status = 1
-            var organization = document.getElementById('organization')
-            var datetime = document.getElementById('datetime')
-            var address = document.getElementById('address')
-            var state = document.getElementById('state')
-            var district = document.getElementById('district')
-            var name = document.getElementById('name')
-            var phone = document.getElementById('phone')
-            var email = document.getElementById('emailid')
-
-            if(organization.value == ""){
-                document.getElementById('organization').style.borderColor="red"
-                document.getElementById('organization_error').innerHTML="** Please Enter Your Organization Name **"
-                document.getElementById('organization_error').style.color="red"
-                document.getElementById('organization_error').style.display="block"
-                var status = 0
-            }
-
-            else{
-                document.getElementById('organization').style.borderColor="black"
-                document.getElementById('organization_error').style.display="none"
-                var status = 1
-            }
-
-            if(datetime.value == ""){
-                document.getElementById('datetime').style.borderColor="red"
-                document.getElementById('datetime_error').innerHTML="** Please Enter Date And Time **"
-                document.getElementById('datetime_error').style.color="red"
-                document.getElementById('datetime_error').style.display="block"
-                var status = 0
-            }
-
-            else{
-                document.getElementById('datetime').style.borderColor="black"
-                document.getElementById('datetime_error').style.display="none"
-                var status = 1
-            }
-
-            if(address.value == ""){
-                document.getElementById('address').style.borderColor="red"
-                document.getElementById('address_error').innerHTML="** Please Enter Permanent Address **"
-                document.getElementById('address_error').style.color="red"
-                document.getElementById('address_error').style.display="block"
-                var status = 0
-            }
-
-            else{
-                document.getElementById('address').style.borderColor="black"
-                document.getElementById('address_error').style.display="none"
-                var status = 1
-            }
-
-            if(state.value == ""){
-                document.getElementById('state').style.borderColor="red"
-                document.getElementById('state_error').innerHTML="** Please Enter Your State **"
-                document.getElementById('state_error').style.color="red"
-                document.getElementById('state_error').style.display="block"
-                var status = 0
-            }
-
-            else{
-                document.getElementById('state').style.borderColor="black"
-                document.getElementById('state_error').style.display="none"
-                var status = 1
-            }
-
-            if(district.value == ""){
-                document.getElementById('district').style.borderColor="red"
-                document.getElementById('district_error').innerHTML="** Please Enter Your District **"
-                document.getElementById('district_error').style.color="red"
-                document.getElementById('district_error').style.display="block"
-                var status = 0
-            }
-
-            else{
-                document.getElementById('district').style.borderColor="black"
-                document.getElementById('district_error').style.display="none"
-                var status = 1
-            }
-
-            if(name.value == ""){
-                document.getElementById('name').style.borderColor="red"
-                document.getElementById('name_error').innerHTML="** Please Enter Your Name **"
-                document.getElementById('name_error').style.color="red"
-                document.getElementById('name_error').style.display="block"
-                var status = 0
-            }
-
-            else{
-                document.getElementById('name').style.borderColor="black"
-                document.getElementById('name_error').style.display="none"
-                var status = 1
-            }
-
-            if(phone.value == ""){
-                document.getElementById('phone').style.borderColor="red"
-                document.getElementById('phone_error').innerHTML="** Please Enter Your Phone Number **"
-                document.getElementById('phone_error').style.color="red"
-                document.getElementById('phone_error').style.display="block"
-                var status = 0
-            }
-
-            else{
-                document.getElementById('phone').style.borderColor="black"
-                document.getElementById('phone_error').style.display="none"
-                var status = 1
-            }
-
-            if(email.value == ""){
-                document.getElementById('emailid').style.borderColor="red"
-                document.getElementById('email_error').innerHTML="** Please Enter Your Email Id **"
-                document.getElementById('email_error').style.color="red"
-                document.getElementById('email_error').style.display="block"
-                var status = 0
-            }
-
-            else{
-                document.getElementById('emailid').style.borderColor="black"
-                document.getElementById('email_error').style.display="none"
-                var status = 1
-            }
-
-            if(status == 0){
-                return false
-            }
-
-            if(status == 1){
-                return true
-            }
-            
-        }
-
-        function campvalid(){
-            var camp = document.getElementById('organization').value
-            if(isNaN(camp)){
-                document.getElementById('organization').style.borderColor="black"
-                document.getElementById('organization_error').style.display="none"
-            }
-
-            else{
-                document.getElementById('organization').style.borderColor="red"
-                document.getElementById('organization_error').innerHTML="** Please Enter A Valid Camp Name **"
-                document.getElementById('organization_error').style.color="red"
-                document.getElementById('organization_error').style.display="block"
-            }
-        }
-
-        function addressvalid(){
-            var address = document.getElementById('address').value
-            if(isNaN(address)){
-                document.getElementById('address').style.borderColor="black"
-                document.getElementById('address_error').style.display="none"
-            }
-
-            else{
-                document.getElementById('address').style.borderColor="red"
-                document.getElementById('address_error').innerHTML="** Please Enter A Valid Address **"
-                document.getElementById('address_error').style.color="red"
-                document.getElementById('address_error').style.display="block"
-            }
-        }
-
-        function statevalid(){
-            var state = document.getElementById('state').value
-            if(isNaN(state)){
-                document.getElementById('state').style.borderColor="black"
-                document.getElementById('state_error').style.display="none"
-            }
-
-            else{
-                document.getElementById('state').style.borderColor="red"
-                document.getElementById('state_error').innerHTML="** Please Enter A Valid State **"
-                document.getElementById('state_error').style.color="red"
-                document.getElementById('state_error').style.display="block"
-            }
-        }
-
-        function districtvalid(){
-            var district = document.getElementById('district').value
-            if(isNaN(district)){
-                document.getElementById('district').style.borderColor="black"
-                document.getElementById('district_error').style.display="none"
-            }
-
-            else{
-                document.getElementById('district').style.borderColor="red"
-                document.getElementById('district_error').innerHTML="** Please Enter A Valid District **"
-                document.getElementById('district_error').style.color="red"
-                document.getElementById('district_error').style.display="block"
-            }
-        }
-
-        function namevalid(){
-            var name = document.getElementById('name').value
-            if(isNaN(name)){
-                document.getElementById('name').style.borderColor="black"
-                document.getElementById('name_error').style.display="none"
-            }
-
-            else{
-                document.getElementById('name').style.borderColor="red"
-                document.getElementById('name_error').innerHTML="** Please Enter A Valid Name **"
-                document.getElementById('name_error').style.color="red"
-                document.getElementById('name_error').style.display="block"
-            }
-        }
-
-        function phonevalid(){
-            var phone = document.getElementById('phone').value
-            if(isNaN(phone)){
-                document.getElementById('phone').style.borderColor="red"
-                document.getElementById('phone_error').innerHTML="** Please Enter A Valid Mobile Number **"
-                document.getElementById('phone_error').style.color="red"
-                document.getElementById('phone_error').style.display="block"
-            }
-
-            if(phone.length<=0){
-                document.getElementById('phone').style.borderColor="red"
-                document.getElementById('phone_error').innerHTML="** Mobile Number Must Have 10 Digits **"
-                document.getElementById('phone_error').style.color="red"
-                document.getElementById('phone_error').style.display="block"
-            }
-
-            if(phone.length == 10){
-                document.getElementById('phone').style.borderColor="green"
-                document.getElementById('phone_error').innerHTML="** You Entered A Perfect Mobile Number **"
-                document.getElementById('phone_error').style.color="green"
-                document.getElementById('phone_error').style.display="block"
-            }
-
-            if(phone.length == 11){
-                document.getElementById('phone').style.borderColor="red"
-                document.getElementById('phone_error').innerHTML="** Mobile Number Must Have 10 Digits **"
-                document.getElementById('phone_error').style.color="red"
-                document.getElementById('phone_error').style.display="block"
-            }
-
-        }
-
-        function emailvalid(){
-            var email = document.getElementById('emailid').value
-            if(isNaN(email)){
-                document.getElementById('emailid').style.borderColor="black"
-                document.getElementById('email_error').style.display="none"
-            }
-
-            else{
-                document.getElementById('emailid').style.borderColor="red"
-                document.getElementById('email_error').innerHTML="** Please Enter A Valid Email Id **"
-                document.getElementById('email_error').style.color="red"
-                document.getElementById('email_error').style.display="block"
-            }
-        }
-    </script>
-
-
-
-
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>      
