@@ -12,94 +12,96 @@
     <script src="{% static 'javascript/main_contact.js' %}"></script>
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
-    <img src="{% static 'images/main_home/donation.png' %}" class="navbar-brand" alt="" width="150px">
-    <a class="navbar-brand" href="#" style="font-size: 30px;">Blood Donation System</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'main' %}"><span class="fa fa-home"> Home</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'about' %}"><span class="fa fa-info"> About Us</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="{% url 'contact' %}"><span class="fa fa-phone"> Contact Us</span></a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
-                  <span class="fa fa-sign-in"> Login</span>
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: grey;">
-                  <a class="dropdown-item" href="{% url 'donorlogin' %}"><span class="fa fa-handshake-o"> Donor</span></a>
-                  <a class="dropdown-item" href="{% url 'recipientlogin' %}"><span class="fa fa-heart"> Recipient</span></a>
-                  <a class="dropdown-item" href="{% url 'hospitallogin' %}"><span class="fa fa-hospital-o"> Hospital</span></a>
-                  <a class="dropdown-item" href="{% url 'adminlogin' %}"><span class="fa fa-user"> Admin</span></a>
-                </div>
-            </li>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+      <img src="{% static 'images/main_home/donation.png' %}" class="navbar-brand" alt="" width="150px">
+      <a class="navbar-brand" href="#" style="font-size: 30px;"><h1>Life Saver</h1></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'main' %}"><span class="fa fa-home"> Home</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'about' %}"><span class="fa fa-info"> About Us</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="{% url 'contact' %}"><span class="fa fa-phone"> Contact Us</span></a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+            <span class="fa fa-sign-in"> Login</span>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: grey;">
+              <a class="dropdown-item" href="{% url 'donorlogin' %}"><span class="fa fa-handshake-o"> Donor</span></a>
+              <a class="dropdown-item" href="{% url 'recipientlogin' %}"><span class="fa fa-heart"> Recipient</span></a>
+              <a class="dropdown-item" href="{% url 'hospitallogin' %}"><span class="fa fa-hospital-o"> Hospital</span></a>
+              <a class="dropdown-item" href="{% url 'adminlogin' %}"><span class="fa fa-user"> Admin</span></a>
+            </div>
+          </li>
 
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
-                  <span class="fa fa-sign-out"> Sign Up</span>
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: grey;">
-                  <a class="dropdown-item" href="{% url 'donorsignup' %}"><span class="fa fa-handshake-o"> Donor</span></a>
-                  <a class="dropdown-item" href="{% url 'recipientsignup' %}"><span class="fa fa-heart"> Recipient</span></a>
-                  <a class="dropdown-item" href="{% url 'hospitalsignup' %}"><span class="fa fa-hospital-o"> Hospital</span></a>
-                </div>
-            </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+            <span class="fa fa-sign-out"> Sign Up</span>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: grey;">
+              <a class="dropdown-item" href="{% url 'donorsignup' %}"><span class="fa fa-handshake-o"> Donor</span></a>
+              <a class="dropdown-item" href="{% url 'recipientsignup' %}"><span class="fa fa-heart"> Recipient</span></a>
+              <a class="dropdown-item" href="{% url 'hospitalsignup' %}"><span class="fa fa-hospital-o"> Hospital</span></a>
+            </div>
+          </li>
         </ul>
-    </div>
-  </nav>
-      <div class="container-fluid">
-          <div class="row">
-              <div class="col-xs-6 col-lg-6" style="margin-top: 50px;">
-                <form method="post">
-                    <h1 class="head">Contact Us</h1>
-                    <div class="form-group" style="margin-top: 100px;">
-                        <input type="text" placeholder="Name" class="form-control" style="border-radius: 50px;" id="name" onkeyup="namevalid()">
-                        <label id="name_error"></label>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" placeholder="Email Id" class="form-control" style="border-radius: 50px;" id="emailid" onkeyup="emailvalid()">
-                        <label id="email_error"></label>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" placeholder="Message" class="form-control" style="height: 200px; border-radius: 50px;" id="message" onkeyup="messagevalid()">
-                        <label id="message_error"></label>
-                    </div><br><br>
-                    <center><input type="button" onclick="return validation()" class="btn btn-danger" value="Submit" style="border-radius: 100px; width: 35%; height: 50px;"></center><br><br><br>
-                </div>
-                <div class="col-xs-6 col-lg-6" style="margin-top: 10px;">
-                    <center><img src="{% static 'images/main_home/tech.jpg' %}" width="330px" style="margin-top: 100px;"></center>
-                </div>
-          </div>
-          </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-6 col-lg-6" style="margin-top: 50px;">
+          <form method="post">
+            <h1 class="head">Contact Us</h1>
+            <div class="form-group" style="margin-top: 100px;">
+              <input type="text" placeholder="Name" class="form-control" style="border-radius: 50px;" id="name" onkeyup="namevalid()">
+              <label id="name_error"></label>
+            </div>
+            <div class="form-group">
+              <input type="text" placeholder="Email Id" class="form-control" style="border-radius: 50px;" id="emailid" onkeyup="emailvalid()">
+              <label id="email_error"></label>
+            </div>
+            <div class="form-group">
+              <input type="text" placeholder="Message" class="form-control" style="height: 200px; border-radius: 50px;" id="message" onkeyup="messagevalid()">
+              <label id="message_error"></label>
+            </div><br><br>
+            <center><input type="button" onclick="return validation()" class="btn btn-danger" value="Submit" style="border-radius: 100px; width: 35%; height: 50px;"></center><br><br><br>
+            </div>
+            <div class="col-xs-6 col-lg-6" style="margin-top: 10px;">
+              <center><img src="{% static 'images/main_home/tech.jpg' %}" width="330px" style="margin-top: 100px;"></center>
+            </div>
           </form>
-      </div>
-      <div class="container-fluid">
-          <div class="row">
-              <div class="col-xs-12 col-lg-12">
-                  <div class="top">
-                      <a href=""><img src="{% static 'images/main_home/topnavigation.png' %}" width="90px"></a>
-                  </div>
-              </div>
+        </div>
+      </div>   
+    </div>
+    
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-12 col-lg-12">
+          <div class="top">
+            <a href=""><img src="{% static 'images/main_home/topnavigation.png' %}" width="90px"></a>
           </div>
-      </div><br><br><br>
-      <div class="container1">
-          <div class="footer1">
-            <a href=""><label for="">Terms And Conditions</label></a><a href="{% url 'about' %}"><label for="">About Us</label></a><a href="{% url 'contact' %}"><label for="">Contact Us</label></a><a href="{% url 'donorlogin' %}"><label for="">Donor Login</label></a>
-          </div>
-      </div>
-      <div class="container2">
-          <div class="footer2">
-            <a href=""><label for="">© Blood Donation System</label></a><a href=""><label for="">Designed And Developed By Arun Pacheeri</label></a>
         </div>
       </div>
+    </div><br><br><br>
+
+    <div class="container1">
+      <div class="footer1">
+        <a href=""><label for="">Terms And Conditions</label></a><a href="{% url 'about' %}"><label for="">About Us</label></a><a href="{% url 'contact' %}"><label for="">Contact Us</label></a><a href="{% url 'donorlogin' %}"><label for="">Donor Login</label></a>
+      </div>
+    </div>
+    <div class="container2">
+      <div class="footer2">
+        <a href=""><label for="">© Blood Donation System</label></a><a href=""><label for="">Designed And Developed By Arun Pacheeri</label></a>
+      </div>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script> 

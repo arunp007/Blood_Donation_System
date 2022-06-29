@@ -9,146 +9,92 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{% static 'css/donor_search.css' %}">
+    <script src="{% static 'javascript/donor_search.js' %}"></script>
   </head>
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
-    <img src="{% static 'images/donor/donation.png' %}" class="navbar-brand" alt="" width="150px">
-    <a class="navbar-brand" style="font-size: 30px;" href="#">Blood Donation System</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'donor_home' %}"><span class="fa fa-home"> Home</span></a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
-               <span class="fa fa-eye"> View</span> 
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: grey;">
-                <a class="dropdown-item" href="{% url 'camptable' %}"><span class="fa fa-hospital-o"> Camps</span></a>
-                <a class="dropdown-item" href="{% url 'bloodrequest' %}"><span class="fa fa-heart"> Blood Requests</span></a>
-                <a class="dropdown-item" href="{% url 'urgentblood' %}"><span class="fa fa-handshake-o"> Urgent Blood Requests</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="{% url 'donor_search' %}"><span class="fa fa-search"> Search</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'donornotification' %}"><span class="fa fa-bell"> Notification</span></a>
-            </li>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+      <img src="{% static 'images/donor/donation.png' %}" class="navbar-brand" alt="" width="150px">
+      <a class="navbar-brand" style="font-size: 30px;" href="#"><h1>Life Saver</h1></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'donor_home' %}"><span class="fa fa-home"> Home</span></a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+            <span class="fa fa-eye"> View</span> 
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: grey;">
+              <a class="dropdown-item" href="{% url 'camptable' %}"><span class="fa fa-hospital-o"> Camps</span></a>
+              <a class="dropdown-item" href="{% url 'bloodrequest' %}"><span class="fa fa-heart"> Blood Requests</span></a>
+              <a class="dropdown-item" href="{% url 'urgentblood' %}"><span class="fa fa-handshake-o"> Urgent Blood Requests</span></a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="{% url 'donor_search' %}"><span class="fa fa-search"> Search</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'donornotification' %}"><span class="fa fa-bell"> Notification</span></a>
+          </li>
         </ul>
         <button class="btn btn-warning" type="submit"><span class="fa fa-sign-out">Logout</span></button>
+      </div>
+    </nav>
+
+    <div class="col-xs-12 col-lg-12" style="margin-top: 30px; border-radius: 30px;">
+      <img src="{% static 'images/donor/search.webp' %}" class="image">
+      <form action="">
+        <div class="form-row" style="margin-left: 5px;">
+          <div class="form-group col-md-3">
+            <label for="inputBloodGroup">Blood Group</label>
+            <select id="bloodgroup" class="form-control">
+              <option value="" value="">Choose...</option>
+              <option value="A+">A+</option>
+              <option value="B+">B+</option>
+              <option value="B-">B-</option>
+              <option value="A-">A-</option>
+              <option value="O+">O+</option>
+              <option value="O-">O-</option>
+              <option value="AB+">AB+</option>
+              <option value="AB-">AB-</option>
+            </select>    
+            
+            <label id="blood_error"></label>
+          </div>
+
+          <div class="form-group col-md-4">
+              <label for="inputLocation">Location</label>
+              <input type="text" class="form-control" id="location" placeholder="Location" onkeyup="locationvalid()">
+              
+              <label id="location_error"></label>
+            </div>
+          </div>
+        </div>
+        </div>
+        <div class="form-group col-md-5">
+          <button class="btn btn-danger" style="margin-left: 10px;" type="submit" onclick="return validation()"><span class="fa fa-search"> Search</span></button>
+        </div>
+      </form><br><br><br>
     </div>
-  </nav>
-            <div class="col-xs-12 col-lg-12" style="margin-top: 30px; border-radius: 30px;">
-              <img src="{% static 'images/donor/search.webp' %}" class="image">
-             <form action="">
-              <div class="form-row" style="margin-left: 5px;">
-                <div class="form-group col-md-3">
-                      <label for="inputBloodGroup">Blood Group</label>
-                      <select id="bloodgroup" class="form-control">
-                          <option value="" value="">Choose...</option>
-                          <option value="A+">A+</option>
-                          <option value="B+">B+</option>
-                          <option value="B-">B-</option>
-                          <option value="A-">A-</option>
-                          <option value="O+">O+</option>
-                          <option value="O-">O-</option>
-                          <option value="AB+">AB+</option>
-                          <option value="AB-">AB-</option>
-                      </select>
-                      
-                      <label id="blood_error"></label>
-                </div>
-                  <div class="form-group col-md-4">
-                      <label for="inputLocation">Location</label>
-                      <input type="text" class="form-control" id="location" placeholder="Location" onkeyup="locationvalid()">
-                      <label id="location_error"></label>
-                   </div>
-                  </div>
-              </div>
-              <div class="form-group col-md-5">
-                <button class="btn btn-danger" style="margin-left: 10px;" type="submit" onclick="return validation()"><span class="fa fa-search"> Search</span></button>
-              </div>
-            </form>
-              <br><br><br>
-            <div class="col-xs-12 col-lg-12">
-             <a href="#top">
-             <div class="top">
-                <img src="{% static 'images/donor/topnav.png' %}" class="topimage"></a>
-              </div>
+
+    <div class="col-xs-12 col-lg-12">
+      <a href="#top">
+      <div class="top">
+        <img src="{% static 'images/donor/topnav.png' %}" class="topimage"></a>
+      </div>
+    </div>
+  
+    <div class="container-fluid1">
+      <div class="col-xs-12 col-lg-12">
+        <div class="footer1">
+          <a href=""><label class="label">Terms And Conditions</label></a><a href="{% url 'about' %}"><label class="label">About Us</label></a><a href="{% url 'contact' %}"><label class="label">Contact Us</label></a><br>
+          <a href=""><label class="label">©Blood Donation System</label></a> <a href=""><label class="label">Designed And Developed By Arun Pacheeri</label></a>
         </div>
       </div>
     </div>
-    <div class="container-fluid1">
-      <div class="col-xs-12 col-lg-12">
-          <div class="footer1">
-            <a href=""><label class="label">Terms And Conditions</label></a><a href="{% url 'about' %}"><label class="label">About Us</label></a><a href="{% url 'contact' %}"><label class="label">Contact Us</label></a><br>
-            <a href=""><label class="label">©Blood Donation System</label></a> <a href=""><label class="label">Designed And Developed By Arun Pacheeri</label></a>
-          </div>
-      </div>
-    </div>
-    <script>
-      function validation(){
-        var status = 1
-        var blood = document.getElementById('bloodgroup')
-        var location = document.getElementById('location')
-
-        if(blood.value == ""){
-          document.getElementById('bloodgroup').style.borderColor="red"
-          document.getElementById('blood_error').innerHTML="** Please Select Your Blood Group **"
-          document.getElementById('blood_error').style.color="red"
-          document.getElementById('blood_error').style.display="block"
-          var status = 0
-        }
-
-        else{
-          document.getElementById('bloodgroup').style.borderColor="black"
-          document.getElementById('blood_error').style.display="none"
-          var status = 1
-        }
-
-        if(location.value == ""){
-          document.getElementById('location').style.borderColor="red"
-          document.getElementById('location_error').innerHTML="** Please Select Your Location **"
-          document.getElementById('location_error').style.color="red"
-          document.getElementById('location_error').style.display="block"
-          var status = 0
-        }
-
-        else{
-          document.getElementById('location').style.borderColor="black"
-          document.getElementById('location_error').style.display="none"
-          var status = 1
-        }
-
-        if(status == 1){
-          return true
-        }
-        
-        if(status == 0){
-          return false
-        }
-      }
-
-      function locationvalid(){
-        var location = document.getElementById('location').value
-        if(isNaN(location)){
-          document.getElementById('location').style.borderColor="black"
-          document.getElementById('location_error').style.display="none"
-        }
-
-        else{
-          document.getElementById('location').style.borderColor="red"
-          document.getElementById('location_error').innerHTML="** Please Enter A Valid Location **"
-          document.getElementById('location_error').style.color="red"
-          document.getElementById('location_error').style.display="block"
-        }
-        
-      }
-    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script> 

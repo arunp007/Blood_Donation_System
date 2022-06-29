@@ -11,63 +11,67 @@
     <link rel="stylesheet" href="{% static 'css/admin_notification.css' %}">
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <img src="{% static 'images/donation.png' %}" class="navbar-brand" alt="" width="150px">
-    <a class="navbar-brand" style="font-size: 30px;" href="#">Blood Donation System</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'admin_home' %}"><span class="fa fa-dashboard"> Dashboard</span></a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
-                <span class="fa fa-eye"> View</span>
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: grey;">
-                <a class="dropdown-item" href="#"><span class="fa fa-handshake-o"> Donors</span></a>
-                <a class="dropdown-item" href="#"><span class="fa fa-heart"> Recipients</span></a>
-                <a class="dropdown-item" href="#"><span class="fa fa-hospital-o"> Hospitals</span></a>
-                <a class="dropdown-item" href="#"><span class="fa fa-heart"> Blood Requests</span></a>
-                <a class="dropdown-item" href="#"><span class="fa fa-hospital-o"> Camps</span></a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
-                <span class="fa fa-warning"> Urgent</span>
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: grey;">
-                <a class="dropdown-item" href=""><span class="fa fa-heart"> Blood Requests</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="{% url 'admin_notification' %}"><span class="fa fa-bell"> Notification</span></a>
-            </li>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <img src="{% static 'images/admin_/donation.png' %}" class="navbar-brand" alt="" width="150px">
+      <a class="navbar-brand" style="font-size: 30px;" href="#"><h1>Life Saver</h1></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'admin_home' %}"><span class="fa fa-dashboard"> Dashboard</span></a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+            <span class="fa fa-eye"> View</span>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: grey;">
+              <a class="dropdown-item" href="#"><span class="fa fa-handshake-o"> Donors</span></a>
+              <a class="dropdown-item" href="#"><span class="fa fa-heart"> Recipients</span></a>
+              <a class="dropdown-item" href="#"><span class="fa fa-hospital-o"> Hospitals</span></a>
+              <a class="dropdown-item" href="#"><span class="fa fa-heart"> Blood Requests</span></a>
+              <a class="dropdown-item" href="#"><span class="fa fa-hospital-o"> Camps</span></a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+            <span class="fa fa-warning"> Urgent</span>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: grey;">
+              <a class="dropdown-item" href=""><span class="fa fa-heart"> Blood Requests</span></a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="{% url 'admin_notification' %}"><span class="fa fa-bell"> Notification</span></a>
+          </li>
         </ul>
         <button class="btn btn-warning" type="submit"><span class="fa fa-sign-out">Logout</span></button>
-    </div>
-  </nav>
+      </div>
+    </nav>
+    
     <div class="container-fluid" style="margin-top: 20px; margin-bottom: 100px;">
       <h1 style="color:grey; font-size: 50px; margin-top: 20px; margin-left: 20px;">Notifications</h1>
       <div class="row" style="margin-top: 20px;">
         <div class="col-xs-12 col-lg-12" style="margin-top: 10px;">
-            <div class="content1">
-              <img src="{% static 'images/admin_/notification_icon.png' %}" class="image" width="100px">
-               <label class="item">Needed </label>
-               <label class="item">Name : </label>
-               <button class="btn btn-primary btn-md"><span class="fa fa-check"> Accept</span></button>&nbsp;&nbsp;
-               <button class="btn btn-danger btn-md"><span class="fa fa-ban"> Reject</span></button>
-            </div>
+          <div class="content1">
+            <img src="{% static 'images/admin_/notification_icon.png' %}" class="image" width="100px">
+            <label class="item">Needed </label>
+            <label class="item">Name : </label>
+            <button class="btn btn-primary btn-md"><span class="fa fa-check"> Accept</span></button>&nbsp;&nbsp;
+            <button class="btn btn-danger btn-md"><span class="fa fa-ban"> Reject</span></button>
           </div>
+        </div>
       </div>
     </div>
+
     <div class="col-xs-12 col-lg-12">
       <a href="#top">
       <div class="top">
         <img src="{% static 'images/admin_/topnav.png' %}" class="topimage"></a>
       </div>
     </div>
+
     <div class="container-fluid1">
       <div class="col-xs-12 col-lg-12">
         <div class="footer1">
@@ -76,6 +80,7 @@
         </div>
       </div>
     </div>
+
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script> 
 </body>

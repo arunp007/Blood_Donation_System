@@ -11,80 +11,82 @@
     <link rel="stylesheet" href="{% static 'css/recipient_style.css' %}">
   </head>
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
-    <img src="{% static 'images/recipient/donation.png' %}" class="navbar-brand" alt="" width="150px">
-    <a class="navbar-brand" style="font-size: 30px;" href="#">Blood Donation System</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-              <a class="nav-link active" href="{% url 'recipient_home' %}"><span class="fa fa-home"> Home</span></a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
-                <span class="fa fa-plus"> Create</span>
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: grey;">
-                <a class="dropdown-item" href="{% url 'recipient_bloodrequest' %}"><span class="fa fa-heart"> Blood Request</span></a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
-                <span class="fa fa-eye"> View</span>
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: grey;">
-                <a class="dropdown-item" href="{% url 'camptable' %}"><span class="fa fa-hospital-o"> Camps</span></a>
-                <a class="dropdown-item" href="#"><span class="fa fa-handshake-o"> Donors</span></a>
-                
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
-                <span class="fa fa-warning"> Urgent</span>
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: grey;">
-                <a class="dropdown-item" href="#"><span class="fa fa-phone"> Call Admin</span></a>
-                <a class="dropdown-item" href="{% url 'recipienturgent' %}"><span class="fa fa-heart"> Blood Request</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'recipient_search' %}"><span class="fa fa-search"> Search</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'recipient_notification' %}"><span class="fa fa-bell"> Notification</span></a>
-            </li>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+      <img src="{% static 'images/recipient/donation.png' %}" class="navbar-brand" alt="" width="150px">
+      <a class="navbar-brand" style="font-size: 30px;" href="#"><h1>Life Saver</h1></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="{% url 'recipient_home' %}"><span class="fa fa-home"> Home</span></a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+            <span class="fa fa-plus"> Create</span>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: grey;">
+              <a class="dropdown-item" href="{% url 'recipient_bloodrequest' %}"><span class="fa fa-heart"> Blood Request</span></a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+            <span class="fa fa-eye"> View</span>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: grey;">
+              <a class="dropdown-item" href="{% url 'camptable' %}"><span class="fa fa-hospital-o"> Camps</span></a>
+              <a class="dropdown-item" href="#"><span class="fa fa-handshake-o"> Donors</span></a>
+            </div>  
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+            <span class="fa fa-warning"> Urgent</span>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: grey;">
+              <a class="dropdown-item" href="#"><span class="fa fa-phone"> Call Admin</span></a>
+              <a class="dropdown-item" href="{% url 'recipienturgent' %}"><span class="fa fa-heart"> Blood Request</span></a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'recipient_search' %}"><span class="fa fa-search"> Search</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'recipient_notification' %}"><span class="fa fa-bell"> Notification</span></a>
+          </li>
         </ul>
         <button class="btn btn-warning" type="submit"><span class="fa fa-sign-out">Logout</span></button>
-    </div>
-  </nav>
-      <div class="container-fluid">
-            <div class="col-xs-12 col-lg-12" style="margin-top: 30px;">
-               <div id="carouselExampleCaptions" class="carousel slide mr-auto" data-ride="carousel">
-                <ol class="carousel-indicators">
-                  <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-                  <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-                  <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
-                </ol>
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <img src="{% static 'images/recipient/home1.jpg'%}" class="d-block w-100 h-100-image" style="border-radius: 10px;">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="{% static 'images/recipient/home2.jpg'%}" class="d-block w-100 h-100" style="width:1000px; height:1000px; border-radius: 10px;">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="{% static 'images/recipient/home4.jpg'%}" class="d-block w-100 h-100" style="border-radius: 10px;">
-                  </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-target="#carouselExampleCaptions" data-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="sr-only">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-target="#carouselExampleCaptions" data-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="sr-only">Next</span>
-                </button>
-              </div><br><br><br><br>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="col-xs-12 col-lg-12" style="margin-top: 30px;">
+        <div id="carouselExampleCaptions" class="carousel slide mr-auto" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+            <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+          </ol>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="{% static 'images/recipient/home1.jpg'%}" class="d-block w-100 h-100-image" style="border-radius: 10px;">
+            </div>
+            <div class="carousel-item">
+              <img src="{% static 'images/recipient/home2.jpg'%}" class="d-block w-100 h-100" style="width:1000px; height:1000px; border-radius: 10px;">
+            </div>
+            <div class="carousel-item">
+              <img src="{% static 'images/recipient/home4.jpg'%}" class="d-block w-100 h-100" style="border-radius: 10px;">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-target="#carouselExampleCaptions" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-target="#carouselExampleCaptions" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </button>
+          </div><br><br><br><br>
           
           <div class="row">
             <div class="col-xs-5 col-lg-5">
@@ -98,13 +100,14 @@
                   <li style="margin-left: 20px;">Since every blood donated is screened, it acts as a major health screening and health checkup for the donor.</li>
                   <li style="margin-left: 20px;">Donors can know the status of their HIV, Hepatitis B C, Malaria, syphilis along TTI pre-donation.</li>
                   <li style="margin-left: 20px;">A Mini health check-up is known with the pulse, temperature, Haemoglobin, Blood pressure, etc
-                    <br>Decrease the risk of cardiac diseases.</li>
+                  <br>Decrease the risk of cardiac diseases.</li>
                   <li style="margin-left: 20px;">Improves liver health</li>
                   <li style="margin-left: 20px;">Boosts immune system.</li>
                   <li style="margin-left: 20px;">Decreases the risk of iron overload.</li>
                   <li style="margin-left: 20px;">Lowered risk of cancer and replenishment of blood cells.</li>
                 </ul>
             </div>
+
             <div class="col-xs-5 col-lg-5">
               <img src="{% static 'images/recipient/5.png' %}" class="image">
             </div>
@@ -114,7 +117,7 @@
               <ul>
                 <li style="margin-left: 20px;">Well-being – The donor has to be in good health, mentally alert, and physically fit.</li>
                 <li style="margin-left: 20px;">Age limit- Minimum age of 18 years to a maximum age of 65 years.<br>
-                  For apheresis donation, it is 18-60 years.  Apheresis donation- where only one of the blood components is donated through the process of cell separation for example plasma donation, platelet donation, etc.</li>
+                For apheresis donation, it is 18-60 years.  Apheresis donation- where only one of the blood components is donated through the process of cell separation for example plasma donation, platelet donation, etc.</li>
                 <li style="margin-left: 20px;">Volume of collected blood and weight of donor – 350mL for 45kg 450mL for more than 55kg.<br> Apheresis donor – minimum 50kg.</li>  
                 <li style="margin-left: 20px;">Donation interval- Whole blood donation once in 3 months for males and once in 4 months for females.</li>  
                 <li style="margin-left: 20px;">Blood pressure- 100-140mmhg systolic and 60-90mmhg diastolic with or without medications.</li>  
@@ -124,6 +127,7 @@
                 <li style="margin-left: 20px;">Risk behavior- Donors must be free from any disease transmissible by blood.</li>
               </ul>
             </div>
+
             <div class="col-xs-6 col-lg-6">
               <div class="container1">
                 <img src="{% static 'images/recipient/weight.png' %}" class="image1">
@@ -135,6 +139,7 @@
                 </div>
               </div>
             </div>
+
             <div class="col-xs-6 col-lg-6">
               <div class="container5">
                 <img src="{% static 'images/recipient/malaria.png' %}" class="image5">
@@ -146,6 +151,7 @@
                 </div>
               </div>
             </div>
+
             <div class="col-xs-2 col-lg-2">
               <div class="container2">
                 <img src="{% static 'images/recipient/age.png' %}" class="image2">
@@ -156,93 +162,102 @@
                   </div>
                 </div>
               </div>
-            </div>   
-                <div class="col-xs-2 col-lg-2">
-                  <div class="container3">
-                    <img src="{% static 'images/recipient/pulse.png' %}" class="image3">
-                    <div class="overlay3">
-                      <div class="content3">
-                        <h1 style="font-size: 15px;">Pulse</h1>
-                        <p style="font-size: 9px;">Temperature and Pulse of the donor shall be normal.</p>
-                      </div>
-                    </div>
-                 </div>
-               </div>
-                 <div class="col-xs-2 col-lg-2">
-                   <div class="container4">
-                     <img src="{% static 'images/recipient/pressure.png' %}" class="image4">
-                      <div class="overlay4">
-                        <div class="content4">
-                          <h1 style="font-size: 15px;">Pressure</h1>
-                          <p style="font-size: 9px;">The systolic and diastolic blood pressures are within normal limits.</p>
-                        </div>
-                      </div>
-                   </div>
-                 </div>
-                 <div class="col-xs-2 col-lg-2">
-                  <div class="container6">
-                    <img src="{% static 'images/recipient/hg.png' %}" class="image6">
-                    <div class="overlay6">
-                      <div class="content6">
-                        <h1 style="font-size: 15px;">Haemoglobin</h1>
-                        <p style="font-size: 9px;">Haemoglobin should not be less than 12.5 grams.</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>   
-                    <div class="col-xs-2 col-lg-2">
-                      <div class="container7">
-                        <img src="{% static 'images/recipient/child.png' %}" class="image7">
-                        <div class="overlay7">
-                          <div class="content7">
-                            <h1 style="font-size: 15px;">Child Birth</h1>
-                            <p style="font-size: 9px;">Should have delivered 1 year ago and stopped lactation.</p>
-                          </div>
-                        </div>
-                     </div>
-                   </div>
-                     <div class="col-xs-2 col-lg-2">
-                       <div class="container8">
-                         <img src="{% static 'images/recipient/tattoo.png' %}" class="image8">
-                          <div class="overlay8">
-                            <div class="content8">
-                              <h1 style="font-size: 15px;">Tattoo</h1>
-                              <p style="font-size: 9px;">Should NOT have had any in last 12 months.</p>
-                            </div>
-                          </div>
-                       </div>
-                     </div>
-                     <div class="col-xs-6 col-lg-6">
-                      <div class="container9">
-                        <img src="{% static 'images/recipient/cancer.png' %}" class="image9">
-                        <div class="overlay9">
-                         <div class="content9">
-                           <h1 style="font-size: 15px;">Cancer</h1>
-                           <p style="font-size: 9px;">Should NOT have any forms of cancer.</p>
-                         </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-xs-6 col-lg-6">
-                      <div class="container10">
-                        <img src="{% static 'images/recipient/h.png' %}" class="image10">
-                        <div class="overlay10">
-                         <div class="content10">
-                           <h1 style="font-size: 15px;">Heart Disease</h1>
-                           <p style="font-size: 9px;">Should NOT have any Heart diseases.</p>
-                         </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-xs-12 col-lg-12">
-                      <a href="#top">
-                      <div class="top">
-                        <img src="{% static 'images/recipient/top.png' %}" class="topimage"></a>
-                      </div>
-                    </div>
+            </div>  
+
+            <div class="col-xs-2 col-lg-2">
+              <div class="container3">
+                <img src="{% static 'images/recipient/pulse.png' %}" class="image3">
+                <div class="overlay3">
+                  <div class="content3">
+                    <h1 style="font-size: 15px;">Pulse</h1>
+                    <p style="font-size: 9px;">Temperature and Pulse of the donor shall be normal.</p>
                   </div>
                 </div>
               </div>
+            </div>
+
+            <div class="col-xs-2 col-lg-2">
+              <div class="container4">
+                <img src="{% static 'images/recipient/pressure.png' %}" class="image4">
+                <div class="overlay4">
+                  <div class="content4">
+                    <h1 style="font-size: 15px;">Pressure</h1>
+                    <p style="font-size: 9px;">The systolic and diastolic blood pressures are within normal limits.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xs-2 col-lg-2">
+              <div class="container6">
+                <img src="{% static 'images/recipient/hg.png' %}" class="image6">
+                <div class="overlay6">
+                  <div class="content6">
+                    <h1 style="font-size: 15px;">Haemoglobin</h1>
+                    <p style="font-size: 9px;">Haemoglobin should not be less than 12.5 grams.</p>
+                  </div>
+                </div>
+              </div>
+            </div> 
+
+            <div class="col-xs-2 col-lg-2">
+              <div class="container7">
+                <img src="{% static 'images/recipient/child.png' %}" class="image7">
+                <div class="overlay7">
+                  <div class="content7">
+                    <h1 style="font-size: 15px;">Child Birth</h1>
+                    <p style="font-size: 9px;">Should have delivered 1 year ago and stopped lactation.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xs-2 col-lg-2">
+              <div class="container8">
+                <img src="{% static 'images/recipient/tattoo.png' %}" class="image8">
+                <div class="overlay8">
+                  <div class="content8">
+                    <h1 style="font-size: 15px;">Tattoo</h1>
+                    <p style="font-size: 9px;">Should NOT have had any in last 12 months.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xs-6 col-lg-6">
+              <div class="container9">
+                <img src="{% static 'images/recipient/cancer.png' %}" class="image9">
+                <div class="overlay9">
+                  <div class="content9">
+                    <h1 style="font-size: 15px;">Cancer</h1>
+                    <p style="font-size: 9px;">Should NOT have any forms of cancer.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xs-6 col-lg-6">
+              <div class="container10">
+                <img src="{% static 'images/recipient/h.png' %}" class="image10">
+                <div class="overlay10">
+                  <div class="content10">
+                    <h1 style="font-size: 15px;">Heart Disease</h1>
+                    <p style="font-size: 9px;">Should NOT have any Heart diseases.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xs-12 col-lg-12">
+              <a href="#top">
+              <div class="top">
+                <img src="{% static 'images/recipient/top.png' %}" class="topimage"></a>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+
     <div class="container-fluid1">
       <div class="col-xs-12 col-lg-12">
         <div class="footer1">
@@ -251,6 +266,7 @@
         </div>
       </div>
     </div>
+
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script> 
 </body>

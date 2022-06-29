@@ -13,299 +13,312 @@
 <body>
     <div class="container-fluid">
         <div class="row">
+            <div class="col-xs-2 col-lg-2"></div>
             <div class="col-xs-7 col-lg-7">
                 <form method="post"> 
                     {% csrf_token %}
                     <h1>Donor Registration</h1>
                     <hr color="red">
-                        <div class="form-row">
-                          <div class="form-group col-md-6">
-                                <label for="inputFirstName">First Name</label>
-                                <input type="text" name="firstname" class="form-control" id="firstname" placeholder="First Name" onkeyup="firstnamevalid()">
-                                <label id="first_error"></label>
-                          </div>
-                          <div class="form-group col-md-6">
-                                <label for="inputLastName">Last Name</label>
-                                <input type="text" name="lastname" class="form-control" id="lastname" placeholder="Last Name" onkeyup="lastnamevalid()">
-                                <label id="last_error"></label>
-                          </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputFirstName">First Name</label>
+                            <input type="text" name="firstname" class="form-control" id="firstname" placeholder="First Name" onkeyup="firstnamevalid()">
+                            <label id="first_error"></label>
                         </div>
-                        <div class="form-row">
-                          <div class="form-group col-md-5">
-                                <label for="inputBloodGroup">Blood Group</label>
-                                <select id="bloodgroup" name="bloodgroup" class="form-control">
-                                    <option  value="" value="">Choose...</option>
-                                    <option>A+</option>
-                                    <option>A-</option>
-                                    <option>B+</option>
-                                    <option>B-</option>
-                                    <option>O+</option>
-                                    <option>O-</option>
-                                    <option>AB+</option>
-                                    <option>AB-</option>
+
+                        <div class="form-group col-md-6">
+                            <label for="inputLastName">Last Name</label>
+                            <input type="text" name="lastname" class="form-control" id="lastname" placeholder="Last Name" onkeyup="lastnamevalid()">
+                            <label id="last_error"></label>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-5">
+                            <label for="inputBloodGroup">Blood Group</label>
+                            <select id="bloodgroup" name="bloodgroup" class="form-control">
+                                <option  value="" value="">Choose...</option>
+                                <option>A+</option>
+                                <option>A-</option>
+                                <option>B+</option>
+                                <option>B-</option>
+                                <option>O+</option>
+                                <option>O-</option>
+                                <option>AB+</option>
+                                <option>AB-</option>
+                            </select>
+                            <label id="blood_error"></label>
+                        </div>
+
+                        <div class="form-group col-md-7">
+                            <label for="inputAadhaar">Aadhaar Card Number</label>
+                            <input type="text" name="aadhaar" class="form-control" id="aadhaar" placeholder="Aadhaar Card Number" onkeyup="aadhaarvalid()">
+                            <label id="aadhaar_error"></label>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <input type="file" name="image" id="file">
+                            <label id="file_error"></label>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-inline">
+                            &nbsp;<label for="dob">Date Of Birth</label>
+                        </div>&nbsp;
+                        <div class="form-row" name="dateofbirth">
+                            <div class="form-group col-md-4">
+                                <label for="inputDay">Day</label>
+                                <select id="day" name="day" class="form-control">
+                                    <option value="" value="">Choose...</option>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                    <option>6</option>
+                                    <option>7</option>
+                                    <option>8</option>
+                                    <option>9</option>
+                                    <option>10</option>
+                                    <option>11</option>
+                                    <option>12</option>
+                                    <option>13</option>
+                                    <option>14</option>
+                                    <option>15</option>
+                                    <option>16</option>
+                                    <option>17</option>
+                                    <option>18</option>
+                                    <option>19</option>
+                                    <option>20</option>
+                                    <option>21</option>
+                                    <option>22</option>
+                                    <option>23</option>
+                                    <option>24</option>
+                                    <option>25</option>
+                                    <option>26</option>
+                                    <option>27</option>
+                                    <option>28</option>
+                                    <option>29</option>
+                                    <option>30</option>
+                                    <option>31</option>
                                 </select>
+                                <label id="dob_error1"></label>
+                            </div>
 
-                                <label id="blood_error"></label>
-                           </div>
-                            <div class="form-group col-md-7">
-                                <label for="inputAadhaar">Aadhaar Card Number</label>
-                                <input type="text" name="aadhaar" class="form-control" id="aadhaar" placeholder="Aadhaar Card Number" onkeyup="aadhaarvalid()">
-                                <label id="aadhaar_error"></label>
+                            <div class="form-group col-md-4">
+                                <label for="inputMonth">Month</label>
+                                <select id="month" name="month" class="form-control">
+                                    <option value="" value="">Choose...</option>
+                                    <option>January</option>
+                                    <option>February</option>
+                                    <option>March</option>
+                                    <option>April</option>
+                                    <option>May</option>
+                                    <option>June</option>
+                                    <option>July</option>
+                                    <option>Augest</option>
+                                    <option>September</option>
+                                    <option>October</option>
+                                    <option>November</option>
+                                    <option>December</option>
+                                </select>  
+                                <label id="dob_error2"></label>
                             </div>
-                        </div>
-                        <div class="form-row">
-                           <div class="form-group col-md-6">
-                              <input type="file" name="image" id="file">
-                              <label id="file_error"></label>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                          <div class="form-inline">
-                               &nbsp;<label for="dob">Date Of Birth</label>
-                            </div>&nbsp;
-                               <div class="form-row" name="dateofbirth">
-                                    <div class="form-group col-md-4">
-                                      <label for="inputDay">Day</label>
-                                      <select id="day" class="form-control">
-                                          <option value="" value="">Choose...</option>
-                                          <option>1</option>
-                                          <option>2</option>
-                                          <option>3</option>
-                                          <option>4</option>
-                                          <option>5</option>
-                                          <option>6</option>
-                                          <option>7</option>
-                                          <option>8</option>
-                                          <option>9</option>
-                                          <option>10</option>
-                                          <option>11</option>
-                                          <option>12</option>
-                                          <option>13</option>
-                                          <option>14</option>
-                                          <option>15</option>
-                                          <option>16</option>
-                                          <option>17</option>
-                                          <option>18</option>
-                                          <option>19</option>
-                                          <option>20</option>
-                                          <option>21</option>
-                                          <option>22</option>
-                                          <option>23</option>
-                                          <option>24</option>
-                                          <option>25</option>
-                                          <option>26</option>
-                                          <option>27</option>
-                                          <option>28</option>
-                                          <option>29</option>
-                                          <option>30</option>
-                                          <option>31</option>
-                                        </select>
-                                        <label id="dob_error1"></label>
-                                    </div>
-                                    <div class="form-group col-md-4">
-                                       <label for="inputMonth">Month</label>
-                                       <select id="month" class="form-control">
-                                            <option value="" value="">Choose...</option>
-                                            <option>January</option>
-                                            <option>February</option>
-                                            <option>March</option>
-                                            <option>April</option>
-                                            <option>May</option>
-                                            <option>June</option>
-                                            <option>July</option>
-                                            <option>Augest</option>
-                                            <option>September</option>
-                                            <option>October</option>
-                                            <option>November</option>
-                                            <option>December</option>
-                                        </select>
-                                        <label id="dob_error2"></label>
-                                    </div>
-                                    <div class="form-group col-md-4">
-                                        <label for="inputYear">Year</label>
-                                        <select id="year" class="form-control">
-                                            <option value="" value="">Choose...</option>
-                                            <option>1950</option>
-                                            <option>1951</option>
-                                            <option>1952</option>
-                                            <option>1953</option>
-                                            <option>1954</option>
-                                            <option>1955</option>
-                                            <option>1956</option>
-                                            <option>1957</option>
-                                            <option>1958</option>
-                                            <option>1959</option>
-                                            <option>1960</option>
-                                            <option>1961</option>
-                                            <option>1962</option>
-                                            <option>1963</option>
-                                            <option>1964</option>
-                                            <option>1965</option>
-                                            <option>1966</option>
-                                            <option>1967</option>
-                                            <option>1968</option>
-                                            <option>1969</option>
-                                            <option>1970</option>
-                                            <option>1971</option>
-                                            <option>1972</option>
-                                            <option>1973</option>
-                                            <option>1974</option>
-                                            <option>1975</option>
-                                            <option>1976</option>
-                                            <option>1977</option>
-                                            <option>1978</option>
-                                            <option>1979</option>
-                                            <option>1980</option>
-                                            <option>1981</option>
-                                            <option>1982</option>
-                                            <option>1983</option>
-                                            <option>1984</option>
-                                            <option>1985</option>
-                                            <option>1986</option>
-                                            <option>1987</option>
-                                            <option>1988</option>
-                                            <option>1989</option>
-                                            <option>1990</option>
-                                            <option>1991</option>
-                                            <option>1992</option>
-                                            <option>1993</option>
-                                            <option>1994</option>
-                                            <option>1995</option>
-                                            <option>1996</option>
-                                            <option>1997</option>
-                                            <option>1998</option>
-                                            <option>1999</option>
-                                            <option>2000</option>
-                                            <option>2001</option>
-                                            <option>2002</option>
-                                            <option>2003</option>
-                                            <option>2004</option>
-                                            <option>2005</option>
-                                            <option>2006</option>
-                                            <option>2007</option>
-                                            <option>2008</option>
-                                            <option>2009</option>
-                                            <option>2010</option>
-                                            <option>2011</option>
-                                            <option>2012</option>
-                                            <option>2013</option>
-                                            <option>2014</option>
-                                            <option>2015</option>
-                                            <option>2016</option>
-                                            <option>2017</option>
-                                            <option>2018</option>
-                                            <option>2019</option>
-                                            <option>2020</option>
-                                            <option>2021</option>
-                                            <option>2022</option>
-                                        </select>
-                                        <label id="dob_error3"></label>
-                                    </div>
-                                </div>
-                            
-                        </div>
-                        <div class="form-row">
-                           <div class="form-group" name="gender">
-                              <label for="gender">Gender</label>
-                              <div class="custom-control custom-radio custom-control-inline">
-                                  <input type="radio" id="customRadioInline1" name="customRadioInline" class="custom-control-input">
-                                  <label class="custom-control-label" for="customRadioInline1">Male</label>
-                                  <label id="gender_error"></label>
-                                </div>
-                               <div class="custom-control custom-radio custom-control-inline">
-                                  <input type="radio" id="customRadioInline2" name="customRadioInline" class="custom-control-input">
-                                  <label class="custom-control-label" for="customRadioInline2">Female</label>
-                               </div>
-                               <div class="custom-control custom-radio custom-control-inline">
-                                  <input type="radio" id="customRadioInline3" name="customRadioInline" class="custom-control-input">
-                                  <label class="custom-control-label" for="customRadioInline3">Others</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                           <div class="form-group col-md-12">
-                                <label for="inputAddress">Permanent Address</label>
-                                <textarea class="form-control" id="permanentaddress" name="address" cols="10" rows="2" placeholder="Permanent Address"></textarea>
-                                <label id="address_error"></label>
-                           </div>
-                        
-                           <div class="form-row">
-                              <div class="form-group col-md-4" name="state">
-                                 <label for="inputState">State</label>
-                                 <select id="state" class="form-control">
-                                       <option value="" value="">Choose...</option>
-                                       <option>Kerala</option>
-                                       <option>Tamilnadu</option>
-                                       <option>Karnataka</option>
-                                       <option>Andra Pradesh</option>
-                                       <option>Telangana</option>
-                                    </select>
-                                    <label id="state_error"></label>
-                                </div> 
 
-                               <div class="form-group col-md-4" name="district">
-                                  <label for="inputDistrict">District</label>
-                                  <select id="district" class="form-control">
-                                        <option value="" value="">Choose...</option>
-                                        <option>Alappuzha</option>
-                                        <option>Eranakulam</option>
-                                        <option>Idukki</option>
-                                        <option>Kannur</option>
-                                        <option>Kasaragod</option>
-                                        <option>Kollam</option>
-                                        <option>Kottayam</option>
-                                        <option>Kozhikode</option>
-                                        <option>Malappuram</option>
-                                        <option>Palakkad</option>
-                                        <option>Pathanamthitta</option>
-                                        <option>Thiruvanathapuram</option>
-                                        <option>Thrissur</option>
-                                        <option>Wayanad</option>
-                                    </select>
-                                    <label id="district_error"></label>
-                                </div> 
-                                <div class="form-group col-md-4">
-                                  <label for="inputPin">Pin Code</label>
-                                  <input type="text" class="form-control" name="pincode" id="pincode" placeholder="Pincode" onkeyup="pincodevalid()">
-                                  <label id="pincode_error"></label>
-                              </div>
-                          </div>
+                            <div class="form-group col-md-4">
+                                <label for="inputYear">Year</label>
+                                <select id="year" name="year" class="form-control">
+                                    <option value="" value="">Choose...</option>
+                                    <option>1950</option>
+                                    <option>1951</option>
+                                    <option>1952</option>
+                                    <option>1953</option>
+                                    <option>1954</option>
+                                    <option>1955</option>
+                                    <option>1956</option>
+                                    <option>1957</option>
+                                    <option>1958</option>
+                                    <option>1959</option>
+                                    <option>1960</option>
+                                    <option>1961</option>
+                                    <option>1962</option>
+                                    <option>1963</option>
+                                    <option>1964</option>
+                                    <option>1965</option>
+                                    <option>1966</option>
+                                    <option>1967</option>
+                                    <option>1968</option>
+                                    <option>1969</option>
+                                    <option>1970</option>
+                                    <option>1971</option>
+                                    <option>1972</option>
+                                    <option>1973</option>
+                                    <option>1974</option>
+                                    <option>1975</option>
+                                    <option>1976</option>
+                                    <option>1977</option>
+                                    <option>1978</option>
+                                    <option>1979</option>
+                                    <option>1980</option>
+                                    <option>1981</option>
+                                    <option>1982</option>
+                                    <option>1983</option>
+                                    <option>1984</option>
+                                    <option>1985</option>
+                                    <option>1986</option>
+                                    <option>1987</option>
+                                    <option>1988</option>
+                                    <option>1989</option>
+                                    <option>1990</option>
+                                    <option>1991</option>
+                                    <option>1992</option>
+                                    <option>1993</option>
+                                    <option>1994</option>
+                                    <option>1995</option>
+                                    <option>1996</option>
+                                    <option>1997</option>
+                                    <option>1998</option>
+                                    <option>1999</option>
+                                    <option>2000</option>
+                                    <option>2001</option>
+                                    <option>2002</option>
+                                    <option>2003</option>
+                                    <option>2004</option>
+                                    <option>2005</option>
+                                    <option>2006</option>
+                                    <option>2007</option>
+                                    <option>2008</option>
+                                    <option>2009</option>
+                                    <option>2010</option>
+                                    <option>2011</option>
+                                    <option>2012</option>
+                                    <option>2013</option>
+                                    <option>2014</option>
+                                    <option>2015</option>
+                                    <option>2016</option>
+                                    <option>2017</option>
+                                    <option>2018</option>
+                                    <option>2019</option>
+                                    <option>2020</option>
+                                    <option>2021</option>
+                                    <option>2022</option>
+                                </select>
+                                <label id="dob_error3"></label>
+                            </div>
+                        </div>   
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="gender">Gender</label>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="customRadioInline1" name="male" class="custom-control-input">
+                                <label class="custom-control-label" for="customRadioInline1">Male</label>
+                                <label id="gender_error"></label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="customRadioInline2" name="female" class="custom-control-input">
+                                <label class="custom-control-label" for="customRadioInline2">Female</label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="customRadioInline3" name="others" class="custom-control-input">
+                                <label class="custom-control-label" for="customRadioInline3">Others</label>
+                            </div>
                         </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
+                            <label for="inputAddress">Permanent Address</label>
+                            <textarea class="form-control" id="permanentaddress" name="address" cols="10" rows="2" placeholder="Permanent Address"></textarea>
+                            <label id="address_error"></label>
+                        </div>
+
                         <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <label for="inputPhoneNumber">Mobile Number</label>
-                                <input type="text" class="form-control" name="phone" id="phonenumber" placeholder="Mobile Number" onkeyup="phonevalid()">
-                                <label id="phone_error"></label>
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label for="inputEmail">Email Address</label>
-                                <input type="email" class="form-control" name="email" id="emailid" placeholder="Email Id" onkeyup="emailvalid()">
-                                <label id="email_error"></label>
+                            <div class="form-group col-md-4" name="state">
+                                <label for="inputState">State</label>
+                                <select id="state" class="form-control">
+                                    <option value="" value="">Choose...</option>
+                                    <option>Kerala</option>
+                                    <option>Tamilnadu</option>
+                                    <option>Karnataka</option>
+                                    <option>Andra Pradesh</option>
+                                    <option>Telangana</option>
+                                </select>
+                                <label id="state_error"></label>
+                            </div> 
+
+                            <div class="form-group col-md-4" name="district">
+                                <label for="inputDistrict">District</label>
+                                <select id="district" class="form-control">
+                                    <option value="" value="">Choose...</option>
+                                    <option>Alappuzha</option>
+                                    <option>Eranakulam</option>
+                                    <option>Idukki</option>
+                                    <option>Kannur</option>
+                                    <option>Kasaragod</option>
+                                    <option>Kollam</option>
+                                    <option>Kottayam</option>
+                                    <option>Kozhikode</option>
+                                    <option>Malappuram</option>
+                                    <option>Palakkad</option>
+                                    <option>Pathanamthitta</option>
+                                    <option>Thiruvanathapuram</option>
+                                    <option>Thrissur</option>
+                                    <option>Wayanad</option>
+                                </select>
+                                <label id="district_error"></label>
+                            </div> 
+
+                            <div class="form-group col-md-4">
+                                <label for="inputPin">Pin Code</label>
+                                <input type="text" class="form-control" name="pincode" id="pincode" placeholder="Pincode" onkeyup="pincodevalid()">
+                                <label id="pincode_error"></label>
                             </div>
                         </div>
-                          <div class="form-row">
-                               <div class="form-group col-md-6">
-                                    <label for="inputPassword">Password</label>
-                                    <input type="password" class="form-control" name="password" id="password" placeholder="Password" onkeyup="passwordvalid()">
-                                    <label id="password_error"></label>
-                               </div>
-                               <div class="form-group col-md-6">
-                                    <label for="inputConfirmPassword">Confirm Password</label>
-                                    <input type="password" class="form-control" name="cpassword" id="cpassword" placeholder="Confirm Password" onkeyup="confirmpassvalid()">
-                                    <label id="cpassword_error"></label>
-                               </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="auth">
-                                    <label class="form-check-label" for="invalidCheck2">
-                                    I authorize this website to display my name and phone number, so that the needy could contact me when there is an emergency.</label><br><br>
-                                    <label id="auth_error"></label>
-                                </div>
-                            </div>
-                            <button class="btn btn-primary col-md-12" type="submit" onclick="return validation()">Sign Up</button>&nbsp;
-                            <button class="btn btn-danger col-md-12" type="submit">Reset</button>
-                </form>          
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputPhoneNumber">Mobile Number</label>
+                            <input type="text" class="form-control" name="phone" id="phonenumber" placeholder="Mobile Number" onkeyup="phonevalid()">
+                            <label id="phone_error"></label>
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label for="inputEmail">Email Address</label>
+                            <input type="email" class="form-control" name="email" id="emailid" placeholder="Email Id" onkeyup="emailvalid()">
+                            <label id="email_error"></label>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputPassword">Password</label>
+                            <input type="password" class="form-control" name="password" id="password" placeholder="Password" onkeyup="passwordvalid()">
+                            <label id="password_error"></label>
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label for="inputConfirmPassword">Confirm Password</label>
+                            <input type="password" class="form-control" name="cpassword" id="cpassword" placeholder="Confirm Password" onkeyup="confirmpassvalid()">
+                            <label id="cpassword_error"></label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="auth">
+                            <label class="form-check-label" for="invalidCheck2">
+                            I authorize this website to display my name and phone number, so that the needy could contact me when there is an emergency.</label><br><br>
+                            <label id="auth_error"></label>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary col-md-12" type="submit" onclick="return validation()">Sign Up</button>&nbsp;
+                    <button class="btn btn-danger col-md-12" type="submit">Reset</button>
+                </form>        
             </div>
         </div>
    </div>
