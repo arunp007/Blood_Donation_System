@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <title>Donor Details</title>
+    <style>
+        h1{
+            font-size: 40px;
+            text-align: center;
+            margin-top: 10px;
+            padding-bottom: 20px;
+            font-weight: bolder;
+        }
+    </style>
+</head>
+<body>
+    <div class="col-xs-12 col-lg-12">
+        <h1>Donor Details</h1>
+        <table border="2">
+            <tr>
+                <th>Donor Id</th>
+                <th>Name</th>
+                <th>Blood Group</th>
+                <th>Aadhaar Number</th>
+                <th>Date Of Birth</th>
+                <th>Gender</th>
+                <th>Address</th>
+                <th>State</th>
+                <th>District</th>
+                <th>Pincode</th>
+                <th>Phone Number</th>
+                <th>Email Id</th>
+                <th>Password</th>
+                <th>Authentication</th>
+                <th>Update</th>
+                <th>Delete</th>
+            </tr>
+
+            {% for i in donor %}
+
+            <tr>
+                <td>{{i.id}}</td>
+                <td>{{i.fname}} {{i.lname}}</td>
+                <td>{{i.blood}}</td>
+                <td>{{i.aadhaar}}</td>
+                <td>{{i.day}}/{{i.month}}/{{i.year}}</td>
+                <td>{{i.gender}}</td>
+                <td>{{i.address}}</td>
+                <td>{{i.state}}</td>
+                <td>{{i.district}}</td>
+                <td>{{i.pin}}</td>
+                <td>{{i.phone}}</td>
+                <td>{{i.email}}</td>
+                <td>{{i.password}}</td>
+                <td>{{i.auth}}</td>
+                <td><a href="" class="btn btn-primary" style="text-decoration: none;">Update</a></td>
+                <td><a href="" class="btn btn-danger" style="text-decoration: none;">Delete</a></td>
+            </tr>
+
+            {% endfor %}
+
+        </table>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+</body>
+</html>

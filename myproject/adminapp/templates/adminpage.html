@@ -27,7 +27,7 @@
             <span class="fa fa-eye"> View</span>
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: grey;">
-              <a class="dropdown-item" href="#"><span class="fa fa-handshake-o"> Donors</span></a>
+              <a class="dropdown-item" href="{% url 'donor_details' %}"><span class="fa fa-handshake-o"> Donors</span></a>
               <a class="dropdown-item" href="#"><span class="fa fa-heart"> Recipients</span></a>
               <a class="dropdown-item" href="#"><span class="fa fa-hospital-o"> Hospitals</span></a>
               <a class="dropdown-item" href="{% url 'bloodrequest' %}"><span class="fa fa-heart"> Blood Requests</span></a>
@@ -62,7 +62,7 @@
             <label for="" style="margin-left: 250px;font-size: 30px;">6</label><br>
             <label for="" style="margin-left: 200px;padding-bottom: 10px;">Total Donors</label>
             <div class="textarea1">
-            <a href="" class="link" style="text-decoration: none;">View Details</a>
+            <a href="{% url 'donor_details' %}" class="link" style="text-decoration: none;">View Details</a>
             <img src="{% static 'images/admin_/left.png' %}" style="width:40px; margin-left: 130px;">
           </div>
         </div>

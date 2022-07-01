@@ -4,49 +4,52 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blood Donation Camps</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <title>Donor Data</title>
     <style>
         h1{
             font-size: 40px;
-            color: black;
+            text-align: center;
             margin-top: 10px;
-            margin-bottom: 40px;
+            padding-bottom: 20px;
             font-weight: bolder;
-
         }
+
     </style>
 </head>
 <body>
     <div class="col-xs-12 col-lg-12">
-        <center><h1>Blood Donation Camps</h1></center>
-        <table border="2" class="table table-dark" width="100%">
+        <h1>Donor Details</h1>
+        <table border="2" class="table table-dark" width="50%">
             <tr>
-                <th>Name Of Organization/Camp</th>
-                <th>Date And Time</th>
-                <th>Permanent Address</th>
-                <th>State</th>
-                <th>District</th>
-                <th>Name Of Organizer</th>
-                <th>Mobile Number</th>
+                <th>Donor Id</th>
+                <th>Name</th>
+                <th>Blood Group</th>
+                <th>Date Of Birth</th>
+                <th>Gender</th>
+                <th>Address</th>
+                <th>Phone Number</th>
                 <th>Email Id</th>
             </tr>
-        
-            {% for i in details%}
+
+            {% for i in info %}
+
             <tr>
-                <td>{{i.camp}}</td>
-                <td>{{i.date}}</td>
+                <td>{{i.id}}</td>
+                <td>{{i.fname}} {{i.lname}}</td>
+                <td>{{i.blood}}</td>
+                <td>{{i.day}}/{{i.month}}/{{i.year}}</td>
+                <td>{{i.gender}}</td>
                 <td>{{i.address}}</td>
-                <td>{{i.state}}</td>
-                <td>{{i.district}}</td>
-                <td>{{i.name}}</td>
                 <td>{{i.phone}}</td>
                 <td>{{i.email}}</td>
             </tr>
+
             {% endfor %}
+
         </table>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>      
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
 </body>
 </html>

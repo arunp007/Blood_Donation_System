@@ -8,6 +8,7 @@ function validation(){
     var day = document.getElementById('day')
     var month = document.getElementById('month')
     var year = document.getElementById('year')
+    var gender = document.getElementById('gender')
     var address = document.getElementById('permanentaddress')
     var state = document.getElementById('state')
     var district = document.getElementById('district')
@@ -60,7 +61,6 @@ function validation(){
         document.getElementById('blood_error').style.display="none"
         var status = 1
     }
-
 
     if(aadhaar.value == ""){
         document.getElementById('aadhaar').style.borderColor="red"
@@ -129,6 +129,20 @@ function validation(){
     else{
         document.getElementById('year').style.borderColor="black"
         document.getElementById('dob_error3').style.display="none"
+        var status = 1
+    }
+
+    if(gender.value == ""){
+        document.getElementById('gender').style.borderColor="red"
+        document.getElementById('gender_error').innerHTML="** Please Enter Your Gender **"
+        document.getElementById('gender_error').style.color="red"
+        document.getElementById('gender_error').style.display="block"
+        var status = 0
+    }
+
+    else{
+        document.getElementById('gender').style.borderColor="black"
+        document.getElementById('gender_error').style.display="none"
         var status = 1
     }
 
@@ -255,8 +269,9 @@ function validation(){
     if(auth.checked){
         document.getElementById('auth').style.borderColor="black"
         document.getElementById('auth_error').style.display="none"
-        var status = 0
+        var status = 1
     }
+
 
     if(status == 0){
         return false
@@ -265,6 +280,7 @@ function validation(){
     if(status == 1){
         return true
     }
+
 }
 
 function firstnamevalid(){
@@ -458,7 +474,7 @@ function confirmpassvalid(){
         document.getElementById('cpassword_error').innerHTML="** Confirm Password Must Have 8 Characters **"
         document.getElementById('cpassword_error').style.color="red"
         document.getElementById('cpassword_error').style.display="block" 
-    }
+    }   
 
     if(pass != cpass){
         document.getElementById('cpassword').style.borderColor="red"
@@ -466,4 +482,6 @@ function confirmpassvalid(){
         document.getElementById('cpassword_error').style.color="red"
         document.getElementById('cpassword_error').style.display="block"   
     }
+
 }
+

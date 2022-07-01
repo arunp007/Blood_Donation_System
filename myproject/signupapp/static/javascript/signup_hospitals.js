@@ -5,7 +5,7 @@ function validation(){
     var place = document.getElementById('location')
     var file = document.getElementById('file')
     var state = document.getElementById('state')
-    var district = document.getElementById('district')        
+    var district = document.getElementById('district')     
     var pin =  document.getElementById('pincode')
     var phone = document.getElementById('phone')
     var email = document.getElementById('emailid')

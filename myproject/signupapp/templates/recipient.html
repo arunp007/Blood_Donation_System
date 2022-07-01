@@ -8,7 +8,7 @@
     <title>Recipient Signup</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/signup_recipient.css' %}">
-    <script src="{% static 'javascript/signup_recipient.js' %}"></script>
+    <script src="{% static 'javascript/signup_recipients.js' %}"></script>
 </head>
 <body>
     <div class="container-fluid">
@@ -56,12 +56,12 @@
                         </div>
                     </div>
 
-                    <div class="form-row">
+                    <!-- <div class="form-row">
                         <div class="form-group col-md-6">
                             <input type="file" name="" id="file">
                             <label id="file_error"></label>
                         </div>
-                    </div>
+                    </div> -->
 
                     <div class="form-row">
                         <div class="form-inline">
@@ -207,27 +207,19 @@
                                 </select>
                                 <label id="dob_error3"></label>
                             </div>
-                        </div>
-                            
+                        </div>      
                     </div>
 
                     <div class="form-row">
-                        <div class="form-group">
-                            <label for="gender">Gender</label>
-                            <div class="custom-control custom-radio custom-control-inline">
-                                <input type="radio" id="customRadioInline1" name="customRadioInline" class="custom-control-input">
-                                <label class="custom-control-label" for="customRadioInline1">Male</label>
-                            </div>
-
-                            <div class="custom-control custom-radio custom-control-inline">
-                                <input type="radio" id="customRadioInline2" name="customRadioInline" class="custom-control-input">
-                                <label class="custom-control-label" for="customRadioInline2">Female</label>
-                            </div>
-
-                            <div class="custom-control custom-radio custom-control-inline">
-                                <input type="radio" id="customRadioInline3" name="customRadioInline" class="custom-control-input">
-                                <label class="custom-control-label" for="customRadioInline3">Others</label>
-                            </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputGender">Gender</label>
+                            <select id="gender" name="gender" class="form-control">
+                                <option value="" value="">Choose...</option>
+                                <option>Male</option>
+                                <option>Female</option>
+                                <option>Others</option>
+                            </select> 
+                            <label id="gender_error"></label> 
                         </div>
                     </div>
 
