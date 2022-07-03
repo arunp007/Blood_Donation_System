@@ -3,7 +3,6 @@ function validation(){
     var hname = document.getElementById('hospital')
     var address = document.getElementById('address')
     var place = document.getElementById('location')
-    var file = document.getElementById('file')
     var state = document.getElementById('state')
     var district = document.getElementById('district')     
     var pin =  document.getElementById('pincode')
@@ -11,7 +10,6 @@ function validation(){
     var email = document.getElementById('emailid')
     var pass = document.getElementById('password')
     var cpass = document.getElementById('cpassword')
-    var auth = document.getElementById('auth')
 
 
     if(hname.value == ""){
@@ -53,20 +51,6 @@ function validation(){
     else{
         document.getElementById('location').style.borderColor="black"
         document.getElementById('location_error').style.display="none"
-        var status = 1
-    }
-
-    if(file.value == ""){
-        document.getElementById('file').style.borderColor="red"
-        document.getElementById('file_error').innerHTML="** Please Upload File **"
-        document.getElementById('file_error').style.color="red"
-        document.getElementById('file_error').style.display="block"
-        var status = 0
-    }
-
-    else{
-        document.getElementById('file').style.borderColor="black"
-        document.getElementById('file_error').style.display="none"
         var status = 1
     }
 
@@ -166,21 +150,6 @@ function validation(){
         var status = 1
     }
 
-    if(auth.value == ""){
-        document.getElementById('auth').style.borderColor="red"
-        document.getElementById('auth_error').innerHTML="** Please Enter Your Authenticaton **"
-        document.getElementById('auth_error').style.color="red"
-        document.getElementById('auth_error').style.display="block"
-        var status = 0
-    }
-
-    if(auth.checked){
-        document.getElementById('auth').style.borderColor="black"
-        document.getElementById('auth_error').style.display="none"
-        var status = 0
-    }
-
-
     if(status == 0){
         return false
     }
@@ -220,6 +189,21 @@ function locationvalid(){
       document.getElementById('location_error').innerHTML="** Please Enter A Valid Location **"
       document.getElementById('location_error').style.color="red"
       document.getElementById('location_error').style.display="block"
+    }
+}
+
+function addressvalid(){
+    var address = document.getElementById('address').value
+    if(isNaN(address)){
+        document.getElementById('address').style.borderColor="black"
+        document.getElementById('address_error').style.display="none" 
+    }
+
+    else{
+        document.getElementById('address').style.borderColor="red"
+        document.getElementById('address_error').innerHTML="** Please Enter A Valid Permanent Address **"
+        document.getElementById('address_error').style.color="red"
+        document.getElementById('address_error').style.display="block"
     }
 }
 

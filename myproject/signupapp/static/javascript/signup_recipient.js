@@ -4,7 +4,6 @@ function validation(){
     var lname = document.getElementById('lastname')
     var blood = document.getElementById('bloodgroup')
     var aadhaar = document.getElementById('aadhaar')
-    var file = document.getElementById('file')
     var day = document.getElementById('day')
     var month = document.getElementById('month')
     var year = document.getElementById('year')
@@ -17,7 +16,6 @@ function validation(){
     var email = document.getElementById('emailid')
     var pass = document.getElementById('password')
     var cpass = document.getElementById('cpassword')
-    var auth = document.getElementById('auth')
 
     if(fname.value == ""){
         document.getElementById('firstname').style.borderColor="red"
@@ -73,20 +71,6 @@ function validation(){
     else{
         document.getElementById('aadhaar').style.borderColor="black"
         document.getElementById('aadhaar_error').style.display="none"
-        var status = 1
-    }
-
-    if(file.value == ""){
-        document.getElementById('file').style.borderColor="red"
-        document.getElementById('file_error').innerHTML="** Please Upload File **"
-        document.getElementById('file_error').style.color="red"
-        document.getElementById('file_error').style.display="block"
-        var status = 0
-    }
-
-    else{
-        document.getElementById('file').style.borderColor="black"
-        document.getElementById('file_error').style.display="none"
         var status = 1
     }
 
@@ -258,20 +242,6 @@ function validation(){
         var status = 1
     }
 
-    if(auth.value == ""){
-        document.getElementById('auth').style.borderColor="red"
-        document.getElementById('auth_error').innerHTML="** Please Enter Your Authentication **"
-        document.getElementById('auth_error').style.color="red"
-        document.getElementById('auth_error').style.display="block"
-        var status = 0
-    }
-
-    if(auth.checked){
-        document.getElementById('auth').style.borderColor="black"
-        document.getElementById('auth_error').style.display="none"
-        var status = 0
-    }
-
     if(status == 0){
         return false
     }
@@ -344,6 +314,21 @@ function aadhaarvalid(){
         document.getElementById('aadhaar_error').style.display="block"
     }
 
+}
+
+function addressvalid(){
+    var address = document.getElementById('permanentaddress').value
+    if(isNaN(address)){
+        document.getElementById('permanentaddress').style.borderColor="black"
+        document.getElementById('address_error').style.display="none" 
+    }
+
+    else{
+        document.getElementById('permanentaddress').style.borderColor="red"
+        document.getElementById('address_error').innerHTML="** Please Enter A Valid Permanent Address **"
+        document.getElementById('address_error').style.color="red"
+        document.getElementById('address_error').style.display="block"
+    }
 }
 
 function pincodevalid(){

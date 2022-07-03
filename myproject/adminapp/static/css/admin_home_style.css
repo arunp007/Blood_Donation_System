@@ -67,7 +67,7 @@ a:hover{
    box-shadow: 0 0 20px black;
 }
 
-.campimage{
+.recipientimage{
    width: 110px;
    margin-top: 15px;
    margin-left: 15px;
@@ -152,7 +152,7 @@ a:hover{
 }
 
 .urgentimage{
-   width: 165px;
+   width: 166px;
    margin-top: 20px;
    margin-left: 20px;
 }
@@ -180,8 +180,8 @@ a:hover{
    box-shadow: 0 0 20px black;
 }
 
-.notificationimage{
-   width: 150px;
+.campimage{
+   width: 145px;
    margin-top: 20px;
    margin-left: 20px;
 }

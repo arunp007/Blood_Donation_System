@@ -8,26 +8,27 @@
     <title>Recipient Signup</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/signup_recipient.css' %}">
-    <script src="{% static 'javascript/signup_recipients.js' %}"></script>
+    <script src="{% static 'javascript/signup_recipient.js' %}"></script>
 </head>
 <body>
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-2 col-lg-2"></div>
             <div class="col-xs-7 col-lg-7">
-                <form> 
+                <form method="post"> 
+                {% csrf_token %}
                     <h1>Recipient Registration</h1>
                     <hr color="red">
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputFirstName">First Name</label>
-                            <input type="text" class="form-control" id="firstname" placeholder="First Name" onkeyup="firstnamevalid()">
+                            <input type="text" name="firstname" id="firstname" value="{{update.fname}}" class="form-control" placeholder="First Name" onkeyup="firstnamevalid()" autocomplete="off">
                             <label id="first_error"></label>
                         </div>
 
                         <div class="form-group col-md-6">
                             <label for="inputLastName">Last Name</label>
-                            <input type="text" class="form-control" id="lastname" placeholder="Last Name" onkeyup="lastnamevalid()">
+                            <input type="text" name="lastname" id="lastname" value="{{update.lname}}" class="form-control"  placeholder="Last Name" onkeyup="lastnamevalid()" autocomplete="off">
                             <label id="last_error"></label>
                         </div>
                     </div>
@@ -35,7 +36,7 @@
                     <div class="form-row">
                         <div class="form-group col-md-5">
                             <label for="inputBloodGroup">Blood Group</label>
-                            <select id="bloodgroup" class="form-control">
+                            <select name="bloodgroup" id="bloodgroup" value="{{update.blood}}" class="form-control" autocomplete="off">
                                 <option  value="" value="">Choose...</option>
                                 <option>A+</option>
                                 <option>A-</option>
@@ -51,17 +52,10 @@
 
                         <div class="form-group col-md-7">
                             <label for="inputAadhaar">Aadhaar Card Number</label>
-                            <input type="text" class="form-control" id="aadhaar" placeholder="Aadhaar Card Number" onkeyup="aadhaarvalid()">
+                            <input type="text" name="aadhaar" id="aadhaar" value="{{update.aadhaar}}" class="form-control" placeholder="Aadhaar Card Number" onkeyup="aadhaarvalid()" autocomplete="off">
                             <label id="aadhaar_error"></label>
                         </div>
                     </div>
-
-                    <!-- <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <input type="file" name="" id="file">
-                            <label id="file_error"></label>
-                        </div>
-                    </div> -->
 
                     <div class="form-row">
                         <div class="form-inline">
@@ -70,7 +64,7 @@
                         <div class="form-row">
                             <div class="form-group col-md-4">
                                 <label for="inputDay">Day</label>
-                                <select id="day" class="form-control">
+                                <select name="day" id="day" value="{{update.day}}" class="form-control" autocomplete="off">
                                     <option value="" value="">Choose...</option>
                                     <option>1</option>
                                     <option>2</option>
@@ -109,27 +103,27 @@
 
                             <div class="form-group col-md-4">
                                 <label for="inputMonth">Month</label>
-                                <select id="month" class="form-control">
+                                <select name="month" id="month" value="{{update.month}}" class="form-control" autocomplete="off">
                                     <option value="" value="">Choose...</option>
-                                    <option>January</option>
-                                    <option>February</option>
-                                    <option>March</option>
-                                    <option>April</option>
-                                    <option>May</option>
-                                    <option>June</option>
-                                    <option>July</option>
-                                    <option>Augest</option>
-                                    <option>September</option>
-                                    <option>October</option>
-                                    <option>November</option>
-                                    <option>December</option>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                    <option>6</option>
+                                    <option>7</option>
+                                    <option>8</option>
+                                    <option>9</option>
+                                    <option>10</option>
+                                    <option>11</option>
+                                    <option>12</option>
                                 </select>
                                 <label id="dob_error2"></label>
                             </div>
 
                             <div class="form-group col-md-4">
                                 <label for="inputYear">Year</label>
-                                <select id="year" class="form-control">
+                                <select name="year" id="year" value="{{update.year}}" class="form-control" autocomplete="off">
                                     <option value="" value="">Choose...</option>
                                     <option>1950</option>
                                     <option>1951</option>
@@ -213,7 +207,7 @@
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputGender">Gender</label>
-                            <select id="gender" name="gender" class="form-control">
+                            <select name="gender" id="gender" value="{{update.gender}}" class="form-control" autocomplete="off">
                                 <option value="" value="">Choose...</option>
                                 <option>Male</option>
                                 <option>Female</option>
@@ -226,14 +220,14 @@
                     <div class="form-row">
                         <div class="form-group col-md-12">
                             <label for="inputAddress">Permanent Address</label>
-                            <textarea class="form-control" id="permanentaddress" cols="10" rows="2" placeholder="Permanent Address"></textarea>
+                            <input type="text" name="address" id="permanentaddress" value="{{update.address}}" class="form-control" placeholder="Permanent Address" onkeyup="addressvalid()" autocomplete="off">
                             <label id="address_error"></label>
                         </div>
                         
                         <div class="form-row">
                             <div class="form-group col-md-4">
                                 <label for="inputState">State</label>
-                                <select id="state" class="form-control">
+                                <select name="state" id="state" value="{{update.state}}" class="form-control" autocomplete="off">
                                     <option value="" value="">Choose...</option>
                                     <option>Kerala</option>
                                     <option>Tamilnadu</option>
@@ -246,7 +240,7 @@
 
                             <div class="form-group col-md-4">
                                 <label for="inputDistrict">District</label>
-                                <select id="district" class="form-control">
+                                <select name="district" id="district" value="{{update.district}}" class="form-control" autocomplete="off">
                                     <option value="" value="">Choose...</option>
                                     <option>Alappuzha</option>
                                     <option>Eranakulam</option>
@@ -268,7 +262,7 @@
 
                             <div class="form-group col-md-4">
                                 <label for="inputPin">Pin Code</label>
-                                <input type="text" class="form-control" id="pincode" placeholder="Pin Code" onkeyup="pincodevalid()">
+                                <input type="text" name="pincode" id="pincode" value="{{update.pin}}" class="form-control" placeholder="Pin Code" onkeyup="pincodevalid()" autocomplete="off">
                                 <label id="pincode_error"></label>
                             </div>
                         </div>
@@ -277,13 +271,13 @@
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputPhoneNumber">Mobile Number</label>
-                            <input type="text" class="form-control" id="phonenumber" placeholder="Mobile Number" onkeyup="phonevalid()">
+                            <input type="text" name="phone" id="phonenumber" value="{{update.phone}}" class="form-control" placeholder="Mobile Number" onkeyup="phonevalid()" autocomplete="off">
                             <label id="phone_error"></label>
                         </div>
 
                         <div class="form-group col-md-6">
                             <label for="inputEmail">Email Address</label>
-                            <input type="text" class="form-control" id="emailid" placeholder="Email Id" onkeyup="emailvald()">
+                            <input type="text" name="email" id="emailid" value="{{update.email}}" class="form-control" placeholder="Email Id" onkeyup="emailvalid()" autocomplete="off">
                             <label id="email_error"></label>
                         </div>
                     </div>
@@ -291,23 +285,22 @@
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputPassword">Password</label>
-                            <input type="password" class="form-control" id="password" placeholder="Password" onkeyup="passwordvalid()">
+                            <input type="password" name="password" id="password" value="{{update.password}}" class="form-control" placeholder="Password" onkeyup="passwordvalid()" autocomplete="off">
                             <label id="password_error"></label>
                         </div>
 
                         <div class="form-group col-md-6">
                             <label for="inputConfirmPassword">Confirm Password</label>
-                            <input type="password" class="form-control" id="cpassword" placeholder="Confirm Password" onkeyup="confirmpassvalid()">
+                            <input type="password" name="cpassword" id="cpassword" value="{{update.cpassword}}" class="form-control" placeholder="Confirm Password" onkeyup="confirmpassvalid()" autocomplete="off">
                             <label id="cpassword_error"></label>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="auth">
+                            <input class="form-check-input" type="checkbox" name="auth" value="{{update.authentication}}" value="Yes" checked>
                             <label class="form-check-label" for="invalidCheck2">
                             I authorize this website to display my name and phone number, so that the needy could contact me when there is an emergency.</label><br><br>
-                            <label id="auth_error"></label>
                         </div>
                     </div>
                     <button class="btn btn-primary col-md-12" type="submit" onclick="return validation()">Sign Up</button>&nbsp;

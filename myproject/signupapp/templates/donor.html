@@ -8,7 +8,7 @@
     <title>Donor Signup</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/signup_donor.css' %}">
-    <script src="{% static 'javascript/signup_donor_valid.js' %}"></script>
+    <script src="{% static 'javascript/signup_donor.js' %}"></script>
 </head>
 <body>
     <div class="container-fluid">
@@ -16,19 +16,19 @@
             <div class="col-xs-2 col-lg-2"></div>
             <div class="col-xs-7 col-lg-7">
                 <form method="post"> 
-                    {% csrf_token %}
+                {% csrf_token %}
                     <h1>Donor Registration</h1>
                     <hr color="red">
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputFirstName">First Name</label>
-                            <input type="text" name="firstname" class="form-control" id="firstname" placeholder="First Name" onkeyup="firstnamevalid()">
+                            <input type="text" name="firstname" id="firstname" value="{{update.fname}}" class="form-control" placeholder="First Name" onkeyup="firstnamevalid()" autocomplete="off"> 
                             <label id="first_error"></label>
                         </div>
 
                         <div class="form-group col-md-6">
                             <label for="inputLastName">Last Name</label>
-                            <input type="text" name="lastname" class="form-control" id="lastname" placeholder="Last Name" onkeyup="lastnamevalid()">
+                            <input type="text" name="lastname" id="lastname"  value="{{update.lname}}" class="form-control"  placeholder="Last Name" onkeyup="lastnamevalid()" autocomplete="off">
                             <label id="last_error"></label>
                         </div>
                     </div>
@@ -36,7 +36,7 @@
                     <div class="form-row">
                         <div class="form-group col-md-5">
                             <label for="inputBloodGroup">Blood Group</label>
-                            <select id="bloodgroup" name="bloodgroup" class="form-control">
+                            <select name="bloodgroup" id="bloodgroup"  value="{{update.blood}}" class="form-control" autocomplete="off">
                                 <option  value="" value="">Choose...</option>
                                 <option>A+</option>
                                 <option>A-</option>
@@ -52,17 +52,11 @@
 
                         <div class="form-group col-md-7">
                             <label for="inputAadhaar">Aadhaar Card Number</label>
-                            <input type="text" name="aadhaar" class="form-control" id="aadhaar" placeholder="Aadhaar Card Number" onkeyup="aadhaarvalid()">
+                            <input type="text" name="aadhaar" id="aadhaar"  value="{{update.aadhaar}}" class="form-control" placeholder="Aadhaar Card Number" onkeyup="aadhaarvalid()" autocomplete="off">
                             <label id="aadhaar_error"></label>
                         </div>
                     </div>
 
-                    <!-- <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <input type="file" class="form_control" name="images" id="file">
-                            <label id="file_error"></label>
-                        </div>
-                    </div> -->
 
                     <div class="form-row">
                         <div class="form-inline">
@@ -71,7 +65,7 @@
                         <div class="form-row">
                             <div class="form-group col-md-4">
                                 <label for="inputDay">Day</label>
-                                <select id="day" name="day" class="form-control">
+                                <select name="day" id="day"  value="{{update.day}}" class="form-control" autocomplete="off">
                                     <option value="" value="">Choose...</option>
                                     <option>1</option>
                                     <option>2</option>
@@ -110,7 +104,7 @@
 
                             <div class="form-group col-md-4">
                                 <label for="inputMonth">Month</label>
-                                <select id="month" name="month" class="form-control">
+                                <select name="month" id="month" value="{{update.month}}" class="form-control" autocomplete="off">
                                     <option value="" value="">Choose...</option>
                                     <option>1</option>
                                     <option>2</option>
@@ -130,7 +124,7 @@
 
                             <div class="form-group col-md-4">
                                 <label for="inputYear">Year</label>
-                                <select id="year" name="year" class="form-control">
+                                <select name="year" id="year" value="{{update.year}}" class="form-control" autocomplete="off">
                                     <option value="" value="">Choose...</option>
                                     <option>1950</option>
                                     <option>1951</option>
@@ -214,7 +208,7 @@
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputGender">Gender</label>
-                            <select id="gender" name="gender" class="form-control">
+                            <select name="gender" id="gender" value="{{update.gender}}" class="form-control" autocomplete="off">
                                 <option value="" value="">Choose...</option>
                                 <option>Male</option>
                                 <option>Female</option>
@@ -227,14 +221,14 @@
                     <div class="form-row">
                         <div class="form-group col-md-12">
                             <label for="inputAddress">Permanent Address</label>
-                            <input type="text" class="form-control" name="address" id="permanentaddress" placeholder="Permanent Address">
+                            <input type="text" name="address" value="{{update.address}}" id="permanentaddress" class="form-control" placeholder="Permanent Address" onkeyup="addressvalid()" autocomplete="off">
                             <label id="address_error"></label>
                         </div>
 
                         <div class="form-row">
                             <div class="form-group col-md-4">
                                 <label for="inputState">State</label>
-                                <select id="state" name="state" class="form-control">
+                                <select name="state" id="state" value="{{update.state}}" class="form-control" autocomplete="off">
                                     <option value="" value="">Choose...</option>
                                     <option>Kerala</option>
                                     <option>Tamilnadu</option>
@@ -247,7 +241,7 @@
 
                             <div class="form-group col-md-4">
                                 <label for="inputDistrict">District</label>
-                                <select id="district" name="district" class="form-control">
+                                <select name="district" id="district" value="{{update.district}}" class="form-control" autocomplete="off">
                                     <option value="" value="">Choose...</option>
                                     <option>Alappuzha</option>
                                     <option>Eranakulam</option>
@@ -269,7 +263,7 @@
 
                             <div class="form-group col-md-4">
                                 <label for="inputPin">Pin Code</label>
-                                <input type="text" class="form-control" name="pincode" id="pincode" placeholder="Pincode" onkeyup="pincodevalid()">
+                                <input type="text" name="pincode" id="pincode" value="{{update.pin}}" class="form-control" placeholder="Pincode" onkeyup="pincodevalid()" autocomplete="off">
                                 <label id="pincode_error"></label>
                             </div>
                         </div>
@@ -278,13 +272,13 @@
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputPhoneNumber">Mobile Number</label>
-                            <input type="text" class="form-control" name="phone" id="phonenumber" placeholder="Mobile Number" onkeyup="phonevalid()">
+                            <input type="text" name="phone" id="phonenumber" value="{{update.phone}}" class="form-control" placeholder="Mobile Number" onkeyup="phonevalid()" autocomplete="off">
                             <label id="phone_error"></label>
                         </div>
 
                         <div class="form-group col-md-6">
                             <label for="inputEmail">Email Address</label>
-                            <input type="email" class="form-control" name="email" id="emailid" placeholder="Email Id" onkeyup="emailvalid()">
+                            <input type="email" name="email" id="emailid" value="{{update.email}}" class="form-control" placeholder="Email Id" onkeyup="emailvalid()" autocomplete="off">
                             <label id="email_error"></label>
                         </div>
                     </div>
@@ -292,23 +286,22 @@
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputPassword">Password</label>
-                            <input type="password" class="form-control" name="password" id="password" placeholder="Password" onkeyup="passwordvalid()">
+                            <input type="password" name="password" id="password" value="{{update.password}}" class="form-control" placeholder="Password" onkeyup="passwordvalid()" autocomplete="off">
                             <label id="password_error"></label>
                         </div>
 
                         <div class="form-group col-md-6">
                             <label for="inputConfirmPassword">Confirm Password</label>
-                            <input type="password" class="form-control" name="cpassword" id="cpassword" placeholder="Confirm Password" onkeyup="confirmpassvalid()">
+                            <input type="password" name="cpassword" id="cpassword" value="{{update.cpassword}}" class="form-control" placeholder="Confirm Password" onkeyup="confirmpassvalid()" autocomplete="off">
                             <label id="cpassword_error"></label>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <div class="form-check">
-                            <input class="form-check-input" value="yes"  type="checkbox" name="auth" id="auth" onkeyup="auth_valid()">
+                            <input type="checkbox" class="form-check-input" name="auth" value="{{update.authentication}}" value="Yes" onkeyup="auth_valid()" checked>
                             <label class="form-check-label" for="invalidCheck2">
                             I authorize this website to display my name and phone number, so that the needy could contact me when there is an emergency.</label><br><br>
-                            <label id="auth_error"></label>
                         </div>
                     </div>
                     <button class="btn btn-primary col-md-12" type="submit" onclick="return validation()">Sign Up</button>&nbsp;
@@ -317,6 +310,7 @@
             </div>
         </div>
    </div>
+   
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
