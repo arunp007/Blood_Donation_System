@@ -53,6 +53,7 @@
     
     <div class="container-fluid">
         <div class="row">
+            <div class="col-xs-2 col-lg-2"></div>
             <div class="col-xs-7 col-lg-7">
                 <form method="post">
                     {% csrf_token %} 
@@ -60,7 +61,7 @@
                     <div class="form-row">
                         <div class="col-md-6">
                             <label for="inputNameOfOrganization">Name Of Organization/Camp</label>
-                            <input type="text" name="camp" class="form-control" id="organization" placeholder="Name Of Organization" onkeyup="campvalid()">
+                            <input type="text" name="camp" id="organization" class="form-control" placeholder="Name Of Organization" onkeyup="campvalid()" autocomplete="off">
                             <label id="organization_error"></label>
                         </div>
 
@@ -72,37 +73,37 @@
 
                         <div class="form-group col-md-6">
                             <label for="inputAddress">Permanent Address</label>
-                            <input type="text" class="form-control" name="address" id="address" placeholder="Permanent Address" onkeyup="addressvalid()">
+                            <input type="text" name="address" id="address" class="form-control" placeholder="Permanent Address" onkeyup="addressvalid()" autocomplete="off">
                             <label id="address_error"></label>
                         </div>
 
                         <div class="form-group col-md-6">
                             <label for="inputState">State</label>
-                            <input type="text" class="form-control" name="state" id="state" placeholder="State" onkeyup="statevalid()">
+                            <input type="text" name="state" id="state" class="form-control" placeholder="State" onkeyup="statevalid()" autocomplete="off">
                             <label id="state_error"></label>
                         </div>
 
                         <div class="form-group col-md-6">
                             <label for="inputDistrict">District</label>
-                            <input type="text" class="form-control" name="district" id="district" placeholder="District" onkeyup="districtvalid()">
+                            <input type="text" name="district" id="district" class="form-control" placeholder="District" onkeyup="districtvalid()" autocomplete="off">
                             <label id="district_error"></label>
                         </div>
 
                         <div class="form-group col-md-6">
                             <label for="inputName">Name</label>
-                            <input type="text" class="form-control" name="name" id="name" placeholder="Name" onkeyup="namevalid()">
+                            <input type="text" name="name" id="name" class="form-control" placeholder="Name" onkeyup="namevalid()" autocomplete="off">
                             <label id="name_error"></label>
                         </div>
  
                         <div class="form-group col-md-6">
                             <label for="inputContact">Contact Number</label>
-                            <input type="text" class="form-control" name="phone" id="phone" placeholder="Contact Number" onkeyup="phonevalid()">
+                            <input type="text" name="phone" id="phone" class="form-control" placeholder="Contact Number" onkeyup="phonevalid()" autocomplete="off">
                             <label id="phone_error"></label>
                         </div>
 
                         <div class="form-group col-md-6">
                             <label for="inputPostalCode">Email Id</label>
-                            <input type="text" class="form-control" name="email" id="emailid" placeholder="Email Id" onkeyup="emailvalid()">
+                            <input type="text" name="email" id="emailid" class="form-control" placeholder="Email Id" onkeyup="emailvalid()" autocomplete="off">
                             <label id="email_error"></label>
                         </div>
 

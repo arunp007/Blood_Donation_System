@@ -28,10 +28,10 @@
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: grey;">
               <a class="dropdown-item" href="{% url 'donor_details' %}"><span class="fa fa-handshake-o"> Donors</span></a>
-              <a class="dropdown-item" href="#"><span class="fa fa-heart"> Recipients</span></a>
-              <a class="dropdown-item" href="#"><span class="fa fa-hospital-o"> Hospitals</span></a>
-              <a class="dropdown-item" href="#"><span class="fa fa-heart"> Blood Requests</span></a>
-              <a class="dropdown-item" href="#"><span class="fa fa-hospital-o"> Camps</span></a>
+              <a class="dropdown-item" href="{% url 'recipient_details' %}"><span class="fa fa-heart"> Recipients</span></a>
+              <a class="dropdown-item" href="{% url 'hospital_details' %}"><span class="fa fa-hospital-o"> Hospitals</span></a>
+              <a class="dropdown-item" href="{% url 'bloodrequest' %}"><span class="fa fa-heart"> Blood Requests</span></a>
+              <a class="dropdown-item" href="{% url 'camp_details' %}"><span class="fa fa-hospital-o"> Camps</span></a>
             </div>
           </li>
           <li class="nav-item dropdown">
@@ -39,7 +39,7 @@
             <span class="fa fa-warning"> Urgent</span>
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: grey;">
-              <a class="dropdown-item" href=""><span class="fa fa-heart"> Blood Requests</span></a>
+              <a class="dropdown-item" href="{% url 'urgentblood' %}"><span class="fa fa-heart"> Blood Requests</span></a>
             </div>
           </li>
           <li class="nav-item">

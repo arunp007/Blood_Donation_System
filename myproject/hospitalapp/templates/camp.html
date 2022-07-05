@@ -1,0 +1,82 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camps Registration</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/hospital_camp.css' %}">
+    <script src="{% static 'javascript/hospital_camp.js' %}"></script>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-2 col-lg-2"></div>
+            <div class="col-xs-7 col-lg-7">
+                <form method="post">
+                    {% csrf_token %} 
+                    <h1 style="font-size: 45px; font-family:Verdana; font-weight:bolder; margin-bottom: 50px; text-align: center;">Blood Donation Camp</h1>
+                    <div class="form-row">
+                        <div class="col-md-6">
+                            <label for="inputNameOfOrganization">Name Of Organization/Camp</label>
+                            <input type="text" name="camp" id="organization" value="{{update.camp}}" class="form-control" placeholder="Name Of Organization" onkeyup="campvalid()" autocomplete="off">
+                            <label id="organization_error"></label>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="inputDate">When Would You Like To Organize A Camp</label>
+                            <input type="datetime-local" name="date" id="datetime" value="{{update.date}}" class="form-control">
+                            <label id="datetime_error"></label>
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label for="inputAddress">Permanent Address</label>
+                            <input type="text" name="address" id="address" value="{{update.address}}" class="form-control" placeholder="Permanent Address" onkeyup="addressvalid()" autocomplete="off">
+                            <label id="address_error"></label>
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label for="inputState">State</label>
+                            <input type="text" name="state" id="state" value="{{update.state}}" class="form-control" placeholder="State" onkeyup="statevalid()" autocomplete="off">
+                            <label id="state_error"></label>
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label for="inputDistrict">District</label>
+                            <input type="text" name="district" id="district" value="{{update.district}}" class="form-control" placeholder="District" onkeyup="districtvalid()" autocomplete="off">
+                            <label id="district_error"></label>
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label for="inputName">Name</label>
+                            <input type="text" name="name" id="name" value="{{update.name}}" class="form-control" placeholder="Name" onkeyup="namevalid()" autocomplete="off">
+                            <label id="name_error"></label>
+                        </div>
+ 
+                        <div class="form-group col-md-6">
+                            <label for="inputContact">Contact Number</label>
+                            <input type="text" name="phone" id="phone" value="{{update.phone}}" class="form-control" placeholder="Contact Number" onkeyup="phonevalid()" autocomplete="off">
+                            <label id="phone_error"></label>
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label for="inputPostalCode">Email Id</label>
+                            <input type="text" name="email" id="emailid" value="{{update.email}}" class="form-control" placeholder="Email Id" onkeyup="emailvalid()" autocomplete="off">
+                            <label id="email_error"></label>
+                        </div>
+
+                    </div>
+                    <button type="submit" onclick="return validation()" class="btn btn-dark col-md-12">Enter</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>      
+</body>
+</html>
