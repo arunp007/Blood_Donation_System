@@ -44,9 +44,9 @@
             <span class="fa fa-sign-out"> Sign Up</span>
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: grey;">
-              <a class="dropdown-item" href="{% url 'donorsignup' %}"><span class="fa fa-handshake-o"> Donor</span></a>
-              <a class="dropdown-item" href="{% url 'recipientsignup' %}"><span class="fa fa-heart"> Recipient</span></a>
-              <a class="dropdown-item" href="{% url 'hospitalsignup' %}"><span class="fa fa-hospital-o"> Hospital</span></a>
+              <a class="dropdown-item" href="{% url 'donor_signup' %}"><span class="fa fa-handshake-o"> Donor</span></a>
+              <a class="dropdown-item" href="{% url 'recipient_signup' %}"><span class="fa fa-heart"> Recipient</span></a>
+              <a class="dropdown-item" href="{% url 'hospital_signup' %}"><span class="fa fa-hospital-o"> Hospital</span></a>
             </div>
           </li>
         </ul>
@@ -113,7 +113,7 @@
           <img src="{% static 'images/main_home/blooddonation.png' %}" style="padding-bottom: 50px; width: 300px; ">
           <h1 style="font-size: 25px;"><span style="color: red;">One</span> Blood Donation Can Save Upto <span style="color: red;">Three</span> Lives</h1><br>
           <p style="font-weight: bolder;">After donating blood, the body works to replenish the blood loss. This stimulates the production of new blood cells and in turn, helps in maintaining good health.</p>
-          <center><a href="{% url 'donorsignup' %}" style="width: 40%; height: 40px;" class="btn btn-danger">Donate Now</a></center><br><br>
+          <center><a href="{% url 'donor_signup' %}" style="width: 40%; height: 40px;" class="btn btn-danger">Donate Now</a></center><br><br>
         </div>
 
         <div class="col-xs-6 col-lg-6" style="padding-bottom: 150px;">
