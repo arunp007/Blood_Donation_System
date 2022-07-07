@@ -16,8 +16,11 @@ urlpatterns = [
     path('hospital_update/<int:id>', views.hospitals_update, name = 'hospital_update'),
     path('hospital_delete/<int:id>', views.hospitals_delete, name = 'hospital_delete'),
     path('donorlogin', views.donorlogin, name = 'donorlogin'),
+    path('donor_logout', views.donor_logout, name = 'donor_logout'),
     path('hospitallogin', views.hospitallogin, name = 'hospitallogin'),
+    path('hospital_logout', views.hospital_logout, name = 'hospital_logout'),
     path('recipientlogin', views.recipientlogin, name = 'recipientlogin'),
+    path('recipient_logout', views.recipient_logout, name = 'recipient_logout'),
     path('admin', views.admin, name = "adminlogin"),
     path('admin_logout', views.admin_logout, name = 'admin_logout')
 ]

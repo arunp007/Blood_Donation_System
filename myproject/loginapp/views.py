@@ -170,13 +170,57 @@ def hospitals_delete(request, id):
     return redirect('hospitals')
 
 def donorlogin(request):
+    if request.method == 'POST':
+        email = request.POST['email']
+        password = request.POST['password']
+
+        try:
+            current_user = Donors.objects.get(email = email, password = password)
+            request.session['xyz'] = current_user.id
+            return redirect('donor_home')
+
+        except Donors.DoesNotExist:
+            return render(request, 'donorlogin.html', {'message': 'Email Id And Password Is Wrong'})
+    
     return render(request, 'donorlogin.html')
 
+def donor_logout(request):
+    request.session.flush()
+    return redirect('donorlogin')
+
 def hospitallogin(request):
+    if request.method == 'POST':
+        email = request.POST['email']
+        password = request.POST['password']
+
+        try:
+            Hospitals.objects.get(email = email, password = password)
+            return redirect('hospital_home')
+
+        except Hospitals.DoesNotExist:
+            return render(request, 'hospitallogin.html', {'message': 'Email Id And Password Is Wrong'}) 
     return render(request, 'hospitallogin.html')
 
+def hospital_logout(request):
+    request.session.flush()
+    return redirect('hospitallogin')
+
 def recipientlogin(request):
+    if request.method == 'POST':
+        email = request.POST['email']
+        password = request.POST['password']
+
+        try:
+            Recipients.objects.get(email = email, password = password)
+            return redirect('recipient_home')
+
+        except Recipients.DoesNotExist:
+            return render(request, 'recipientlogin.html', {'message': 'Email Id And Password Is Wrong'})
     return render(request, 'recipientlogin.html')
+
+def recipient_logout(request):
+    request.session.flush()
+    return redirect('recipientlogin')
 
 def admin(request):
     if request.method == 'POST':
