@@ -8,10 +8,10 @@
     <title>Admin Page</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="{% static 'css/admin_home_style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/admin_home_style__.css' %}">
 </head>
  <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
       <img src="{% static 'images/admin_/donation.png' %}" class="navbar-brand" alt="" width="150px">
       <a class="navbar-brand" style="font-size: 30px;" href="#"><h1>Life Saver</h1></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -53,77 +53,77 @@
    <div class="container-fluid">
       <div class="row">
         <div class="col-xs-12 col-lg-12">
-          <h1 style="margin-top: 10px; margin-bottom: 100px;">Admin Dashboard</h1>
+          <h1 style="margin-top: 200px; margin-bottom: 100px;">Admin Dashboard</h1>
         </div>
       
-        <div class="col-xs-4 col-lg-4" width="330px" style="margin-top: 10px; margin-bottom: 30px;">
+        <div class="col-xs-3 col-lg-3">
           <div class="container1">
             <img src="{% static 'images/admin_/donors.png' %}" class="donorimage"><br>
-            <label for="" style="margin-left: 250px;font-size: 30px;">6</label><br>
-            <label for="" style="margin-left: 200px;padding-bottom: 10px;">Total Donors</label>
+            <label for="" style="margin-left: 200px;font-size: 30px;">6</label><br>
+            <label for="" style="margin-left: 100px;">Total Donors</label>
             <div class="textarea1">
             <a href="{% url 'donors' %}" class="link" style="text-decoration: none;">View Details</a>
-            <img src="{% static 'images/admin_/left.png' %}" style="width:40px; margin-left: 220px;">
+            <img src="{% static 'images/admin_/left.png' %}" style="width:40px; margin-left: 80px;">
           </div>
         </div>
-      </div>
+      </div><br>
 
-      <div class="col-xs-4 col-lg-4" width="330px" style="margin-top: 10px; margin-bottom: 30px;">
+      <div class="col-xs-3 col-lg-3">
         <div class="container2">
           <img src="{% static 'images/admin_/recipient.png' %}" class="recipientimage"><br>
-          <label for="" style="margin-left: 250px;font-size: 30px;">10</label><br>
-          <label for="" style="margin-left: 180px;padding-bottom: 10px;">Total Recipients</label>
+          <label for="" style="margin-left: 200px; font-size: 30px;">10</label><br>
+          <label for="" style="margin-left: 70px;">Total Recipients</label>
           <div class="textarea2">
             <a href="{% url 'recipients' %}" class="link" style="text-decoration: none;">View Details</a>
-            <img src="{% static 'images/admin_/left.png' %}" style="width:40px; margin-left: 220px;">
+            <img src="{% static 'images/admin_/left.png' %}" style="width:40px; margin-left: 80px;">
           </div>
        </div>
       </div>
 
-      <div class="col-xs-4 col-lg-4" width="330px" style="margin-top: 10px; margin-bottom: 30px;">
+      <div class="col-xs-3 col-lg-3">
         <div class="container3">
           <img src="{% static 'images/admin_/hospital.png' %}" class="hospitalimage"><br>
-          <label for="" style="margin-left: 250px;font-size: 30px;">9</label><br>
-          <label for="" style="margin-left: 175px;padding-bottom: 10px;">Total Hospitals</label>
+          <label for="" style="margin-left: 200px; font-size: 30px;">9</label><br>
+          <label for="" style="margin-left: 70px;">Total Hospitals</label>
           <div class="textarea3">
             <a href="{% url 'hospitals' %}" class="link" style="text-decoration: none;">View Details</a>
-            <img src="{% static 'images/admin_/left.png' %}" style="width:40px; margin-left: 220px;">
+            <img src="{% static 'images/admin_/left.png' %}" style="width:40px; margin-left: 80px;">
           </div>
        </div>
       </div>
 
-      <div class="col-xs-4 col-lg-4" width="330px" style="margin-top: 10px; margin-bottom: 30px;">
+      <div class="col-xs-3 col-lg-3">
         <div class="container4">
           <img src="{% static 'images/admin_/request.png' %}" class="requestimage"><br>
-          <label for="" style="margin-left: 250px;font-size: 30px;">2</label><br>
-          <label for="" style="margin-left: 180px;padding-bottom: 10px;">Blood Requests</label>
+          <label for="" style="margin-left: 200px; font-size: 30px;">2</label><br>
+          <label for="" style="margin-left: 70px;">Blood Requests</label>
           <div class="textarea4">
             <a href="{% url 'bloodrequest' %}" class="link" style="text-decoration: none;">View Details</a>
-            <img src="{% static 'images/admin_/left.png' %}" style="width:40px; margin-left: 220px;">
+            <img src="{% static 'images/admin_/left.png' %}" style="width:40px; margin-left: 80px;">
           </div>
        </div>
       </div>
 
-      <div class="col-xs-4 col-lg-4" width="330px" style="margin-top: 10px; margin-bottom: 30px;">
+      <div class="col-xs-3 col-lg-3">
         <div class="container5">
           <img src="{% static 'images/admin_/urgent.png' %}" class="urgentimage"><br>
-          <label for="" style="margin-left: 250px;font-size: 30px;">4</label><br>
-          <label for="" style="margin-left: 170px;padding-bottom: 10px;">Urgent Requests</label>
+          <label for="" style="margin-left: 200px;font-size: 30px;">4</label><br>
+          <label for="" style="margin-left: 70px;">Urgent Requests</label>
           <div class="textarea5">
             <a href="{% url 'urgentblood' %}" class="link" style="text-decoration: none;">View Details</a>
-            <img src="{% static 'images/admin_/left.png' %}" style="width:40px; margin-left: 220px;">
+            <img src="{% static 'images/admin_/left.png' %}" style="width:40px; margin-left: 80px;">
           </div>
        </div>
       </div>
 
-      <div class="col-xs-4 col-lg-4" width="330px" style="margin-top: 10px; margin-bottom: 30px;">
+      <div class="col-xs-3 col-lg-3" width="330px" style="margin-top: 10px; margin-bottom: 30px;">
         <div class="container6">
           <img src="{% static 'images/admin_/blood_donation_camp.png' %}" class="campimage"><br>
-          <label for="" style="margin-left: 250px;font-size: 30px;">7</label><br>
-          <label for="" style="margin-left: 100px;padding-bottom: 10px;">Blood Donation Camps</label>
+          <label for="" style="margin-left: 200px;font-size: 30px;">7</label><br>
+          <label for="" style="margin-left: 10px;">Blood Donation Camps</label>
           <div class="textarea6">
             <a href="{% url 'camp_details' %}" class="link" style="text-decoration: none;">View Details</a>
-            <img src="{% static 'images/admin_/left.png' %}" style="width:40px; margin-left: 220px;">
+            <img src="{% static 'images/admin_/left.png' %}" style="width:40px; margin-left: 80px;">
           </div>
        </div>
       </div>

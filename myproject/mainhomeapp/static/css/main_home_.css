@@ -1,22 +1,22 @@
 .container-fluid{
-    background-color: white;
+  background-color: white;
 }
 
 a{
-    font-size: 20px;
-    color: white;
+  font-size: 20px;
+  color: white;
 }
 
 
 a:hover{
-    color: red;
-    text-decoration: none;
+  color: red;
+  text-decoration: none;
 }
 
 .head{
-    color: red;
-    font-size: 50px;
-    text-align: center;
+  color: red;
+  font-size: 50px;
+  text-align: center;
 }
 
 .head2{
@@ -38,15 +38,21 @@ a:hover{
 }
 
 .grid{
-    background-color: pink;
-    padding-left: 30px;
-    padding-top: 100px;
-    margin-bottom: 100px;
-    border-radius: 15px;
+  background-color: pink;
+  text-align: center;
+  width: 230px;
+  height: 250px;
+  padding-top: 30px;
+  margin-bottom: 100px;
+  border-radius: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
 }
 
 .grid:hover{
-    box-shadow: 0 0 20px gray;
+  box-shadow: 0 0 20px #f1f6f7;
+  transform: translateY(-50px);
 }
 
 .top{
@@ -82,4 +88,8 @@ a:hover{
 label{
   margin-left: 30px;
   font-size: 22px;
+}
+
+nav{
+  position: sticky;
 }

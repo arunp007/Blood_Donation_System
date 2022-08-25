@@ -14,23 +14,21 @@ a:hover{
 }
 
 .btn-warning{
-    color: white;
+    color:white;
     border-radius: 20px;
 }
 
 .btn-warning:hover{
     color: white;
 }
-  
+ 
 .container{
     padding-top: 20px;
- 
 }
 
 .image{
     margin-left: 20px;
     margin-top: 15px;
-
 }
 
 .content1{
@@ -38,13 +36,16 @@ a:hover{
     width: 100%;
     height: 200px;
     box-shadow: 0 0 20px lightgrey;
-
 }
 
 .content1:hover{
     border-left: 6px solid blue ;
     width: 100%;
     height: 200px;
+}
+
+label{
+    padding-left: 10px;
 }
 
 .footer1{
@@ -63,7 +64,6 @@ label{
     font-size: 20px;
     padding-left: 10px;
     padding-right: 10px;
-    padding-left: 10px;
 }
 
 .top{
@@ -76,7 +76,6 @@ label{
     width: 80px;
     height: 80px;
     margin-left: 1200px;
-    
 }
 
 .topimage{
@@ -90,4 +89,8 @@ label{
     border-radius: 200px;
     width: 80px;
     height: 80px;
+}
+
+nav{
+    position: sticky;
 }

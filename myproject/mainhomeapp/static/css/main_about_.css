@@ -1,0 +1,90 @@
+.container-fluid{
+  background-color: white;
+}
+
+a{
+  font-size: 20px;
+  color: white;
+}
+
+a:hover{
+  color: red;
+  text-decoration: none;
+}
+
+.head{
+  color: red;
+  padding-top: 100px;
+  padding-bottom: 30px;
+  font-size: 40px;
+  text-align: center;
+}
+
+.head1{
+  color: black;
+  font-size: 25px;
+  text-align: center;
+}
+
+.content{
+  color: gray;
+  font-size: 20px;
+  text-align: center;
+}
+
+.grid{
+  background-color: aliceblue !important;
+  width: 300px;
+  height: 300px;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  border-radius: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.grid:hover{
+   transform: translateY(-50px);
+}
+
+.top{
+  position: fixed;
+  top: 70%;
+  transform: translateY(-70%);
+  padding-left: 1200px;
+}
+
+.container1{
+  background-color: #323949;
+  height: 110px;
+}
+
+.footer1{
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-left: 10px;
+  text-align: center;
+}
+
+.container2{
+  background-color: black;
+  height: 200px;
+}
+
+.footer2{
+  padding-top: 50px;
+  padding-bottom: 30px;
+  padding-left: 10px;
+  text-align: center;
+
+}
+
+label{
+  margin-left: 30px;
+  font-size: 22px;
+}
+
+nav{
+  position: sticky;
+}

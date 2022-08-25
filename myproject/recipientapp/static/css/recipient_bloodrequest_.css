@@ -13,7 +13,7 @@ a:hover{
 }
 
 .btn-warning{
-    color: white;
+    color:white;
     border-radius: 20px;
 }
 
@@ -22,25 +22,8 @@ a:hover{
 }
 
 .image{
-    width: 300px;
-    height: 300px;
-    margin-top: 30px;
-    margin-bottom: 50px;
+    margin-top: 100px;
     margin-left: 20px;
-    border-radius: 500px;
-
-}
-
-.head{
-    color: red;
-    font-weight: bolder;
-    font-size: 50px;
-    padding-top: 20px;
-}
-
-p{
-    padding-top: 20px;
-    padding-bottom: 20px;
 }
 
 .footer1{
@@ -53,24 +36,11 @@ p{
 .container-fluid1{
     background-color: #323949;
 }
-
 .label{
     padding-top: 30px;
     font-size: 20px;
     padding-left: 10px;
     padding-right: 10px;
-}
-
-.footer2{
-    background-color: black;
-    color: white;
-    height: 160px;
-    width: 100%;
-    text-align: center;
-}
-
-.container-fluid2{
-    background-color: black;
 }
 
 .top{
@@ -85,6 +55,7 @@ p{
     margin-left: 1200px;
 }
 
+
 .topimage{
     width: 50px;
     margin-left: 15px;
@@ -96,4 +67,8 @@ p{
     border-radius: 200px;
     width: 80px;
     height: 80px;
+}
+
+nav{
+    position: sticky;
 }

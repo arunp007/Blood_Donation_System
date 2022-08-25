@@ -28,6 +28,7 @@ a:hover{
     margin-bottom: 50px;
     margin-left: 20px;
     border-radius: 500px;
+
 }
 
 .head{
@@ -60,6 +61,18 @@ p{
     padding-right: 10px;
 }
 
+.footer2{
+    background-color: black;
+    color: white;
+    height: 160px;
+    width: 100%;
+    text-align: center;
+}
+
+.container-fluid2{
+    background-color: black;
+}
+
 .top{
     position: fixed;
     top: 70%;
@@ -72,7 +85,6 @@ p{
     margin-left: 1200px;
 }
 
-
 .topimage{
     width: 50px;
     margin-left: 15px;
@@ -84,4 +96,8 @@ p{
     border-radius: 200px;
     width: 80px;
     height: 80px;
+}
+
+nav{ 
+    position: sticky;
 }

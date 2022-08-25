@@ -13,7 +13,7 @@ a:hover{
 }
 
 .btn-warning{
-    color:white;
+    color: white;
     border-radius: 20px;
 }
 
@@ -22,8 +22,24 @@ a:hover{
 }
 
 .image{
-    margin-top: 100px;
+    width: 300px;
+    height: 300px;
+    margin-top: 30px;
+    margin-bottom: 50px;
     margin-left: 20px;
+    border-radius: 500px;
+}
+
+.head{
+    color: red;
+    font-weight: bolder;
+    font-size: 50px;
+    padding-top: 20px;
+}
+
+p{
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .footer1{
@@ -36,6 +52,7 @@ a:hover{
 .container-fluid1{
     background-color: #323949;
 }
+
 .label{
     padding-top: 30px;
     font-size: 20px;
@@ -67,4 +84,8 @@ a:hover{
     border-radius: 200px;
     width: 80px;
     height: 80px;
+}
+
+nav{
+    position: sticky;
 }

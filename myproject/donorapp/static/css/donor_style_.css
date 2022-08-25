@@ -3,21 +3,18 @@
     margin-bottom: 200px;
 }
 
-  
 a{
     color: white;
     font-size: 20px;
     text-decoration: none;
-  
 }
 
-  
 a:hover{
     color: red;
 }
 
 .btn-warning{
-    color:white;
+    color: white;
     border-radius: 20px;
 }
 
@@ -26,10 +23,10 @@ a:hover{
 }
 
 .image{
-    width: 310px;
+    width: 330px;
     height: 300px;
-    margin-left: 1px;
-    margin-top: 50px;
+    margin-left: 3px;
+    margin-top: 50px ;
     border-radius: 10px;
 }
 
@@ -91,6 +88,7 @@ p{
     margin-top: 100px;
     margin-left: 275px;
     position: relative;
+
 }
 
 .container1:hover .overlay1{
@@ -99,6 +97,7 @@ p{
 
 .image1:hover{
     display: none;
+
 }
 
 .container2{
@@ -144,6 +143,7 @@ p{
     width: 150px;
     height: 150px;
     position: relative;
+
 }
 
 .container2:hover .overlay2{
@@ -318,6 +318,7 @@ p{
 
 .image5:hover{
     display: none;
+
 }
 
 .container6{
@@ -424,7 +425,6 @@ p{
 
 .image7:hover{
     display: none;
-
 }
 
 .container8{
@@ -603,7 +603,7 @@ p{
 .container-fluid1{
     background-color: #323949;
 }
-  
+
 label{
     padding-top: 30px;
     font-size: 20px;
@@ -635,4 +635,8 @@ label{
     border-radius: 200px;
     width: 80px;
     height: 80px;
+}
+
+nav{
+    position: sticky;
 }
