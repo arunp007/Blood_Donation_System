@@ -8,7 +8,7 @@
     <title>Recipient Page</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="{% static 'css/recipient_style_.css' %}">
+    <link rel="stylesheet" href="{% static 'css/recipient_style__.css' %}">
   </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-danger">
@@ -59,7 +59,7 @@
       </div>
     </nav>
 
-    <div class="container-fluid" style="margin-top: 150px;">
+    <div class="container-fluid" style="margin-top: 200px;">
       <div class="col-xs-12 col-lg-12">
         <div id="carouselExampleCaptions" class="carousel slide mr-auto" data-ride="carousel">
           <ol class="carousel-indicators">
@@ -128,33 +128,21 @@
               </ul>
             </div>
 
-            <div class="col-xs-6 col-lg-6">
+            <div class="col-xs-2 col-lg-2">
               <div class="container1">
-                <img src="{% static 'images/recipient/weight.png' %}" class="image1">
+                <img src="{% static 'images/donor/weight.png' %}" class="image1">
                 <div class="overlay1">
-                 <div class="content1">
-                   <h1 style="font-size: 15px;">Weight</h1>
-                   <p style="font-size: 9px;">The Donor Should not be less than 45 Kilograms.</p>
-                 </div>
+                  <div class="content1">
+                    <h1 style="font-size: 15px;">Weight</h1>
+                    <p style="font-size: 9px;">The Donor Should not be less than 45 Kilograms.</p>
+                  </div>
                 </div>
               </div>
             </div>
-
-            <div class="col-xs-6 col-lg-6">
-              <div class="container5">
-                <img src="{% static 'images/recipient/malaria.png' %}" class="image5">
-                <div class="overlay5">
-                 <div class="content5">
-                   <h1 style="font-size: 15px;">Malaria</h1>
-                   <p style="font-size: 9px;">Should Not have been treated for malaria in last 3 months or 3 years.</p>
-                 </div>
-                </div>
-              </div>
-            </div>
-
+      
             <div class="col-xs-2 col-lg-2">
               <div class="container2">
-                <img src="{% static 'images/recipient/age.png' %}" class="image2">
+                <img src="{% static 'images/donor/age.png' %}" class="image2">
                 <div class="overlay2">
                   <div class="content2">
                     <h1 style="font-size: 15px;">Age</h1>
@@ -162,11 +150,11 @@
                   </div>
                 </div>
               </div>
-            </div>  
-
+            </div> 
+            
             <div class="col-xs-2 col-lg-2">
               <div class="container3">
-                <img src="{% static 'images/recipient/pulse.png' %}" class="image3">
+                <img src="{% static 'images/donor/pulse.png' %}" class="image3">
                 <div class="overlay3">
                   <div class="content3">
                     <h1 style="font-size: 15px;">Pulse</h1>
@@ -175,10 +163,10 @@
                 </div>
               </div>
             </div>
-
+      
             <div class="col-xs-2 col-lg-2">
               <div class="container4">
-                <img src="{% static 'images/recipient/pressure.png' %}" class="image4">
+                <img src="{% static 'images/donor/pressure.png' %}" class="image4">
                 <div class="overlay4">
                   <div class="content4">
                     <h1 style="font-size: 15px;">Pressure</h1>
@@ -187,10 +175,22 @@
                 </div>
               </div>
             </div>
-
+      
+            <div class="col-xs-2 col-lg-2">
+              <div class="container5">
+                <img src="{% static 'images/donor/malaria.png' %}" class="image5">
+                <div class="overlay5">
+                  <div class="content5">
+                    <h1 style="font-size: 15px;">Malaria</h1>
+                    <p style="font-size: 9px;">Should Not have been treated for malaria in last 3 months or 3 years.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+      
             <div class="col-xs-2 col-lg-2">
               <div class="container6">
-                <img src="{% static 'images/recipient/hg.png' %}" class="image6">
+                <img src="{% static 'images/donor/hg.png' %}" class="image6">
                 <div class="overlay6">
                   <div class="content6">
                     <h1 style="font-size: 15px;">Haemoglobin</h1>
@@ -198,11 +198,13 @@
                   </div>
                 </div>
               </div>
-            </div> 
-
+            </div> <br><br>
+      
+            <div class="col-xs-2 col-lg-2"></div>
+      
             <div class="col-xs-2 col-lg-2">
               <div class="container7">
-                <img src="{% static 'images/recipient/child.png' %}" class="image7">
+                <img src="{% static 'images/donor/child.png' %}" class="image7">
                 <div class="overlay7">
                   <div class="content7">
                     <h1 style="font-size: 15px;">Child Birth</h1>
@@ -211,10 +213,10 @@
                 </div>
               </div>
             </div>
-
+      
             <div class="col-xs-2 col-lg-2">
               <div class="container8">
-                <img src="{% static 'images/recipient/tattoo.png' %}" class="image8">
+                <img src="{% static 'images/donor/tattoo.png' %}" class="image8">
                 <div class="overlay8">
                   <div class="content8">
                     <h1 style="font-size: 15px;">Tattoo</h1>
@@ -223,10 +225,10 @@
                 </div>
               </div>
             </div>
-
-            <div class="col-xs-6 col-lg-6">
+      
+            <div class="col-xs-2 col-lg-2">
               <div class="container9">
-                <img src="{% static 'images/recipient/cancer.png' %}" class="image9">
+                <img src="{% static 'images/donor/cancer.png' %}" class="image9">
                 <div class="overlay9">
                   <div class="content9">
                     <h1 style="font-size: 15px;">Cancer</h1>
@@ -235,10 +237,10 @@
                 </div>
               </div>
             </div>
-
-            <div class="col-xs-6 col-lg-6">
+      
+            <div class="col-xs-2 col-lg-2">
               <div class="container10">
-                <img src="{% static 'images/recipient/h.png' %}" class="image10">
+                <img src="{% static 'images/donor/h.png' %}" class="image10">
                 <div class="overlay10">
                   <div class="content10">
                     <h1 style="font-size: 15px;">Heart Disease</h1>
@@ -247,13 +249,15 @@
                 </div>
               </div>
             </div>
+      
+            <div class="col-xs-2 col-lg-2"></div>
 
             <div class="col-xs-12 col-lg-12">
               <a href="#top">
               <div class="top">
-                <img src="{% static 'images/recipient/top.png' %}" class="topimage"></a>
+                <img src="{% static 'images/donor/topnav.png' %}" class="topimage"></a>
               </div>
-            </div>
+            </div> 
         </div>
       </div>
     </div>

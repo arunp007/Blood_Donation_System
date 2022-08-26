@@ -3,18 +3,21 @@
     margin-bottom: 200px;
 }
 
+  
 a{
     color: white;
     font-size: 20px;
     text-decoration: none;
+  
 }
 
+  
 a:hover{
     color: red;
 }
 
 .btn-warning{
-    color: white;
+    color:white;
     border-radius: 20px;
 }
 
@@ -23,10 +26,10 @@ a:hover{
 }
 
 .image{
-    width: 330px;
+    width: 310px;
     height: 300px;
-    margin-left: 3px;
-    margin-top: 50px ;
+    margin-left: 1px;
+    margin-top: 50px;
     border-radius: 10px;
 }
 
@@ -48,8 +51,9 @@ p{
     width: 150px;
     height: 150px;
     margin-top: 100px;
-    margin-left: 275px;
-    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
     position: relative;
 }
 
@@ -67,8 +71,9 @@ p{
 .content1{
     position: relative;
     top: 10px;
-    left: 0%;
-    transition: translate(-50%, -50%);
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
     color: white;
     font-family: Verdana;
     text-align: center;
@@ -86,7 +91,9 @@ p{
     width: 150px;
     height: 150px;
     margin-top: 100px;
-    margin-left: 275px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
     position: relative;
 
 }
@@ -105,8 +112,10 @@ p{
     border-radius: 500px;
     width: 150px;
     height: 150px;
-    margin-top: 10px;
-    margin-left: 50px;
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
     position: relative;
 }
 
@@ -124,8 +133,9 @@ p{
 .content2{
     position: relative;
     top: 10px;
-    left: 0%;
-    transition: translate(-50%, -50%);
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
     color: white;
     font-family: Verdana;
     text-align: center;
@@ -142,6 +152,10 @@ p{
     background-color: black;
     width: 150px;
     height: 150px;
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
     position: relative;
 
 }
@@ -159,8 +173,10 @@ p{
     border-radius: 500px;
     width: 150px;
     height: 150px;
-    margin-top: 10px;
-    margin-left: 20px;
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
     position: relative;
 }
 
@@ -178,8 +194,9 @@ p{
 .content3{
     position: relative;
     top: 10px;
-    left: 0%;
-    transition: translate(-50%, -50%);
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
     color: white;
     font-family: Verdana;
     text-align: center;
@@ -196,6 +213,9 @@ p{
     background-color: black;
     width: 150px;
     height: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
     position: relative;
 
 }
@@ -214,8 +234,10 @@ p{
     border-radius: 500px;
     width: 150px;
     height: 150px;
-    margin-top: 10px;
-    margin-left: 0px;
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
     position: relative;
 }
 
@@ -233,8 +255,9 @@ p{
 .content4{
     position: relative;
     top: 15px;
-    left: 0%;
-    transition: translate(-50%, -50%);
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
     color: white;
     font-family: Verdana;
     text-align: center;
@@ -251,6 +274,9 @@ p{
     background-color: black;
     width: 150px;
     height: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
     position: relative;
 
 }
@@ -270,8 +296,9 @@ p{
     width: 150px;
     height: 150px;
     margin-top: 100px;
-    margin-left: 275px;
-    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
     position: relative;
 }
 
@@ -289,8 +316,9 @@ p{
 .content5{
     position: relative;
     top: 10px;
-    left: 0%;
-    transition: translate(-50%, -50%);
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
     color: white;
     font-family: Verdana;
     text-align: center;
@@ -308,7 +336,9 @@ p{
     width: 150px;
     height: 150px;
     margin-top: 100px;
-    margin-left: 275px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
     position: relative;
 }
 
@@ -326,8 +356,10 @@ p{
     border-radius: 500px;
     width: 150px;
     height: 150px;
-    margin-top: 10px;
-    margin-left: 50px;
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
     position: relative;
 }
 
@@ -345,8 +377,9 @@ p{
 .content6{
     position: relative;
     top: 20px;
-    left: 0%;
-    transition: translate(-50%, -50%);
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
     color: white;
     font-family: Verdana;
     text-align: center;
@@ -363,6 +396,9 @@ p{
     background-color: black;
     width: 150px;
     height: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
     position: relative;
 }
 
@@ -379,8 +415,11 @@ p{
     border-radius: 500px;
     width: 150px;
     height: 150px;
-    margin-top: 10px;
-    margin-left: 20px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
     position: relative;
 }
 
@@ -398,8 +437,9 @@ p{
 .content7{
     position: relative;
     top: 10px;
-    left: 0%;
-    transition: translate(-50%, -50%);
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
     color: white;
     font-family: Verdana;
     text-align: center;
@@ -416,6 +456,9 @@ p{
     background-color: black;
     width: 150px;
     height: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
     position: relative;
 }
 
@@ -432,8 +475,11 @@ p{
     border-radius: 500px;
     width: 150px;
     height: 150px;
-    margin-top: 10px;
-    margin-left: 0px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
     position: relative;
 }
 
@@ -451,8 +497,9 @@ p{
 .content8{
     position: relative;
     top: 15px;
-    left: 0%;
-    transition: translate(-50%, -50%);
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
     color: white;
     font-family: Verdana;
     text-align: center;
@@ -469,6 +516,9 @@ p{
     background-color: black;
     width: 150px;
     height: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
     position: relative;
 }
 
@@ -485,8 +535,11 @@ p{
     border-radius: 500px;
     width: 150px;
     height: 150px;
-    margin-top: 50px;
-    margin-left: 275px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
     margin-bottom: 30px;
     position: relative;
 }
@@ -505,8 +558,9 @@ p{
 .content9{
     position: relative;
     top: 10px;
-    left: 0%;
-    transition: translate(-50%, -50%);
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
     color: white;
     font-family: Verdana;
     text-align: center;
@@ -523,8 +577,9 @@ p{
     background-color: black;
     width: 150px;
     height: 150px;
-    margin-top: 50px;
-    margin-left: 275px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
     position: relative;
 }
 
@@ -541,9 +596,11 @@ p{
     border-radius: 500px;
     width: 150px;
     height: 150px;
-    margin-top: 50px;
-    margin-left: 275px;
-    margin-bottom: 30px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
     position: relative;
 }
 
@@ -561,8 +618,9 @@ p{
 .content10{
     position: relative;
     top: 20px;
-    left: 0%;
-    transition: translate(-50%, -50%);
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
     color: white;
     font-family: Verdana;
     text-align: center;
@@ -579,8 +637,9 @@ p{
     background-color: black;
     width: 150px;
     height: 150px;
-    margin-top: 50px;
-    margin-left: 275px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
     position: relative;
 }
 
@@ -603,7 +662,7 @@ p{
 .container-fluid1{
     background-color: #323949;
 }
-
+  
 label{
     padding-top: 30px;
     font-size: 20px;
