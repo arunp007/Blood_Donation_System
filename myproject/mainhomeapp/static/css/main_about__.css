@@ -34,6 +34,7 @@ a:hover{
 
 .grid{
   background-color: aliceblue !important;
+  box-shadow: 0 0 20px lightgray;
   width: 300px;
   height: 300px;
   margin-top: 100px;
@@ -45,7 +46,7 @@ a:hover{
 }
 
 .grid:hover{
-   transform: translateY(-50px);
+  background-color: lightpink !important;
 }
 
 .top{

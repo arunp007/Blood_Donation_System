@@ -59,20 +59,21 @@
       <div class="row">
         <div class="col-xs-6 col-lg-6" style="margin-top: 50px;">
           <form method="post">
+            {% csrf_token %}
             <h1 class="head">Contact Us</h1>
             <div class="form-group" style="margin-top: 100px;">
-              <input type="text" placeholder="Name" class="form-control" style="border-radius: 50px;" id="name" onkeyup="namevalid()">
+              <input type="text" placeholder="Name" class="form-control" style="border-radius: 50px;" id="name" name="name" onkeyup="namevalid()">
               <label id="name_error"></label>
             </div>
             <div class="form-group">
-              <input type="text" placeholder="Email Id" class="form-control" style="border-radius: 50px;" id="emailid" onkeyup="emailvalid()">
+              <input type="text" placeholder="Email Id" class="form-control" style="border-radius: 50px;" id="emailid" name="emailid" onkeyup="emailvalid()">
               <label id="email_error"></label>
             </div>
             <div class="form-group">
-              <input type="text" placeholder="Message" class="form-control" style="height: 200px; border-radius: 50px;" id="message" onkeyup="messagevalid()">
+              <input type="text" placeholder="Message" class="form-control" style="height: 200px; border-radius: 50px;" id="message" name="message" onkeyup="messagevalid()">
               <label id="message_error"></label>
             </div><br><br>
-            <center><input type="button" onclick="return validation()" class="btn btn-danger" value="Submit" style="border-radius: 100px; width: 35%; height: 50px;"></center><br><br><br>
+            <center><button onclick="return validation()" class="btn btn-danger" style="border-radius: 100px; width: 35%; height: 50px;">Enter</button></center><br><br><br>
             </div>
             <div class="col-xs-6 col-lg-6" style="margin-top: 10px;">
               <center><img src="{% static 'images/main_home/tech.jpg' %}" width="330px" style="margin-top: 100px;"></center>

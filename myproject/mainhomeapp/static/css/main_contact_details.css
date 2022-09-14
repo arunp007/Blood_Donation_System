@@ -1,0 +1,25 @@
+#grid1{
+    background-color: black;
+    color: white;
+    height: 250px;
+    width: 350px;
+    font-weight: bolder;
+    border-radius: 20px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 35px;
+}
+
+#grid1:hover{
+    background-color: grey;
+}
+
+h1{
+    font-size: 50px;
+    font-weight: bolder;
+    text-align: center;
+}

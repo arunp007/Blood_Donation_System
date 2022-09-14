@@ -8,7 +8,7 @@
     <title>Admin Page</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="{% static 'css/admin_home_style__.css' %}">
+    <link rel="stylesheet" href="{% static 'css/admin_home_style___.css' %}">
 </head>
  <body>
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
@@ -32,6 +32,7 @@
               <a class="dropdown-item" href="{% url 'hospitals' %}"><span class="fa fa-hospital-o"> Hospitals</span></a>
               <a class="dropdown-item" href="{% url 'bloodrequest' %}"><span class="fa fa-heart"> Blood Requests</span></a>
               <a class="dropdown-item" href="{% url 'camp_details' %}"><span class="fa fa-hospital-o"> Camps</span></a>
+              <a class="dropdown-item" href="{% url 'contact_data' %}"><span class="fa fa-address-book"> Contact Details</span></a>
             </div>
           </li>
           <li class="nav-item dropdown">
@@ -127,9 +128,21 @@
           </div>
        </div>
       </div>
-    </div>
-   </div>
 
+      <div class="col-xs-3 col-lg-3" width="330px" style="margin-top: 10px; margin-bottom: 30px;">
+        <div class="container7">
+          <img src="{% static 'images/admin_/contact_details.png' %}" class="campimage"><br>
+          <label for="" style="margin-left: 200px;font-size: 30px;">7</label><br>
+          <label for="" style="margin-left: 100px;">Contact Details</label>
+          <div class="textarea6">
+            <a href="{% url 'contact_data' %}" class="link" style="text-decoration: none;">View Details</a>
+            <img src="{% static 'images/admin_/left.png' %}" style="width:40px; margin-left: 80px;">
+          </div>
+       </div>
+      </div>
+    </div>
+    </div>
+    
     <div class="container-fluid">
       <div class="col-xs-12 col-lg-12">
         <div class="top">
@@ -138,7 +151,7 @@
       </div>
     </div>
 
-    <div class="container-fluid1">
+    <div class="row">
       <div class="col-xs-12 col-lg-12">
         <div class="footer1">
           <a href=""><label for="">Terms And Conditions</label></a><a href="{% url 'about' %}"><label for="">About Us</label></a><a href="{% url 'contact' %}"><label for="">Contact Us</label></a><br>

@@ -51,7 +51,7 @@ a:hover{
 }
 
 .grid:hover{
-  box-shadow: 0 0 20px #f1f6f7;
+  box-shadow: 0 0 20px lightgray;
   transform: translateY(-50px);
 }
 
