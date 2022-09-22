@@ -31,7 +31,7 @@ a:hover{
    background-color: brown;
    color: white;
    width: 300px;
-   height: 300px !important;
+   height: 200px !important;
    margin-top: 50px;
    margin-bottom: 100px !important;
    border-top-left-radius: 20px;
@@ -71,7 +71,7 @@ a:hover{
    background-color: yellowgreen;
    color: white;
    width: 300px;
-   height: 280px;
+   height: 200px;
    margin-top: 50px;
    margin-bottom: 100px;
    border-top-left-radius: 20px;
@@ -110,7 +110,7 @@ a:hover{
    background-color:orange;
    color: white;
    width: 300px;
-   height: 280px;
+   height: 200px;
    margin-top: 50px;
    margin-bottom: 100px;
    border-top-left-radius: 20px;
@@ -149,7 +149,7 @@ a:hover{
    background-color: rosybrown;
    color: white;
    width: 300px;
-   height: 280px;
+   height: 200px;
    margin-top: 50px;
    margin-bottom: 100px;
    border-top-left-radius: 20px;
@@ -188,7 +188,7 @@ a:hover{
    background-color: purple;
    color: white;
    width: 300px;
-   height: 280px;
+   height: 200px;
    border-top-left-radius: 20px;
    border-top-right-radius: 20px;
    margin-top: 50px;
@@ -206,7 +206,7 @@ a:hover{
 }
 
 .urgentimage{
-   width: 100px;
+   width: 78px;
    margin-left: auto;
    margin-right: auto;
    display: block;
@@ -227,7 +227,7 @@ a:hover{
    background-color: mediumblue;
    color: white;
    width: 300px;
-   height: 280px;
+   height: 200px;
    border-top-left-radius: 20px;
    border-top-right-radius: 20px;
    margin-top: 50px;
@@ -244,11 +244,19 @@ a:hover{
    transform: translateY(-20px);
 }
 
+.camp-image{
+   width: 70px;
+   margin-left: auto;
+   margin-right: auto;
+   display: block;
+   padding-top: 15px;
+}
+
 .container7{
    background-color: lightsalmon;
    color: white;
    width: 300px;
-   height: 280px;
+   height: 200px;
    border-top-left-radius: 20px;
    border-top-right-radius: 20px;
    margin-top: 50px;
@@ -265,8 +273,8 @@ a:hover{
    transform: translateY(-20px);
 }
 
-.campimage{
-   width: 75px;
+.contact-image{
+   width: 70px;
    margin-left: auto;
    margin-right: auto;
    display: block;
@@ -290,11 +298,16 @@ a:hover{
    text-align: center;
 }
   
-label{
-   padding-top: 30px;
+.grid-title{
+   margin-top: 10px;
    font-size: 20px;
-   padding-left: 10px;
-   padding-right: 10px;
+   margin-bottom: 10px;
+}
+
+label{
+   margin-top: 50px;
+   font-size: 20px;
+   margin-left: 10px;
 }
 
 .top{

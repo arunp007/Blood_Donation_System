@@ -19,16 +19,15 @@
 <body>
     <div class="col-xs-12 col-lg-12">
         <h1>Donor Details</h1>
-        <table border="2" class="table table-dark">
-            <tr>
+        <table border="2" >
+            <tr style="background-color: black; color: white; height: 50px; text-align: center;">
                 <th>Donor Id</th>
                 <th>Name</th>
                 <th>Blood Group</th>
-                <th>Date Of Birth</th>
-                <th>Gender</th>
                 <th>Address</th>
                 <th>State</th>
                 <th>District</th>
+                <th>Location</th>
                 <th>Mobile Number</th>
                 <th>Email Id</th>
             </tr>
@@ -39,11 +38,10 @@
                 <td>{{i.id}}</td>
                 <td>{{i.fname}}&nbsp;{{i.lname}}</td>
                 <td>{{i.blood}}</td>
-                <td>{{i.day}}/{{i.month}}/{{i.year}}</td>
-                <td>{{i.gender}}</td>
                 <td>{{i.address}}</td>
                 <td>{{i.state}}</td>
                 <td>{{i.district}}</td>
+                <td>{{i.location}}</td>
                 <td>{{i.phone}}</td>
                 <td>{{i.email}}</td>
             </tr>

@@ -30,11 +30,10 @@
                 <th>Address</th>
                 <th>State</th>
                 <th>District</th>
-                <th>Pincode</th>
+                <th>Location</th>
                 <th>Mobile Number</th>
                 <th>Email Id</th>
                 <th>Password</th>
-                <th>Auth</th>
                 <th>Add</th>
                 <th>Update</th>
                 <th>Delete</th> 
@@ -52,11 +51,10 @@
                 <td>{{i.address}}</td>
                 <td>{{i.state}}</td>
                 <td>{{i.district}}</td>
-                <td>{{i.pin}}</td>
+                <td>{{i.location}}</td>
                 <td>{{i.phone}}</td>
                 <td>{{i.email}}</td>
                 <td>{{i.password}}</td>
-                <td>{{i.authentication}}</td>
                 <td><a href="{% url 'donor_signup' %}" class="btn btn-success">Add</a></td>
                 <td><a href="{% url 'donor_update' i.id %}" class="btn btn-primary">Update</a></td>
                 <td><a href="{% url 'donor_delete' i.id %}" class="btn btn-danger">Delete</a></td>

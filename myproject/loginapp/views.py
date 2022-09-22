@@ -15,13 +15,12 @@ def donor_signup(request):
         address = request.POST['address']
         state = request.POST['state']
         district = request.POST['district']
-        pin = request.POST['pincode']
+        location = request.POST['location']
         phone = request.POST['phone']
         email = request.POST['email']
         password = request.POST['password']
         cpassword = request.POST['cpassword']
-        authentication = request.POST['auth']
-        donor_details = Donors(fname = fname, lname = lname, blood = blood, aadhaar = aadhaar, day = day, month = month, year = year, gender = gender, address = address, state = state, district = district, pin = pin, phone = phone, email = email, password = password, cpassword = cpassword, authentication = authentication)
+        donor_details = Donors(fname = fname, lname = lname, blood = blood, aadhaar = aadhaar, day = day, month = month, year = year, gender = gender, address = address, state = state, district = district, location = location, phone = phone, email = email, password = password, cpassword = cpassword)
         donor_details.save()
     return render(request, 'donor_signup.html')
 
@@ -47,13 +46,12 @@ def donors_update(request, id):
         address = request.POST['address']
         state = request.POST['state']
         district = request.POST['district']
-        pin = request.POST['pincode']
+        location = request.POST['location']
         phone = request.POST['phone']
         email = request.POST['email']
         password = request.POST['password']
         cpassword = request.POST['cpassword']
-        authentication = request.POST['auth']
-        Donors.objects.filter(id = id).update(fname = fname, lname = lname, blood = blood, aadhaar = aadhaar, day = day, month = month, year = year, gender = gender, address = address, state = state, district = district, pin = pin, phone = phone, email = email, password = password, cpassword = cpassword, authentication = authentication)
+        Donors.objects.filter(id = id).update(fname = fname, lname = lname, blood = blood, aadhaar = aadhaar, day = day, month = month, year = year, gender = gender, address = address, state = state, district = district, location = location, phone = phone, email = email, password = password, cpassword = cpassword)
         return redirect('donors')
 
     else:
@@ -77,13 +75,12 @@ def recipient_signup(request):
         address = request.POST['address']
         state = request.POST['state']
         district = request.POST['district']
-        pin = request.POST['pincode']
+        location = request.POST['location']
         phone = request.POST['phone']
         email = request.POST['email']
         password = request.POST['password']
         cpassword = request.POST['cpassword']
-        authentication = request.POST['auth']
-        recipient_details = Recipients(fname = fname, lname = lname, blood = blood, aadhaar = aadhaar, day = day, month = month, year = year, gender = gender, address = address, state = state, district = district, pin = pin, phone = phone, email = email, password = password, cpassword = cpassword, authentication = authentication)
+        recipient_details = Recipients(fname = fname, lname = lname, blood = blood, aadhaar = aadhaar, day = day, month = month, year = year, gender = gender, address = address, state = state, district = district, location = location, phone = phone, email = email, password = password, cpassword = cpassword)
         recipient_details.save()
     return render(request, 'recipient_signup.html')
 
@@ -105,13 +102,12 @@ def recipients_update(request, id):
         address = request.POST['address']
         state = request.POST['state']
         district = request.POST['district']
-        pin = request.POST['pincode']
+        location = request.POST['location']
         phone = request.POST['phone']
         email = request.POST['email']
         password = request.POST['password']
         cpassword = request.POST['cpassword']
-        authentication = request.POST['auth']
-        Recipients.objects.filter(id = id).update(fname = fname, lname = lname, blood = blood, aadhaar = aadhaar, day = day, month = month, year = year, gender = gender, address = address, state = state, district = district, pin = pin, phone = phone, email = email, password = password, cpassword = cpassword, authentication = authentication)
+        Recipients.objects.filter(id = id).update(fname = fname, lname = lname, blood = blood, aadhaar = aadhaar, day = day, month = month, year = year, gender = gender, address = address, state = state, district = district, location = location, phone = phone, email = email, password = password, cpassword = cpassword)
         return redirect('recipients')
 
     else:
@@ -135,8 +131,7 @@ def hospital_signup(request):
         email = request.POST['email']
         password = request.POST['password']
         cpassword = request.POST['cpassword']
-        authentication = request.POST['auth']
-        hospital_details = Hospitals(hname = hname, address = address, location = location, state = state, district = district, pin = pin, phone = phone, email = email, password = password, cpassword = cpassword, authentication = authentication)
+        hospital_details = Hospitals(hname = hname, address = address, location = location, state = state, district = district, pin = pin, phone = phone, email = email, password = password, cpassword = cpassword)
         hospital_details.save()
     return render(request, 'hospital_signup.html')
 
@@ -157,8 +152,7 @@ def hospitals_update(request, id):
         email = request.POST['email']
         password = request.POST['password']
         cpassword = request.POST['cpassword']
-        authentication = request.POST['auth']
-        Hospitals.objects.filter(id = id).update(hname = hname, address = address, location = location, state = state, district = district, pin = pin, phone = phone, email = email, password = password, cpassword = cpassword, authentication = authentication)
+        Hospitals.objects.filter(id = id).update(hname = hname, address = address, location = location, state = state, district = district, pin = pin, phone = phone, email = email, password = password, cpassword = cpassword)
         return redirect('hospitals')
 
     else:

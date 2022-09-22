@@ -31,7 +31,6 @@
               <th>Mobile Number</th>
               <th>Email Id</th>
               <th>Password</th>
-              <th>Auth</th>
               <th>Add</th>
               <th>Update</th>
               <th>Delete</th>  
@@ -50,7 +49,6 @@
                 <td>{{i.phone}}</td>
                 <td>{{i.email}}</td>
                 <td>{{i.password}}</td>
-                <td>{{i.authentication}}</td>
                 <td><a href="{% url 'hospital_signup' %}" class="btn btn-success">Add</a></td>
                 <td><a href="{% url 'hospital_update' i.id %}" class="btn btn-primary">Update</a></td>
                 <td><a href="{% url 'hospital_delete' i.id %}" class="btn btn-danger">Delete</a></td>

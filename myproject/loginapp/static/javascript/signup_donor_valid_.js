@@ -11,7 +11,7 @@ function validation(){
     var address = document.getElementById('permanentaddress')
     var state = document.getElementById('state')
     var district = document.getElementById('district')
-    var pin = document.getElementById('pincode')
+    var location = document.getElementById('location')
     var phone = document.getElementById('phonenumber')
     var email = document.getElementById('emailid')
     var pass = document.getElementById('password')
@@ -73,6 +73,7 @@ function validation(){
         document.getElementById('aadhaar_error').style.display="none"
         var status = 1
     }
+
 
     if(day.value == ""){
         document.getElementById('day').style.borderColor="red"
@@ -172,17 +173,17 @@ function validation(){
         var status = 1
     }
 
-    if(pin.value == ""){
-        document.getElementById('pincode').style.borderColor="red"
-        document.getElementById('pincode_error').innerHTML="** Please Enter Your Pincode **"
-        document.getElementById('pincode_error').style.color="red"
-        document.getElementById('pincode_error').style.display="block"
+    if(location.value == ""){
+        document.getElementById('location').style.borderColor="red"
+        document.getElementById('location_error').innerHTML="** Please Enter Your Location **"
+        document.getElementById('location_error').style.color="red"
+        document.getElementById('location_error').style.display="block"
         var status = 0
     }
 
     else{
-        document.getElementById('pincode').style.borderColor="black"
-        document.getElementById('pincode_error').style.display="none"
+        document.getElementById('location').style.borderColor="black"
+        document.getElementById('location_error').style.display="none"
         var status = 1
     }
 
@@ -249,6 +250,7 @@ function validation(){
     if(status == 1){
         return true
     }
+
 }
 
 function firstnamevalid(){
@@ -331,34 +333,18 @@ function addressvalid(){
     }
 }
 
-function pincodevalid(){
-    var pin = document.getElementById('pincode').value
-    if(isNaN(pin)){
-        document.getElementById('pincode').style.borderColor="red"
-        document.getElementById('pincode_error').innerHTML="** Please Enter A Valid Pincode **"
-        document.getElementById('pincode_error').style.color="red"
-        document.getElementById('pincode_error').style.display="block"
+function locationvalid(){
+    var location = document.getElementById('location').value
+    if(isNaN(location)){
+        document.getElementById('location').style.borderColor="black"
+        document.getElementById('location_error').style.display="none" 
     }
 
-    if(pin.length <= 0){
-        document.getElementById('pincode').style.borderColor="red"
-        document.getElementById('pincode_error').innerHTML="** Pincode Must Have 6 Digits **"
-        document.getElementById('pincode_error').style.color="red"
-        document.getElementById('pincode_error').style.display="block"
-    }
-
-    if(pin.length == 6){
-        document.getElementById('pincode').style.borderColor="green"
-        document.getElementById('pincode_error').innerHTML="** You Entered A Perfect Pincode **"
-        document.getElementById('pincode_error').style.color="green"
-        document.getElementById('pincode_error').style.display="block" 
-    }
-
-    if(pin.length == 7){
-        document.getElementById('pincode').style.borderColor="red"
-        document.getElementById('pincode_error').innerHTML="** Pincode Must Have 6 Digits **"
-        document.getElementById('pincode_error').style.color="red"
-        document.getElementById('pincode_error').style.display="block"
+    else{
+        document.getElementById('location').style.borderColor="red"
+        document.getElementById('location_error').innerHTML="** Please Enter A Valid Location **"
+        document.getElementById('location_error').style.color="red"
+        document.getElementById('location_error').style.display="block"
     }
 
 }
@@ -457,7 +443,7 @@ function confirmpassvalid(){
         document.getElementById('cpassword_error').innerHTML="** Confirm Password Must Have 8 Characters **"
         document.getElementById('cpassword_error').style.color="red"
         document.getElementById('cpassword_error').style.display="block" 
-    }
+    }   
 
     if(pass != cpass){
         document.getElementById('cpassword').style.borderColor="red"
@@ -465,4 +451,6 @@ function confirmpassvalid(){
         document.getElementById('cpassword_error').style.color="red"
         document.getElementById('cpassword_error').style.display="block"   
     }
+
 }
+

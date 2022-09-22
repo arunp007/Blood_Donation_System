@@ -12,12 +12,11 @@ class Donors(models.Model):
     address = models.TextField(max_length=50)
     state = models.TextField(max_length=50)
     district = models.TextField(max_length=50)
-    pin = models.TextField(max_length=50)
+    location = models.TextField(max_length=50)
     phone = models.TextField(max_length=50)
     email = models.EmailField(max_length=50)
     password = models.TextField(max_length=50)
     cpassword = models.TextField(max_length=50)
-    authentication = models.TextField(max_length=50)
 
     class Meta:
         db_table = 'donor_details'
@@ -35,12 +34,11 @@ class Recipients(models.Model):
     address = models.TextField(max_length=50)
     state = models.TextField(max_length=50)
     district = models.TextField(max_length=50)
-    pin = models.TextField(max_length=50)
+    location = models.TextField(max_length=50)
     phone = models.TextField(max_length=50)
     email = models.EmailField(max_length=50)
     password = models.TextField(max_length=50)
     cpassword = models.TextField(max_length=50)
-    authentication = models.TextField(max_length=50)
 
     class Meta:
         db_table = 'recipient_details'
@@ -57,7 +55,6 @@ class Hospitals(models.Model):
     email = models.EmailField(max_length=50)
     password = models.TextField(max_length=50)
     cpassword = models.TextField(max_length=50)
-    authentication = models.TextField(max_length=50)
 
     class Meta:
         db_table = 'hospital_details'
