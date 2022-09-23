@@ -10,6 +10,7 @@ urlpatterns = [
     path('camp_details', views.camp_details, name = 'camp_details'),
     path('camp', views.camp, name = 'camp'),
     path('camp_update<int:id>', views.camp_update, name = 'camp_update'),
-    path('camp_delete<int:id>', views.camp_delete, name = 'camp_delete')
+    path('camp_delete<int:id>', views.camp_delete, name = 'camp_delete'),
+    path('donors_details', views.kvk_hospital_table),
   
 ]

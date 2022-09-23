@@ -1,0 +1,599 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Page</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'css/donor_search_.css' %}">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-danger">
+    <img src="{% static 'images/recipient/donation.png' %}" class="navbar-brand" alt="" width="150px">
+    <a class="navbar-brand" style="font-size: 30px;" href="#"><h1>Life Saver</h1></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'recipient_home' %}"><span class="fa fa-home"> Home</span></a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+          <span class="fa fa-plus"> Create</span>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: grey;">
+            <a class="dropdown-item" href="{% url 'recipient_bloodrequest' %}"><span class="fa fa-heart"> Blood Request</span></a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+          <span class="fa fa-eye"> View</span>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: grey;">
+            <a class="dropdown-item" href="{% url 'camptable' %}"><span class="fa fa-hospital-o"> Camps</span></a>
+            <a class="dropdown-item" href="{% url 'donor_info' %}"><span class="fa fa-handshake-o"> Donors</span></a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+          <span class="fa fa-warning"> Urgent</span>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: grey;">
+            <a class="dropdown-item" href="#"><span class="fa fa-phone"> Call Admin</span></a>
+            <a class="dropdown-item" href="{% url 'recipienturgent' %}"><span class="fa fa-heart"> Blood Request</span></a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="{% url 'recipient_search' %}"><span class="fa fa-search"> Search</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'recipient_notification' %}"><span class="fa fa-bell"> Notification</span></a>
+        </li>
+      </ul>
+      <a href="{% url 'recipient_logout' %}" class="btn btn-warning"><span class="fa fa-sign-out">Logout</span></a>
+    </div>
+  </nav>
+
+    <div class="col-xs-3 col-lg-3" style="margin-top: 200px;">
+        <h1 style="margin-bottom: 100px; color: darkred;">Blood Donors List</h1>
+
+        <table border="2" style="margin-bottom: 200px;">
+          <tr class="table table-success">
+              <th>Donor Id</th>
+              <th>Donor Name</th>
+              <th>Blood Group</th>
+              <th>Address</th>
+              <th>Email Id</th>
+              <th>Phone Number</th>
+          </tr>
+
+          <tr>
+              <td>1</td>
+              <td>Arun Pacheeri</td>
+              <td>A+</td>
+              <td>Pacheeri House Pulvetta P.O Ayyappan Kavu, Karuvarakundu</td>
+              <td>arunp4624@gmail.com</td>
+              <td>8848193954</td>
+          </tr>
+
+          <tr>
+            <td>2</td>
+            <td>Chandran Pacheeri</td>
+            <td>A+</td>
+            <td>Pacheeri House Pulvetta P.O Ayyappan Kavu, Karuvarakundu</td>
+            <td>arunp4624@gmail.com</td>
+            <td>9946605673</td>
+        </tr>
+
+        <tr>
+          <td>3</td>
+          <td>Rasheed Kp</td>
+          <td>A+</td>
+          <td>KUNDUPARAMBATH HOUSE ,PULVETTA POST, Malappuram</td>
+          <td></td>
+          <td>8848193954</td>
+        </tr>
+
+        <tr>
+          <td>4</td>
+          <td>Arshad K</td>
+          <td>A+</td>
+          <td>KARUVADAN HOUSE ,KARUVARAKUND ,Malappuram</td>
+          <td></td>
+          <td>8606679891</td>
+        </tr>
+
+        <tr>
+          <td>5</td>
+          <td>Ayisha Kp</td>
+          <td>A+</td>
+          <td>KONDIPARAMBATH HOUSE ,PULVETTA ,Malappuram</td>
+          <td></td>
+          <td>7025936913</td>
+        </tr>
+
+        <tr>
+          <td>6</td>
+          <td>Abdu Rasak</td>
+          <td>A+</td>
+          <td>KOTTOPADAN HOUSE ,THARISH ,Malappuram</td>
+          <td></td>
+          <td>9747601419</td>
+        </tr>
+
+        <tr>
+          <td>7</td>
+          <td>Shameem Ka</td>
+          <td>A+</td>
+          <td>KAIPULLY HOUSE ,THARISH ,Malappuram</td>
+          <td></td>
+          <td>9744603286</td>
+        </tr>
+
+        <tr>
+          <td>8</td>
+          <td>Faizal Nk</td>
+          <td>A+</td>
+          <td>NECHIKKADAN HOUSE ,THARISH ,Malappuram</td>
+          <td></td>
+          <td>9446327759</td>
+        </tr>
+
+        <tr>
+          <td>9</td>
+          <td>Muhammed Rineesh</td>
+          <td>A+</td>
+          <td>KIZHAKKUM PURATH HOUSE ,KUTTATHI ,Malappuram</td>
+          <td></td>
+          <td>7025133429</td>
+        </tr>
+
+        <tr>
+          <td>10</td>
+          <td>Sathyaraj</td>
+          <td>A+</td>
+          <td>KURUKKAN CHIRAYIL HOUSE ,THARISH ,Malappuram</td>
+          <td></td>
+          <td>8606155289</td>
+        </tr>
+
+        <tr>
+          <td>11</td>
+          <td>Muhammed Ashik</td>
+          <td>A+</td>
+          <td>THARENAL HOUSE ,THARISH ,Malappuram</td>
+          <td></td>
+          <td>9656507238</td>
+        </tr>
+
+        <tr>
+          <td>12</td>
+          <td>Mohammed Shibili</td>
+          <td>A+</td>
+          <td>KAIPULLY HOUSE ,PULVETTA ,Malappuram</td>
+          <td></td>
+          <td>8157858181</td>
+        </tr>
+        
+        <tr>
+          <td>13</td>
+          <td>Muhammed Afsal</td>
+          <td>A+</td>
+          <td>KOPPILAN HO ,THARISH ,Malappuram</td>
+          <td></td>
+          <td>9446247659</td>
+        </tr>
+        
+        <tr>
+          <td>14</td>
+          <td>Abdu Rasheed Pb</td>
+          <td>A+</td>
+          <td>PERIYAN KUZUHIYAN HO ,KALKUNDU ,Malappuram</td>
+          <td></td>
+          <td>9446154589</td>
+        </tr>
+        
+        <tr>
+          <td>15</td>
+          <td>Ibrahm K</td>
+          <td>A+</td>
+          <td>KAIPPULLI HO ,THARISH ,Malappuram</td>
+          <td></td>
+          <td>9846877402</td>
+        </tr>
+        
+        <tr>
+          <td>16</td>
+          <td>Mohammed Ihsan</td>
+          <td>A-</td>
+          <td>MATTATHUR HOUSE KARUVARAKUNDU,PULVET TA ,Malappuram</td>
+          <td></td>
+          <td>9744353767</td>
+        </tr>
+        
+        <tr>
+          <td>17</td>
+          <td>Shabeer Sha Vp</td>
+          <td>A-</td>
+          <td>VATTAPPARAMBIL HO ,PULVETTA ,Malappuram</td>
+          <td></td>
+          <td>8086636340</td>
+        </tr>
+        
+        <tr>
+          <td>18</td>
+          <td>Faisal Kunnummal</td>
+          <td>B+</td>
+          <td>Kunnummal house, Kannath, tharish post, Karuvarakundu , Malappuram, Karuvarakundu</td>
+          <td>faisalkunumal@gmail.com</td>
+          <td>9746998133</td>
+        </tr>
+        
+        <tr>
+          <td>19</td>
+          <td>Viswanathan</td>
+          <td>B+</td>
+          <td>KOLATHOOR HOUSE ,KARUVARAKUNDU ,Malappuram</td>
+          <td></td>
+          <td>8606098657</td>
+        </tr>
+        
+        <tr>
+          <td>20</td>
+          <td>Ramlath</td>
+          <td>B+</td>
+          <td>ALTEKADAN HOUSE ,THARISH ,Malappuram</td>
+          <td></td>
+          <td>9446881152</td>
+        </tr>
+        
+        <tr>
+          <td>21</td>
+          <td>Muhammed Rafeeq</td>
+          <td>B+</td>
+          <td>CHERUKARA HOUSE KARUVARAKUNDU,KERALA ESTATE,Malappuram</td>
+          <td></td>
+          <td>9539430642</td>
+        </tr>
+        
+        <tr>
+          <td>22</td>
+          <td>Nisar P</td>
+          <td>B+</td>
+          <td>PARAMBATH HOUSE ,THARISH ,Malappuram</td>
+          <td></td>
+          <td>9447108154</td>
+        </tr>
+        
+        <tr>
+          <td>23</td>
+          <td>Rasheed</td>
+          <td>B+</td>
+          <td>CHERUMALA HOUSE KARUVARAKUNDU,KARUVA RAKUNDU,Malappuram</td>
+          <td></td>
+          <td>9446408141</td>
+        </tr>
+        
+        <tr>
+          <td>24</td>
+          <td>Badushan</td>
+          <td>B+</td>
+          <td>ELAM KULAYAN HOUSE ,THARISH ,Malappuram</td>
+          <td></td>
+          <td>9656334438</td>
+        </tr>
+        
+        <tr>
+          <td>25</td>
+          <td>Muhammed Yousaf</td>
+          <td>B+</td>
+          <td>KOMBAN HOUSE KARUVARAKUNDU,KERALA ESTATE,Malappuram</td>
+          <td></td>
+          <td>9496764378</td>
+        </tr>
+        
+        <tr>
+          <td>26</td>
+          <td>Shareef</td>
+          <td>B+</td>
+          <td>PANANGADAN HOUSE ,THARISH ,Malappuram</td>
+          <td></td>
+          <td>9946922475</td>
+        </tr>
+        
+        <tr>
+          <td>27</td>
+          <td>Ajmal Musshid</td>
+          <td>B-</td>
+          <td>NMALATHODI HOUSE ,KARUVARAKUNDU ,Malappuram</td>
+          <td></td>
+          <td>9539721119</td>
+        </tr>
+        
+        <tr>
+          <td>28</td>
+          <td>Jamshid Jahan</td>
+          <td>B-</td>
+          <td>OTTUPPARA HOUSE ,THARISH ,Malappuram</td>
+          <td></td>
+          <td>9747036016</td>
+        </tr>
+        
+        <tr>
+          <td>29</td>
+          <td>Murshid vp</td>
+          <td>B-</td>
+          <td>VATTAPPARAMBIL HO ,PULVETTA ,Malappuram</td>
+          <td></td>
+          <td>8893056944</td>
+        </tr>
+        
+        <tr>
+          <td>30</td>
+          <td>Jaseem Op</td>
+          <td>B-</td>
+          <td>OTTUPPARA HO ,THARISH ,Malappuram</td>
+          <td></td>
+          <td>9846595880</td>
+        </tr>
+        
+        <tr>
+          <td>31</td>
+          <td>Ubaidulla Kappil</td>
+          <td>O+</td>
+          <td>kerala,Karuvarakundu</td>
+          <td>ubaid05_k@hotmail.com</td>
+          <td>9846619312</td>
+        </tr>
+
+        <tr>
+          <td>32</td>
+          <td>Krishna Kumar</td>
+          <td>O+</td>
+          <td>Pulkuzhi house, Karuvarakundu</td>
+          <td>krishna.mji@gmail.com</td>
+          <td>9495395074</td>
+        </tr>
+
+        <tr>
+          <td>33</td>
+          <td>Fathimath Suhra</td>
+          <td>O+</td>
+          <td>NECHIKKADAN HOUSE ,KARUVARAKUNDU ,Malappuram</td>
+          <td></td>
+          <td>9562167432</td>
+        </tr>
+
+        <tr>
+          <td>34</td>
+          <td>Sabeed K</td>
+          <td>O+</td>
+          <td>KOPPAN HOUSE ,KARUVARAKUNDU ,Malappuram</td>
+          <td></td>
+          <td>8086851342</td>
+        </tr>
+
+        <tr>
+          <td>35</td>
+          <td>Mumthas</td>
+          <td>O+</td>
+          <td>NECHIKKADAN HOUSE ,THARISH ,Malappuram</td>
+          <td></td>
+          <td>9497151671</td>
+        </tr>
+        <tr>
+          <td>36</td>
+          <td>Asif Tk</td>
+          <td>O+</td>
+          <td>THUMBAKUZHIYAN HOUSE ,THARISH ,Malappuram</td>
+          <td></td>
+          <td>9809953145</td>
+        </tr>
+        <tr>
+          <td>37</td>
+          <td>Rujas</td>
+          <td>O+</td>
+          <td>CHARUMALA HOUSE ,THARISH ,Malappuram</td>
+          <td></td>
+          <td>9447842481</td>
+        </tr>
+
+        <tr>
+          <td>38</td>
+          <td>Haris Babu</td>
+          <td>O+</td>
+          <td>UNNYALUNGAL HOUSE ,THARISH ,Malappuram</td>
+          <td></td>
+          <td>7561000230</td>
+        </tr>
+
+        <tr>
+          <td>38</td>
+          <td>Baiju Tk</td>
+          <td>O+</td>
+          <td>THACHAMPATTA HOUSE ,THARISH ,Malappuram</td>
+          <td></td>
+          <td>9644537632</td>
+        </tr>
+
+        <tr>
+          <td>39</td>
+          <td>Jamsheer</td>
+          <td>O+</td>
+          <td>NNETH HOUSE ,THARISH ,Malappuram</td>
+          <td></td>
+          <td>9744956572</td>
+        </tr>
+
+        <tr>
+          <td>40</td>
+          <td>Nahas</td>
+          <td>O+</td>
+          <td>PUTHUKKOLLY HOUSE ,PULVETTA ,Malappuram</td>
+          <td></td>
+          <td>9645837785</td>
+        </tr>
+
+        <tr>
+          <td>41</td>
+          <td>Nishad K</td>
+          <td>O+</td>
+          <td>KALATHIL HOUSE ,PULVETTA ,Malappuram</td>
+          <td></td>
+          <td>9605728797</td>
+        </tr>
+
+        <tr>
+          <td>42</td>
+          <td>Subair</td>
+          <td>O+</td>
+          <td>KOORIYATTIL HOUSE ,KARUVARAKUNDU,Malappuram</td>
+          <td></td>
+          <td>9747629444</td>
+        </tr>
+
+        <tr>
+          <td>43</td>
+          <td>Naseem Tk</td>
+          <td>O+</td>
+          <td>THODUKUZHIYIL HOUSE ,THARISH ,Malappuram</td>
+          <td></td>
+          <td>9961838615</td>
+        </tr>
+
+        <tr>
+          <td>44</td>
+          <td>Murshid c</td>
+          <td>O+</td>
+          <td>CHERUMALA HOUSE ,KUTTATHI ,Malappuram</td>
+          <td></td>
+          <td>8606075772</td>
+        </tr>
+
+        <tr>
+          <td>45</td>
+          <td>Mohammed Nadir</td>
+          <td>O+</td>
+          <td>KALLUVETTY HOUSE ,KARUVARAKUND ,Malappuram</td>
+          <td></td>
+          <td>9656933910</td>
+        </tr>
+
+        <tr>
+          <td>46</td>
+          <td>Shamsirak</td>
+          <td>O+</td>
+          <td>KOPPAN HOUSE ,KARUVARAKUNDU,Malappuram</td>
+          <td></td>
+          <td>9946323624</td>
+        </tr>
+
+        <tr>
+          <td>47</td>
+          <td>Muhammed Ashar</td>
+          <td>O+</td>
+          <td>KUTTIKKATTIL HO ,THARISH ,Malappuram</td>
+          <td></td>
+          <td>9497810305</td>
+        </tr>
+
+        <tr>
+          <td>48</td>
+          <td>Saifudheen</td>
+          <td>O+</td>
+          <td>ERAKKADAN HO ,THARISH ,Malappuram</td>
+          <td></td>
+          <td>8086730106</td>
+        </tr>
+
+        <tr>
+          <td>49</td>
+          <td>Salmanul Faris</td>
+          <td>O+</td>
+          <td>PARATHODAN HO ,KERALA ESTATE ,Malappuram</td>
+          <td></td>
+          <td>9656220173</td>
+        </tr>
+
+        <tr>
+          <td>50</td>
+          <td>Sharafudheen</td>
+          <td>O+</td>
+          <td>CHERIPURATH HO ,PULVETTA ,Malappuram</td>
+          <td></td>
+          <td>9447123031</td>
+        </tr>
+
+        <tr>
+          <td>51</td>
+          <td>Ismail K</td>
+          <td>O+</td>
+          <td>KUNNANATH HO ,PULVETTA ,Malappuram</td>
+          <td></td>
+          <td>8086963823</td>
+        </tr>
+
+        <tr>
+          <td>52</td>
+          <td>Muhammed Sulthan</td>
+          <td>O+</td>
+          <td>PAALEMBADIYAN HO ,KARUVARAKUND ,Malappuram</td>
+          <td></td>
+          <td>8592856330</td>
+        </tr>
+        
+        <tr>
+          <td>53</td>
+          <td>Shahsad Nm</td>
+          <td>O-</td>
+          <td>NALAKATH HOUSE ,KARUVARAKUNDU ,Malappuram</td>
+          <td></td>
+          <td>8086300636</td>
+        </tr>
+
+        <tr>
+          <td>54</td>
+          <td>Riyas K</td>
+          <td>O-</td>
+          <td>KALATHINGAL THODIKA HOUSE ,THARISH ,Malappuram</td>
+          <td></td>
+          <td>9446841050</td>
+        </tr>
+        
+        <tr>
+          <td>55</td>
+          <td>Muhammed Jaseel N</td>
+          <td>AB+</td>
+          <td>Neelinagadan (H) Palakkal vetta (po) Malappuram (dist) Kerala,Karuvarakundu</td>
+          <td>jaseelmuhammed404@gmail.com</td>
+          <td>9447912228</td>
+        </tr>
+
+      </table>
+    </div>
+
+    <div class="col-xs-12 col-lg-12">
+      <a href="#top">
+      <div class="top">
+        <img src="{% static 'images/donor/topnav.png' %}" class="topimage"></a>
+      </div>
+    </div>
+  
+    <div class="container-fluid1">
+      <div class="col-xs-12 col-lg-12">
+        <div class="footer1">
+          <a href=""><label class="label">Terms And Conditions</label></a><a href="{% url 'about' %}"><label class="label">About Us</label></a><a href="{% url 'contact' %}"><label class="label">Contact Us</label></a><br>
+          <a href=""><label class="label">©Blood Donation System</label></a> <a href=""><label class="label">Designed And Developed By Arun Pacheeri</label></a>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script> 
+</body>
+</html>

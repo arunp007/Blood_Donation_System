@@ -39,3 +39,6 @@ def urgentblood(request):
     return render(request, 'urgentblood.html', {'urgent': urgentdetails})
 
 
+def kvk_recipient_table(request):
+    return render(request, 'kvk_recipient.html')
+

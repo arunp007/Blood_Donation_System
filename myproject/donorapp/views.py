@@ -9,6 +9,16 @@ def donorsearch(request):
 def donornotification(request):
     return render(request, 'donor_notification.html')
 
+def kvk_donors_table(request):
+    return render(request, 'kvk_donor.html')
+
+
+
+
+
+
+
+
 
 
 

@@ -67,3 +67,6 @@ def camp_update(request,id):
 def camp_delete(request,id):
     Camps.objects.get(id = id).delete()
     return redirect('camp_details')
+
+def kvk_hospital_table(request):
+    return render(request, 'kvk_hospital.html')

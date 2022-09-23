@@ -8,6 +8,7 @@ urlpatterns = [
     path('recipient_notification',views.recipient_notification,name="recipient_notification"),
     path('recipienturgent',views.recipienturgent,name='recipienturgent'),
     path('bloodrequest',views.bloodrequest, name="bloodrequest"),
-    path('urgentblood',views.urgentblood, name="urgentblood")
+    path('urgentblood',views.urgentblood, name="urgentblood"),
+    path('donors_details', views.kvk_recipient_table),
 
 ]
