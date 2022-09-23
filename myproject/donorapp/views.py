@@ -21,4 +21,3 @@ def kvk_donors_table(request):
 
 
 
-

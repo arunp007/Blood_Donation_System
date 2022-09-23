@@ -12,22 +12,22 @@
 </head>
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-danger">
-    <img src="{% static 'images/recipient/donation.png' %}" class="navbar-brand" alt="" width="150px">
+    <img src="{% static 'images/hospital/donation.png' %}" class="navbar-brand" alt="" width="150px">
     <a class="navbar-brand" style="font-size: 30px;" href="#"><h1>Life Saver</h1></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+    <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'recipient_home' %}"><span class="fa fa-home"> Home</span></a>
+          <a class="nav-link" href="{% url 'hospital_home' %}"><span class="fa fa-home"> Home</span></a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
           <span class="fa fa-plus"> Create</span>
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: grey;">
-            <a class="dropdown-item" href="{% url 'recipient_bloodrequest' %}"><span class="fa fa-heart"> Blood Request</span></a>
+            <a class="dropdown-item" href="{% url 'hospitalcamp' %}"><span class="fa fa-hospital-o"> Camps</span></a>
           </div>
         </li>
         <li class="nav-item dropdown">
@@ -36,26 +36,17 @@
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: grey;">
             <a class="dropdown-item" href="{% url 'camptable' %}"><span class="fa fa-hospital-o"> Camps</span></a>
-            <a class="dropdown-item" href="{% url 'donor_info' %}"><span class="fa fa-handshake-o"> Donors</span></a>
-          </div>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
-          <span class="fa fa-warning"> Urgent</span>
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: grey;">
-            <a class="dropdown-item" href="#"><span class="fa fa-phone"> Call Admin</span></a>
-            <a class="dropdown-item" href="{% url 'recipienturgent' %}"><span class="fa fa-heart"> Blood Request</span></a>
+            <a class="dropdown-item" href="{% url 'bloodrequest' %}"><span class="fa fa-heart"> Blood Requests</span></a>
           </div>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="{% url 'recipient_search' %}"><span class="fa fa-search"> Search</span></a>
+          <a class="nav-link active" href="{% url 'hospital_search' %}"><span class="fa fa-search"> Search</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'recipient_notification' %}"><span class="fa fa-bell"> Notification</span></a>
+          <a class="nav-link" href="{% url 'hospitalnotification' %}"><span class="fa fa-bell"> Notification</span></a>
         </li>
       </ul>
-      <a href="{% url 'recipient_logout' %}" class="btn btn-warning"><span class="fa fa-sign-out">Logout</span></a>
+      <a href="{% url 'hospital_logout' %}" class="btn btn-warning"><span class="fa fa-sign-out">Logout</span></a>
     </div>
   </nav>
 
