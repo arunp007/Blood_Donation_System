@@ -1,17 +1,16 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Search Page</title>
+    <title>Donors Details</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{% static 'css/donor_search_.css' %}">
-    <script src="{% static 'javascript/donor_searching_.js' %}"></script>
   </head>
-<body>
+  <body>
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-danger">
       <img src="{% static 'images/donor/donation.png' %}" class="navbar-brand" alt="" width="150px">
       <a class="navbar-brand" style="font-size: 30px;" href="#"><h1>Life Saver</h1></a>
@@ -44,42 +43,139 @@
       </div>
     </nav>
 
-    <div class="col-xs-12 col-lg-12" style="margin-top: 200px; border-radius: 30px;">
-      <img src="{% static 'images/donor/search.webp' %}" class="image">
-      <form action="">
-        <div class="form-row" style="margin-left: 5px;">
-          <div class="form-group col-md-3">
-            <label for="inputBloodGroup">Blood Group</label>
-            <select id="bloodgroup" class="form-control">
-              <option value="" value="">Choose...</option>
-              <option value="A+">A+</option>
-              <option value="B+">B+</option>
-              <option value="B-">B-</option>
-              <option value="A-">A-</option>
-              <option value="O+">O+</option>
-              <option value="O-">O-</option>
-              <option value="AB+">AB+</option>
-              <option value="AB-">AB-</option>
-            </select>    
-            
-          </div>
+    <div class="col-xs-3 col-lg-3" style="margin-top: 200px; width: auto;">
+        <h1 style="margin-bottom: 100px; color: darkred;">Blood Donors List</h1>
 
-          <div class="form-group col-md-3">
-            <label for="inputLocation">Location</label>
-            <select id="location" class="form-control">
-              <option value="" value="">Choose...</option>
-              <option value="Karuvarakundu">Karuvarakundu</option>
-              <option value="Manjeri">Manjeri</option>
-            </select>      
-          </div>
-        </div>
-        </div>
-        </div>
-        <div class="form-group col-md-5">
-          <button class="btn btn-danger" style="margin-left: 10px;" type="submit" onclick="return search()"><span class="fa fa-search"> Search</span></button>
-        </div>
-        <label id="table_error" style="margin-left: 30px; text-align: center;"></label>
-      </form><br><br><br>
+        <table border="2" style="margin-bottom: 200px;">
+            <tr class="table table-success">
+                <th>Donor Id</th>
+                <th>Donor Name</th>
+                <th>Blood Group</th>
+                <th>Location</th>
+                <th>Phone Number</th>
+            </tr>
+
+            <tr>
+                <td>1</td>
+                <td>Arun Pacheeri</td>
+                <td>A+</td>
+                <td>Karuvarakundu</td>
+                <td>8848193954</td>
+            </tr>
+
+            <tr>
+              <td>2</td>
+              <td>Chandran Pacheeri</td>
+              <td>A+</td>
+              <td>Karuvarakundu</td>
+              <td>9946605673</td>
+          </tr>
+
+          <tr>
+            <td>3</td>
+            <td>Rasheed Kp</td>
+            <td>A+</td>
+            <td>Karuvarakundu</td>
+            <td>8848193954</td>
+          </tr>
+
+          <tr>
+            <td>4</td>
+            <td>Arshad K</td>
+            <td>A+</td>
+            <td>Karuvarakundu</td>
+            <td>8606679891</td>
+          </tr>
+
+          <tr>
+            <td>5</td>
+            <td>Ayisha Kp</td>
+            <td>A+</td>
+            <td>Karuvarakundu</td>
+            <td>7025936913</td>
+          </tr>
+
+          <tr>
+            <td>6</td>
+            <td>Abdu Rasak</td>
+            <td>A+</td>
+            <td>Karuvarakundu</td>
+            <td>9747601419</td>
+          </tr>
+
+          <tr>
+            <td>7</td>
+            <td>Shameem Ka</td>
+            <td>A+</td>
+            <td>Karuvarakundu</td>
+            <td>9744603286</td>
+          </tr>
+
+          <tr>
+            <td>8</td>
+            <td>Faizal Nk</td>
+            <td>A+</td>
+            <td>Karuvarakundu</td>
+            <td>9446327759</td>
+          </tr>
+
+          <tr>
+            <td>9</td>
+            <td>Muhammed Rineesh</td>
+            <td>A+</td>
+            <td>Karuvarakundu</td>
+            <td>7025133429</td>
+          </tr>
+
+          <tr>
+            <td>10</td>
+            <td>Sathyaraj</td>
+            <td>A+</td>
+            <td>Karuvarakundu</td>
+            <td>8606155289</td>
+          </tr>
+
+          <tr>
+            <td>11</td>
+            <td>Muhammed Ashik</td>
+            <td>A+</td>
+            <td>Karuvarakundu</td>
+            <td>9656507238</td>
+          </tr>
+
+          <tr>
+            <td>12</td>
+            <td>Mohammed Shibili</td>
+            <td>A+</td>
+            <td>Karuvarakundu</td>
+            <td>8157858181</td>
+          </tr>
+          
+          <tr>
+            <td>13</td>
+            <td>Muhammed Afsal</td>
+            <td>A+</td>
+            <td>Karuvarakundu</td>
+            <td>9446247659</td>
+          </tr>
+          
+          <tr>
+            <td>14</td>
+            <td>Abdu Rasheed Pb</td>
+            <td>A+</td>
+            <td>Karuvarakundu</td>
+            <td>9446154589</td>
+          </tr>
+          
+          <tr>
+            <td>15</td>
+            <td>Ibrahm K</td>
+            <td>A+</td>
+            <td>Karuvarakundu</td>
+            <td>9846877402</td>
+          </tr>
+
+        </table>
     </div>
 
     <div class="col-xs-12 col-lg-12">
@@ -100,5 +196,5 @@
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script> 
-</body>
+  </body>
 </html>

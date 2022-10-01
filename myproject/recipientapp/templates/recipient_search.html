@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{% static 'css/recipient_search_.css' %}">
-    <script src="{% static 'javascript/recipient_searching.js' %}"></script>
+    <script src="{% static 'javascript/recipient_searching_.js' %}"></script>
   </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-danger">
@@ -85,6 +85,7 @@
             <select id="location" class="form-control">
               <option value="" value="">Choose...</option>
               <option value="Karuvarakundu">Karuvarakundu</option>
+              <option value="Manjeri">Manjeri</option>
             </select>      
           </div>
         </div>
@@ -94,6 +95,7 @@
           <div class="form-group col-md-5">
             <button class="btn btn-danger" style="margin-left: 10px;" type="submit" onclick="return search()"><span class="fa fa-search"> Search</span></button>
           </div>
+          <label id="table_error" style="margin-left: 30px; text-align: center;"></label>
         </form><br><br><br>
 
         <div class="col-xs-12 col-lg-12">
