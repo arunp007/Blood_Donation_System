@@ -59,100 +59,124 @@
       </div>
     </nav>
     
-    <div class="col-xs-3 col-lg-3" style="margin-top: 200px; width: auto;">
-        <h1 style="margin-bottom: 100px; color: darkred;">Blood Donors List</h1>
+    <div class="row">
+      <div class="col-xs-12 col-lg-12" style="margin-top: 200px;">
+        <h1 style="margin-bottom: 100px; margin-left: 10px; color: darkred;">Blood Donors List</h1>
+      </div>
+      <div class="col-xs-6 col-lg-6">
+        <table border="2" style="margin-bottom: 200px; margin-left: 10px;">
+          <tr class="table table-success">
+            <th>Donor Id</th>
+            <th>Donor Name</th>
+            <th>Blood Group</th>
+            <th>Location</th>
+            <th>Phone Number</th>
+          </tr>
 
-        <table border="2" style="margin-bottom: 200px;">
-            <tr class="table table-success">
-                <th>Donor Id</th>
-                <th>Donor Name</th>
-                <th>Blood Group</th>
-                <th>Location</th>
-                <th>Phone Number</th>
-            </tr>
+          <tr>
+            <td>1</td>
+            <td>Sufail</td>
+            <td>B+</td>
+            <td>Wandoor</td>
+            <td>9020503058</td>
+          </tr>
 
-            <tr>
-                <td>1</td>
-                <td>Sufail</td>
-                <td>B+</td>
-                <td>Wandoor</td>
-                <td>9020503058</td>
-            </tr>
+          <tr>
+            <td>2</td>
+            <td>Unnikrishnan P</td>
+            <td>B+</td>
+            <td>Wandoor</td>
+            <td>9496514927</td>
+          </tr>
 
-            <tr>
-                <td>2</td>
-                <td>Unnikrishnan P</td>
-                <td>B+</td>
-                <td>Wandoor</td>
-                <td>9496514927</td>
-            </tr>
+          <tr>
+            <td>3</td>
+            <td>Abdul Nasar T</td>
+            <td>B+</td>
+            <td>Wandoor</td>
+            <td>9447258146</td>
+          </tr>
 
-            <tr>
-                <td>3</td>
-                <td>Abdul Nasar T</td>
-                <td>B+</td>
-                <td>Wandoor</td>
-                <td>9447258146</td>
-            </tr>
+          <tr>
+            <td>4</td>
+            <td>Rajesh M</td>
+            <td>B+</td>
+            <td>Wandoor</td>
+            <td>9747958506</td>
+          </tr>
 
-            <tr>
-                <td>4</td>
-                <td>Rajesh M</td>
-                <td>B+</td>
-                <td>Wandoor</td>
-                <td>9747958506</td>
-            </tr>
+          <tr>
+            <td>5</td>
+            <td>Subair K</td>
+            <td>B+</td>
+            <td>Wandoor</td>
+            <td>9961980309</td>
+          </tr>
 
-            <tr>
-                <td>5</td>
-                <td>Subair K</td>
-                <td>B+</td>
-                <td>Wandoor</td>
-                <td>9961980309</td>
-            </tr>
+          <tr>
+            <td>6</td>
+            <td>Nayana Ck</td>
+            <td>B+</td>
+            <td>Wandoor</td>
+            <td>9048528002</td>
+          </tr>
 
-            <tr>
-                <td>6</td>
-                <td>Nayana Ck</td>
-                <td>B+</td>
-                <td>Wandoor</td>
-                <td>9048528002</td>
-            </tr>
+          <tr>
+            <td>7</td>
+            <td>Preena M</td>
+            <td>B+</td>
+            <td>Wandoor</td>
+            <td>9605160896</td>
+          </tr>
 
-            <tr>
-                <td>7</td>
-                <td>Preena M</td>
-                <td>B+</td>
-                <td>Wandoor</td>
-                <td>9605160896</td>
-            </tr>
+          <tr>
+            <td>8</td>
+            <td>Gopika P</td>
+            <td>B+</td>
+            <td>Wandoor</td>
+            <td>9495845829</td>
+          </tr>
 
-            <tr>
-                <td>8</td>
-                <td>Gopika P</td>
-                <td>B+</td>
-                <td>Wandoor</td>
-                <td>9495845829</td>
-            </tr>
+          <tr>
+            <td>9</td>
+            <td>Saifu Shanij</td>
+            <td>B+</td>
+            <td>Wandoor</td>
+            <td>9961665939</td>
+          </tr>
 
-            <tr>
-                <td>9</td>
-                <td>Saifu Shanij</td>
-                <td>B+</td>
-                <td>Wandoor</td>
-                <td>9961665939</td>
-            </tr>
-
-            <tr>
-                <td>10</td>
-                <td>Sujeer Mon C</td>
-                <td>B+</td>
-                <td>Wandoor</td>
-                <td>9895881272</td>
-            </tr>
-
-
+          <tr>
+            <td>10</td>
+            <td>Sujeer Mon C</td>
+            <td>B+</td>
+            <td>Wandoor</td>
+            <td>9895881272</td>
+          </tr>
         </table>
+      </div>
+
+      <div class="col-xs-4 col-lg-4" style="margin-top: 5px; margin-bottom: 200px; margin-left: auto; margin-right: auto;">
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <a href="https://moulanahospital.com/"><img src="{% static 'images/recipient/slider-1.png' %}" class="d-block w-100"></a>
+            </div>
+            <div class="carousel-item">
+              <a href="https://www.asterhospitals.in/hospitals/aster-mims-calicut"><img src="{% static 'images/recipient/slider-2.png' %}" class="d-block w-100"></a>
+            </div>
+            <div class="carousel-item">
+              <a href="https://www.kimshealth.org/alshifa/"><img src="{% static 'images/recipient/slider-3.png' %}" class="d-block w-100"></a>
+            </div>
+            <div class="carousel-item">
+              <a href="https://babymhospital.org/"><img src="{% static 'images/recipient/slider-4.png' %}" class="d-block w-100"></a>
+            </div>
+            <div class="carousel-item">
+              <a href="https://www.traumacaremalappuram.com/"><img src="{% static 'images/recipient/slider-5.png' %}" class="d-block w-100"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-2 col-lg-2"></div>
     </div>
 
 

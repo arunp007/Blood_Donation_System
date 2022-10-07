@@ -43,102 +43,125 @@
       </div>
     </nav>
     
-    <div class="col-xs-3 col-lg-3" style="margin-top: 200px; width: auto;">
-        <h1 style="margin-bottom: 100px; color: darkred;">Blood Donors List</h1>
+    <div class="row">
+      <div class="col-xs-12 col-lg-12" style="margin-top: 200px;">
+        <h1 style="margin-bottom: 100px; margin-left: 10px; color: darkred;">Blood Donors List</h1>
+      </div>
+      <div class="col-xs-6 col-lg-6">
+        <table border="2" style="margin-bottom: 200px; margin-left: 10px;">
+          <tr class="table table-success">
+            <th>Donor Id</th>
+            <th>Donor Name</th>
+            <th>Blood Group</th>
+            <th>Location</th>
+            <th>Phone Number</th>
+          </tr>
 
-        <table border="2" style="margin-bottom: 200px;">
-            <tr class="table table-success">
-                <th>Donor Id</th>
-                <th>Donor Name</th>
-                <th>Blood Group</th>
-                <th>Location</th>
-                <th>Phone Number</th>
-            </tr>
+          <tr>
+            <td>1</td>
+            <td>Sidharth Am</td>
+            <td>O+</td>
+            <td>Wandoor</td>
+            <td>8075281847</td>
+          </tr>
 
-            <tr>
-                <td>1</td>
-                <td>Sidharth Am</td>
-                <td>O+</td>
-                <td>Wandoor</td>
-                <td>8075281847</td>
-            </tr>
+          <tr>
+            <td>2</td>
+            <td>Muhsin</td>
+            <td>O+</td>
+            <td>Wandoor</td>
+            <td>8943396966</td>
+          </tr>
 
-            <tr>
-                <td>2</td>
-                <td>Muhsin</td>
-                <td>O+</td>
-                <td>Wandoor</td>
-                <td>8943396966</td>
-            </tr>
+          <tr>
+            <td>3</td>
+            <td>Navas</td>
+            <td>O+</td>
+            <td>Wandoor</td>
+            <td>9048418526</td>
+          </tr>
 
-            <tr>
-                <td>3</td>
-                <td>Navas</td>
-                <td>O+</td>
-                <td>Wandoor</td>
-                <td>9048418526</td>
-            </tr>
+          <tr>
+            <td>4</td>
+            <td>Naseer Ct</td>
+            <td>O+</td>
+            <td>Wandoor</td>
+            <td>9846059120</td>
+          </tr>
 
-            <tr>
-                <td>4</td>
-                <td>Naseer Ct</td>
-                <td>O+</td>
-                <td>Wandoor</td>
-                <td>9846059120</td>
-            </tr>
+          <tr>
+            <td>5</td>
+            <td>Ashraf Madathil</td>
+            <td>O+</td>
+            <td>Wandoor</td>
+            <td>9447515845</td>
+          </tr>
 
-            <tr>
-                <td>5</td>
-                <td>Ashraf Madathil</td>
-                <td>O+</td>
-                <td>Wandoor</td>
-                <td>9447515845</td>
-            </tr>
+          <tr>
+            <td>6</td>
+            <td>Midlaj</td>
+            <td>O+</td>
+            <td>Wandoor</td>
+            <td>8606567143</td>
+          </tr>
 
-            <tr>
-                <td>6</td>
-                <td>Midlaj</td>
-                <td>O+</td>
-                <td>Wandoor</td>
-                <td>8606567143</td>
-            </tr>
+          <tr>
+            <td>7</td>
+            <td>Athulya P</td>
+            <td>O+</td>
+            <td>Wandoor</td>
+            <td>9497870937</td>
+          </tr>
 
-            <tr>
-                <td>7</td>
-                <td>Athulya P</td>
-                <td>O+</td>
-                <td>Wandoor</td>
-                <td>9497870937</td>
-            </tr>
+          <tr>
+            <td>8</td>
+            <td>Usharani K</td>
+            <td>O+</td>
+            <td>Wandoor</td>
+            <td>8593898179</td>
+          </tr>
 
-            <tr>
-                <td>8</td>
-                <td>Usharani K</td>
-                <td>O+</td>
-                <td>Wandoor</td>
-                <td>8593898179</td>
-            </tr>
+          <tr>
+            <td>9</td>
+            <td>Sunil Kumar</td>
+            <td>O+</td>
+            <td>Wandoor</td>
+            <td>9809797675</td>
+          </tr>
 
-            <tr>
-                <td>9</td>
-                <td>Sunil Kumar</td>
-                <td>O+</td>
-                <td>Wandoor</td>
-                <td>9809797675</td>
-            </tr>
-
-            <tr>
-                <td>10</td>
-                <td>Firos Kk</td>
-                <td>O+</td>
-                <td>Wandoor</td>
-                <td>9048527105</td>
-            </tr>
-
-
+          <tr>
+            <td>10</td>
+            <td>Firos Kk</td>
+            <td>O+</td>
+            <td>Wandoor</td>
+            <td>9048527105</td>
+          </tr>
         </table>
-    </div>
+      </div>
 
+      <div class="col-xs-4 col-lg-4" style="margin-top: 5px; margin-bottom: 200px; margin-left: auto; margin-right: auto;">
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <a href="https://moulanahospital.com/"><img src="{% static 'images/donor/slider-1.png' %}" class="d-block w-100"></a>
+            </div>
+            <div class="carousel-item">
+              <a href="https://www.asterhospitals.in/hospitals/aster-mims-calicut"><img src="{% static 'images/donor/slider-2.png' %}" class="d-block w-100"></a>
+            </div>
+            <div class="carousel-item">
+              <a href="https://www.kimshealth.org/alshifa/"><img src="{% static 'images/donor/slider-3.png' %}" class="d-block w-100"></a>
+            </div>
+            <div class="carousel-item">
+              <a href="https://babymhospital.org/"><img src="{% static 'images/donor/slider-4.png' %}" class="d-block w-100"></a>
+            </div>
+            <div class="carousel-item">
+              <a href="https://www.traumacaremalappuram.com/"><img src="{% static 'images/donor/slider-5.png' %}" class="d-block w-100"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-2 col-lg-2"></div>
+    </div>
 
     <div class="col-xs-12 col-lg-12">
       <a href="#top">

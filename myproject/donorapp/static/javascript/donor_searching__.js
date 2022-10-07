@@ -31,7 +31,7 @@ function search(){
     }
 
     if(blood.value == 'AB-' && location.value == 'Karuvarakundu'){
-        alert("No Data Founded")
+        window.open("https://blooddonationsystem1.herokuapp.com/donorapp/kvk_abminus")
     }
 
     if(blood.value == 'A+' && location.value == 'Manjeri'){

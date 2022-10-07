@@ -43,17 +43,19 @@
       </div>
     </nav>
     
-    <div class="col-xs-3 col-lg-3" style="margin-top: 200px; width: auto;">
-        <h1 style="margin-bottom: 100px; color: darkred;">Blood Donors List</h1>
-
-        <table border="2" style="margin-bottom: 200px;">
-            <tr class="table table-success">
-                <th>Donor Id</th>
-                <th>Donor Name</th>
-                <th>Blood Group</th>
-                <th>Location</th>
-                <th>Phone Number</th>
-            </tr>
+    <div class="row">
+      <div class="col-xs-12 col-lg-12" style="margin-top: 200px;">
+        <h1 style="margin-bottom: 100px; margin-left: 10px; color: darkred;">Blood Donors List</h1>
+      </div>
+      <div class="col-xs-6 col-lg-6">
+        <table border="2" style="margin-bottom: 200px; margin-left: 10px;">
+          <tr class="table table-success">
+            <th>Donor Id</th>
+            <th>Donor Name</th>
+            <th>Blood Group</th>
+            <th>Location</th>
+            <th>Phone Number</th>
+          </tr>
 
           <tr>
             <td>1</td>
@@ -62,9 +64,31 @@
             <td>Manjeri</td>
             <td>8089163453</td>
           </tr>
-          
-
         </table>
+      </div>
+
+      <div class="col-xs-4 col-lg-4" style="margin-top: 5px; margin-bottom: 200px; margin-left: auto; margin-right: auto;">
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <a href="https://moulanahospital.com/"><img src="{% static 'images/donor/slider-1.png' %}" class="d-block w-100"></a>
+            </div>
+            <div class="carousel-item">
+              <a href="https://www.asterhospitals.in/hospitals/aster-mims-calicut"><img src="{% static 'images/donor/slider-2.png' %}" class="d-block w-100"></a>
+            </div>
+            <div class="carousel-item">
+              <a href="https://www.kimshealth.org/alshifa/"><img src="{% static 'images/donor/slider-3.png' %}" class="d-block w-100"></a>
+            </div>
+            <div class="carousel-item">
+              <a href="https://babymhospital.org/"><img src="{% static 'images/donor/slider-4.png' %}" class="d-block w-100"></a>
+            </div>
+            <div class="carousel-item">
+              <a href="https://www.traumacaremalappuram.com/"><img src="{% static 'images/donor/slider-5.png' %}" class="d-block w-100"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-2 col-lg-2"></div>
     </div>
 
 

@@ -31,8 +31,7 @@ function search(){
     }
 
     if(blood.value == 'AB-' && location.value == 'Karuvarakundu'){
-        document.getElementById('table_error').innerHTML="No Data Founded"
-        return false
+        window.open("https://blooddonationsystem1.herokuapp.com/hospitalapp/kvk_abminus")
     }
 
     if(blood.value == 'A+' && location.value == 'Manjeri'){
