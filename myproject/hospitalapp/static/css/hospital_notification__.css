@@ -1,6 +1,6 @@
 .container-fluid{
     background-color: white;
-    height: 500px;
+    margin-bottom: 200px;
 }
 
 a{
@@ -14,38 +14,40 @@ a:hover{
 }
 
 .btn-warning{
-    color:white;
+    color: white;
     border-radius: 20px;
 }
 
 .btn-warning:hover{
     color: white;
 }
- 
-.container{
-    padding-top: 20px;
-}
-
+  
 .image{
-    margin-left: 20px;
-    margin-top: 15px;
+    margin-left: 10px;
+    margin-top: 45px;
+    width: 70px;
 }
 
 .content1{
     background-color: azure;
-    width: 100%;
+    width: 90%;
     height: 200px;
     box-shadow: 0 0 20px lightgrey;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    display: block;
+    border-radius: 10px;
 }
 
 .content1:hover{
-    border-left: 6px solid blue ;
-    width: 100%;
+    border-left: 6px solid red;
+    width: 90%;
     height: 200px;
 }
 
-label{
-    padding-left: 10px;
+.message{
+    margin-left: 70px;
 }
 
 .footer1{

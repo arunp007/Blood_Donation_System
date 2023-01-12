@@ -7,9 +7,6 @@ def donor(request):
 def donorsearch(request):
     return render(request, 'donor_search.html')
 
-def donornotification(request):
-    return render(request, 'donor_notification.html')
-
 def kvk_aplus(request):
     return render(request, 'donor_search/kvk_a+.html')
 

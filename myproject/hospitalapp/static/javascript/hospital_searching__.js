@@ -3,7 +3,7 @@ function search(){
     var location = document.getElementById('location')
 
     if(blood.value == 'A+' && location.value == 'Karuvarakundu'){
-        window.open("https://blooddonationsystem1.herokuapp.com/hospitalapp/kvk_aplus")
+        window.open("{% url 'kvk_aplus' %}")
     }
 
     if(blood.value == 'A-' && location.value == 'Karuvarakundu'){

@@ -8,7 +8,7 @@
     <title>Admin Page</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="{% static 'css/admin_home_style1.css' %}">
+    <link rel="stylesheet" href="{% static 'css/admin_home__.css' %}">
 </head>
  <body>
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
@@ -129,6 +129,17 @@
           <label for="" class="grid-title" style="margin-left: 60px;">Contact Details</label>
           <div class="textarea6">
             <a href="{% url 'contact_data' %}" class="link" style="text-decoration: none;">View Details</a>
+            <img src="{% static 'images/admin_/left.png' %}" style="width:40px; margin-left: 80px;">
+          </div>
+       </div>
+      </div>
+
+      <div class="col-xs-3 col-lg-3" width="330px" style="margin-top: 10px; margin-bottom: 30px;">
+        <div class="container8">
+          <img src="{% static 'images/admin_/notification.png' %}" class="contact-image"><br>
+          <label for="" class="grid-title" style="margin-left: 60px;">Notification</label>
+          <div class="textarea6">
+            <a href="{% url 'notification' %}" class="link" style="text-decoration: none;">View Details</a>
             <img src="{% static 'images/admin_/left.png' %}" style="width:40px; margin-left: 80px;">
           </div>
        </div>

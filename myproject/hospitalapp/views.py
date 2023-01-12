@@ -7,9 +7,6 @@ def hospital(request):
 def hospitalsearch(request):
     return render(request, 'hospital_search.html')
 
-def hospitalnotification(request):
-    return render(request, 'hospital_notification.html')
-
 def hospitalcamp(request):
     if request.method == 'POST':
         camp = request.POST['camp']

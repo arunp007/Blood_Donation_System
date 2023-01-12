@@ -8,7 +8,7 @@
     <title>Notification</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="{% static 'css/hospital_notification_.css' %}">
+    <link rel="stylesheet" href="{% static 'css/hospital_notification__.css' %}">
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-danger">
@@ -43,25 +43,30 @@
             <a class="nav-link" href="{% url 'hospital_search' %}"><span class="fa fa-search"> Search</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="{% url 'hospitalnotification' %}"><span class="fa fa-bell"> Notification</span></a>
+            <a class="nav-link active" href="{% url 'hospital_notification' %}"><span class="fa fa-bell"> Notification</span></a>
           </li>
         </ul>
         <a href="{% url 'hospital_logout' %}" class="btn btn-warning"><span class="fa fa-sign-out">Logout</span></a>
       </div>
     </nav>
     
-    <div class="container-fluid" style="margin-top: 200px; margin-bottom: 100px;">
-      <h1 style="color:grey; font-size: 50px; margin-top: 20px; margin-left: 20px;">Notifications</h1>
+    <div class="container-fluid" style="margin-top: 230px; margin-bottom: 100px;">
+      <h1 style="color:grey; font-size: 35px; margin-top: 20px; margin-left: 20px;">Notifications</h1>
       <div class="row" style="margin-top: 20px;">
-        <div class="col-xs-12 col-lg-12" style="margin-top: 10px;">
+        
+        <div class="col-xs-1 col-lg-1"></div>
+
+        <div class="col-xs-9 col-lg-9" style="margin-top: 10px;">
+          {% for i in message %}
           <div class="content1">
             <img src="{% static 'images/hospital/notification_icon.png' %}" class="image" width="100px">
-            <label class="item">Needed </label>
-            <label class="item">Name : </label>
-            <button class="btn btn-primary btn-md"><span class="fa fa-check"> Accept</span></button>&nbsp;&nbsp;
-            <button class="btn btn-danger btn-md"><span class="fa fa-ban"> Reject</span></button>
+            <p class="message">{{i.messages}}</p>
           </div>
+          {% endfor %}
         </div>
+
+        <div class="col-xs-1 col-lg-1"></div>
+        
       </div>
     </div>
 

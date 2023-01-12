@@ -4,7 +4,6 @@ from.import views
 urlpatterns = [
     path('donor',views.donor,name="donor_home"),
     path('donorsearch',views.donorsearch,name="donor_search"),
-    path('donornotification', views.donornotification,name="donornotification"),
     path('kvk_aplus', views.kvk_aplus),
     path('kvk_aminus', views.kvk_aminus),
     path('kvk_bplus', views.kvk_bplus),

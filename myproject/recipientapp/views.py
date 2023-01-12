@@ -20,10 +20,7 @@ def recipientbloodrequest(request):
 def bloodrequest(request):
     bloodrequest = Blood.objects.all()
     return render(request, 'bloodrequest.html', {'details': bloodrequest})
-
-def recipient_notification(request):
-    return render(request, 'recipient_notification.html')
-
+    
 def recipienturgent(request):
     if request.method == 'POST':
         name = request.POST['name']

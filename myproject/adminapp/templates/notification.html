@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notification</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <style>
+        .container-fluid{
+            background-color: lightblue;
+            padding-top: 50px;
+            padding-bottom: 250px;
+        }
+        
+        .main-heading{
+            margin-top: 30px;
+            margin-bottom: 80px;
+            font-size: 35px;
+            font-weight: bolder;
+            text-align: center;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .col-xs-9, .col-lg-9{
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+        }
+
+        .btn-dark{
+            margin-top: 20px;
+            width: 200px;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-9 col-lg-9">
+                <form method="post">
+                    {% csrf_token %}
+                    <h1 class="main-heading">Send Message</h1>
+                    <textarea class="form-control" name="messages" id="message" cols="10" rows="15"></textarea><br><br>
+                    <label id="message_error"></label>
+                    <button type="submit" class="btn btn-dark" onclick="return validation()">Send</button>
+                </form>
+            </div>
+        </div>
+    </div>
+   
+    <script>
+        function validation(){
+            var status = 1
+            var message = document.getElementById('message')
+
+            if(message.value == ""){
+                document.getElementById('message').style.borderColor="red"
+                document.getElementById('message_error').innerHTML="** Please Enter Your Message **"
+                document.getElementById('message_error').style.color="red"
+                document.getElementById('message_error').style.display="block"
+                var status = 0
+            }
+
+            else{
+                document.getElementById('message').style.borderColor="black"
+                document.getElementById('message_error').style.display="none"
+                var status = 1
+            }
+
+            if(status == 1){
+                return true
+            }
+
+            if(status == 0){
+                return false
+            }
+        }
+    </script>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script> 
+</body>
+</html>
