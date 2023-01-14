@@ -7,42 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Donors Details</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="{% static 'css/donor_search_.css' %}">
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-danger">
-      <img src="{% static 'images/donor/donation.png' %}" class="navbar-brand" alt="" width="150px">
-      <a class="navbar-brand" style="font-size: 30px;" href="#"><h1>Life Saver</h1></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'donor_home' %}"><span class="fa fa-home"> Home</span></a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
-            <span class="fa fa-eye"> View</span> 
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: grey;">
-              <a class="dropdown-item" href="{% url 'camptable' %}"><span class="fa fa-hospital-o"> Camps</span></a>
-              <a class="dropdown-item" href="{% url 'bloodrequest' %}"><span class="fa fa-heart"> Blood Requests</span></a>
-              <a class="dropdown-item" href="{% url 'urgentblood' %}"><span class="fa fa-handshake-o"> Urgent Blood Requests</span></a>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="{% url 'donor_search' %}"><span class="fa fa-search"> Search</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'donornotification' %}"><span class="fa fa-bell"> Notification</span></a>
-          </li>
-        </ul>
-        <a href="{% url 'donor_logout' %}" class="btn btn-warning"><span class="fa fa-sign-out">Logout</span></a>
-      </div>
-    </nav>
-
     <div class="row">
       <div class="col-xs-12 col-lg-12" style="margin-top: 200px;">
         <h1 style="margin-bottom: 100px; margin-left: 10px; color: darkred;">Blood Donors List</h1>
@@ -114,22 +80,6 @@
         </div>
       </div>
       <div class="col-xs-2 col-lg-2"></div>
-    </div>
-
-    <div class="col-xs-12 col-lg-12">
-      <a href="#top">
-      <div class="top">
-        <img src="{% static 'images/donor/topnav.png' %}" class="topimage"></a>
-      </div>
-    </div>
-  
-    <div class="container-fluid1">
-      <div class="col-xs-12 col-lg-12">
-        <div class="footer1">
-          <a href=""><label class="label">Terms And Conditions</label></a><a href="{% url 'about' %}"><label class="label">About Us</label></a><a href="{% url 'contact' %}"><label class="label">Contact Us</label></a><br>
-          <a href=""><label class="label">©Blood Donation System</label></a> <a href=""><label class="label">Designed And Developed By Arun Pacheeri</label></a>
-        </div>
-      </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
