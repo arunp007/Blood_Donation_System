@@ -1,0 +1,96 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donors Data</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <style>
+        h1{
+            margin-top: 50px;
+            margin-bottom: 50px;
+            font-size: 50px;
+            font-weight: bolder;
+            font-family: 'Times New Roman', Times, serif;
+            text-align: center;
+        }
+
+        #carousel{
+            margin-top: 400px;
+            margin-bottom: 100px;
+        }
+
+        .d-block{
+            height: 280px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12 col-lg-12">
+                <h1>Donors</h1>
+            </div>
+
+            <div class="col-xs-3 col-lg-3"></div>
+
+            <div class="col-xs-6 col-lg-6">
+                <table border="2">
+                    <tr class="table table-primary">
+                        <th>Donor Id</th>
+                        <th>Donor Name</th>
+                        <th>Blood Group</th>
+                        <th>Location</th>
+                        <th>Phone Number</th>
+                    </tr>
+
+                    {% for i in donor %}
+
+                    <tr>
+                        <td>{{i.id}}</td>
+                        <td>{{i.name}}</td>
+                        <td>{{i.blood}}</td>
+                        <td>{{i.location}}</td>
+                        <td>{{i.phone}}</td>
+                    </tr>
+
+                    {% endfor %}
+
+                </table>
+            </div>
+
+            <div class="col-xs-3 col-lg-3"></div>
+
+            <div class="col-xs-12 col-lg-12" id="carousel">
+                <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <a href="https://moulanahospital.com/"><img src="{% static 'images/donor/slider-1.png' %}" class="d-block w-100"></a>
+                        </div>
+                        <div class="carousel-item">
+                            <a href="https://www.asterhospitals.in/hospitals/aster-mims-calicut"><img src="{% static 'images/donor/slider-2.png' %}" class="d-block w-100"></a>
+                        </div>
+                        <div class="carousel-item">
+                            <a href="https://www.kimshealth.org/alshifa/"><img src="{% static 'images/donor/slider-3.png' %}" class="d-block w-100"></a>
+                        </div>
+                        <div class="carousel-item">
+                            <a href="https://babymhospital.org/"><img src="{% static 'images/donor/slider-4.png' %}" class="d-block w-100"></a>
+                        </div>
+                        <div class="carousel-item">
+                            <a href="https://www.traumacaremalappuram.com/"><img src="{% static 'images/donor/slider-5.png' %}" class="d-block w-100"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+</body>
+</html>

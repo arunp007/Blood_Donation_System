@@ -24,10 +24,6 @@ def donor_signup(request):
         donor_details.save()
     return render(request, 'donor_signup.html')
 
-def donor_info(request):
-    donor_details = Donors.objects.all()
-    return render(request, 'donor_info.html', {'donor': donor_details})
-
 def donors(request):
     donor_data = Donors.objects.all()
     return render(request, 'donors.html', {'data': donor_data})

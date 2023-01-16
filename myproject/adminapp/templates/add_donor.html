@@ -1,0 +1,110 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Donors</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <script src="{% static 'js/add_donor.js' %}"></script>
+    <style>
+        .container-fluid{
+            background-color: grey;
+            padding-top: 100px;
+            padding-bottom: 400px;
+        }
+
+        h1{
+            margin-bottom: 50px;
+            color: brown;
+            font-size: 40px;
+            font-weight: bolder;
+            font-family: 'Times New Roman', Times, serif;
+            text-align: center;
+        }
+
+        form{
+            background-color: white;
+            padding-top: 50px;
+            padding-bottom: 100px;
+            padding-left: 10px;
+            padding-right: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px darkgrey;
+        }
+
+        .form-control{
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+
+        .col-xs-5, .col-lg-5{
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+        }
+
+        .btn-success{
+            margin-top: 70px;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-5 col-lg-5">
+                <form method="post">
+                    {% csrf_token %}
+                    <h1>Add Donors</h1>
+                    <input class="form-control" type="text" name="name" id="name" placeholder="Donor Name" onkeyup="return name_valid()" value="{{update.name}}">
+                    <label id="name_error"></label>
+                    
+                    <select class="form-control" name="blood" id="blood-group" value="{{update.blood}}">
+                        <option value="">Blood Group</option>
+                        <option value="A+">A+</option>
+                        <option value="A-">A-</option>
+                        <option value="B+">B+</option>
+                        <option value="B-">B-</option>
+                        <option value="O+">O+</option>
+                        <option value="O-">O-</option>
+                        <option value="AB+">AB+</option>
+                        <option value="AB-">AB-</option>
+                    </select>
+
+                    <label id="blood_error"></label>
+
+                    <select class="form-control" name="location" id="location" value="{{update.location}}">
+                        <option value="">Location</option>
+                        <option value="Malappuram">Malappuram</option>
+                        <option value="Manjeri">Manjeri</option>
+                        <option value="Karuvarakundu">Karuvarakundu</option>
+                        <option value="Wandoor">Wandoor</option>
+                        <option value="Nilambur">Nilambur</option>
+                        <option value="Vazhikkadavu">Vazhikkadavu</option>
+                    </select>
+
+                    <label id="location_error"></label>
+
+                    <input class="form-control" type="text" name="phone" id="phone" placeholder="Phone Number" onkeyup="return phone_valid()" value="{{update.phone}}">
+
+                    <label id="phone_error"></label>
+
+                    <button class="btn btn-success" type="submit" onclick="return validation()">Submit</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+    
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script> 
+</body>
+</html>
